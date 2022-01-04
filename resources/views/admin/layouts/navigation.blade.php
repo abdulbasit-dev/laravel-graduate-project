@@ -52,7 +52,7 @@
                 <span class="sidebar-icon me-3">
                     <i class="fas fa-circle fa-fw"></i>
                 </span>
-                <span class="sidebar-text">Two-level menu</span>
+                <span class="sidebar-text">Section</span>
             </span>
             <span class="link-arrow">
                 <svg class="icon icon-sm" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -70,7 +70,23 @@
                         <span class="sidebar-icon">
                             <i class="fas fa-circle"></i>
                         </span>
-                        <span class="sidebar-text">Child menu</span>
+                        <span class="sidebar-text">Collegs</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <span class="sidebar-icon">
+                            <i class="fas fa-circle"></i>
+                        </span>
+                        <span class="sidebar-text">Departments</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <span class="sidebar-icon">
+                            <i class="fas fa-circle"></i>
+                        </span>
+                        <span class="sidebar-text">Class Types</span>
                     </a>
                 </li>
             </ul>

@@ -17,7 +17,7 @@ class IsAdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        abort_if(!Gate::allows('manage-dashboard'),403);
+        abort_if(Gate::allows('manage-dashboard'),403);
         return $next($request);
     }
 }

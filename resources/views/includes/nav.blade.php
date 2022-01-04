@@ -23,15 +23,19 @@
                 </li>
             </ul>
             <ul>
-                <li>
-                    <a class="btn btn-secondary btn-sm d-inline-flex align-items-center" href="{{ route('logout') }}" onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();">
-                <form method="POST" id="logout-form" action="{{ route('logout') }}">
-                    @csrf
-                </form>
-                {{ __('Log Out') }}
-            </a>
-                </li>
+                @if (Route::has('login'))
+                <div class="top-right links">
+                    @auth
+                        <a href="{{ url('/home') }}">Home</a>
+                    @else
+                        <a href="{{ route('login') }}">Login</a>
+
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}">Register</a>
+                        @endif
+                    @endauth
+                </div>
+            @endif
             </ul>
         </div>
     </div>
