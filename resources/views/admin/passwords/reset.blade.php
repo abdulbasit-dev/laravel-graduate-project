@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <p class="text-center">
-                <a href="{{ route('login') }}" class="d-flex align-items-center justify-content-center">
+                <a href="{{ route('admin.login') }}" class="d-flex align-items-center justify-content-center">
                     <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd"
@@ -18,7 +18,7 @@
             <div class="col-12 d-flex align-items-center justify-content-center">
                 <div class="bg-white shadow border-0 rounded p-4 p-lg-5 w-100 fmxw-500">
                     <h1 class="h3 mb-4">{{ __('Reset password') }}</h1>
-                    <form method="POST" action="{{ route('password.update') }}">
+                    <form method="POST" action="{{ route('admin.password.update') }}">
                         @csrf
 
                         <input type="hidden" name="token" value="{{ $token }}">

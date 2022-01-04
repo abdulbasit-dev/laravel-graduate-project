@@ -1,6 +1,6 @@
 <ul class="nav flex-column pt-3 pt-md-0">
     <li class="nav-item">
-        <a href="{{ route('home') }}" class="nav-link d-flex align-items-center">
+        <a href="{{ route('admin.home') }}" class="nav-link d-flex align-items-center">
             <span class="sidebar-icon me-3">
                 <img src="{{ asset('images/brand/light.svg') }}" height="20" width="20" alt="Volt Logo">
             </span>
@@ -11,7 +11,7 @@
     </li>
 
     <li class="nav-item {{ request()->routeIs('home') ? 'active' : '' }}">
-        <a href="{{ route('home') }}" class="nav-link">
+        <a href="{{ route('admin.home') }}" class="nav-link">
             <span class="sidebar-icon">
                 <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg">
@@ -24,7 +24,7 @@
     </li>
 
     <li class="nav-item {{ request()->routeIs('users.index') ? 'active' : '' }}">
-        <a href="{{ route('users.index') }}" class="nav-link">
+        <a href="{{ route('admin.users.index') }}" class="nav-link">
             <span class="sidebar-icon me-3">
                 <i class="fas fa-user-alt fa-fw"></i>
             </span>
@@ -33,7 +33,7 @@
     </li>
 
     <li class="nav-item {{ request()->routeIs('about') ? 'active' : '' }}">
-        <a href="{{ route('about') }}" class="nav-link">
+        <a href="{{ route('admin.about') }}" class="nav-link">
             <span class="sidebar-icon">
                 <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg">

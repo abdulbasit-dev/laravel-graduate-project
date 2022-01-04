@@ -1,15 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\User;
+use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    //<?php
     public function index()
     {
         $users = User::paginate();
 
-        return view('users.index', compact('users'));
+        return view('admin.users.index', compact('users'));
     }
 }

@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <p class="text-center">
-                <a href="{{ route('login') }}" class="d-flex align-items-center justify-content-center">
+                <a href="{{ route('admin.login') }}" class="d-flex align-items-center justify-content-center">
                     <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd"
@@ -28,7 +28,7 @@
                     <p class="mb-4">
                         {{ __("Don't fret! Just type in your email and we will send you a code to reset your password!") }}
                     </p>
-                    <form method="POST" action="{{ route('password.email') }}">
+                    <form method="POST" action="{{ route('admin.password.email') }}">
                         @csrf
                         <!-- Form -->
                         <div class="mb-4">

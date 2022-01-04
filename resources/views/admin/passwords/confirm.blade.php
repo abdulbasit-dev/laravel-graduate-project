@@ -9,7 +9,7 @@
                         {{ __('This is a secure area of the application. Please confirm your password before continuing.') }}
                     </div>
 
-                    <form method="POST" action="{{ route('password.confirm') }}">
+                    <form method="POST" action="{{ route('admin.password.confirm') }}">
                         @csrf
 
                         <!-- Form Password -->
@@ -36,7 +36,7 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <button type="submit" class="btn btn-gray-800">{{ __('Confirm') }}</button>
                             @if (Route::has('password.request'))
-                                <a class="small text-right" href="{{ route('password.request') }}">
+                                <a class="small text-right" href="{{ route('admin.password.request') }}">
                                     {{ __('Forgot Your Password?') }}
                                 </a>
                             @endif

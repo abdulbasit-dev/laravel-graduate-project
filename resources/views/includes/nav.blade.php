@@ -22,6 +22,17 @@
                     <a class="nav-link" href="{{ route('evaluation') }}">Evaluation</a>
                 </li>
             </ul>
+            <ul>
+                <li>
+                    <a class="btn btn-secondary btn-sm d-inline-flex align-items-center" href="{{ route('logout') }}" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                <form method="POST" id="logout-form" action="{{ route('logout') }}">
+                    @csrf
+                </form>
+                {{ __('Log Out') }}
+            </a>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>
