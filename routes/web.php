@@ -2,7 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\Admin\{
-    DashboradController
+    DashboradController,
+    // UserController,
+    // ProfileController,
+};
+
+use \App\Http\Controllers\{
+    PageController
 };
 /*
 |--------------------------------------------------------------------------
@@ -15,26 +21,23 @@ use \App\Http\Controllers\Admin\{
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
 //Front End Routes
-Route::get('/', function () {
-    return view('pages.home');
-});
+Route::get('/', [PageController::class, 'home'])->name('home');
+Route::get('/conference-grant', [PageController::class, 'conference'])->name('conference');
+Route::get('/graduate-project', [PageController::class, 'graduateProject'])->name('graduateProject');
+Route::get('/evaluation', [PageController::class, 'evaluation'])->name('evaluation');
 
-//Admin Routes
 Auth::routes();
 
 
-Route::group(['prefix' => 'admin', 'middleware'=>'auth'], function () {
+//Admin Routes
+Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'as' => 'admin.'], function () {
     Route::get('', [DashboradController::class, 'index'])->name('home');
-        Route::view('about', 'about')->name('about');
-    
-        Route::get('users', [\App\Http\Controllers\UserController::class, 'index'])->name('users.index');
-    
-        Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
-        Route::put('profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
-});
+    // Route::view('about', 'about')->name('about');
 
+    // Route::get('users', [UserController::class, 'index'])->name('users.index');
+
+    // Route::get('profile', [ProfileController::class, 'show'])->name('profile.show');
+    // Route::put('profile', [ProfileController::class, 'update'])->name('profile.update');
+});
