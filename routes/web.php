@@ -8,7 +8,8 @@ use \App\Http\Controllers\Admin\{
 };
 
 use \App\Http\Controllers\{
-    PageController
+    PageController,
+    LanguageController
 };
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,9 @@ use \App\Http\Controllers\{
 |
 */
 
+
+//language changer controller
+Route::get('/change-langauge/{lang}', [LanguageController::class,"changeLanguage"])->name("change-langauge");
 
 //Front End Routes
 Route::get('/', [PageController::class, 'home'])->name('home');
