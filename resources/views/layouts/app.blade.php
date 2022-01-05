@@ -17,7 +17,7 @@
     @if (config('app.locale') == 'ar' || config('app.locale') == 'kr')
         <link href="{{ asset('/css/bootstrap-rtl.css') }}" rel="stylesheet">
     @endif
-    <title>{{ _('Graduta Projects') }}</title>
+    <title>{{ _('Student Graduate Projects') }}</title>
 </head>
 
 <body>

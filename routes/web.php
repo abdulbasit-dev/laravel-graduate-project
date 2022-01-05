@@ -5,7 +5,8 @@ use Illuminate\Support\Facades\Route;
 
 use \App\Http\Controllers\{
     PageController,
-    LanguageController
+    LanguageController,
+    RegisterController
 };
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,10 @@ Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/conference-grant', [PageController::class, 'conference'])->name('conference');
 Route::get('/graduate-project', [PageController::class, 'graduateProject'])->name('graduateProject');
 Route::get('/evaluation', [PageController::class, 'evaluation'])->name('evaluation');
+
+Route::get('/user/register', [RegisterController::class, 'index'])->name('user.register');
+Route::post('/user/register', [RegisterController::class, 'store']);
+
 
 Auth::routes();
 

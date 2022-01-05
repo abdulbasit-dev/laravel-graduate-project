@@ -11,6 +11,7 @@
                 <thead>
                     <tr>
                         <th class="border-gray-200">{{ __('Name') }}</th>
+                        <th class="border-gray-200">{{ __('User Type') }}</th>
                         <th class="border-gray-200">{{ __('Email') }}</th>
                     </tr>
                 </thead>
@@ -18,6 +19,7 @@
                     @foreach ($users as $user)
                         <tr>
                             <td><span class="fw-normal">{{ $user->name }}</span></td>
+                            <td><span class="fw-normal">{{ $user->user_type ?? "Not Specified" }}</span></td>
                             <td><span class="fw-normal">{{ $user->email }}</span></td>
                         </tr>
                     @endforeach

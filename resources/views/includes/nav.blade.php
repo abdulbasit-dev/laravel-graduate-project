@@ -13,16 +13,16 @@
                         aria-current="page" href="{{ route('home') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link fw-medium {{ Route::currentRouteName() == 'conference' ? 'active' : '' }}"
-                        href="{{ route('conference') }}">Conference and Grant</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link fw-medium {{ Route::currentRouteName() == 'graduateProject' ? 'active' : '' }}"
                         href="{{ route('graduateProject') }}">Graduate Project</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link fw-medium {{ Route::currentRouteName() == 'evaluation' ? 'active' : '' }}"
                         href="{{ route('evaluation') }}">Evaluation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-medium {{ Route::currentRouteName() == 'conference' ? 'active' : '' }}"
+                        href="{{ route('conference') }}">Conference and Grant</a>
                 </li>
             </ul>
             @if (Route::has('login'))
@@ -36,7 +36,7 @@
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">Register <i
+                                    <a class="nav-link" href="{{ route('user.register') }}">Register <i
                                             class="fas fa-user"></i></a>
 
                                 </li>

@@ -8,9 +8,9 @@
                     <div class="text-center text-md-center mb-4 mt-md-0">
                         <h1 class="mt-n3 mb-0 h3">{{ __('Create Account') }}</h1>
                     </div>
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('user.register') }}">
                         @csrf
-                        
+
                         <!-- Form -->
                         <div class="form-group mt-4 mb-4">
                             <label for="name">{{ __('Your Name') }}</label>
@@ -44,6 +44,19 @@
                             </div>
                             @error('email') <div class="invalid-feedback"> {{ $message }} </div> @enderror
                         </div>
+                        <div class="form-group mt-4 mb-4">
+                            <label for="user_type">{{ __('Select User Type') }}</label>
+
+                            <select class="form-select" id="user_type" name="user_type"
+                                required>
+                                <option value="Student" selected>Student</option>
+                                <option value="Head Of Department">Head Of Department</option>
+                                <option value="Department Rapporteur">Department Rapporteur</option>
+                                <option value="Lecturer">Lecturer</option>
+                                <option value="Chairman Of Student Evaluation Committe">Chairman Of Student Evaluation Committe</option>
+                                <option value="Dean Of Faculty">Dean Of Faculty</option>
+                            </select>
+                        </div>
                         <!-- End of Form -->
                         <!-- Form -->
                         <div class="form-group mb-4">
@@ -58,15 +71,15 @@
                                         </path>
                                     </svg>
                                 </span>
-                                <input name="password" type="password" placeholder="{{ __('Password') }}" class="form-control" id="password"
-                                    required autocomplete="new-password">
+                                <input name="password" type="password" placeholder="{{ __('Password') }}"
+                                    class="form-control" id="password" required autocomplete="new-password">
                             </div>
                             @error('password') <div class="invalid-feedback"> {{ $message }} </div>
                             @enderror
                         </div>
                         <!-- End of Form -->
                         <!-- Form -->
-                        <div class="form-group mb-4">
+                        {{-- <div class="form-group mb-4">
                             <label for="password_confirmation">{{ __('Confirm Password') }}</label>
                             <div class="input-group">
                                 <span class="input-group-text" id="basic-addon3">
@@ -78,10 +91,11 @@
                                         </path>
                                     </svg>
                                 </span>
-                                <input name="password_confirmation" type="password" placeholder="{{ __('Confirm Password') }}"
-                                    class="form-control" id="password_confirmation" required>
+                                <input name="password_confirmation" type="password"
+                                    placeholder="{{ __('Confirm Password') }}" class="form-control"
+                                    id="password_confirmation" required>
                             </div>
-                        </div>
+                        </div> --}}
                         <!-- End of Form -->
                         <div class="d-grid">
                             <button type="submit" class="btn btn-gray-800">{{ __('Register') }}</button>
