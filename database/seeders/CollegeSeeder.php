@@ -13,6 +13,6 @@ class CollegeSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $arr = [];
     }
 }
