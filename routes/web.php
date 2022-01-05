@@ -1,11 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use \App\Http\Controllers\Admin\{
-    DashboradController,
-    UserController,
-    ProfileController,
-};
+
 
 use \App\Http\Controllers\{
     PageController,
@@ -37,14 +33,18 @@ Auth::routes();
 
 //Admin Routes
 Route::group([
-    'prefix' => 'admin',  'namespace' => 'Admin',
+    'prefix' => 'admin',
     'middleware' => ['auth', 'admin'], 'as' => 'admin.'
 ], function () {
-    Route::get('', [DashboradController::class, 'index'])->name('home');
+    Route::get('', [ \App\Http\Controllers\Admin\DashboradController::class, 'index'])->name('home');
+    Route::resource('colleges', \App\Http\Controllers\Admin\CollegeController::class);
+
+    Route::get('', [ \App\Http\Controllers\Admin\DashboradController::class, 'index'])->name('home');
+
     Route::view('about', 'about')->name('about');
 
-    Route::get('users', [UserController::class, 'index'])->name('users.index');
+    Route::get('users', [ \App\Http\Controllers\Admin\UserController::class, 'index'])->name('users.index');
 
-    Route::get('profile', [ProfileController::class, 'show'])->name('profile.show');
-    Route::put('profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::get('profile', [ \App\Http\Controllers\Admin\ProfileController::class, 'show'])->name('profile.show');
+    Route::put('profile',  [\App\Http\Controllers\Admin\ProfileController::class, 'update'])->name('profile.update');
 });

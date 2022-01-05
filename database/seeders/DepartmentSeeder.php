@@ -13,6 +13,34 @@ class DepartmentSeeder extends Seeder
      */
     public function run()
     {
-        //
+
+        //since
+        // Biology Department
+        // Chemistry Department
+        // Physics Department
+        // Mathematics Department
+        // Geology Department
+        // Computer Science and IT Department
+        // Environmental Health and Science Department
+
+        //eng
+        //     Civil Engineering Department
+
+        // Electrical Engineering Department
+
+        // Mechanical and Mechatronics Engineering
+
+        // Architectural Engineering Department
+
+        // Software and Informatics Engineering
+
+        // Water Resources Engineering
+
+        // Geomatics (Surveying) Engineering
+
+        // Chemical and Petrochemical Engineering
+
+        // Aviation Engineering Department
+
     }
 }

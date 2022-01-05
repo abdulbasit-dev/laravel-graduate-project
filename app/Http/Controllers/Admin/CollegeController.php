@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\College;
 use Illuminate\Http\Request;
 
-class CollegController extends Controller
+class CollegeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,9 @@ class CollegController extends Controller
      */
     public function index()
     {
-        //
+        $title = "Colleges";
+        $colleges = College::orderByDesc('created_at')->get();
+        return view('admin.colleges.index', compact('colleges','title'));
     }
 
     /**
@@ -36,7 +38,12 @@ class CollegController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        College::create([
+            'name'=>$request->name
+        ]);
+
+        return redirect()->back();
+
     }
 
     /**
@@ -70,7 +77,11 @@ class CollegController extends Controller
      */
     public function update(Request $request, College $college)
     {
-        //
+        $college->update([
+            "name"=>$request->name
+        ]);
+
+        return redirect()->back();
     }
 
     /**
@@ -81,6 +92,7 @@ class CollegController extends Controller
      */
     public function destroy(College $college)
     {
-        //
+        $college->delete();
+        return redirect()->back();
     }
 }

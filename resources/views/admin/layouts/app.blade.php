@@ -23,7 +23,7 @@
         @include('admin.layouts.topbar')
         @yield('content')
         {{-- Footer --}}
-        @include('admin.layouts.footer')
+        {{-- @include('admin.layouts.footer') --}}
     </main>
 
     @yield('scripts')

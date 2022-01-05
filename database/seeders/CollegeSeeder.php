@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use \App\Models\College;
 
 class CollegeSeeder extends Seeder
 {
@@ -13,6 +14,28 @@ class CollegeSeeder extends Seeder
      */
     public function run()
     {
-        $arr = [];
+        $arr = [
+            "Science",
+            "Engineering",
+            "Agriculture Engineering Sciences",
+            "Education",
+            "Arts",
+            "Languages",
+            "Administration and Economic",
+            "Law",
+            "Political Science",
+            "Basic Education",
+            "Physical Education & Sport Sciences",
+            "Islamic Sciences",
+            "Fine Arts",
+            "Education of Shaqlawa",
+            "Education of Makhmoor"
+        ];
+
+        foreach ($arr as $name) {
+            College::create([
+                "name"=>$name
+            ]);
+        }
     }
 }
