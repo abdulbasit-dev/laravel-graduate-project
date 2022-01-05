@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Department;
 use Illuminate\Database\Seeder;
 
 class DepartmentSeeder extends Seeder
@@ -15,32 +16,60 @@ class DepartmentSeeder extends Seeder
     {
 
         //since
-        // Biology Department
-        // Chemistry Department
-        // Physics Department
-        // Mathematics Department
-        // Geology Department
-        // Computer Science and IT Department
-        // Environmental Health and Science Department
+        $since = [
+            "Biology Department",
+            "Chemistry Department",
+            "Physics Department",
+            "Mathematics Department",
+            "Geology Department",
+            "Computer Science and IT Department",
+            "Environmental Health and Science Department"
+        ];
 
-        //eng
-        //     Civil Engineering Department
+        foreach ($since as $name) {
+            Department::firstOrCreate([
+                "name" => $name,
+                "college_id" => 1
+            ]);
+        }
 
-        // Electrical Engineering Department
+        $eng = [
+            "Civil Engineering Department",
+            "Electrical Engineering Department",
+            "Mechanical and Mechatronics Engineering",
+            "Architectural Engineering Department",
+            "Software and Informatics Engineering",
+            "Water Resources Engineering",
+            "Geomatics (Surveying) Engineering",
+            "Chemical and Petrochemical Engineering",
+            "Aviation Engineering Department",
+        ];
 
-        // Mechanical and Mechatronics Engineering
+        foreach ($eng as $name) {
+            Department::firstOrCreate([
+                "name" => $name,
+                "college_id" => 2
+            ]);
+        }
 
-        // Architectural Engineering Department
+        $edu = [
+            "Chemistry",
+            "Mathematics",
+            "Physics",
+            "Biology",
+            "Kurdish Language",
+            "English Language",
+            "Syriac Language",
+            "Arabic Language",
+            "Special Education",
+            "Educational and Psychological Counselings"
+        ];
 
-        // Software and Informatics Engineering
-
-        // Water Resources Engineering
-
-        // Geomatics (Surveying) Engineering
-
-        // Chemical and Petrochemical Engineering
-
-        // Aviation Engineering Department
-
+        foreach ($edu as $name) {
+            Department::firstOrCreate([
+                "name" => $name,
+                "college_id" => 4
+            ]);
+        }
     }
 }

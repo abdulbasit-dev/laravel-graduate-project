@@ -33,7 +33,7 @@ class CollegeSeeder extends Seeder
         ];
 
         foreach ($arr as $name) {
-            College::create([
+            College::firstOrCreate([
                 "name"=>$name
             ]);
         }

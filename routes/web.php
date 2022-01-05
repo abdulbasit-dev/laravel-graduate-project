@@ -38,6 +38,8 @@ Route::group([
 ], function () {
     Route::get('', [ \App\Http\Controllers\Admin\DashboradController::class, 'index'])->name('home');
     Route::resource('colleges', \App\Http\Controllers\Admin\CollegeController::class);
+    Route::resource('departments', \App\Http\Controllers\Admin\DepartmentController::class);
+    Route::resource('classtypes', \App\Http\Controllers\Admin\ClassTypeController::class);
 
     Route::get('', [ \App\Http\Controllers\Admin\DashboradController::class, 'index'])->name('home');
 

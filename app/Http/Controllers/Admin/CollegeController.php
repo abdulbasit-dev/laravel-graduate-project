@@ -15,7 +15,7 @@ class CollegeController extends Controller
      */
     public function index()
     {
-        $title = "Colleges";
+        $title = "College";
         $colleges = College::orderByDesc('created_at')->get();
         return view('admin.colleges.index', compact('colleges','title'));
     }

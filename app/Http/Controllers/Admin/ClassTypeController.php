@@ -3,11 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\College;
-use App\Models\Department;
+use App\Models\ClassType;
 use Illuminate\Http\Request;
 
-class DepartmentController extends Controller
+class ClassTypeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +15,9 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        $title = "Department";
-        $colleges = College::pluck('name','id');
-        $departments = Department::with('college')->orderByDesc('created_at')->paginate(10);
-        return view('admin.departments.index', compact('departments','title','colleges'));
+        $title = "Class Type";
+        $types = ClassType::with('dept', 'dept.college')->get();
+        return view('admin.class_types.index',compact('types','title'));
     }
 
     /**
@@ -40,21 +38,16 @@ class DepartmentController extends Controller
      */
     public function store(Request $request)
     {
-        Department::create([
-            'name'=>$request->name,
-            'college_id'=>$request->college_id
-        ]);
-
-        return redirect()->back();
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Department  $department
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Department $department)
+    public function show($id)
     {
         //
     }
@@ -62,10 +55,10 @@ class DepartmentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Department  $department
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Department $department)
+    public function edit($id)
     {
         //
     }
@@ -74,15 +67,13 @@ class DepartmentController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Department  $department
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Department $department)
+    public function update(Request $request, ClassType $classtype)
     {
-
-        $department->update([
-            "name"=>$request->name,
-            "college_id"=>$request->college_id,
+        $classtype->update([
+            'name'=>$request->name
         ]);
 
         return redirect()->back();
@@ -91,12 +82,11 @@ class DepartmentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Department  $department
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Department $department)
+    public function destroy($id)
     {
-        $department->delete();
-        return redirect()->back();
+        //
     }
 }

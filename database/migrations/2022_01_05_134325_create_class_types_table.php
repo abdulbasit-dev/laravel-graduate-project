@@ -15,6 +15,8 @@ class CreateClassTypesTable extends Migration
     {
         Schema::create('class_types', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('dept_id')->constrained('departments')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->string('name');
             $table->timestamps();
         });
     }

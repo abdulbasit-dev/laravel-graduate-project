@@ -1,0 +1,173 @@
+@extends('admin.layouts.app')
+
+@section('content')
+    <div class="py-4">
+        <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
+            <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
+                <li class="breadcrumb-item"><a href="{{ route('admin.home') }}"><svg class="icon icon-xxs" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                            </path>
+                        </svg></a></li>
+                <li class="breadcrumb-item"><a href="#">{{ $title }}s</a></li>
+            </ol>
+        </nav>
+        <div class="d-flex justify-content-between w-100 flex-wrap">
+            <div class="mb-3 mb-lg-0">
+                <h4 class="h4">Salahaddin University Departments</h4>
+            </div>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createModal">Add New {{ $title }}</button>
+        </div>
+    </div>
+    <div class="main py-4">
+        <div class="row">
+            <div class="col-12 col-xl-12">
+                <div class="col-12 px-0">
+                    <div class="card border-0 shadow mb-4">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-centered table-nowrap mb-0 rounded">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th class="border-0 rounded-start">#</th>
+                                            <th class="border-0">Department Name</th>
+                                            <th class="border-0">College Name</th>
+                                            <th class="border-0">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($departments as $dept)
+                                            <tr>
+                                                <td>{{ $loop->iteration }}</td>
+                                                <td>{{ $dept->name }}</td>
+                                                <td class="text-success">{{ $dept->college->name ?? 'Null' }}</td>
+                                                <td class="d-flex">
+                                                    <button class="btn btn-info btn-sm" type="button" data-bs-toggle="modal"
+                                                        data-bs-target="#editModal_{{ $dept->id }}">Edit</button>
+
+
+
+                                                    <a href="javascript:void(0)" class="btn btn-outline-danger btn-sm ms-2"
+                                                        onclick="if (confirm('{{ __('Are you sure you went to delete this?') }}')){document.getElementById('delete-{{ $dept->id }}').submit();} else{return false}">
+                                                        Delete
+                                                    </a>
+
+                                                    <form action="{{ route('admin.departments.destroy', $dept) }}"
+                                                        method="POST" id="delete-{{ $dept->id }}">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                    </form>
+
+                                                    <!-- Edit Modal -->
+                                                    <div class="modal fade" id="editModal_{{ $dept->id }}"
+                                                        tabindex="-1" role="dialog" aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header border-0">
+                                                                    <button type="button" class="btn-close"
+                                                                        data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body px-md-5">
+                                                                    <h2 class="h4 text-center">Edit {{ $title }}
+                                                                        {{ $dept->name }}</h2>
+                                                                    <form
+                                                                        action="{{ route('admin.departments.update', $dept) }}"
+                                                                        method="POST">
+                                                                        @csrf
+                                                                        @method("PATCH")
+                                                                        <!-- Form -->
+                                                                        <div class="form-group mb-4">
+                                                                            <label for="name">Department Name</label>
+
+                                                                            <input type="text"
+                                                                                class="form-control border-gray-300"
+                                                                                name="name" value="{{ $dept->name }}"
+                                                                                id="name" autofocus required>
+                                                                        </div>
+
+                                                                        <div class="form-group mb-4">
+                                                                            <label class="my-1 me-2"
+                                                                                for="college">Select College</label>
+                                                                            <select class="form-select" id="college"
+                                                                                name="college_id"
+
+                                                                                required>
+                                                                                @foreach ($colleges as $key => $value)
+                                                                                    <option value="{{ $key }}">
+                                                                                        {{ $value }}
+                                                                                    </option>
+                                                                                @endforeach
+                                                                            </select>
+                                                                        </div>
+
+                                                                        <div class="d-grid">
+                                                                            <button type="submit"
+                                                                                class="btn btn-info">Update</button>
+                                                                        </div>
+                                                                    </form>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+
+
+                                {{-- create modal --}}
+                                <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header border-0">
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body px-md-5 mb-4">
+                                                <h2 class="h4 text-center mb-3">Add New {{ $title }}
+                                                </h2>
+                                                <form action="{{ route('admin.departments.store') }}" method="POST">
+                                                    @csrf
+
+                                                    <label class="my-1 me-2" for="college">Select College</label>
+                                                    <select class="form-select" id="college" name="college_id"
+                                                        aria-label="Default select example" required>
+                                                        @foreach ($colleges as $key => $value)
+                                                            <option value="{{ $key }}">{{ $value }}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
+
+                                                    <!-- Form -->
+                                                    <div class="form-group mb-4">
+                                                        <label for="name">Department Name</label>
+
+                                                        <input type="text" class="form-control border-gray-300" name="name"
+                                                            id="name" autofocus>
+                                                    </div>
+
+                                                    <div class="d-grid">
+                                                        <button type="submit" class="btn btn-outline-primary">Add</button>
+                                                    </div>
+                                                </form>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                {{ $departments->links() }}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
