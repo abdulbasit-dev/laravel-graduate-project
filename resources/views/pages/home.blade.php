@@ -64,17 +64,21 @@
                 </button>
             </div>
         </section>
-        {{-- about the project --}}
-
-        <!-- INFO SECTION  -->
+        {{-- About the project --}}
         <section >
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 align-self-center">
-                        <h3>About Project</h3>
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias similique
-                            nisi suscipit exercitationem autem ab debitis ipsam. Rem, eligendi repellendus?</p>
-                        <a href="about.html" class="btn btn-outline-danger btn-lg">Learn More</a>
+                    <div class="col-md-6">
+                        <h2 class="text-primary mb-4">About Project</h2>
+                        <div class="mb-2">
+                            <h3>Student Project Gradution</h3>
+                            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, praesentium? Nam optio omnis, architecto ipsam voluptatem recusandae consequatur expedita. Neque?</p>
+                        </div>
+                        <div class="mb-4">
+                            <h3>Project Supervisor:</h3>
+                            <p class="lead fw-medium">D. Haider Haddad</p>
+                        </div>
+                        <a href="#team" class="btn btn-outline-danger">Meet Our Team</a>
                     </div>
                     <div class="col-md-6">
                         <img src="{{ asset('images/image5.jpg') }}" class="img-fluid rounded-3" alt="">
@@ -91,19 +95,19 @@
                     <hr class="mb-4 mt-0 d-inline-block mx-auto w-25 bg-primary" style="height: 2px" />
                 </div>
                 <div class="row justify-content-around ">
-                    <div class="col-md-3 mb-4 text-center  border border-1 py-4  rounded goal">
+                    <div class="col-md-3 mb-4 text-center  py-4  goal">
                         <i class="fas fa-cog fa-3x mb-2 text-primary"></i>
                         <h3 class="">Turning Gear</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, itaque?</p>
                     </div>
 
-                    <div class="col-md-3 text-center mb-4 border border-1 py-4  rounded goal">
+                    <div class="col-md-3 text-center mb-4 py-4  goal">
                         <i class="fas fa-cloud fa-3x mb-2 text-primary"></i>
                         <h3>Sending Data</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, itaque?</p>
                     </div>
 
-                    <div class="col-md-3 text-center mb-4 border border-1 py-4  rounded goal">
+                    <div class="col-md-3 text-center mb-4 py-4  goal">
                         <i class="fas fa-cart-plus fa-3x mb-2 text-primary"></i>
                         <h3>Making Money</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, itaque?</p>
@@ -134,7 +138,7 @@
 
 
         {{-- MEET OUR TEAM --}}
-        <section id="instructors" class="p-5 bg-primary">
+        <section id="team" class="p-5 bg-primary">
             <div class="container">
                 <h2 class="text-center text-white">Meet Our Team</h2>
                 <p class="lead text-center text-white mb-5">

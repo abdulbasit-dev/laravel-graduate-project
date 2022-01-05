@@ -48,13 +48,14 @@
 
   .goal{
     transition: 0.5s;
-    box-shadow:  0 .3rem .25rem rgba(0,0,0, .075);
+    border-radius: 8px;
+    box-shadow: 0 0 20px 5px rgba(62, 60, 98, 0.08);
     border: none;
 }
 
 .goal:hover{
-    transform: scale(1.1);
-    box-shadow:  0 .9rem .25rem rgba(0,0,0, .075);
-    border: 1px solid #eee;
+    box-shadow: 0 0 20px 10px rgba(62, 60, 98, 0.08);
+    transform: scale(1.05);
   }
+
 
