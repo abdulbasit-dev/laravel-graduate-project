@@ -118,25 +118,6 @@
 
 
 
-
-        <!-- Home Heading Section  -->
-        <section id="home-heading" class="p-5 text-center text-white">
-            <div class="dark-overlay">
-                <div class="row " style="margin-top:4rem ">
-                    <div class="col">
-                        <div class="container pt-5">
-                            <h1>Are you readey to get strated</h1>
-                            <p class="d-none d-md-block"> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Doloremque
-                                voluptatem culpa ex commodi dolores saepe accusantium, illo omnis quos nihil.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-
         {{-- MEET OUR TEAM --}}
         <section id="team" class="p-5 bg-primary">
             <div class="container">
