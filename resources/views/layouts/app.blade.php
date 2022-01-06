@@ -14,9 +14,9 @@
     {{-- custome style --}}
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 
-    @if (config('app.locale') == 'ar' || config('app.locale') == 'kr')
+    {{-- @if (config('app.locale') == 'ar' || config('app.locale') == 'kr')
         <link href="{{ asset('/css/bootstrap-rtl.css') }}" rel="stylesheet">
-    @endif
+    @endif --}}
     <title>{{ _('Student Graduate Projects') }}</title>
 </head>
 
