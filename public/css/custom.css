@@ -17,11 +17,7 @@
     background-size: cover;
 }
 
-section {
-    margin-bottom: 10rem;
-}
-
-footer>section {
+footer > section {
     margin-bottom: 0rem;
 }
 
