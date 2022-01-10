@@ -47,14 +47,6 @@
                         <span class="sidebar-text">Departments</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('admin.classtypes.index') }}">
-                        <span class="sidebar-icon">
-                            <i class="fas fa-circle"></i>
-                        </span>
-                        <span class="sidebar-text">Class Types</span>
-                    </a>
-                </li>
             </ul>
         </div>
     </li>

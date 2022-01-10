@@ -18,7 +18,6 @@ class PageController extends Controller
     {
         $colleges = College::pluck('name','id');
         $depts = Department::pluck('name','id');
-        $classTypes = ClassType::pluck('name','id');
         return view('pages.graduate-project',compact("colleges","depts",'classTypes'));
     }
 
