@@ -58,15 +58,6 @@
                         @endforeach
                     </select>
                 </div>
-                <div class="col-md-4">
-                    <select class="form-select" id="inlineFormSelectPref">
-                        <option selected>Choose Class Type</option>
-                        @foreach ($classTypes as $key => $value)
-                            <option value="{{ $key }}">{{ $value }}</option>
-                        @endforeach
-                    </select>
-                </div>
-
                 <div class="col-12">
                     <button type="submit" class="btn btn-primary">Filter</button>
                 </div>
