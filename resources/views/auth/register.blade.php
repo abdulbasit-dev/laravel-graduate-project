@@ -44,19 +44,7 @@
                             </div>
                             @error('email') <div class="invalid-feedback"> {{ $message }} </div> @enderror
                         </div>
-                        <div class="form-group mt-4 mb-4">
-                            <label for="user_type">{{ __('Select User Type') }}</label>
 
-                            <select class="form-select" id="user_type" name="user_type"
-                                required>
-                                <option value="Student" selected>Student</option>
-                                <option value="Head Of Department">Head Of Department</option>
-                                <option value="Department Rapporteur">Department Rapporteur</option>
-                                <option value="Lecturer">Lecturer</option>
-                                <option value="Chairman Of Student Evaluation Committe">Chairman Of Student Evaluation Committe</option>
-                                <option value="Dean Of Faculty">Dean Of Faculty</option>
-                            </select>
-                        </div>
                         <!-- End of Form -->
                         <!-- Form -->
                         <div class="form-group mb-4">
@@ -79,7 +67,7 @@
                         </div>
                         <!-- End of Form -->
                         <!-- Form -->
-                        {{-- <div class="form-group mb-4">
+                        <div class="form-group mb-4">
                             <label for="password_confirmation">{{ __('Confirm Password') }}</label>
                             <div class="input-group">
                                 <span class="input-group-text" id="basic-addon3">
@@ -95,7 +83,7 @@
                                     placeholder="{{ __('Confirm Password') }}" class="form-control"
                                     id="password_confirmation" required>
                             </div>
-                        </div> --}}
+                        </div>
                         <!-- End of Form -->
                         <div class="d-grid">
                             <button type="submit" class="btn btn-gray-800">{{ __('Register') }}</button>
