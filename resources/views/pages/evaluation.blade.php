@@ -602,229 +602,18 @@
                     <div id="firstPresentation" class="accordion-collapse collapse"
                         aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <div class="row justify-content-center my-5" >
-                            <div class="col-8" dir="rtl">
-                                <img src="{{ asset('images/header-logo.png') }}" class="mb-4" alt=""
-                                    style="width: 100%;">
-
-                                <form action="">
-                                    <div class="text-center" style="margin-bottom: 3rem">
-                                        <h4 class="lh-base">
-                                            هەلسەنگاندنی (سەرەتایی) بۆ پڕۆژەی توێژینەی قوتابیانی
-                                            قوناغی کۆتایی <br>
-                                            فۆرمی هەلسەنگێنەران و سەرپەشتیار بۆ ساڵی خوێندنی 2021 -
-                                            2022
-                                        </h4>
-                                    </div>
-                                    <div class="mb-4">
-                                        <div class="row g-3 align-items-start mb-3">
-                                            <div class="col-2">
-                                                <label for="name" class="col-form-label"> ناوی
-                                                    قوتابی:</label>
-                                            </div>
-                                            <div class="col-4">
-                                                <input type="text" name="name" id="name"
-                                                    class="form-control light-border">
-                                            </div>
-                                        </div>
-                                        <div class="row g-3 align-items-start mb-3">
-                                            <div class="col-2">
-                                                <label for="name" class="col-form-label">
-                                                    ناونیشانی پڕۆژە:
-                                                </label>
-                                            </div>
-                                            <div class="col-4">
-                                                <input type="text" name="name" id="name"
-                                                    class="form-control light-border">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <table class="table table-bordered">
-
-                                        <tr class="table_header">
-                                            <th class="pt-4">بابەتەکان</th>
-                                            <th>نمرەی هەلسەنگێنەری-1 <br> بۆ هەر بڕگەیەک (1-3) نمرە
-                                            </th>
-                                            <th>نمرەی هەلسەنگێنەری-2 <br> بۆ هەر بڕگەیەک (1-3) نمرە
-                                            </th>
-                                            <th class="w-25 " rowspan="3">
-                                                نمرەی سەرپەرشتیار لە 8 نمرە <br>بۆ پابەندبوونی
-                                                قوتابی بۆ پابەندبوونی
-                                                قوتابی بە
-                                                ئەنجامدانی کارەکانی و
-                                                سەردانە هەفتانەکانی بۆ لای سەرپەرشتیار
-                                            </th>
-                                        </tr>
-
-                                        <tr>
-                                            <th>
-                                                <label for="" class="fw-normal">
-                                                    1. تێگەیشتنی قوتابی لە پلانی پڕۆژەکەی و ڕیژەی
-                                                    ئەنجامدانی
-                                                    پڕۆژەکەی (بە
-                                                    بەڵگە)
-                                                </label>
-                                            </th>
-                                            <td>
-                                                <input type="number" class="form-control border-0"
-                                                    min="1" max="3">
-                                            </td>
-                                            <td>
-                                                <input type="number" class="form-control border-0"
-                                                    min="1" max="3">
-                                            </td>
-
-
-                                        </tr>
-                                        <tr>
-                                            <th>
-                                                <label for="" class="fw-normal">
-                                                    2. ڕادەی بە دەستهێنانی سەرچاوە زانستیەکان و
-                                                    زانیاری نوێ (بە
-                                                    بەڵگە)
-                                                </label>
-                                            </th>
-                                            <td>
-                                                <input type="number" class="form-control border-0"
-                                                    min="1" max="3">
-                                            </td>
-                                            <td>
-                                                <input type="number" class="form-control border-0"
-                                                    min="1" max="3">
-                                            </td>
-
-                                        </tr>
-                                        <tr style="background-color: #f2f2f2">
-                                            <td>
-                                                کۆی نمرەکان
-                                            </td>
-                                            <td>
-                                                <input type="number" class="form-control border-0"
-                                                    style="background-color: #f2f2f2" disabled
-                                                    readonly>
-                                            </td>
-                                            <td>
-                                                <input type="number" class="form-control border-0"
-                                                    style="background-color: #f2f2f2" disabled
-                                                    readonly>
-                                            </td>
-                                            <td>
-                                                <input type="number" class="form-control border-0"
-                                                    style="background-color: #f2f2f2" disabled
-                                                    readonly>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <label for="">
-                                                    نمرەی تاقیکردنەوە تیۆری لە (10)
-                                                </label>
-                                            </td>
-                                            <td colspan="3">
-                                                <input type="number" class="form-control border-0"
-                                                    min="1" max="10">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <label for="">
-                                                    نمرەی پۆستەری ئەکادیمی لە (10)
-                                                </label>
-                                            </td>
-                                            <td colspan="3">
-                                                <input type="number" class="form-control border-0"
-                                                    min="1" max="10">
-                                            </td>
-                                        </tr>
-                                        <tr style="background-color: #f2f2f2">
-                                            <td>
-                                                <label for="">
-                                                    کۆی گشتی نمرەکان (کۆشش لە 40)
-                                                </label>
-                                            </td>
-                                            <td colspan="3">
-                                                <input type="number" class="form-control border-0"
-                                                    style="background-color: #f2f2f2" disabled
-                                                    readonly>
-                                            </td>
-                                        </tr>
-
-
-                                    </table>
-
-                                    <div class="my-4">
-                                        <div class="row g-3 align-items-start mb-3">
-                                            <div class="col-4">
-                                                <label for="name" class="col-form-label">
-                                                    ناو و واژۆی سەرپەرشتیاری پڕۆژکە:
-                                                </label>
-                                            </div>
-                                            <div class="col-5 ">
-                                                <input type="text" name="name" id="name"
-                                                    class="form-control light-border">
-                                            </div>
-                                        </div>
-                                        <div class="row g-3 align-items-start mb-3">
-                                            <div class="col-4">
-                                                <label for="" class="col-form-label">
-                                                    ناوی هەلسەنگێنەری-1 و واژووەکەی:
-                                                </label>
-                                            </div>
-                                            <div class="col-5 ">
-                                                <input type="text" name="" id=""
-                                                    class="form-control light-border">
-                                            </div>
-                                        </div>
-                                        <div class="row g-3 align-items-start mb-3">
-                                            <div class="col-4">
-                                                <label for="" class="col-form-label">
-                                                    ناوی هەلسەنگێنەری-1 و واژووەکەی:
-                                                </label>
-                                            </div>
-                                            <div class="col-5">
-                                                <input type="text" name="" id=""
-                                                    class="form-control light-border">
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </form>
-
-                                <div>
-                                    <span class="fw-bold">تێبینی: </span>
-                                    هەلسەنگاندنی پۆستەری ئەکادیمی پرۆژەی دەرچوونی قوتابیان لە لایەن
-                                    هەردوو مامۆستای هەڵسەنگێنەر
-                                    ئەنجام دەدەرێت لەسەر (10)نمرە.
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#lastPresentation" aria-expanded="false"
-                            aria-controls="lastPresentation">
-                            Last Presentaion Evaluation Form
-                        </button>
-                    </h2>
-                    <div id="lastPresentation" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
                             <div class="row justify-content-center my-5">
                                 <div class="col-8" dir="rtl">
-                                    <img src="{{ asset('images/header-logo.png') }}" class="mb-4" alt=""
-                                        style="width: 100%;">
-                
+                                    <img src="{{ asset('images/header-logo.png') }}" class="mb-4"
+                                        alt="" style="width: 100%;">
+
                                     <form action="">
                                         <div class="text-center" style="margin-bottom: 3rem">
                                             <h4 class="lh-base">
                                                 هەلسەنگاندنی (سەرەتایی) بۆ پڕۆژەی توێژینەی قوتابیانی
                                                 قوناغی کۆتایی <br>
-                                                فۆرمی هەلسەنگێنەران و سەرپەشتیار بۆ ساڵی خوێندنی 2021 -
+                                                فۆرمی هەلسەنگێنەران و سەرپەشتیار بۆ ساڵی خوێندنی
+                                                2021 -
                                                 2022
                                             </h4>
                                         </div>
@@ -851,14 +640,16 @@
                                                 </div>
                                             </div>
                                         </div>
-                
+
                                         <table class="table table-bordered">
-                
+
                                             <tr class="table_header">
                                                 <th class="pt-4">بابەتەکان</th>
-                                                <th>نمرەی هەلسەنگێنەری-1 <br> بۆ هەر بڕگەیەک (1-3) نمرە
+                                                <th>نمرەی هەلسەنگێنەری-1 <br> بۆ هەر بڕگەیەک (1-3)
+                                                    نمرە
                                                 </th>
-                                                <th>نمرەی هەلسەنگێنەری-2 <br> بۆ هەر بڕگەیەک (1-3) نمرە
+                                                <th>نمرەی هەلسەنگێنەری-2 <br> بۆ هەر بڕگەیەک (1-3)
+                                                    نمرە
                                                 </th>
                                                 <th class="w-25 " rowspan="3">
                                                     نمرەی سەرپەرشتیار لە 8 نمرە <br>بۆ پابەندبوونی
@@ -868,26 +659,29 @@
                                                     سەردانە هەفتانەکانی بۆ لای سەرپەرشتیار
                                                 </th>
                                             </tr>
-                
+
                                             <tr>
                                                 <th>
                                                     <label for="" class="fw-normal">
-                                                        1. تێگەیشتنی قوتابی لە پلانی پڕۆژەکەی و ڕیژەی
+                                                        1. تێگەیشتنی قوتابی لە پلانی پڕۆژەکەی و
+                                                        ڕیژەی
                                                         ئەنجامدانی
                                                         پڕۆژەکەی (بە
                                                         بەڵگە)
                                                     </label>
                                                 </th>
                                                 <td>
-                                                    <input type="number" class="form-control border-0" min="1"
+                                                    <input type="number"
+                                                        class="form-control border-0" min="1"
                                                         max="3">
                                                 </td>
                                                 <td>
-                                                    <input type="number" class="form-control border-0" min="1"
+                                                    <input type="number"
+                                                        class="form-control border-0" min="1"
                                                         max="3">
                                                 </td>
-                
-                
+
+
                                             </tr>
                                             <tr>
                                                 <th>
@@ -898,30 +692,38 @@
                                                     </label>
                                                 </th>
                                                 <td>
-                                                    <input type="number" class="form-control border-0" min="1"
+                                                    <input type="number"
+                                                        class="form-control border-0" min="1"
                                                         max="3">
                                                 </td>
                                                 <td>
-                                                    <input type="number" class="form-control border-0" min="1"
+                                                    <input type="number"
+                                                        class="form-control border-0" min="1"
                                                         max="3">
                                                 </td>
-                
+
                                             </tr>
                                             <tr style="background-color: #f2f2f2">
                                                 <td>
                                                     کۆی نمرەکان
                                                 </td>
                                                 <td>
-                                                    <input type="number" class="form-control border-0"
-                                                        style="background-color: #f2f2f2" disabled readonly>
+                                                    <input type="number"
+                                                        class="form-control border-0"
+                                                        style="background-color: #f2f2f2" disabled
+                                                        readonly>
                                                 </td>
                                                 <td>
-                                                    <input type="number" class="form-control border-0"
-                                                        style="background-color: #f2f2f2" disabled readonly>
+                                                    <input type="number"
+                                                        class="form-control border-0"
+                                                        style="background-color: #f2f2f2" disabled
+                                                        readonly>
                                                 </td>
                                                 <td>
-                                                    <input type="number" class="form-control border-0"
-                                                        style="background-color: #f2f2f2" disabled readonly>
+                                                    <input type="number"
+                                                        class="form-control border-0"
+                                                        style="background-color: #f2f2f2" disabled
+                                                        readonly>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -931,7 +733,8 @@
                                                     </label>
                                                 </td>
                                                 <td colspan="3">
-                                                    <input type="number" class="form-control border-0" min="1"
+                                                    <input type="number"
+                                                        class="form-control border-0" min="1"
                                                         max="10">
                                                 </td>
                                             </tr>
@@ -942,7 +745,8 @@
                                                     </label>
                                                 </td>
                                                 <td colspan="3">
-                                                    <input type="number" class="form-control border-0" min="1"
+                                                    <input type="number"
+                                                        class="form-control border-0" min="1"
                                                         max="10">
                                                 </td>
                                             </tr>
@@ -953,14 +757,16 @@
                                                     </label>
                                                 </td>
                                                 <td colspan="3">
-                                                    <input type="number" class="form-control border-0"
-                                                        style="background-color: #f2f2f2" disabled readonly>
+                                                    <input type="number"
+                                                        class="form-control border-0"
+                                                        style="background-color: #f2f2f2" disabled
+                                                        readonly>
                                                 </td>
                                             </tr>
-                
-                
+
+
                                         </table>
-                
+
                                         <div class="my-4">
                                             <div class="row g-3 align-items-start mb-3">
                                                 <div class="col-4">
@@ -995,16 +801,371 @@
                                                         class="form-control light-border">
                                                 </div>
                                             </div>
-                
+
                                         </div>
                                     </form>
-                
+
                                     <div>
                                         <span class="fw-bold">تێبینی: </span>
-                                        هەلسەنگاندنی پۆستەری ئەکادیمی پرۆژەی دەرچوونی قوتابیان لە لایەن
+                                        هەلسەنگاندنی پۆستەری ئەکادیمی پرۆژەی دەرچوونی قوتابیان لە
+                                        لایەن
                                         هەردوو مامۆستای هەڵسەنگێنەر
                                         ئەنجام دەدەرێت لەسەر (10)نمرە.
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#lastPresentation"
+                            aria-expanded="false" aria-controls="lastPresentation">
+                            Last Presentaion Evaluation Form
+                        </button>
+                    </h2>
+                    <div id="lastPresentation" class="accordion-collapse collapse"
+                        aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="row justify-content-center my-5">
+                                <div class="col-8" dir="rtl">
+                                    <img src="{{ asset('images/header-logo.png') }}" class="mb-4"
+                                        alt="" style="width: 100%;">
+
+                                    <form action="">
+                                        <div class="text-center" style="margin-bottom: 3rem">
+                                            <h4 class="lh-base">
+                                                هەلسەنگاندنی (کۆتایی) بۆ پڕۆژەی توێژینەی قوتابیانی
+                                                قوناغی کۆتایی <br>
+                                                فۆرمی هەلسەنگێنەران و سەرپەشتیار بۆ ساڵی خوێندنی
+                                                2021 -
+                                                2022
+                                            </h4>
+                                        </div>
+                                        <div class="mb-4">
+                                            <div class="row g-3 align-items-start mb-3">
+                                                <div class="col-2">
+                                                    <label for="name" class="col-form-label"> ناوی
+                                                        قوتابی:</label>
+                                                </div>
+                                                <div class="col-4">
+                                                    <input type="text" name="name" id="name"
+                                                        class="form-control light-border">
+                                                </div>
+                                            </div>
+                                            <div class="row g-3 align-items-start mb-3">
+                                                <div class="col-2">
+                                                    <label for="name" class="col-form-label">
+                                                        ناونیشانی پڕۆژە:
+                                                    </label>
+                                                </div>
+                                                <div class="col-4">
+                                                    <input type="text" name="name" id="name"
+                                                        class="form-control light-border">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-5">
+                                            <table class="table table-bordered">
+
+                                                <tr class="table_header">
+                                                    <th style="width: 20px"></th>
+                                                    <th class="pt-3 h5">بابەتەکان</th>
+                                                    <th class="w-25">
+                                                        نمرەی سەرپەڕشتیار <br>بۆ هەر بڕگەیەک
+                                                        (1-4)نمرە
+                                                    </th>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>
+                                                        <label for="" class="fw-normal">
+                                                            ڕادەی پابەندی قوتابی بە ڕینمایەکانی
+                                                            زانکۆ بۆ نووسینی
+                                                            پڕۆژەی دەرچوونەکەی
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <input type="number"
+                                                            class="form-control border-0" min="1"
+                                                            max="3">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>
+                                                        <label for="" class="fw-normal">
+                                                            توانای قوتابی لە بەدەستهێنانی سەرچاوە
+                                                            زانستیەکان و
+                                                            زانیاری نوێ
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <input type="number"
+                                                            class="form-control border-0" min="1"
+                                                            max="3">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>
+                                                        <label for="" class="fw-normal">
+                                                            توانای قوتابی لە بەکارهێنانی زانیاریەکان
+                                                            لە کاتی
+                                                            نووسینەوەی پڕۆژەکەی
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <input type="number"
+                                                            class="form-control border-0" min="1"
+                                                            max="3">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>
+                                                        <label for="" class="fw-normal">
+                                                            توانای قوتابی لە دەرخستنی ئەنجامەکان بە
+                                                            شێوەی هونەری
+                                                            شیاو و بەرنامەی گونجاو
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <input type="number"
+                                                            class="form-control border-0" min="1"
+                                                            max="3">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td>
+                                                        <label for="" class="fw-normal">
+                                                            ڕادەی پابەندی قوتابی بە ڕینمایی و
+                                                            سەرنجەکانی مامۆستای
+                                                            سەرپەرشتیاری توێژینەوەکەی
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <input type="number"
+                                                            class="form-control border-0" min="1"
+                                                            max="3">
+                                                    </td>
+                                                </tr>
+
+                                                <tr style="background-color: #f2f2f2">
+                                                    <td></td>
+                                                    <td class="text-center">
+                                                        <label for="">
+                                                            کۆنمرە لە (20)
+                                                        </label>
+                                                    </td>
+                                                    <td colspan="3">
+                                                        <input type="number"
+                                                            class="form-control border-0"
+                                                            style="background-color: #f2f2f2"
+                                                            disabled readonly>
+                                                    </td>
+                                                </tr>
+
+                                            </table>
+
+                                            <div class="row g-3 align-items-start mb-3">
+                                                <div class="col-4">
+                                                    <label for="name" class="col-form-label">
+                                                        ناو و واژۆی سەرپەرشتیاری توێژینەوەکە:
+                                                    </label>
+                                                </div>
+                                                <div class="col-5 ">
+                                                    <input type="text" name="name" id="name"
+                                                        class="form-control light-border">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <table class="table table-bordered">
+
+                                                <tr class="table_header">
+                                                    <th style="width: 20px"></th>
+                                                    <th class="pt-5 h5">بابەتەکان</th>
+                                                    <th style="width: 15%">
+                                                        نمرەی هەڵسەنگێنەری-1 <br>
+                                                        بۆ هەر بڕگەیەک (1-4)نمرە
+                                                    </th>
+                                                    <th style="width: 15%">
+                                                        نمرەی هەڵسەنگێنەری-2 <br>
+                                                        بۆ هەر بڕگەیەک (1-4)نمرە
+                                                    </th>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>
+                                                        <label for="" class="fw-normal">
+                                                            تێگەیشتنی قوتابی کە ناوەڕۆکی پڕۆژەکەی
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <input type="number"
+                                                            class="form-control border-0" min="1"
+                                                            max="4">
+                                                    </td>
+                                                    <td>
+                                                        <input type="number"
+                                                            class="form-control border-0" min="1"
+                                                            max="4">
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>
+                                                        <label for="" class="fw-normal">
+                                                            چونیەتی پێشکەشکردنی پڕۆژەکەی و
+                                                            بەکار‌هێنانی هۆیەکانی
+                                                            ڕوونکردنەوە
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <input type="number"
+                                                            class="form-control border-0" min="1"
+                                                            max="4">
+                                                    </td>
+                                                    <td>
+                                                        <input type="number"
+                                                            class="form-control border-0" min="1"
+                                                            max="4">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>
+                                                        <label for="" class="fw-normal">
+                                                            چۆنیەتی نووسینی پڕۆژەکەی
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <input type="number"
+                                                            class="form-control border-0" min="1"
+                                                            max="4">
+                                                    </td>
+                                                    <td>
+                                                        <input type="number"
+                                                            class="form-control border-0" min="1"
+                                                            max="4">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>
+                                                        <label for="" class="fw-normal">
+                                                            توانای قوتابی بۆ وەڵامدانەوەی پسیارەکانی
+                                                            لێژنە
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <input type="number"
+                                                            class="form-control border-0" min="1"
+                                                            max="4">
+                                                    </td>
+                                                    <td>
+                                                        <input type="number"
+                                                            class="form-control border-0" min="1"
+                                                            max="4">
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td>
+                                                        <label for="" class="fw-normal">
+                                                            تا چەند بایەخی بە بیرکردنەوەی زانستی
+                                                            داوە و سوودی کە
+                                                            پرۆژەکە وەرگرتووە
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <input type="number"
+                                                            class="form-control border-0" min="1"
+                                                            max="4">
+                                                    </td>
+                                                    <td>
+                                                        <input type="number"
+                                                            class="form-control border-0" min="1"
+                                                            max="4">
+                                                    </td>
+                                                </tr>
+
+
+                                                <tr>
+                                                    <td></td>
+                                                    <td class="text-center">
+                                                        <label for="">
+                                                            کۆی نمرە لە (20)
+                                                        </label>
+                                                    </td>
+                                                    <td colspan="">
+                                                        <input type="number"
+                                                            class="form-control border-0"
+                                                            style="background-color: #fff" disabled
+                                                            readonly>
+                                                    </td>
+                                                    <td colspan="">
+                                                        <input type="number"
+                                                            class="form-control border-0"
+                                                            style="background-color: #fff" disabled
+                                                            readonly>
+                                                    </td>
+
+                                                </tr>
+
+                                                <tr style="background-color: #f2f2f2">
+                                                    <td></td>
+                                                    <td class="text-center">
+                                                        <label for="">
+                                                            نمرەی کۆتایی لە (40) بە ژمارە و نووسین
+                                                        </label>
+                                                    </td>
+                                                    <td colspan="2">
+                                                        <input type="number"
+                                                            class="form-control border-0"
+                                                            style="background-color: #f2f2f2"
+                                                            disabled readonly>
+                                                    </td>
+                                                </tr>
+
+                                            </table>
+
+                                            <div>
+                                                <div class="row g-3 align-items-start mb-3">
+                                                    <div class="col-3">
+                                                        <label for="name" class="col-form-label">
+                                                            ناو و واژۆی هەڵسەنگێنەری-1:
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-5 ">
+                                                        <input type="text" name="name" id="name"
+                                                            class="form-control light-border">
+                                                    </div>
+                                                </div>
+
+                                                <div class="row g-3 align-items-start mb-3">
+                                                    <div class="col-3">
+                                                        <label for="name" class="col-form-label">
+                                                            ناو و واژۆی هەڵسەنگێنەری-2:
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-5 ">
+                                                        <input type="text" name="name" id="name"
+                                                            class="form-control light-border">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
