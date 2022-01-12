@@ -2,11 +2,11 @@
 
 @section('content')
     <div class="container" style="height: 80vh">
-        <div class="d-flex" style="height: 100%;">
+        <div class="d-flex shadow" style="height: 100%;">
             <div style="height: 100%; width:50% !important;">
                 <img src="{{ asset('images/register.jpg') }}" style="width:100%; height:100% " alt="register">
             </div>
-            <div class="bg-white shadow border-0 rounded border-light p-4 p-lg-5" style="width:50% !important;">
+            <div class="bg-white  border-0 border-light p-4 p-lg-5" style="width:50% !important;">
                 <div class="text-center text-md-center mb-4 mt-md-0">
                     <h1 class="mt-n3 mb-0 h3">{{ __('Create Account') }}</h1>
                 </div>
