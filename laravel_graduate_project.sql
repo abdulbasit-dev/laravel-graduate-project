@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 06, 2022 at 04:07 AM
+-- Generation Time: Jan 13, 2022 at 05:11 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 7.4.15
 
@@ -309,10 +309,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `user_type`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'admin@admin.com', NULL, NULL, '$2y$10$VBVkAxy4PJ1dxzgwfVsFsOm4D5xxj1fGl.SYIDcmCPvp5Xqz3eMr6', NULL, '2022-01-05 15:54:29', '2022-01-05 15:54:29'),
-(2, 'Kevyn Griffith', 'zasaqoqu@mailinator.com', NULL, 'Student', '$2y$10$2JXOCBoFcnxf4yjMBPfDiOq1iCwJWhNGMnzw0jB0tDUiavrlmoHjq', NULL, '2022-01-05 15:54:38', '2022-01-05 15:54:38'),
-(3, 'Thane Pearson', 'fiwe@mailinator.com', NULL, 'Head Of Department', '$2y$10$nn0UEHEmPUnTJmIBRb5LdeSsZrJ4Q3k28myMVNnD90jppNKWSEYY2', NULL, '2022-01-05 16:25:18', '2022-01-05 16:25:18'),
-(4, 'Sawyer Tyson', 'pixugite@mailinator.com', NULL, 'Department Rapporteur', '$2y$10$sLijxeffcu1s0cYbExiX4.XCrMBUFmmaQKzfDZl9ud5uzBSX.xI.S', NULL, '2022-01-05 16:33:46', '2022-01-05 16:33:46');
+(5, 'Kibo Nunez', 'bysuxi@mailinator.com', NULL, NULL, '$2y$10$lCxP1Ilxqx1l9TVJ5cpECu3ReG1JROUXC.dtTjm8wqL230R.iVE3q', NULL, '2022-01-12 16:49:47', '2022-01-12 16:49:47'),
+(6, 'Harrison York', 'fumi@mailinator.com', NULL, NULL, '$2y$10$ceBsj.B.UVOId3ZI/hdkiO7dgSo3ksthjnLzbpqbRqPQKdLNL/nJy', NULL, '2022-01-13 01:09:48', '2022-01-13 01:09:48');
 
 --
 -- Indexes for dumped tables
@@ -463,7 +461,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
