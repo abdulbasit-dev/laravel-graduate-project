@@ -21,19 +21,19 @@ class RegisterController extends Controller
 
     public function store(Request $request)
     {
-        // 'email' => 'required|max:255|regex:/su.edu.krd/',
-
         // validate request data
-        $this->validate($request, [
-            'name' => 'required|max:255',
-            'username' => 'required|max:255',
-            'email' => 'required|max:255',
-            'password' => 'required|confirmed'
-        ],
-        [
-            'email.regex' => 'please provide university email',
-        ]
-    );
+        // $this->validate(
+        //     $request,
+        //     [
+        //         'name' => ['required','max:255'],
+        //         'username' => 'required|max:255',
+        //         // 'email' => ['required','max:255','regex:/[\w]+@+((?i)(student.){0,1}su.edu.krd(?-i))$/im'],
+        //         'password' => 'required|confirmed'
+        //     ],
+        //     [
+        //         'email.regex'=>"Please provide a valid university email"
+        //     ]
+        // );
 
         //store user
         User::create([
