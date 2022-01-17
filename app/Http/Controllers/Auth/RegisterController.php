@@ -73,6 +73,8 @@ class RegisterController extends Controller
     {
         $text =  explode('@', $data['email'])[1];
 
+        $data['is_student'] = 0;
+
         if (preg_match("/\bstudent\b/i", $text)) {
             $data['is_student'] = 1;
         }
