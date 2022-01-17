@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ClassType;
 use App\Models\College;
 use App\Models\Department;
-use Illuminate\Http\Request;
 
 class PageController extends Controller
 {

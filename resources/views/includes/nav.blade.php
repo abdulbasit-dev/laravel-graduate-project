@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
-<a class="navbar-brand" href="{{ route('home') }}"><img src="{{ asset('images/brand.png') }}"
-                width="50" height="auto"></a>
+        <a class="navbar-brand" href="{{ route('home') }}"><img
+                src="{{ asset('images/brand.png') }}" width="50" height="auto"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -11,7 +11,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link fw-medium {{ Route::currentRouteName() == 'home' ? 'active' : '' }}"
-aria-current="page" href="{{ route('home') }}">About</a>
+                        aria-current="page" href="{{ route('home') }}">About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link fw-medium {{ Route::currentRouteName() == 'graduateProject' ? 'active' : '' }}"
@@ -28,17 +28,19 @@ aria-current="page" href="{{ route('home') }}">About</a>
             </ul>
             @if (Route::has('login'))
             <div class="top-right links">
-<ul class="navbar-nav">
+                <ul class="navbar-nav">
                     @guest
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Login <i class="fas fa-sign-in-alt"></i></a>
+                        <a class="nav-link" href="{{ route('login') }}">Login <i
+                                class="fas fa-sign-in-alt"></i></a>
                     </li>
 
-@if (Route::has('register'))
+                    @if (Route::has('register'))
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('user.register') }}">Register <i class="fas fa-user"></i></a>
+                        <a class="nav-link" href="{{ route('register') }}">Register <i
+                                class="fas fa-user"></i></a>
 
-</li>
+                    </li>
                     @endif
                     @endguest
                     @endif
@@ -46,16 +48,16 @@ aria-current="page" href="{{ route('home') }}">About</a>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
-<form method="POST" id="logout-form" action="{{ route('logout') }}">
+                            <form method="POST" id="logout-form" action="{{ route('logout') }}">
                                 @csrf
                             </form>
                             {{ __('Log Out') }} <i class="fas fa-out"></i>
-                            </a>
-                            </li>
+                        </a>
+                    </li>
 
-@endauth
-                    </ul>
-                    </div>
+                    @endauth
+                </ul>
+            </div>
         </div>
     </div>
 </nav>
