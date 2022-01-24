@@ -15,7 +15,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link fw-medium {{ Route::currentRouteName() == 'graduateProject' ? 'active' : '' }}"
-                        href="{{ route('graduateProject') }}">Graduate Project</a>
+                        href="{{ route('graduateProject') }}">Graduation Project</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link fw-medium {{ Route::currentRouteName() == 'evaluation' ? 'active' : '' }}"

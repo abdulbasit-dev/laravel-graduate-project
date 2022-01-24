@@ -17,7 +17,7 @@
     {{-- @if (config('app.locale') == 'ar' || config('app.locale') == 'kr')
         <link href="{{ asset('/css/bootstrap-rtl.css') }}" rel="stylesheet">
     @endif --}}
-    <title>{{ _('Student Graduate Projects') }}</title>
+    <title>{{ _('Student Graduation Projects') }}</title>
 </head>
 
 <body>
@@ -25,6 +25,8 @@
     @include('includes.nav')
     @yield('content')
 
+    {{-- Jquery --}}
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 

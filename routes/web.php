@@ -28,6 +28,7 @@ Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/conference-grant', [PageController::class, 'conference'])->name('conference');
 Route::get('/graduate-project', [PageController::class, 'graduateProject'])->name('graduateProject');
 Route::get('/evaluation', [PageController::class, 'evaluation'])->name('evaluation');
+Route::get('/get-department', [PageController::class, 'getDepartment'])->name('getDepartment');
 
 
 Auth::routes();
