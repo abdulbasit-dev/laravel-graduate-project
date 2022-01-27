@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ config('app.locale') }}" dir="{{ config('app.locale') !== 'en'?'rtl':'ltr'; }}">
 
 <head>
     <meta charset="UTF-8">
@@ -14,9 +14,10 @@
     {{-- custome style --}}
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 
-    {{-- @if (config('app.locale') == 'ar' || config('app.locale') == 'kr')
-        <link href="{{ asset('/css/bootstrap-rtl.css') }}" rel="stylesheet">
-    @endif --}}
+    @if (config('app.locale') !== 'en')
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.rtl.min.css">
+    @endif
     <title>{{ _('Student Graduation Projects') }}</title>
 </head>
 
@@ -28,7 +29,8 @@
     {{-- Jquery --}}
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js">
+    </script>
 
     @stack('scripts')
 

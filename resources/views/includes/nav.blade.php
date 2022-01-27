@@ -8,6 +8,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Right Side Of Navbar -->
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link fw-medium {{ Route::currentRouteName() == 'home' ? 'active' : '' }}"
@@ -27,8 +28,22 @@
                 </li>
             </ul>
             @if (Route::has('login'))
-            <div class="top-right links">
+            <div class="top-right links ">
                 <ul class="navbar-nav">
+                    {{-- <div class="btn-group pt-1">
+                        <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="fas fa-globe"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item"
+                                    href="{{ route('change-langauge', 'en') }}">En</a></li>
+                                    <li><a class="dropdown-item"
+                                            href="{{ route('change-langauge', 'kr') }}">Kr</a></li>
+                            <li><a class="dropdown-item"
+                                    href="{{ route('change-langauge', 'ar') }}">Ar</a></li>
+                        </ul>
+                    </div> --}}
                     @guest
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">Login <i
@@ -56,6 +71,7 @@
                     </li>
 
                     @endauth
+
                 </ul>
             </div>
         </div>
