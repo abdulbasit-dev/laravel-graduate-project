@@ -24,10 +24,15 @@ use \App\Http\Controllers\{
 Route::get('/change-langauge/{lang}', [LanguageController::class,"changeLanguage"])->name("change-langauge");
 
 //Front End Routes
+//Page Routes
 Route::get('/', [PageController::class, 'home'])->name('home');
-Route::get('/conference-grant', [PageController::class, 'conference'])->name('conference');
-Route::get('/graduate-project', [PageController::class, 'graduateProject'])->name('graduateProject');
-Route::get('/evaluation', [PageController::class, 'evaluation'])->name('evaluation');
+Route::get('/projects', [PageController::class, 'project'])->name('project');
+Route::get('/conferences', [PageController::class, 'conference'])->name('conference');
+Route::get('/evaluation-committee', [PageController::class, 'evaluation'])->name('evaluationCommittee');
+Route::get('/expert-system-info', [PageController::class, 'expertSystemInfo'])->name('expertSystemInfo');
+Route::get('/announcements', [PageController::class, 'announcements'])->name('announcements');
+Route::get('/contact-us', [PageController::class, 'contactUs'])->name('contactUs');
+
 Route::get('/get-department', [PageController::class, 'getDepartment'])->name('getDepartment');
 
 

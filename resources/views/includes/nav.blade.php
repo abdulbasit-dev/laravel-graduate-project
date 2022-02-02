@@ -15,17 +15,31 @@
                         aria-current="page" href="{{ route('home') }}">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link fw-medium {{ Route::currentRouteName() == 'graduateProject' ? 'active' : '' }}"
-                        href="{{ route('graduateProject') }}">Graduation Project</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-medium {{ Route::currentRouteName() == 'evaluation' ? 'active' : '' }}"
-                        href="{{ route('evaluation') }}">Evaluation</a>
+                    <a class="nav-link fw-medium {{ Route::currentRouteName() == 'project' ? 'active' : '' }}"
+                        href="{{ route('project') }}">Project</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link fw-medium {{ Route::currentRouteName() == 'conference' ? 'active' : '' }}"
                         href="{{ route('conference') }}">Conference</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-medium {{ Route::currentRouteName() == 'evaluationCommittee' ? 'active' : '' }}"
+                        href="{{ route('evaluationCommittee') }}">Evaluation Committee</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-medium {{ Route::currentRouteName() == 'expertSystemInfo' ? 'active' : '' }}"
+                        href="{{ route('expertSystemInfo') }}">Expert System Info</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-medium {{ Route::currentRouteName() == 'announcements' ? 'active' : '' }}"
+                        href="{{ route('announcements') }}">Announcement</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link fw-medium {{ Route::currentRouteName() == 'contactUs' ? 'active' : '' }}"
+                        href="{{ route('contactUs') }}">Contact Us</a>
+                </li>
+
             </ul>
             @if (Route::has('login'))
             <div class="top-right links ">
