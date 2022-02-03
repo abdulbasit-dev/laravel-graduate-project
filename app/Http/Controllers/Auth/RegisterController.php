@@ -79,8 +79,6 @@ class RegisterController extends Controller
             $data['is_student'] = 1;
         }
 
-        Log::info($data);
-
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

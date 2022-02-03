@@ -41,14 +41,13 @@ Auth::routes();
 
 //Admin Routes
 Route::group([
-    'prefix' => 'admin',
+    'prefix' => 'dashboard',
     'middleware' => ['auth', 'admin'], 'as' => 'admin.'
 ], function () {
     Route::get('', [ \App\Http\Controllers\Admin\DashboradController::class, 'index'])->name('home');
     Route::resource('colleges', \App\Http\Controllers\Admin\CollegeController::class);
     Route::resource('departments', \App\Http\Controllers\Admin\DepartmentController::class);
-
-    Route::get('', [ \App\Http\Controllers\Admin\DashboradController::class, 'index'])->name('home');
+    Route::resource('projects', \App\Http\Controllers\Admin\ProjectController::class);
 
     Route::view('about', 'about')->name('about');
 
