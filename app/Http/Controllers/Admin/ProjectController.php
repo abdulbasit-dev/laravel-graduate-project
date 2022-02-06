@@ -3,10 +3,19 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\College;
+use App\Models\Department;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
+    public function __construct()
+    {
+        $data = [
+            'colleges'=> College::pluck('name', 'id'),
+            'departments'=> Department::pluck('name', 'id'),
+        ];
+    }
     /**
      * Display a listing of the resource.
      *
@@ -24,7 +33,8 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('admin.project.create');
+        $colleges = College::pluck('name', 'id');
+        return view('admin.project.create',compact('colleges'));
     }
 
     /**
@@ -35,7 +45,7 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return $request->all();
     }
 
     /**
