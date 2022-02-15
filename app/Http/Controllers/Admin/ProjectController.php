@@ -8,6 +8,13 @@ use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
+    public function __construct()
+    {
+        $data = [
+            'colleges'=> College::pluck('name', 'id'),
+            'departments'=> Department::pluck('name', 'id'),
+        ];
+    }
     /**
      * Display a listing of the resource.
      *
