@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 17, 2022 at 06:36 PM
+-- Generation Time: Feb 21, 2022 at 08:03 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 7.4.15
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `laravel_graduate_project`
+-- Database: `laravel_graduate-project`
 --
 
 -- --------------------------------------------------------
@@ -39,21 +39,21 @@ CREATE TABLE `colleges` (
 --
 
 INSERT INTO `colleges` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'Science', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(2, 'Engineering', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(3, 'Agriculture Engineering Sciences', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(4, 'Education', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(5, 'Arts', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(6, 'Languages', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(7, 'Administration and Economic', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(8, 'Law', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(9, 'Political Science', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(10, 'Basic Education', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(11, 'Physical Education & Sport Sciences', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(12, 'Islamic Sciences', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(13, 'Fine Arts', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(14, 'Education of Shaqlawa', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(15, 'Education of Makhmoor', '2022-01-17 14:29:25', '2022-01-17 14:29:25');
+(1, 'Science', '2022-02-21 16:02:42', '2022-02-21 16:02:42'),
+(2, 'Engineering', '2022-02-21 16:02:42', '2022-02-21 16:02:42'),
+(3, 'Agriculture Engineering Sciences', '2022-02-21 16:02:42', '2022-02-21 16:02:42'),
+(4, 'Education', '2022-02-21 16:02:42', '2022-02-21 16:02:42'),
+(5, 'Arts', '2022-02-21 16:02:42', '2022-02-21 16:02:42'),
+(6, 'Languages', '2022-02-21 16:02:42', '2022-02-21 16:02:42'),
+(7, 'Administration and Economic', '2022-02-21 16:02:42', '2022-02-21 16:02:42'),
+(8, 'Law', '2022-02-21 16:02:42', '2022-02-21 16:02:42'),
+(9, 'Political Science', '2022-02-21 16:02:42', '2022-02-21 16:02:42'),
+(10, 'Basic Education', '2022-02-21 16:02:42', '2022-02-21 16:02:42'),
+(11, 'Physical Education & Sport Sciences', '2022-02-21 16:02:42', '2022-02-21 16:02:42'),
+(12, 'Islamic Sciences', '2022-02-21 16:02:42', '2022-02-21 16:02:42'),
+(13, 'Fine Arts', '2022-02-21 16:02:42', '2022-02-21 16:02:42'),
+(14, 'Education of Shaqlawa', '2022-02-21 16:02:42', '2022-02-21 16:02:42'),
+(15, 'Education of Makhmoor', '2022-02-21 16:02:42', '2022-02-21 16:02:42');
 
 -- --------------------------------------------------------
 
@@ -74,32 +74,32 @@ CREATE TABLE `departments` (
 --
 
 INSERT INTO `departments` (`id`, `college_id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Biology Department', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(2, 1, 'Chemistry Department', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(3, 1, 'Physics Department', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(4, 1, 'Mathematics Department', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(5, 1, 'Geology Department', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(6, 1, 'Computer Science and IT Department', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(7, 1, 'Environmental Health and Science Department', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(8, 2, 'Civil Engineering Department', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(9, 2, 'Electrical Engineering Department', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(10, 2, 'Mechanical and Mechatronics Engineering', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(11, 2, 'Architectural Engineering Department', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(12, 2, 'Software and Informatics Engineering', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(13, 2, 'Water Resources Engineering', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(14, 2, 'Geomatics (Surveying) Engineering', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(15, 2, 'Chemical and Petrochemical Engineering', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(16, 2, 'Aviation Engineering Department', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(17, 4, 'Chemistry', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(18, 4, 'Mathematics', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(19, 4, 'Physics', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(20, 4, 'Biology', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(21, 4, 'Kurdish Language', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(22, 4, 'English Language', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(23, 4, 'Syriac Language', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(24, 4, 'Arabic Language', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(25, 4, 'Special Education', '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(26, 4, 'Educational and Psychological Counselings', '2022-01-17 14:29:25', '2022-01-17 14:29:25');
+(1, 1, 'Biology Department', '2022-02-21 16:02:42', '2022-02-21 16:02:42'),
+(2, 1, 'Chemistry Department', '2022-02-21 16:02:42', '2022-02-21 16:02:42'),
+(3, 1, 'Physics Department', '2022-02-21 16:02:42', '2022-02-21 16:02:42'),
+(4, 1, 'Mathematics Department', '2022-02-21 16:02:42', '2022-02-21 16:02:42'),
+(5, 1, 'Geology Department', '2022-02-21 16:02:42', '2022-02-21 16:02:42'),
+(6, 1, 'Computer Science and IT Department', '2022-02-21 16:02:42', '2022-02-21 16:02:42'),
+(7, 1, 'Environmental Health and Science Department', '2022-02-21 16:02:42', '2022-02-21 16:02:42'),
+(8, 2, 'Civil Engineering Department', '2022-02-21 16:02:42', '2022-02-21 16:02:42'),
+(9, 2, 'Electrical Engineering Department', '2022-02-21 16:02:42', '2022-02-21 16:02:42'),
+(10, 2, 'Mechanical and Mechatronics Engineering', '2022-02-21 16:02:42', '2022-02-21 16:02:42'),
+(11, 2, 'Architectural Engineering Department', '2022-02-21 16:02:42', '2022-02-21 16:02:42'),
+(12, 2, 'Software and Informatics Engineering', '2022-02-21 16:02:42', '2022-02-21 16:02:42'),
+(13, 2, 'Water Resources Engineering', '2022-02-21 16:02:42', '2022-02-21 16:02:42'),
+(14, 2, 'Geomatics (Surveying) Engineering', '2022-02-21 16:02:42', '2022-02-21 16:02:42'),
+(15, 2, 'Chemical and Petrochemical Engineering', '2022-02-21 16:02:42', '2022-02-21 16:02:42'),
+(16, 2, 'Aviation Engineering Department', '2022-02-21 16:02:42', '2022-02-21 16:02:42'),
+(17, 4, 'Chemistry', '2022-02-21 16:02:42', '2022-02-21 16:02:42'),
+(18, 4, 'Mathematics', '2022-02-21 16:02:42', '2022-02-21 16:02:42'),
+(19, 4, 'Physics', '2022-02-21 16:02:42', '2022-02-21 16:02:42'),
+(20, 4, 'Biology', '2022-02-21 16:02:42', '2022-02-21 16:02:42'),
+(21, 4, 'Kurdish Language', '2022-02-21 16:02:42', '2022-02-21 16:02:42'),
+(22, 4, 'English Language', '2022-02-21 16:02:43', '2022-02-21 16:02:43'),
+(23, 4, 'Syriac Language', '2022-02-21 16:02:43', '2022-02-21 16:02:43'),
+(24, 4, 'Arabic Language', '2022-02-21 16:02:43', '2022-02-21 16:02:43'),
+(25, 4, 'Special Education', '2022-02-21 16:02:43', '2022-02-21 16:02:43'),
+(26, 4, 'Educational and Psychological Counselings', '2022-02-21 16:02:43', '2022-02-21 16:02:43');
 
 -- --------------------------------------------------------
 
@@ -140,7 +140,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
 (5, '2022_01_04_122545_create_permission_tables', 1),
 (6, '2022_01_05_134244_create_colleges_table', 1),
-(7, '2022_01_05_134309_create_departments_table', 1);
+(7, '2022_01_05_134309_create_departments_table', 1),
+(8, '2022_02_21_051650_create_projects_table', 1);
 
 -- --------------------------------------------------------
 
@@ -204,7 +205,7 @@ CREATE TABLE `permissions` (
 --
 
 INSERT INTO `permissions` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES
-(1, 'users_manage', 'web', '2022-01-17 14:29:25', '2022-01-17 14:29:25');
+(1, 'users_manage', 'web', '2022-02-21 16:02:42', '2022-02-21 16:02:42');
 
 -- --------------------------------------------------------
 
@@ -220,6 +221,27 @@ CREATE TABLE `personal_access_tokens` (
   `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
   `abilities` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `last_used_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `projects`
+--
+
+CREATE TABLE `projects` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Project Title',
+  `description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Project Description',
+  `project` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `report` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `supervisor_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `team_members` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`team_members`)),
+  `created_by` bigint(20) UNSIGNED NOT NULL,
+  `college_id` bigint(20) UNSIGNED NOT NULL,
+  `dept_id` bigint(20) UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -243,7 +265,7 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES
-(1, 'administrator', 'web', '2022-01-17 14:29:25', '2022-01-17 14:29:25');
+(1, 'administrator', 'web', '2022-02-21 16:02:42', '2022-02-21 16:02:42');
 
 -- --------------------------------------------------------
 
@@ -272,6 +294,7 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `username` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `is_student` tinyint(1) NOT NULL DEFAULT 0,
   `email_verified_at` timestamp NULL DEFAULT NULL,
@@ -285,9 +308,9 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `is_student`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'admin@admin.com', 0, NULL, '$2y$10$tVwKvvoyJKCdiIKLws.ya.1jU2A2eFXv/YLEWMSYAaqmU0po2pE8.', NULL, '2022-01-17 14:29:25', '2022-01-17 14:29:25'),
-(2, 'Amethyst Tanner', 'pocuveroly@su.edu.krd', 0, NULL, '$2y$10$.crQS0kiwC8DtbQLtZYsYuOXti18AewPaGueb/NaOTwbPNFIgcWlK', NULL, '2022-01-17 14:33:09', '2022-01-17 14:33:09');
+INSERT INTO `users` (`id`, `name`, `username`, `email`, `is_student`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Admin', NULL, 'admin@admin.com', 0, NULL, '$2y$10$iyEOaygogHWd0xOKy80HxOmtnc2d9/o/VttukAsjFlo8o33ggntpy', NULL, '2022-02-21 16:02:42', '2022-02-21 16:02:42'),
+(2, 'basit', NULL, 'sara@student.su.edu.krd', 0, NULL, '$2y$10$tzRtRLjXTb/tIuV.Nx0hwOYe8FtPXzVS7jqwHupwIv8cGUGdA7nxS', NULL, '2022-02-21 16:02:42', '2022-02-21 16:02:42');
 
 --
 -- Indexes for dumped tables
@@ -355,6 +378,15 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
+-- Indexes for table `projects`
+--
+ALTER TABLE `projects`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `projects_created_by_foreign` (`created_by`),
+  ADD KEY `projects_college_id_foreign` (`college_id`),
+  ADD KEY `projects_dept_id_foreign` (`dept_id`);
+
+--
 -- Indexes for table `roles`
 --
 ALTER TABLE `roles`
@@ -401,7 +433,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -413,6 +445,12 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `projects`
+--
+ALTER TABLE `projects`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
@@ -448,6 +486,14 @@ ALTER TABLE `model_has_permissions`
 --
 ALTER TABLE `model_has_roles`
   ADD CONSTRAINT `model_has_roles_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `projects`
+--
+ALTER TABLE `projects`
+  ADD CONSTRAINT `projects_college_id_foreign` FOREIGN KEY (`college_id`) REFERENCES `colleges` (`id`),
+  ADD CONSTRAINT `projects_created_by_foreign` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `projects_dept_id_foreign` FOREIGN KEY (`dept_id`) REFERENCES `departments` (`id`);
 
 --
 -- Constraints for table `role_has_permissions`
