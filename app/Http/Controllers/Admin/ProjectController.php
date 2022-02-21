@@ -1,19 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\College;
+use App\Models\Project;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
     public function __construct()
     {
-        $data = [
-            'colleges'=> College::pluck('name', 'id'),
-            'departments'=> Department::pluck('name', 'id'),
-        ];
     }
     /**
      * Display a listing of the resource.
@@ -22,7 +19,6 @@ class ProjectController extends Controller
      */
     public function index()
     {
-
     }
 
     /**
@@ -33,7 +29,7 @@ class ProjectController extends Controller
     public function create()
     {
         $colleges = College::pluck('name', 'id');
-        return view('admin.project.create',compact('colleges'));
+        return view('admin.project.create', compact('colleges'));
     }
 
     /**
@@ -44,7 +40,37 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        return $request->all();
+        $projectFile = null;
+        $reportFile = null;
+        try {
+            if ($request->hasFile('project') && $request->hasFile('report')) {
+                //for project file
+                $projectFile = time() . '_' . $request->file('project')->getClientOriginalName() . '.' . $request->project->extension();
+                $request->project->move(public_path('uploads/projects'), $projectFile);
+
+                // for report file
+                $reportFile = time() . '_' . $request->file('report')->getClientOriginalName() . '.' . $request->report->extension();
+                $request->report->move(public_path('uploads/reports'), $reportFile);
+            }
+
+
+
+            Project::create([
+                "title" => $request->title,
+                "description" => $request->description,
+                "project" => "/uploads/projects/$projectFile",
+                "report" => "/uploads/reports/$reportFile",
+                "supervisor_name" => $request->supervisor_name,
+                "team_members" => $request->teams,
+                "created_by" => $request->user()->id,
+                "college_id" => $request->college_id,
+                "dept_id" => $request->dept_id,
+            ]);
+
+            return redirect()->route('admin.home');
+        } catch (\Throwable $th) {
+            throw $th;
+        }
     }
 
     /**
