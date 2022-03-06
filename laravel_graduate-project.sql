@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 21, 2022 at 08:03 PM
+-- Generation Time: Mar 04, 2022 at 05:43 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 7.4.15
 
@@ -310,7 +310,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `username`, `email`, `is_student`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Admin', NULL, 'admin@admin.com', 0, NULL, '$2y$10$iyEOaygogHWd0xOKy80HxOmtnc2d9/o/VttukAsjFlo8o33ggntpy', NULL, '2022-02-21 16:02:42', '2022-02-21 16:02:42'),
-(2, 'basit', NULL, 'sara@student.su.edu.krd', 0, NULL, '$2y$10$tzRtRLjXTb/tIuV.Nx0hwOYe8FtPXzVS7jqwHupwIv8cGUGdA7nxS', NULL, '2022-02-21 16:02:42', '2022-02-21 16:02:42');
+(2, 'sara', NULL, 'sara@student.su.edu.krd', 0, NULL, '$2y$10$tzRtRLjXTb/tIuV.Nx0hwOYe8FtPXzVS7jqwHupwIv8cGUGdA7nxS', NULL, '2022-02-21 16:02:42', '2022-02-21 16:02:42');
 
 --
 -- Indexes for dumped tables
