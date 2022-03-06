@@ -80,13 +80,13 @@
                             <form method="POST" id="logout-form" action="{{ route('logout') }}">
                                 @csrf
                             </form>
-                            {{ __('Log Out') }} <i class="fas fa-out"></i>
+                            {{ __('Logout') }} <i class="fas fa-out"></i>
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('admin.home') }}">Dashboard</a>
-                    
+
                     </li>
 
                     @endauth
