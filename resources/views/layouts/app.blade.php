@@ -18,7 +18,8 @@
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.rtl.min.css">
     @endif
-    <title>{{ _('Student Graduation Projects') }}</title>
+    {{-- <title>{{ _('Student Graduation Projects') }}</title> --}}
+    <title>'Student Graduation Projects'</title>
 </head>
 
 <body>
