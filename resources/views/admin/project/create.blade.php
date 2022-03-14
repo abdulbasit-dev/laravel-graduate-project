@@ -105,7 +105,7 @@
                     <div class="d-flex mt-3">
                                 <input class="form-control" id="${numberIncr}" type="text" name="teams[]"
                                     placeholder="Enter team member name" required>
-                                <button type="button" class="btn btn-danger ms-3 btn-sm delegated-btn"><svg
+                                <button type="button" class="btn btn-outline-danger ms-3  delegated-btn" style="padding: 0.1rem 0.6rem; !important"><svg
                                     class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
