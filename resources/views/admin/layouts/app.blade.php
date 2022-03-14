@@ -8,11 +8,8 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/app.css">
-
-    {{-- Select2 --}}
-    {{-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
-        rel="stylesheet" /> --}}
+    {{-- <link rel="stylesheet" href="css/app.css"> --}}
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
 
     <style>
@@ -34,8 +31,10 @@
     </main>
 
     <!-- Scripts -->
-    <script src="js/app.js"></script>
-    <script src="js/jquery.min.js"></script>
+    {{-- <script src="js/app.js"></script> --}}
+    <script src="{{ asset('js/app.js') }}"></script>
+    {{-- <script src="js/jquery.min.js"></script> --}}
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
     @stack('scripts')
 </body>
 

@@ -63,8 +63,6 @@ class ProjectController extends Controller
                 "supervisor_name" => $request->supervisor_name,
                 "team_members" => $request->teams,
                 "created_by" => $request->user()->id,
-                "college_id" => $request->college_id,
-                "dept_id" => $request->dept_id,
             ]);
 
             return redirect()->route('admin.home');

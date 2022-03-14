@@ -10,6 +10,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    
 </head>
 
 <body>
@@ -18,6 +19,12 @@
             @yield('content')
         </section>
     </main>
+    <!-- Scripts -->
+    {{-- <script src="js/app.js"></script> --}}
+    <script src="{{ asset('js/app.js') }}"></script>
+    {{-- <script src="js/jquery.min.js"></script> --}}
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    @stack('scripts')
 </body>
 
 </html>

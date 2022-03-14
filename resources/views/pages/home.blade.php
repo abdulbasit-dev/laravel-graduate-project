@@ -127,7 +127,7 @@
 
 
         {{-- MEET OUR TEAM --}}
-        <section id="team" class="p-5" style="margin:10rem 0 ;background: #F7F8F8;color:rgb(36, 40, 51)">
+        {{-- <section id="team" class="p-5" style="margin:10rem 0 ;background: #F7F8F8;color:rgb(36, 40, 51)">
             <div class="container">
                 <h2 class="text-center ">Meet Our Team</h2>
                 <p class="lead text-center  mb-5">
@@ -205,7 +205,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
 
         {{-- FAQ SECTION --}}
         {{-- <section id="questions" class="p-5">
@@ -323,7 +323,7 @@
     </section> --}}
 
         {{-- FOOTER --}}
-        <footer class="text-center text-lg-start text-white" style="background-color: #1c2331">
+        {{-- <footer class="text-center text-lg-start text-white" style="background-color: #1c2331">
             <section class="pt-2">
                 <div class="container text-center text-md-start mt-5">
                     <!-- Grid row -->
@@ -404,7 +404,7 @@
             <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
                 © <span id="year"></span> Copyright: Student Graduate Project Team
             </div>
-        </footer>
+        </footer> --}}
     </div>
 @endsection
 

@@ -49,15 +49,17 @@ class PageController extends Controller
 
     public function contactUs()
     {
-        $colleges = College::pluck('name', 'id');
-        $depts = Department::pluck('name', 'id');
-        return view('pages.contact-us', compact("colleges", "depts"));
+        return view('pages.contact-us');
     }
 
 
     public function getDepartment(Request $request)
     {
         $departments = Department::where('college_id', $request->collegeId)->pluck('name', 'id');
+
+        if (!count($departments)) {
+            $departments = Department::pluck('name', 'id');
+        }
         return $departments;
     }
 }

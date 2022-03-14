@@ -7,24 +7,6 @@
         <form action="{{ route('admin.projects.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
-            <div class="row">
-                <div class="col-md-4">
-                    <label for="">Choose your college</label>
-                    <select class="form-select" id="college" name="college_id" required>
-                        <option selected>Choose College</option>
-                        @foreach ($colleges as $key => $value)
-                        <option value="{{ $key }}">{{ $value }}</option>
-                        @endforeach
-                    </select>
-                </div>
-                <div class="col-md-4">
-                    <label for="dept">Choose your department</label>
-                    <select class="form-select department" name="dept_id"  id="dept">
-                        <option selected>Choose Department</option>
-                    </select>
-                </div>
-            </div>
-
             <div class="row mt-3">
                 <div class="col-md-8 mb-3">
                     <label for="title">Project title</label>
