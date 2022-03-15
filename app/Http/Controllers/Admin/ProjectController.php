@@ -4,13 +4,18 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\College;
-use App\Models\Project;
+use App\Models\Project; 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
 
 class ProjectController extends Controller
 {
     public function __construct()
     {
+        View::share([
+            'title'=>"Projects",
+            'desc'=>"List of uploaded projects"
+        ]);
     }
     /**
      * Display a listing of the resource.
@@ -19,6 +24,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
+        $projects = Project::with('student', 'student.dept', 'student.college')->paginate(10);
+        return view('admin.project.index',compact('projects'));
     }
 
     /**
@@ -53,8 +60,6 @@ class ProjectController extends Controller
                 $request->report->move(public_path('uploads/reports'), $reportFile);
             }
 
-
-
             Project::create([
                 "title" => $request->title,
                 "description" => $request->description,
@@ -64,6 +69,9 @@ class ProjectController extends Controller
                 "team_members" => $request->teams,
                 "created_by" => $request->user()->id,
             ]);
+
+            //update user that he submit the project
+            auth()->user()->update(['is_submited' => 1]);
 
             return redirect()->route('admin.home');
         } catch (\Throwable $th) {
@@ -77,9 +85,10 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Project $project)
     {
-        //
+        $project->load('student', 'student.dept', 'student.college');
+        return view('admin.project.show', compact('project'));
     }
 
     /**

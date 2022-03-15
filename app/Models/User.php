@@ -25,6 +25,7 @@ class User extends Authenticatable
         'college_id',
         'dept_id',
         'is_student',
+        'is_submited',
         'password',
     ];
 

@@ -18,9 +18,9 @@ class Project extends Model
 
 
 
-    protected $appends = ['invoice_pdf_link'];
+    protected $appends = ['project_year'];
 
-    public function getInvoicePdfLinkAttribute()
+    public function getProjectYearAttribute()
     {
         $month  =  $this->created_at->month;
         if ($month >= 9 && $month <= 12) {

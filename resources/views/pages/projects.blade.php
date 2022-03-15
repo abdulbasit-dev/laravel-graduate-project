@@ -96,9 +96,6 @@
         @empty
         <div class="col-12 text-center">
             <h2>No project found :(</h2>
-            <a href="#projects" class="btn btn-outline-primary">
-                All Projects
-            </a>
         </div>
         @endforelse
 
