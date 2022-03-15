@@ -22,8 +22,6 @@ class CreateProjectsTable extends Migration
             $table->string('supervisor_name');
             $table->json("team_members");
             $table->foreignId('created_by')->constrained('users', 'id');
-            $table->foreignId('college_id')->constrained('colleges', 'id');
-            $table->foreignId('dept_id')->constrained('departments', 'id');
             $table->timestamps();
         });
     }

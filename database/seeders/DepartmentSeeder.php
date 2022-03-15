@@ -68,7 +68,7 @@ class DepartmentSeeder extends Seeder
         foreach ($edu as $name) {
             Department::firstOrCreate([
                 "name" => $name,
-                "college_id" => 4
+                "college_id" => 3
             ]);
         }
     }

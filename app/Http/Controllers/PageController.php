@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\College;
 use App\Models\Department;
+use App\Models\Project;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -18,7 +19,15 @@ class PageController extends Controller
     {
         $colleges = College::pluck('name', 'id');
         $depts = Department::pluck('name', 'id');
-        return view('pages.graduate-project', compact("colleges", "depts"));
+        $projects = Project::with('student', 'student.dept', 'student.college')->get();
+        return $projects;
+        return view('pages.projects', compact("colleges", "depts", "projects"));
+    }
+
+    public function projectShow(Project $project)
+    {
+        $project  =  $project->load('student', 'student.dept', 'student.college');
+        return view('pages.project-show', compact("project"));
     }
 
     public function conference()

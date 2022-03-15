@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\{
     PageController,
     LanguageController,
-    RegisterController
 };
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +26,7 @@ Route::get('/change-langauge/{lang}', [LanguageController::class,"changeLanguage
 //Page Routes
 Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/projects', [PageController::class, 'project'])->name('project');
+Route::get('/projects/{project}', [PageController::class, 'projectShow'])->name('projectShow');
 Route::get('/conferences', [PageController::class, 'conference'])->name('conference');
 Route::get('/evaluation-committee', [PageController::class, 'evaluation'])->name('evaluationCommittee');
 Route::get('/expert-system-info', [PageController::class, 'expertSystemInfo'])->name('expertSystemInfo');
