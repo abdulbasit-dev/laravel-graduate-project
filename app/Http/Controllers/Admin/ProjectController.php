@@ -49,14 +49,15 @@ class ProjectController extends Controller
     {
         $projectFile = null;
         $reportFile = null;
+        
         try {
             if ($request->hasFile('project') && $request->hasFile('report')) {
                 //for project file
-                $projectFile = time() . '_' . $request->file('project')->getClientOriginalName() . '.' . $request->project->extension();
+                $projectFile = time() . '_' . $request->file('project')->getClientOriginalName();
                 $request->project->move(public_path('uploads/projects'), $projectFile);
 
                 // for report file
-                $reportFile = time() . '_' . $request->file('report')->getClientOriginalName() . '.' . $request->report->extension();
+                $reportFile = time() . '_' . $request->file('report')->getClientOriginalName();
                 $request->report->move(public_path('uploads/reports'), $reportFile);
             }
 

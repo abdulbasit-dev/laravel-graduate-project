@@ -85,8 +85,8 @@
             </div>
 
             <div class="mt-3">
-                <button class="btn btn-gray-800 mt-2 animate-up-2" disabled type="submit"
-                    @if(auth()->user()->is_submited) disabled='disabled' @endif>Submit</button>
+                <button class="btn btn-gray-800 mt-2 animate-up-2"  type="submit"
+                    @if(auth()->user()->is_submited) disabled @endif>Submit</button>
             </div>
         </form>
     </div>
