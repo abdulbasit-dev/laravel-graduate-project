@@ -70,21 +70,19 @@
                 style="width: 18rem;  box-shadow: 0 0 20px 5px rgba(62, 60, 98, 0.08);">
                 <div class="card-body">
                     <h4 class="card-title mb-3">{{ $project->title }}</h4>
-                    <h6 class="card-subtitle mb-2 text-muted">2021 - 2022 </h6>
-                    <p class="card-text">{{ $project->description }}</p>
-                    <div class="d-flex flex-column">
-                        <div class="d-flex">
+                    <h6 class="card-subtitle mb-2 text-muted">{{ $project->project_year }}</h6>
+                    <div class="d-flex flex-column mb-4">
+                        <div class="d-flex mb-2">
                             <span>College: </span>
                             <span class="fw-med text-primary ms-2">{{
                                 $project->student->college->name }}</span>
                         </div>
-                        <div class="d-flex">
+                        <div class="d-fle">
                             <span>Department: </span>
                             <span class="fw-med text-primary ms-2">{{ $project->student->dept->name
                                 }}</span>
                         </div>
                     </div>
-                    <h6 class="my-3">Project Supervisor: {{ $project->supervisor_name }}</h6>
                     <a href="{{ route('projectShow',$project->id) }}">
                         <button class="btn btn-primary">More Detail <i
                                 class="fas fa-arrow-right"></i></button>
