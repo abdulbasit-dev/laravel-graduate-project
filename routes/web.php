@@ -49,6 +49,9 @@ Route::group([
     Route::resource('departments', \App\Http\Controllers\Admin\DepartmentController::class);
     Route::resource('projects', \App\Http\Controllers\Admin\ProjectController::class);
 
+    //teams
+    Route::resource('teams', \App\Http\Controllers\Admin\TeamController::class);
+
     Route::view('about', 'about')->name('about');
 
     Route::get('users', [ \App\Http\Controllers\Admin\UserController::class, 'index'])->name('users.index');

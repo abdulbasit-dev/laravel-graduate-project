@@ -18,8 +18,6 @@
         <div class="mb-3 mb-lg-0">
             <h4 class="h4">{{ $desc }}</h4>
         </div>
-        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createModal">Add New
-            College</button>
     </div>
 </div>
 <div class="main py-4">
