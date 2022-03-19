@@ -14,7 +14,7 @@
     {{-- custome style --}}
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 
-    <title>{{ __('Student Graduation Projects') }}</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
 </head>
 
 <body>
@@ -23,7 +23,7 @@
     @yield('content')
     {{-- FOOTER --}}
     @include('includes.footer')
-   
+
     {{-- Jquery --}}
     <script src="{{ asset('js/jquery.min.js')}}"></script>
     <!-- Scripts -->
