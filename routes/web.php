@@ -50,7 +50,7 @@ Route::group([
     Route::resource('projects', \App\Http\Controllers\Admin\ProjectController::class);
 
     //teams
-    Route::resource('teams', \App\Http\Controllers\Admin\TeamController::class);
+    Route::resource('teams', \App\Http\Controllers\Admin\TeamController::class)->except('show');
 
     Route::view('about', 'about')->name('about');
 

@@ -6,6 +6,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Team;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\View;
 
 class TeamController extends Controller
@@ -14,8 +16,8 @@ class TeamController extends Controller
     public function __construct()
     {
         View::share([
-            'title'=>"Teams",
-            'desc'=>"List of team members"
+            'title' => "Teams",
+            'desc' => "List of team members"
         ]);
     }
 
@@ -26,8 +28,8 @@ class TeamController extends Controller
      */
     public function index()
     {
-        $teams = Team::take(5);
-        return view('admin.teams.index',compact('teams'));
+        $teams = Team::orderByDesc('created_at')->take(5)->get();
+        return view('admin.teams.index', compact('teams'));
     }
 
     /**
@@ -48,18 +50,39 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $validator = Validator::make($request->all(), [
+            "name" => ['required', 'string', 'max:30'],
+            "description" => ['required', 'string',],
+            "file" => ['required', 'file', 'mimes:png,jpg']
+        ]);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Team  $team
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Team $team)
-    {
-        //
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        $file = null;
+        try {
+            if ($request->hasFile('file')) {
+                $file = time() . '_' . $request->file('file')->getClientOriginalName();
+                $request->file->move(public_path('uploads/teams'), $file);
+            }
+
+            Team::create([
+                "name" => $request->name,
+                "description" => $request->description,
+                "image" => 'uploads/teams/' . $file,
+            ]);
+
+            return redirect()->route('admin.teams.index')->with([
+                "message" => "Team member Created Succefully",
+                "title" => "Created",
+                "icon" => "success",
+            ]);
+        } catch (\Throwable $th) {
+            throw $th;
+        }
     }
 
     /**
@@ -70,7 +93,7 @@ class TeamController extends Controller
      */
     public function edit(Team $team)
     {
-        //
+        return view('admin.teams.edit', compact("team"));
     }
 
     /**
@@ -82,7 +105,43 @@ class TeamController extends Controller
      */
     public function update(Request $request, Team $team)
     {
-        //
+
+        $validator = Validator::make($request->all(), [
+            "name" => ['required', 'string', 'max:30'],
+            "description" => ['required', 'string',],
+            "file" => ['file', 'mimes:png,jpg']
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        $file = null;
+        try {
+            if ($request->hasFile('file')) {
+                //first delete privies file
+                File::delete($team->image);
+                $file = time() . '_' . $request->file('file')->getClientOriginalName();
+                $request->file->move(public_path('uploads/teams'), $file);
+            }
+
+            $team->name = $request->name;
+            $team->description = $request->description;
+            if ($file) {
+                $team->image = 'uploads/teams/' . $file;
+            }
+            $team->save();
+
+            return redirect()->route('admin.teams.index')->with([
+                "message" => "Team member Updated Succefully",
+                "title" => "updated",
+                "icon" => "success",
+            ]);
+        } catch (\Throwable $th) {
+            throw $th;
+        }
     }
 
     /**
@@ -93,6 +152,11 @@ class TeamController extends Controller
      */
     public function destroy(Team $team)
     {
-        //
+        $team->delete();
+        return redirect()->back()->with([
+            "message" => "Team member deleted Succefully",
+            "title" => "Deleted",
+            "icon" => "success",
+        ]);
     }
 }

@@ -17,7 +17,7 @@
               </path>
             </svg></a></li>
         <li class="breadcrumb-item"><a href="{{ route('admin.teams.index') }}">{{ $title }}</a>
-          / Create
+          / Edit
         </li>
       </ol>
     </nav>
@@ -45,11 +45,13 @@
     <div class="row">
       <div class="col-12 col-xl-12">
         <div class="card card-body border-0 shadow mb-4">
-          <h2 class="h5 mb-4">Add New Team Member</h2>
-          <form action="{{ route('admin.teams.store') }}"
+        
+          <h2 class="h5 mb-4">Edit Team Member {{ $team->name }}</h2>
+          <form action="{{ route('admin.teams.update', $team->id) }}"
             method="POST"
             enctype="multipart/form-data">
             @csrf
+            @method("PUT")
 
             <div class="row mt-3">
               <div class="col-md-6 mb-3">
@@ -58,7 +60,7 @@
                   id="name"
                   type="text"
                   name="name"
-                  value="{{ old('name') }}">
+                  value="{{ old('name',$team->name) }}">
                 @error('name')
                   <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
@@ -71,7 +73,7 @@
                 <textarea class="form-control @error('description') is-invalid @enderror"
                   rows="2"
                   id="description"
-                  name="description">{{ old('description') }}</textarea>
+                  name="description">{{ old('description',$team->description) }}</textarea>
                 @error('description')
                   <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
