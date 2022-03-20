@@ -58,12 +58,12 @@
                             class="avatar-lg rounded-circle">
                         </td>
                         <td>
-                          <div class="d-flex justify-content-center">
+                          <div class="d-flex justify-content-center align-items-center">
                             <a href="{{ route('admin.teams.edit', $team->id) }}">
                               <button class="btn btn-outline-info btn-sm me-3"
                                 type="button">Edit</button>
                             </a>
-                            <div>
+                            
                               <form action="{{ route('admin.teams.destroy', $team->id) }}"
                                 method="POST"
                                 id="myForm">
@@ -73,7 +73,6 @@
                               <button id="delete_btn"
                                 class="btn btn-outline-danger btn-sm">Delete</button>
                             </div>
-                          </div>
                         </td>
                       </tr>
                     @empty

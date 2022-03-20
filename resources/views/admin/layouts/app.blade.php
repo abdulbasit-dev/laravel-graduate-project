@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport"
@@ -15,7 +12,7 @@
     href="{{ asset('css/app.css') }}">
 
   <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    href="{{ asset('css/animate.min.css') }}" />
 
 
 
@@ -44,9 +41,9 @@
   <script src="{{ asset('js/app.js') }}"></script>
   {{-- <script src="js/jquery.min.js"></script> --}}
   <script src="{{ asset('js/jquery.min.js') }}"></script>
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  {{-- sweetalert2 --}}
+  <script src="{{ asset('js/sweetalert2.min.js') }}"></script>
   @stack('scripts')
-
   {{-- sweetalert2 message --}}
   @if (Session::has('message'))
     <script>
