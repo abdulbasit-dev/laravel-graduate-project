@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\College;
 use App\Models\Department;
 use App\Models\Project;
+use App\Models\Team;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -57,7 +58,8 @@ class PageController extends Controller
 
     public function contactUs()
     {
-        return view('pages.contact-us');
+        $teams = Team::take(4)->get();
+        return view('pages.contact-us',compact('teams'));
     }
 
 
