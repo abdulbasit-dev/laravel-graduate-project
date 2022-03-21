@@ -17,7 +17,7 @@ class BannerController extends Controller
     {
         View::share([
             'title' => "Banners",
-            'desc' => "List of Banner members"
+            'desc' => "List of Banners"
         ]);
     }
 
@@ -28,7 +28,7 @@ class BannerController extends Controller
      */
     public function index()
     {
-        $banners = Banner::orderByDesc('created_at')->take(5)->get();
+        $banners = Banner::take(3)->get();
         return view('admin.banners.index', compact('banners'));
     }
 
@@ -39,7 +39,7 @@ class BannerController extends Controller
      */
     public function create()
     {
-        $desc = "Add New Banner Member";
+        $desc = "Add New Banner";
         return view('admin.banners.create', compact('desc'));
     }
 
@@ -52,8 +52,8 @@ class BannerController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            "name" => ['required', 'string', 'max:30'],
-            "description" => ['required', 'string',],
+            "title" => ['required', 'string', 'max:50'],
+            "description" => ['required', 'string' ],
             "file" => ['required', 'file', 'mimes:png,jpg']
         ]);
 
@@ -71,13 +71,13 @@ class BannerController extends Controller
             }
 
             Banner::create([
-                "name" => $request->name,
+                "title" => $request->title,
                 "description" => $request->description,
                 "image" => 'uploads/banners/' . $file,
             ]);
 
             return redirect()->route('admin.banners.index')->with([
-                "message" => "Banner member Created Succefully",
+                "message" => "Banner Created Succefully",
                 "title" => "Created",
                 "icon" => "success",
             ]);
@@ -109,7 +109,7 @@ class BannerController extends Controller
     {
 
         $validator = Validator::make($request->all(), [
-            "name" => ['required', 'string', 'max:30'],
+            "title" => ['required', 'string', 'max:30'],
             "description" => ['required', 'string',],
             "file" => ['file', 'mimes:png,jpg']
         ]);
@@ -129,7 +129,7 @@ class BannerController extends Controller
                 $request->file->move(public_path('uploads/banners'), $file);
             }
 
-            $banner->name = $request->name;
+            $banner->title = $request->title;
             $banner->description = $request->description;
             if ($file) {
                 $banner->image = 'uploads/banners/' . $file;
@@ -137,7 +137,7 @@ class BannerController extends Controller
             $banner->save();
 
             return redirect()->route('admin.banners.index')->with([
-                "message" => "Banner member Updated Succefully",
+                "message" => "Banner Updated Succefully",
                 "title" => "updated",
                 "icon" => "success",
             ]);
@@ -154,9 +154,11 @@ class BannerController extends Controller
      */
     public function destroy(Banner $banner)
     {
+        //first delete file
+        File::delete($banner->image);
         $banner->delete();
         return redirect()->back()->with([
-            "message" => "Banner member deleted Succefully",
+            "message" => "Banner Deleted Succefully",
             "title" => "Deleted",
             "icon" => "success",
         ]);

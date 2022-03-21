@@ -154,6 +154,8 @@ class TeamController extends Controller
      */
     public function destroy(Team $team)
     {
+        //first delete file
+        File::delete($team->image);
         $team->delete();
         return redirect()->back()->with([
             "message" => "Team member deleted Succefully",
