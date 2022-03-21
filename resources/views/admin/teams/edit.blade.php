@@ -1,6 +1,8 @@
 @extends('admin.layouts.app')
 
 @section('content')
+  {{-- Header --}}
+
   <div>
     <nav aria-label="breadcrumb"
       class="d-none d-md-inline-block">
@@ -41,8 +43,8 @@
       </a>
     </div>
   </div>
+  {{-- End Header --}}
 
-  
   <div class="main py-4">
     <div class="row">
       <div class="col-12 col-xl-12">
@@ -60,7 +62,7 @@
                   id="name"
                   type="text"
                   name="name"
-                  value="{{ old('name',$team->name) }}">
+                  value="{{ old('name', $team->name) }}">
                 @error('name')
                   <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
@@ -73,7 +75,7 @@
                 <textarea class="form-control @error('description') is-invalid @enderror"
                   rows="2"
                   id="description"
-                  name="description">{{ old('description',$team->description) }}</textarea>
+                  name="description">{{ old('description', $team->description) }}</textarea>
                 @error('description')
                   <div class="invalid-feedback">{{ $message }}</div>
                 @enderror

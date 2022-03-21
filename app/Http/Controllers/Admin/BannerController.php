@@ -17,7 +17,7 @@ class BannerController extends Controller
     {
         View::share([
             'title' => "Banners",
-            'desc' => "List of Banners"
+            'desc' => "List of Banner members"
         ]);
     }
 
@@ -28,7 +28,7 @@ class BannerController extends Controller
      */
     public function index()
     {
-        $banners = Banner::take(5)->get();
+        $banners = Banner::orderByDesc('created_at')->take(5)->get();
         return view('admin.banners.index', compact('banners'));
     }
 
@@ -39,7 +39,8 @@ class BannerController extends Controller
      */
     public function create()
     {
-        return view('admin.banners.create');
+        $desc = "Add New Banner Member";
+        return view('admin.banners.create', compact('desc'));
     }
 
     /**
@@ -93,7 +94,8 @@ class BannerController extends Controller
      */
     public function edit(Banner $banner)
     {
-        return view('admin.banners.edit', compact("banner"));
+        $desc = "Edit Banner Member $banner->name";
+        return view('admin.banners.edit', compact("banner", 'desc'));
     }
 
     /**
