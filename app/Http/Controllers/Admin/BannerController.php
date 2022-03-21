@@ -4,20 +4,20 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Team;
+use App\Models\Banner;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\View;
 
-class TeamController extends Controller
+class BannerController extends Controller
 {
 
     public function __construct()
     {
         View::share([
-            'title' => "Teams",
-            'desc' => "List of Team members"
+            'title' => "Banners",
+            'desc' => "List of Banners"
         ]);
     }
 
@@ -28,8 +28,8 @@ class TeamController extends Controller
      */
     public function index()
     {
-        $teams = Team::orderByDesc('created_at')->take(5)->get();
-        return view('admin.teams.index', compact('teams'));
+        $banners = Banner::take(5)->get();
+        return view('admin.banners.index', compact('banners'));
     }
 
     /**
@@ -39,8 +39,7 @@ class TeamController extends Controller
      */
     public function create()
     {
-        $desc = "Add New Team Member";
-        return view('admin.teams.create',compact('desc'));
+        return view('admin.banners.create');
     }
 
     /**
@@ -67,17 +66,17 @@ class TeamController extends Controller
         try {
             if ($request->hasFile('file')) {
                 $file = time() . '_' . $request->file('file')->getClientOriginalName();
-                $request->file->move(public_path('uploads/teams'), $file);
+                $request->file->move(public_path('uploads/banners'), $file);
             }
 
-            Team::create([
+            Banner::create([
                 "name" => $request->name,
                 "description" => $request->description,
-                "image" => 'uploads/teams/' . $file,
+                "image" => 'uploads/banners/' . $file,
             ]);
 
-            return redirect()->route('admin.teams.index')->with([
-                "message" => "Team member Created Succefully",
+            return redirect()->route('admin.banners.index')->with([
+                "message" => "Banner member Created Succefully",
                 "title" => "Created",
                 "icon" => "success",
             ]);
@@ -89,23 +88,22 @@ class TeamController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Team  $team
+     * @param  \App\Models\Banner  $banner
      * @return \Illuminate\Http\Response
      */
-    public function edit(Team $team)
+    public function edit(Banner $banner)
     {
-        $desc = "Edit Team Member $team->name";
-        return view('admin.teams.edit', compact("team",'desc'));
+        return view('admin.banners.edit', compact("banner"));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Team  $team
+     * @param  \App\Models\Banner  $banner
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Team $team)
+    public function update(Request $request, Banner $banner)
     {
 
         $validator = Validator::make($request->all(), [
@@ -124,20 +122,20 @@ class TeamController extends Controller
         try {
             if ($request->hasFile('file')) {
                 //first delete privies file
-                File::delete($team->image);
+                File::delete($banner->image);
                 $file = time() . '_' . $request->file('file')->getClientOriginalName();
-                $request->file->move(public_path('uploads/teams'), $file);
+                $request->file->move(public_path('uploads/banners'), $file);
             }
 
-            $team->name = $request->name;
-            $team->description = $request->description;
+            $banner->name = $request->name;
+            $banner->description = $request->description;
             if ($file) {
-                $team->image = 'uploads/teams/' . $file;
+                $banner->image = 'uploads/banners/' . $file;
             }
-            $team->save();
+            $banner->save();
 
-            return redirect()->route('admin.teams.index')->with([
-                "message" => "Team member Updated Succefully",
+            return redirect()->route('admin.banners.index')->with([
+                "message" => "Banner member Updated Succefully",
                 "title" => "updated",
                 "icon" => "success",
             ]);
@@ -149,14 +147,14 @@ class TeamController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Team  $team
+     * @param  \App\Models\Banner  $banner
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Team $team)
+    public function destroy(Banner $banner)
     {
-        $team->delete();
+        $banner->delete();
         return redirect()->back()->with([
-            "message" => "Team member deleted Succefully",
+            "message" => "Banner member deleted Succefully",
             "title" => "Deleted",
             "icon" => "success",
         ]);

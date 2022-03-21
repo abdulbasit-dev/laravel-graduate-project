@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 
 @section('content')
-  <div class="py-4">
+  <div>
     <nav aria-label="breadcrumb"
       class="d-none d-md-inline-block">
       <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
@@ -41,12 +41,12 @@
       </a>
     </div>
   </div>
+
+  
   <div class="main py-4">
     <div class="row">
       <div class="col-12 col-xl-12">
         <div class="card card-body border-0 shadow mb-4">
-        
-          <h2 class="h5 mb-4">Edit Team Member {{ $team->name }}</h2>
           <form action="{{ route('admin.teams.update', $team->id) }}"
             method="POST"
             enctype="multipart/form-data">

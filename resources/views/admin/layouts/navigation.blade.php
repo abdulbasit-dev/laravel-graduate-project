@@ -138,7 +138,7 @@
     <li role="separator" class="dropdown-divider mt-4 mb-3 border-gray-700"></li>
 
 
-    <li class="nav-item {{ request()->routeIs('admin.teams.index') ? 'active' : '' }}">
+    <li class="nav-item {{ request()->routeIs('admin.teams.*') ? 'active' : '' }}">
         <a href="{{ route('admin.teams.index') }}" class="nav-link">
             <span class="sidebar-icon ">
                 <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -157,8 +157,8 @@
     </li>
 
 
-    <li class="nav-item {{ request()->routeIs('admin.banners.index') ? 'active' : '' }}">
-        <a href="{{ route('admin.users.index') }}" class="nav-link">
+    <li class="nav-item {{ request()->routeIs('admin.banners.*') ? 'active' : '' }}">
+        <a href="{{ route('admin.banners.index') }}" class="nav-link">
             <span class="sidebar-icon ">
                 <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">

@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 
 @section('content')
-    <div class="py-4">
+    <div>
         <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
             <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
                 <li class="breadcrumb-item"><a href="{{ route('admin.home') }}"><svg class="icon icon-xxs" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -33,7 +33,6 @@
         <div class="row">
             <div class="col-12 col-xl-12">
                 <div class="card card-body border-0 shadow mb-4">
-                    <h2 class="h5 mb-4">Add New Team Member</h2>
                     <form action="{{ route('admin.teams.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
 

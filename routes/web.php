@@ -7,6 +7,16 @@ use \App\Http\Controllers\{
     PageController,
     LanguageController,
 };
+
+use \App\Http\Controllers\Admin\{
+    CollegeController,
+    DepartmentController,
+    TeamController,
+    BannerController,
+    ProjectController,
+    UserController,
+    ProfileController
+};
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,7 +30,7 @@ use \App\Http\Controllers\{
 
 
 //language changer controller
-Route::get('/change-langauge/{lang}', [LanguageController::class,"changeLanguage"])->name("change-langauge");
+Route::get('/change-langauge/{lang}', [LanguageController::class, "changeLanguage"])->name("change-langauge");
 
 //Front End Routes
 //Page Routes
@@ -44,18 +54,15 @@ Route::group([
     'prefix' => 'dashboard',
     'middleware' => ['auth', 'admin'], 'as' => 'admin.'
 ], function () {
-    Route::get('', [ \App\Http\Controllers\Admin\DashboradController::class, 'index'])->name('home');
-    Route::resource('colleges', \App\Http\Controllers\Admin\CollegeController::class);
-    Route::resource('departments', \App\Http\Controllers\Admin\DepartmentController::class);
-    Route::resource('projects', \App\Http\Controllers\Admin\ProjectController::class);
-
+    Route::get('', [DashboradController::class, 'index'])->name('home');
+    Route::resource('colleges', CollegeController::class);
+    Route::resource('departments', DepartmentController::class);
+    Route::resource('projects', ProjectController::class);
     //teams
-    Route::resource('teams', \App\Http\Controllers\Admin\TeamController::class)->except('show');
-
-    Route::view('about', 'about')->name('about');
-
-    Route::get('users', [ \App\Http\Controllers\Admin\UserController::class, 'index'])->name('users.index');
-
-    Route::get('profile', [ \App\Http\Controllers\Admin\ProfileController::class, 'show'])->name('profile.show');
-    Route::put('profile',  [\App\Http\Controllers\Admin\ProfileController::class, 'update'])->name('profile.update');
+    Route::resource('teams', TeamController::class)->except('show');
+    //banners
+    Route::resource('banners', BannerController::class)->except('show');
+    Route::get('users', [UserController::class, 'index'])->name('users.index');
+    Route::get('profile', [ProfileController::class, 'show'])->name('profile.show');
+    Route::put('profile',  [ProfileController::class, 'update'])->name('profile.update');
 });
