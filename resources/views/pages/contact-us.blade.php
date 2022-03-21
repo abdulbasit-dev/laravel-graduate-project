@@ -27,13 +27,16 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 text-left">
-                        <h1 class="display-3" style="margin-top: 6rem">Ranked Project</h1>
-                        <p class="lead">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, voluptas.
-                        </p>
+                        <div  data-aos="fade-down">
 
-                        <a href="#contact" class="btn btn-outline-primary">Contact Us</a>
-                        <a href="#team" class="btn btn-outline-primary ms-3">Our Team</a>
+                            <h1 class="display-3" style="margin-top: 6rem">Get In Touch</h1>
+                            <p class="lead">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, voluptas.
+                            </p>
+                        </div>
+
+                        <a href="#contact" class="btn btn-outline-primary" data-aos="fade-right">Contact Us</a>
+                        <a href="#team" class="btn btn-outline-primary ms-3" data-aos="fade-left">Our Team</a>
                     </div>
                 </div>
             </div>
@@ -41,13 +44,13 @@
     </header>
 
     <section class="container my-5" id="contact">
-        <div class="text-center mb-4">
+        <div class="text-center mb-4" data-aos="fade-up">
             <h3 class="mb-3">Contact Us</h3>
             <hr class="mb-4 mt-0 d-inline-block mx-auto w-50 bg-primary" style="height: 2px" />
         </div>
 
         <div class="row my-5">
-            <div class="col-md-6">
+            <div class="col-md-6" data-aos="fade-right">
                 <!-- Bootstrap 5 starter form -->
                 <form id="contactForm">
 
@@ -77,14 +80,14 @@
                 </form>
 
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6" data-aos="fade-left">
                 <img src="{{ asset('images/contact.jpg') }}" alt="contact us" class="img-fluid rounded">
             </div>
         </div>
     </section>
 
-    <section class="container my-5" id="team" data-aos="fade-up">
-        <div class="text-center mb-4">
+    <section class="container my-5" id="team" >
+        <div class="text-center mb-4" data-aos="fade-up">
             <h3 class="mb-3">Our Team</h3>
             <hr class="mb-4 mt-0 d-inline-block mx-auto w-50 bg-primary" style="height: 2px" />
             <p class="lead text-center  mb-5">
@@ -96,7 +99,7 @@
 
         <div class="row g-4">
             @foreach ($teams as $team)
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="flip-down">
                     <div class="card bg-light">
                         <div class="card-body text-center">
                             <img src="{{ asset($team->image) }}" class="rounded-circle mb-3" alt="">
