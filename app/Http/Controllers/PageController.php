@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Banner;
 use App\Models\College;
 use App\Models\Department;
 use App\Models\Project;
@@ -13,7 +14,8 @@ class PageController extends Controller
 
     public function home()
     {
-        return view('pages.home');
+        $banners = Banner::take(3)->get();
+        return view('pages.home', compact('banners'));
     }
 
     public function project()
@@ -59,7 +61,7 @@ class PageController extends Controller
     public function contactUs()
     {
         $teams = Team::take(4)->get();
-        return view('pages.contact-us',compact('teams'));
+        return view('pages.contact-us', compact('teams'));
     }
 
 

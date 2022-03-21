@@ -28,7 +28,7 @@ class BannerController extends Controller
      */
     public function index()
     {
-        $banners = Banner::take(3)->get();
+        $banners = Banner::all();
         return view('admin.banners.index', compact('banners'));
     }
 

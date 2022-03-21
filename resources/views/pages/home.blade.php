@@ -1,12 +1,40 @@
 @extends('layouts.app')
 
 @section('content')
+  <div>
 
+    <div id="carouselExampleControls"
+      class="carousel slide"
+      data-bs-ride="carousel">
+      <div class="carousel-inner">
+          @foreach ($banners as $banner)
+          <div class="carousel-item <?php echo $loop->iteration == 1 ? "active" : "" ?>">
+            <img src="{{ asset($banner->image) }}"
+              class="d-block w-100"
+              alt="...">
+          </div>
+          @endforeach  
+      </div>
+      <button class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"
+          aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon"
+          aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
 
-    <div>
-
-        {{-- Carosel --}}
-        <section id="showcase">
+    {{-- Carosel --}}
+    {{-- <section id="showcase">
             <div id="carouselExampleCaptions" class="carousel carousel-light slide" data-bs-ride="carousel"
                 data-bs-pause="false">
                 <div class="carousel-indicators">
@@ -19,6 +47,7 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item carousel-image-1 active" data-bs-interval="3000">
+                        <img src="..." class="d-block w-100" alt="...">
                         <div class="dark-overlay">
                             <div class="carousel-caption d-none d-md-block" style="margin-bottom: 5rem">
                                 <h1 class="display-4">Explore Students Projects</h1>
@@ -27,7 +56,6 @@
                                     incidunt,
                                     voluptatem dolor
                                 </p>
-
                             </div>
                         </div>
                     </div>
@@ -66,34 +94,37 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
-        </section>
-        {{-- About the project --}}
-        <section style="margin:10rem 0 ;">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h2 class="text-primary mb-4">About Project</h2>
-                        <div class="mb-2">
-                            <h3>Student Project Gradution</h3>
-                            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Sed, praesentium? Nam optio omnis, architecto ipsam voluptatem
-                                recusandae consequatur expedita. Neque?</p>
-                        </div>
-                        <div class="mb-4">
-                            <h3>Project Supervisor:</h3>
-                            <p class="lead fw-medium">D. Haider Haddad</p>
-                        </div>
-                        <a href="#team" class="btn btn-outline-danger">Meet Our Team</a>
-                    </div>
-                    <div class="col-md-6">
-                        <img src="{{ asset('images/image5.jpg') }}" class="img-fluid rounded-3" alt="">
-                    </div>
-                </div>
+        </section> --}}
+    {{-- About the project --}}
+    <section style="margin:10rem 0 ;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h2 class="text-primary mb-4">About Project</h2>
+            <div class="mb-2">
+              <h3>Student Project Gradution</h3>
+              <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Sed, praesentium? Nam optio omnis, architecto ipsam voluptatem
+                recusandae consequatur expedita. Neque?</p>
             </div>
-        </section>
+            <div class="mb-4">
+              <h3>Project Supervisor:</h3>
+              <p class="lead fw-medium">D. Haider Haddad</p>
+            </div>
+            <a href="#team"
+              class="btn btn-outline-danger">Meet Our Team</a>
+          </div>
+          <div class="col-md-6">
+            <img src="{{ asset('images/image5.jpg') }}"
+              class="img-fluid rounded-3"
+              alt="">
+          </div>
+        </div>
+      </div>
+    </section>
 
-        {{-- Project Golds --}}
-        {{-- <section id="home-icon" class="py-5">
+    {{-- Project Golds --}}
+    {{-- <section id="home-icon" class="py-5">
         <div class="container">
             <div class="text-center mb-4">
                 <h3>Project Goals</h3>
@@ -126,8 +157,8 @@
 
 
 
-        {{-- MEET OUR TEAM --}}
-        {{-- <section id="team" class="p-5" style="margin:10rem 0 ;background: #F7F8F8;color:rgb(36, 40, 51)">
+    {{-- MEET OUR TEAM --}}
+    {{-- <section id="team" class="p-5" style="margin:10rem 0 ;background: #F7F8F8;color:rgb(36, 40, 51)">
             <div class="container">
                 <h2 class="text-center ">Meet Our Team</h2>
                 <p class="lead text-center  mb-5">
@@ -207,8 +238,8 @@
             </div>
         </section> --}}
 
-        {{-- FAQ SECTION --}}
-        {{-- <section id="questions" class="p-5">
+    {{-- FAQ SECTION --}}
+    {{-- <section id="questions" class="p-5">
         <div class="container">
             <h2 class="text-center mb-4">Frequently Asked Questions</h2>
             <div class="accordion accordion-flush" id="questions">
@@ -322,8 +353,8 @@
         </div>
     </section> --}}
 
-        {{-- FOOTER --}}
-        {{-- <footer class="text-center text-lg-start text-white" style="background-color: #1c2331">
+    {{-- FOOTER --}}
+    {{-- <footer class="text-center text-lg-start text-white" style="background-color: #1c2331">
             <section class="pt-2">
                 <div class="container text-center text-md-start mt-5">
                     <!-- Grid row -->
@@ -405,13 +436,13 @@
                 © <span id="year"></span> Copyright: Student Graduate Project Team
             </div>
         </footer> --}}
-    </div>
+  </div>
 @endsection
 
 @push('scripts')
-    <script>
-        // Get the current year for the copyright
-        const year = document.getElementById('year');
-        year.innerText = new Date().getFullYear();
-    </script>
+  <script>
+    // Get the current year for the copyright
+    const year = document.getElementById('year');
+    year.innerText = new Date().getFullYear();
+  </script>
 @endpush
