@@ -35,8 +35,8 @@
                             </p>
                         </div>
 
-                        <a href="#contact" class="btn btn-outline-primary" data-aos="fade-right">Contact Us</a>
-                        <a href="#team" class="btn btn-outline-primary ms-3" data-aos="fade-left">Our Team</a>
+                        <a href="#contact" class="btn btn-outline-primary" data-aos="fade-right"  data-aos-duration="1000">Contact Us</a>
+                        <a href="#team" class="btn btn-outline-primary ms-3" data-aos="fade-left" data-aos-duration="1000">Our Team</a>
                     </div>
                 </div>
             </div>
@@ -44,7 +44,7 @@
     </header>
 
     <section class="container my-5" id="contact">
-        <div class="text-center mb-4" data-aos="fade-up">
+        <div class="text-center mb-4" data-aos="fade-up" data-aos-duration="1000">
             <h3 class="mb-3">Contact Us</h3>
             <hr class="mb-4 mt-0 d-inline-block mx-auto w-50 bg-primary" style="height: 2px" />
         </div>
@@ -87,7 +87,7 @@
     </section>
 
     <section class="container my-5" id="team" >
-        <div class="text-center mb-4" data-aos="fade-up">
+        <div class="text-center mb-4" data-aos="fade-up" data-aos-duration="1000">
             <h3 class="mb-3">Our Team</h3>
             <hr class="mb-4 mt-0 d-inline-block mx-auto w-50 bg-primary" style="height: 2px" />
             <p class="lead text-center  mb-5">
@@ -99,7 +99,7 @@
 
         <div class="row g-4">
             @foreach ($teams as $team)
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="flip-down">
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in-down" data-aos-duration="1500">
                     <div class="card bg-light">
                         <div class="card-body text-center">
                             <img src="{{ asset($team->image) }}" class="rounded-circle mb-3" alt="">
