@@ -3,98 +3,65 @@
 @section('content')
   <div>
 
-    <div id="carouselExampleControls"
-      class="carousel slide"
-      data-bs-ride="carousel">
-      <div class="carousel-inner">
-          @foreach ($banners as $banner)
-          <div class="carousel-item <?php echo $loop->iteration == 1 ? "active" : "" ?>">
-            <img src="{{ asset($banner->image) }}"
-              class="d-block w-100"
-              alt="...">
-          </div>
-          @endforeach  
-      </div>
-      <button class="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselExampleControls"
-        data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"
-          aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselExampleControls"
-        data-bs-slide="next">
-        <span class="carousel-control-next-icon"
-          aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-
     {{-- Carosel --}}
-    {{-- <section id="showcase">
-            <div id="carouselExampleCaptions" class="carousel carousel-light slide" data-bs-ride="carousel"
-                data-bs-pause="false">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
-                        class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
+    <section id="showcase">
+      <div id="carouselExampleCaptions"
+        class="carousel carousel-light slide"
+        data-bs-ride="carousel"
+        data-bs-pause="false">
+        <div class="carousel-indicators">
+          <button type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"></button>
+          <button type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          @foreach ($banners as $banner)
+            <div class="carousel-item {{ $loop->iteration == 1 ? 'active' : '' }}"
+              data-bs-interval="3000">
+              <img src="{{ asset($banner->image) }}"
+                class="d-block w-100"
+                alt="...">
+              <div class="dark-overlay">
+                <div class="carousel-caption d-none d-md-block"
+                  style="margin-bottom: 5rem">
+                  <h1 class="display-4">{{ $banner->title }}</h1>
+                  <p class="lead">{{ $banner->description }}
+                  </p>
                 </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item carousel-image-1 active" data-bs-interval="3000">
-                        <img src="..." class="d-block w-100" alt="...">
-                        <div class="dark-overlay">
-                            <div class="carousel-caption d-none d-md-block" style="margin-bottom: 5rem">
-                                <h1 class="display-4">Explore Students Projects</h1>
-                                <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing
-                                    elit. Quos ut
-                                    incidunt,
-                                    voluptatem dolor
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item carousel-image-2" data-bs-interval="3000">
-                        <div class="dark-overlay">
-                            <div class="carousel-caption d-none d-md-block " style="margin-bottom: 5rem">
-                                <h1 class="display-4">Find Out The best Ranked One</h1>
-                                <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing
-                                    elit. Quos ut
-                                    incidunt,
-                                    voluptatem dolor</p>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item carousel-image-3" data-bs-interval="3000">
-                        <div class="dark-overlay">
-                            <div class="carousel-caption d-none d-md-block " style="margin-bottom: 5rem">
-                                <h1 class="display-4">Get Idea From Others Project</h1>
-                                <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing
-                                    elit. Quos ut
-                                    incidunt,
-                                    voluptatem dolor </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+              </div>
             </div>
-        </section> --}}
+          @endforeach
+        </div>
+        <button class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"
+            aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon"
+            aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+
     {{-- About the project --}}
     <section style="margin:10rem 0 ;">
       <div class="container">

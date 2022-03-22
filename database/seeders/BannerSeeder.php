@@ -5,6 +5,9 @@ namespace Database\Seeders;
 use App\Models\Banner;
 use Faker\Factory;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class BannerSeeder extends Seeder
 {
@@ -15,11 +18,20 @@ class BannerSeeder extends Seeder
      */
     public function run()
     {
+        // delete all rows 
+        Banner::truncate();
+
         $faker = Factory::create();
+        $titles = [
+            'Explore Students Projects',
+            'Find Out The best Ranked One',
+            'Get Idea From Others Project',
+        ];
+
         foreach (range(1, 3) as $banner) {
             Banner::create([
-                "title" => $faker->sentence(5),
-                "description" => $faker->sentence(8),
+                "title" => $titles[$banner - 1],
+                "description" => $faker->sentence(12),
                 'image' => "uploads/banners/$banner.jpg"
             ]);
         }

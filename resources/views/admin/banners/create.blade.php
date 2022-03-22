@@ -91,6 +91,7 @@
                     name="file"
                     id="file"
                     class="form-control  @error('file') is-invalid @enderror">
+                    <small id="emailHelp" class="form-text text-muted">choose a a file with size (1920 x 1280 ). use this website <span class="text-muted">https://unsplash.com/s/photos/project?orientation=landscape</span> </small>
                   @error('file')
                     <div class="invalid-feedback">{{ $message }}</div>
                   @enderror

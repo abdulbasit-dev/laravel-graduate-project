@@ -15,6 +15,9 @@ class TeamSeeder extends Seeder
      */
     public function run()
     {
+        // delete all rows 
+        Team::truncate();
+
         $faker = Factory::create();
         foreach (range(1,4) as $team) {
             Team::create([
