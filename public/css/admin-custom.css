@@ -1,7 +1,13 @@
 .sidebar .nav-link {
-    font-size: .9rem !important;
+  font-size: 0.9rem !important;
 }
 
 tr td {
-    vertical-align: middle !important;
+  vertical-align: middle !important;
+}
+
+.table td,
+.table th {
+  font-size: 0.875rem !important;
+  white-space: normal !important;
 }

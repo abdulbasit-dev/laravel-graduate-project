@@ -43,7 +43,7 @@
                   <thead class="thead-light">
                     <tr>
                       <th class="border-0 rounded-start">#</th>
-                      <th class="border-0">title</th>
+                      <th class="border-0">Title</th>
                       <th class="border-0">Description</th>
                       <th class="border-0">Image</th>
                       <th class="border-0 text-center">Action</th>
