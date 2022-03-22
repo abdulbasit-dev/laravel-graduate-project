@@ -63,7 +63,7 @@
           </p>
           <p>
             <a href="#!"
-              class="text-white">Help</a>
+              class="text-white text-decoration-none">Help</a>
           </p>
         </div>
         <!-- Grid column -->
