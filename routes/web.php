@@ -10,6 +10,7 @@ use \App\Http\Controllers\{
 
 use \App\Http\Controllers\Admin\{
     CollegeController,
+    DashboradController,
     DepartmentController,
     TeamController,
     BannerController,
