@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Team;
-use Faker\Factory;
 use Illuminate\Database\Seeder;
 
 class TeamSeeder extends Seeder
@@ -18,14 +17,19 @@ class TeamSeeder extends Seeder
         // delete all rows 
         Team::truncate();
 
-        $faker = Factory::create();
-        foreach (range(1,4) as $team) {
-            Team::create([
-                "name"=>$faker->name,
-                "description"=>$faker->sentence(12),
-                'image'=>"uploads/teams/$team.jpg"
-            ]);
+        $names = [
+            "Sara",
+            "Sanah",
+            "Jane",
+            "Helin",
+        ];
 
+        foreach (range(1, 4) as $team) {
+            Team::create([
+                "name" => $names[$team - 1],
+                "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus. ",
+                'image' => "uploads/teams/$team.jpg"
+            ]);
         }
     }
 }
