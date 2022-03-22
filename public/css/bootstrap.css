@@ -40,7 +40,8 @@
     --bs-dark: #212529;
     /* set primary color  */
     /* --bs-primary-rgb: 238, 60, 72; */
-    --bs-primary-rgb: 238, 60, 72;
+    /* --bs-primary-rgb: 238, 60, 72; */
+    --bs-primary-rgb: 139, 19, 29;
     --bs-secondary-rgb: 108, 117, 125;
     --bs-success-rgb: 25, 135, 84;
     --bs-info-rgb: 13, 202, 240;
@@ -3382,8 +3383,8 @@ fieldset:disabled .btn {
 
 .btn-outline-primary:hover {
     color: #fff;
-    background-color: #EE3C48;
-    border-color: #EE3C48;
+    background-color: #8B131D;
+    border-color: #8B131D;
 }
 
 .btn-check:focus+.btn-outline-primary,
