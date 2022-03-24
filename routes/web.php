@@ -16,7 +16,8 @@ use \App\Http\Controllers\Admin\{
     BannerController,
     ProjectController,
     UserController,
-    ProfileController
+    ProfileController,
+    AnnouncementController
 };
 use App\Models\College;
 use App\Models\Department;
@@ -72,10 +73,16 @@ Route::group([
     Route::resource('colleges', CollegeController::class);
     Route::resource('departments', DepartmentController::class);
     Route::resource('projects', ProjectController::class);
+
+    //announcements
+    Route::resource('announcements', AnnouncementController::class);
+
     //teams
     Route::resource('teams', TeamController::class)->except('show');
+    
     //banners
     Route::resource('banners', BannerController::class)->except('show');
+
     Route::get('users', [UserController::class, 'index'])->name('users.index');
     Route::get('profile', [ProfileController::class, 'show'])->name('profile.show');
     Route::get('profile/project',  [ProfileController::class, 'project'])->name('profile.project');
