@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Str;
 
 use \App\Http\Controllers\{
     PageController,
@@ -18,6 +18,10 @@ use \App\Http\Controllers\Admin\{
     UserController,
     ProfileController
 };
+use App\Models\College;
+use App\Models\Department;
+use App\Models\User;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,6 +36,15 @@ use \App\Http\Controllers\Admin\{
 
 //language changer controller
 Route::get('/change-langauge/{lang}', [LanguageController::class, "changeLanguage"])->name("change-langauge");
+
+
+Route::get('/test',function(){
+    // $json = file_get_contents('../names.json');
+    // $array = json_decode($json, true);
+    // $one_item = $array[rand(0, count($array) - 1)];
+    // return Str::lower($one_item);
+
+});
 
 //Front End Routes
 //Page Routes

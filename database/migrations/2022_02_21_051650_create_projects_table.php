@@ -21,7 +21,7 @@ class CreateProjectsTable extends Migration
             $table->string('report');
             $table->string('supervisor_name');
             $table->json("team_members");
-            $table->foreignId('created_by')->constrained('users', 'id');
+            $table->foreignId('created_by')->constrained('users', 'id')->onDelete("cascade");
             $table->timestamps();
         });
     }
