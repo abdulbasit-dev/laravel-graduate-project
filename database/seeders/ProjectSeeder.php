@@ -6,6 +6,7 @@ use App\Models\Project;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class ProjectSeeder extends Seeder
 {
@@ -27,17 +28,26 @@ class ProjectSeeder extends Seeder
         $array = json_decode($json, true);
 
         foreach (range(1, 50) as $item) {
-            $user_id = User::inRandomOrder()->first()->id;
+            $user = User::whereIsStudent(1)->inRandomOrder()->first();
+            $name =  Str::lower($array[rand(0, count($array) - 1)]);
 
-            Project::firstorCreate([
-                "title" => $request->title,
-                "description" => $request->description,
-                "project" => "/uploads/projects/$projectFile",
-                "report" => "/uploads/reports/$reportFile",
-                "supervisor_name" => $request->supervisor_name,
-                "team_members" => $request->teams,
-                "created_by" => $request->user()->id,
-            ]);
+            $foundProject = Project::where('created_by',$user->id)->get();
+            if(!count($foundProject)){
+                Project::firstorCreate([
+                    "title" => " Lorem ipsum dolor sit amet.",
+                    "description" => "Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.",
+                    "project" => "/uploads/projects/dentcare.zip",
+                    "report" => "/uploads/reports/dummy.pdf",
+                    "poster" => "/uploads/posters/poster.jpg",
+                    "supervisor_name" => $name,
+                    "team_members" => ["Magnam ducimus vel", "Laborum aut velit il", "Aperiam voluptatibus"] ,
+                    "created_by" => $user->id,
+                ]);
+
+                $user->is_submited = 1;
+                $user->save();
+            }
+
         }
 
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');

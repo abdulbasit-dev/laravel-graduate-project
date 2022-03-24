@@ -9,7 +9,25 @@
         </div>
     @endif
     <div class="card card-body border-0 shadow mb-4">
-        <h2 class="h5 mb-4">Submit Your Project</h2>
+        <div class="d-flex justify-content-between align-items-center">
+
+            <h2 class="h5 mb-4">Submit Your Project</h2>
+                  <a href="{{ route('project') }}">
+            <button class="btn btn-warning">
+              <svg class="icon icon-xs"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z">
+                </path>
+              </svg>
+              Go Back</button>
+          </a>
+        </div>
         <form action="{{ route('admin.projects.store') }}" method="POST"
             enctype="multipart/form-data">
             @csrf
@@ -73,14 +91,21 @@
             <div class="row mt-3">
                 <div class="col-md-8 mb-3">
                     <label for="report" class="form-label">Upload your report</label>
-                    <input type="file" class="form-control" id="report" name="report" required>
+                    <input type="file" class="form-control" id="report" name="report">
                 </div>
             </div>
 
             <div class="row mt-3">
                 <div class="col-md-8 mb-3">
                     <label for="project" class="form-label">Upload your project</label>
-                    <input class="form-control" type="file" id="project" name="project" required>
+                    <input class="form-control" type="file" id="project" name="project">
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-md-8 mb-3">
+                    <label for="project" class="form-label">Upload your project poster</label>
+                    <input class="form-control" type="file" id="project" name="poster" >
                 </div>
             </div>
 

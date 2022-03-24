@@ -53,6 +53,11 @@ class User extends Authenticatable
         return $this->belongsTo(College::class,'college_id','id');
     }
 
+    public function project()
+    {
+        return $this->hasOne(Project::class,'created_by');
+    }
+
     public function dept()
     {
         return $this->belongsTo(Department::class, 'dept_id', 'id');

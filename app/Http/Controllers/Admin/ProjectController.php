@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\College;
-use App\Models\Project; 
+use App\Models\Project;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 
@@ -13,8 +14,8 @@ class ProjectController extends Controller
     public function __construct()
     {
         View::share([
-            'title'=>"Projects",
-            'desc'=>"List of uploaded projects"
+            'title' => "Projects",
+            'desc' => "List of uploaded projects"
         ]);
     }
     /**
@@ -24,8 +25,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::with('student', 'student.dept', 'student.college')->paginate(10);
-        return view('admin.project.index',compact('projects'));
+        $projects = Project::with('student', 'student.dept', 'student.college')->paginate(15);
+        return view('admin.project.index', compact('projects'));
     }
 
     /**
@@ -49,16 +50,25 @@ class ProjectController extends Controller
     {
         $projectFile = null;
         $reportFile = null;
-        
+        $posterFile = null;
+
         try {
-            if ($request->hasFile('project') && $request->hasFile('report')) {
-                //for project file
+            //for project files
+            if ($request->hasFile('project')) {
                 $projectFile = time() . '_' . $request->file('project')->getClientOriginalName();
                 $request->project->move(public_path('uploads/projects'), $projectFile);
+            }
 
-                // for report file
+            // for report file
+            if ($request->hasFile('report')) {
                 $reportFile = time() . '_' . $request->file('report')->getClientOriginalName();
                 $request->report->move(public_path('uploads/reports'), $reportFile);
+            }
+
+            // for report file
+            if ($request->hasFile('poster')) {
+                $posterFile = time() . '_' . $request->file('poster')->getClientOriginalName();
+                $request->poster->move(public_path('uploads/posters'), $posterFile);
             }
 
             Project::create([
@@ -66,6 +76,7 @@ class ProjectController extends Controller
                 "description" => $request->description,
                 "project" => "/uploads/projects/$projectFile",
                 "report" => "/uploads/reports/$reportFile",
+                "poster" => "/uploads/posters/$posterFile",
                 "supervisor_name" => $request->supervisor_name,
                 "team_members" => $request->teams,
                 "created_by" => $request->user()->id,

@@ -8,9 +8,7 @@ use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
 use Spatie\Permission\Models\Role;
-use Spatie\Permission\Models\Permission;
 use Illuminate\Support\Str;
 
 class UserSeeder extends Seeder
@@ -36,16 +34,25 @@ class UserSeeder extends Seeder
 
 
         //cretae admin user
-        $role = Role::firstorCreate(['name' => 'admin']);
-        $admin = User::firstorCreate([
-            'name' => 'Admin',
+        Role::firstorCreate(['name' => 'admin']);
+        Role::firstorCreate(['name' => 'manager']);
+        Role::firstorCreate(['name' => 'student']);
+
+        //create admin user
+        User::firstorCreate([
+            'name' => 'admin',
             'email' => 'admin@admin.com',
+            'is_student' => 0,
             'password' => bcrypt('password')
-        ]);
+        ])->assignRole('admin');
 
-        $admin->assignRole($role);
-
-
+        //create mangaer users
+        User::firstorCreate([
+            'name' => 'manager',
+            'email' => 'manager@admin.com',
+            'is_student' => 0,
+            'password' => bcrypt('password')
+        ])->assignRole('manager');
 
         User::firstorCreate([
             'name' => 'sara',
@@ -54,7 +61,7 @@ class UserSeeder extends Seeder
             'dept_id' => 7,
             'is_student' => 1,
             'password' => bcrypt('password')
-        ]);
+        ])->assignRole('student');
 
         foreach (range(1, 50) as $item) {
             $name =  Str::lower($array[rand(0, count($array) - 1)]);
@@ -63,12 +70,11 @@ class UserSeeder extends Seeder
 
             User::firstorCreate([
                 'name' => $name,
-                'email' => $name . '@student.su.edu.krd',
-                'college_id' => $dept->id,
-                'dept_id' => $dept->college_id,
-                'is_student' => 1,
+                'email' => $name . $item . '@student.su.edu.krd',
+                'college_id' =>  $dept->college_id,
+                'dept_id' =>  $dept->id,
                 'password' => bcrypt('password')
-            ]);
+            ])->assignRole('student');
         }
 
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');

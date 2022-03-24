@@ -32,6 +32,11 @@
                     <a href="#projects" class="btn btn-outline-primary">
                         See Projects <i class="fas fa-arrow-right"></i>
                     </a>
+                    @role('student')
+                    <a href="{{ route('admin.projects.create') }}" target="__blank" class="btn btn-primary ms-4">
+                        Upload Project <i class="fas fa-upload"></i>
+                    </a>
+                    @endrole
                 </div>
             </div>
         </div>
@@ -75,11 +80,11 @@
                         <div class="d-flex mb-2">
                             <span>College: </span>
                             <span class="fw-med text-primary ms-2">{{
-                                $project->student->college->name }}</span>
+                                $project->student->college->name ?? '' }}</span>
                         </div>
                         <div class="d-fle">
                             <span>Department: </span>
-                            <span class="fw-med text-primary ms-2">{{ $project->student->dept->name
+                            <span class="fw-med text-primary ms-2">{{ $project->student->dept->name ?? ''
                                 }}</span>
                         </div>
                     </div>

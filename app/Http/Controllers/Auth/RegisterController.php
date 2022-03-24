@@ -79,7 +79,7 @@ class RegisterController extends Controller
             $data['is_student'] = 1;
         }
 
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'college_id' => $data['college_id'],
@@ -87,5 +87,11 @@ class RegisterController extends Controller
             'is_student' => $data['is_student'],
             'password' => Hash::make($data['password']),
         ]);
+
+        if ($data['is_student'] == 1) {
+            $user->assignRole('student');
+        }
+
+        return $user;
     }
 }

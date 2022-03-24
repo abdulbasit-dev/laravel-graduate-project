@@ -78,5 +78,6 @@ Route::group([
     Route::resource('banners', BannerController::class)->except('show');
     Route::get('users', [UserController::class, 'index'])->name('users.index');
     Route::get('profile', [ProfileController::class, 'show'])->name('profile.show');
+    Route::get('profile/project',  [ProfileController::class, 'project'])->name('profile.project');
     Route::put('profile',  [ProfileController::class, 'update'])->name('profile.update');
 });

@@ -22,7 +22,8 @@ class PageController extends Controller
     {
         $colleges = College::pluck('name', 'id');
         $depts = Department::pluck('name', 'id');
-        $projects = Project::with('student', 'student.dept', 'student.college')->get();
+        $projects = Project::orderByDesc('created_by')->with('student', 'student.dept', 'student.college')->get();
+        // return $projects;
         return view('pages.projects', compact("colleges", "depts", "projects"));
     }
 

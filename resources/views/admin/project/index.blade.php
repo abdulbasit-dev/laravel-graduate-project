@@ -51,7 +51,8 @@
                                         <td class="d-flex">
                                             <a
                                                 href="{{ route('admin.projects.show',$project->id) }}">
-                                                <button class="btn btn-info btn-sm" type="button">View</button>
+                                                <button class="btn btn-info btn-sm"
+                                                    type="button">View</button>
                                             </a>
 
                                         </td>
@@ -63,7 +64,10 @@
                                     @endforelse
                                 </tbody>
                             </table>
-
+                            <div
+                                class="card-footer px-3 border-0 d-flex flex-column flex-lg-row align-items-center justify-content-between">
+                                {{ $projects->links() }}
+                            </div>
                         </div>
                     </div>
                 </div>
