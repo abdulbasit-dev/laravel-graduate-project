@@ -23,7 +23,7 @@ class UserSeeder extends Seeder
        // DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 
         // delete all rows 
-        User::truncate();
+        // User::truncate();
 
         Artisan::call('cache:clear');
         app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();

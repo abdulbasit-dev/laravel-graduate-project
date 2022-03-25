@@ -21,7 +21,7 @@ class ProjectSeeder extends Seeder
        // DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 
         // delete all rows 
-        Project::truncate();
+        // Project::truncate();
 
         //get random name
         $json = file_get_contents('./names.json');

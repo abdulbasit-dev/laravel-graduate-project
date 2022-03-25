@@ -13,7 +13,8 @@
                             <!-- Post title-->
                             <h1 class="fw-bolder mb-1">{{ $project->title }}</h1>
                             <!-- Post meta content-->
-                            <div class="text-muted fst-italic mb-2">Project Year {{ $project->project_year }}</div>
+                            <div class="text-muted fst-italic mb-2">Project Year {{
+                                $project->project_year }}</div>
                         </header>
                         <!-- Preview image figure-->
                         <figure class="mb-4"><img class="img-fluid" style="width: 100%;height:45vh"
@@ -32,8 +33,13 @@
 
                             <div class="d-flex justify-content-between">
                                 <div class="mb-3">
+                                    @php
+                                    $serialized = serialize($project->team_members);
+                                    $myNewArray = unserialize($serialized);
+                                    $newTeamArr = json_decode($myNewArray, true);
+                                    @endphp
                                     <h4>Team Members</h4>
-                                    @foreach ($project->team_members as $team)
+                                    @foreach ($newTeamArr as $team)
                                     <h5 class="text-secondary">{{ $loop->iteration
                                         }}. {{ $team }}
                                     </h5>
