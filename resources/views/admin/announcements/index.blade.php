@@ -55,7 +55,8 @@
                                                 class="d-flex justify-content-center align-items-center">
                                                 <a
                                                     href="{{ route('admin.announcements.show', $announcement->id) }}">
-                                                    <button class="btn btn-outline-warning btn-sm me-3"
+                                                    <button
+                                                        class="btn btn-outline-warning btn-sm me-3"
                                                         type="button">View</button>
                                                 </a>
                                                 <a
@@ -66,17 +67,36 @@
 
                                                 <form
                                                     action="{{ route('admin.announcements.destroy', $announcement->id) }}"
-                                                    method="POST" id="myForm">
+                                                    method="POST"
+                                                    id="myForm_{{ $announcement->id }}">
                                                     @method("DELETE")
                                                     @csrf
-                                                    <button class="delete_bt" type="submit"
-                                                    class="btn btn-outline-danger btn-sm">Delete</button>
                                                 </form>
+                                                <button onclick="Swal.fire({
+                                                        title: 'Are you sure?',
+                                                        text: `You won't be able to revert this!`,
+                                                        showClass: {
+                                                        popup: 'animate__animated animate__fadeInDown'
+                                                        },
+                                                        hideClass: {
+                                                        popup: 'animate__animated animate__fadeOutUp'
+                                                        },
+                                                        icon: 'warning',
+                                                        showCancelButton: true,
+                                                        confirmButtonText: 'Yes, delete it'
+                                                    }).then((result) => {
+                                                                if (result.isConfirmed) {
+                                                                document.getElementById('myForm_{{ $announcement->id }}').submit();
+                                                                }
+                                                            })
+                                                    "
+                                                    class="btn btn-outline-danger btn-sm ">Delete</button>
+
                                             </div>
                                         </td>
                                     </tr>
 
-                                    
+
                                     @empty
                                     <div class="col-12 text-center">
                                         <h5>No announcements found :(</h5>
@@ -93,27 +113,3 @@
     </div>
 </div>
 @endsection
-@push('scripts')
-<script>
-    //Delete Alert
-    document.getElementById('delete_btn').addEventListener('click', function() {
-      Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        showClass: {
-          popup: 'animate__animated animate__fadeInDown'
-        },
-        hideClass: {
-          popup: 'animate__animated animate__fadeOutUp'
-        },
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonText: 'Yes, delete it'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          document.getElementById("myForm").submit();
-        }
-      })
-    });
-</script>
-@endpush

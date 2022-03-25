@@ -53,7 +53,7 @@ class BannerController extends Controller
     {
         $validator = Validator::make($request->all(), [
             "title" => ['required', 'string', 'max:50'],
-            "description" => ['required', 'string' ],
+            "description" => ['required', 'string'],
             "file" => ['required', 'file', 'mimes:png,jpg']
         ]);
 
@@ -154,8 +154,14 @@ class BannerController extends Controller
      */
     public function destroy(Banner $banner)
     {
-        //first delete file
-        File::delete($banner->image);
+        //try to not delete seeder file
+        $fileName =  explode('/', $banner->image)[2];
+
+        if (count(explode('_', $fileName)) > 1) {
+            //first delete 
+            File::delete($banner->image);
+        }
+
         $banner->delete();
         return redirect()->back()->with([
             "message" => "Banner Deleted Succefully",

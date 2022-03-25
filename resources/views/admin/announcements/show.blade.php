@@ -91,27 +91,3 @@
     </div>
 </div>
 @endsection
-@push('scripts')
-<script>
-    //Delete Alert
-    document.getElementById('delete_btn').addEventListener('click', function() {
-      Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        showClass: {
-          popup: 'animate__animated animate__fadeInDown'
-        },
-        hideClass: {
-          popup: 'animate__animated animate__fadeOutUp'
-        },
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonText: 'Yes, delete it'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          document.getElementById("myForm").submit();
-        }
-      })
-    });
-</script>
-@endpush

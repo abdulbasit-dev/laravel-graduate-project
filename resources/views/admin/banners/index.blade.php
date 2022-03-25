@@ -69,12 +69,29 @@
 
                             <form action="{{ route('admin.banners.destroy', $banner->id) }}"
                               method="POST"
-                              id="myForm">
+                              id="myForm_{{ $banner->id }}">
                               @method("DELETE")
                               @csrf
                             </form>
-                            <button id="delete_btn"
-                              class="btn btn-outline-danger btn-sm">Delete</button>
+                            <button onclick="Swal.fire({
+                                                                                        title: 'Are you sure?',
+                                                                                        text: `You won't be able to revert this!`,
+                                                                                        showClass: {
+                                                                                        popup: 'animate__animated animate__fadeInDown'
+                                                                                        },
+                                                                                        hideClass: {
+                                                                                        popup: 'animate__animated animate__fadeOutUp'
+                                                                                        },
+                                                                                        icon: 'warning',
+                                                                                        showCancelButton: true,
+                                                                                        confirmButtonText: 'Yes, delete it'
+                                                                                    }).then((result) => {
+                                                                                                if (result.isConfirmed) {
+                                                                                                document.getElementById('myForm_{{ $banner->id }}').submit();
+                                                                                                }
+                                                                                            })
+                                                                                    "
+                                    class="btn btn-outline-danger btn-sm ">Delete</button>
                           </div>
                         </td>
                       </tr>
@@ -94,27 +111,4 @@
     </div>
   </div>
 @endsection
-@push('scripts')
-  <script>
-    //Delete Alert
-    document.getElementById('delete_btn').addEventListener('click', function() {
-      Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        showClass: {
-          popup: 'animate__animated animate__fadeInDown'
-        },
-        hideClass: {
-          popup: 'animate__animated animate__fadeOutUp'
-        },
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonText: 'Yes, delete it'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          document.getElementById("myForm").submit();
-        }
-      })
-    });
-  </script>
-@endpush
+

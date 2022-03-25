@@ -40,7 +40,7 @@ class TeamController extends Controller
     public function create()
     {
         $desc = "Add New Team Member";
-        return view('admin.teams.create',compact('desc'));
+        return view('admin.teams.create', compact('desc'));
     }
 
     /**
@@ -95,7 +95,7 @@ class TeamController extends Controller
     public function edit(Team $team)
     {
         $desc = "Edit Team Member $team->name";
-        return view('admin.teams.edit', compact("team",'desc'));
+        return view('admin.teams.edit', compact("team", 'desc'));
     }
 
     /**
@@ -154,8 +154,13 @@ class TeamController extends Controller
      */
     public function destroy(Team $team)
     {
-        //first delete file
-        File::delete($team->image);
+        //try to not delete seeder file
+        $fileName =  explode('/', $team->image)[2];
+        if (count(explode('_', $fileName)) > 1) {
+            //first delete file
+            File::delete($team->image);
+        }
+
         $team->delete();
         return redirect()->back()->with([
             "message" => "Team member deleted Succefully",
