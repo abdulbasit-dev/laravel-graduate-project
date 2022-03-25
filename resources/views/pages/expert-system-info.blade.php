@@ -4,7 +4,7 @@
     <style>
         #showcase {
             position: relative;
-            background: url('{{ asset('images/image7.jpg') }}');
+            background: url('{{ asset('images/image8.jpg') }}');
             background-position: center;
             min-height: 60vh;
             margin-bottom: 2rem;
@@ -26,9 +26,9 @@
         <div class="primary-overlay text-white">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 text-left">
-                        <h1 class="display-3" style="margin-top: 6rem">Ranked Project</h1>
-                        <p class="lead">
+                    <div class="col-lg-8 text-left" data-aos="fade-down" data-aos-duration="1000">
+                        <h1 class="display-3" style="margin-top: 6rem">Expert Systems</h1>
+                        <p class="lead" data-aos="fade-up" data-aos-duration="1300">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, voluptas.
                         </p>
                     </div>
@@ -39,7 +39,7 @@
 
     <section class="container">
 
-        <div class="text-center mb-4">
+        <div class="text-center mb-4" data-aos="fade-up" data-aos-duration="1000">
             <h3 class="mb-3">Expert System Info (comming soon)</h3>
             <hr class="mb-4 mt-0 d-inline-block mx-auto w-50 bg-primary" style="height: 2px" />
         </div>

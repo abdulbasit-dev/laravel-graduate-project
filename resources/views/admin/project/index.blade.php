@@ -32,10 +32,9 @@
                                     <tr>
                                         <th class="border-0 rounded-start">#</th>
                                         <th class="border-0">Title</th>
+                                        <th class="border-0">Supervisor Name</th>
                                         <th class="border-0">College</th>
                                         <th class="border-0">Department</th>
-                                        <th class="border-0">Project Year</th>
-                                        <th class="border-0">Created At</th>
                                         <th class="border-0">Action</th>
                                     </tr>
                                 </thead>
@@ -44,14 +43,13 @@
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $project->title }}</td>
+                                        <td>{{ $project->supervisor_name }}</td>
                                         <td>{{ $project->student->college->name }}</td>
                                         <td>{{ $project->student->dept->name }}</td>
-                                        <td>{{ $project->project_year }}</td>
-                                        <td>{{ $project->created_at }}</td>
                                         <td class="d-flex">
                                             <a
                                                 href="{{ route('admin.projects.show',$project->id) }}">
-                                                <button class="btn btn-info btn-sm"
+                                                <button class="btn btn-outline-info btn-sm"
                                                     type="button">View</button>
                                             </a>
 

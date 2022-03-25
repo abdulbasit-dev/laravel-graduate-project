@@ -72,11 +72,11 @@
         </div>
 
         <div class="content">
-            <h1>
+            <h1 data-aos="fade-up" data-aos-duration="1000">
                 explore new places, <br />
                 adventure awaits.
             </h1>
-            <p>
+            <p data-aos="fade-right" data-aos-duration="1400">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod necessitatibus sunt atque
                 consequuntur quam veniam magnam
                 consectetur, odio velit alias!
@@ -87,28 +87,8 @@
 
 
     <section class="mt-5" style="margin-bottom: 10rem">
-        <div class="container">
-            <div class="row mb-5" id="projects">
-                <form class="row justify-content-center row-cols-lg-auto g-3 align-items-center">
-                    <div class="col-md-4">
-                        <select class="form-select" id="college">
-                            <option selected>Choose College</option>
-                            @foreach ($colleges as $key => $value)
-                                <option value="{{ $key }}">{{ $value }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="col-md-4">
-                        <select class="form-select department" id="inlineFormSelectPref">
-                            <option selected>Choose Department</option>
+        <div class="container" data-aos="zoom-in-down" data-aos-duration="1500">
 
-                        </select>
-                    </div>
-                    <div class="col-12">
-                        <button type="submit" class="btn btn-primary">Filter</button>
-                    </div>
-                </form>
-            </div>
             <div class="row">
                 <div class="accordion accordion-flush" id="accordionExample">
                     <div class="accordion-item">

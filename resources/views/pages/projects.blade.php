@@ -25,15 +25,21 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 text-left">
-                    <h1 class="display-4" style="margin-top: 6rem">Browse All Other Project</h1>
-                    <p class="lead">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, voluptas.
-                    </p>
-                    <a href="#projects" class="btn btn-outline-primary">
+                    <div data-aos="fade-down" data-aos-duration="1000">
+                        <h1 class="display-4" style="margin-top: 6rem">Browse All Other Project</h1>
+                        <p class="lead">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque,
+                            voluptas.
+                        </p>
+                    </div>
+                    <a href="#projects" class="btn btn-outline-primary" data-aos="fade-right"
+                        data-aos-duration="1000">
                         See Projects <i class="fas fa-arrow-right"></i>
                     </a>
                     @role('student')
-                    <a href="{{ route('admin.projects.create') }}" target="__blank" class="btn btn-primary ms-4">
+                    <a href="{{ route('admin.projects.create') }}" target="__blank"
+                        class="btn btn-outline-primary ms-4" data-aos="fade-left"
+                        data-aos-duration="1000">
                         Upload Project <i class="fas fa-upload"></i>
                     </a>
                     @endrole
@@ -44,7 +50,7 @@
 </header>
 
 <section class="container">
-    <div class="row" id="projects">
+    <div class="row"  data-aos="fade-up" data-aos-duration="1000">
         <form class="row justify-content-center row-cols-lg-auto g-3 align-items-center">
             <div class="col-md-4">
                 <select class="form-select" id="inlineFormSelectPref">
@@ -68,9 +74,9 @@
         </form>
     </div>
 
-    <div class="row my-5">
+    <div class="row my-5" id="projects" data-aos="zoom-in-down" data-aos-duration="1500">
         @forelse ($projects as $project)
-        <div class="col-md-3 mb-5">
+        <div class="col-md-3 mb-5 d-flex align-items-stretch">
             <div class="card"
                 style="width: 18rem;  box-shadow: 0 0 20px 5px rgba(62, 60, 98, 0.08);">
                 <div class="card-body">
@@ -84,7 +90,8 @@
                         </div>
                         <div class="d-fle">
                             <span>Department: </span>
-                            <span class="fw-med text-primary ms-2">{{ $project->student->dept->name ?? ''
+                            <span class="fw-med text-primary ms-2">{{ $project->student->dept->name
+                                ?? ''
                                 }}</span>
                         </div>
                     </div>
@@ -102,6 +109,7 @@
         </div>
         @endforelse
 
+        {{ $projects->links() }}
     </div>
 </section>
 @endsection

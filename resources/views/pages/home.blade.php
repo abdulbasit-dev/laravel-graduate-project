@@ -35,8 +35,8 @@
               <div class="dark-overlay">
                 <div class="carousel-caption d-none d-md-block"
                   style="margin-bottom: 5rem">
-                  <h1 class="display-4">{{ $banner->title }}</h1>
-                  <p class="lead">{{ $banner->description }}
+                  <h1 class="display-4" data-aos="fade-down" data-aos-duration="1000">{{ $banner->title }}</h1>
+                  <p class="lead" data-aos="fade-up" data-aos-duration="1500">{{ $banner->description }}
                   </p>
                 </div>
               </div>
@@ -66,7 +66,7 @@
     <section style="margin:10rem 0 ;">
       <div class="container">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-6" data-aos="fade-right" data-aos-duration="1000">
             <h2 class="text-primary mb-4">About Project</h2>
             <div class="mb-2">
               <h3>Student Project Gradution</h3>
@@ -78,10 +78,10 @@
               <h3>Project Supervisor:</h3>
               <p class="lead fw-medium">D. Haider Haddad</p>
             </div>
-            <a href="#team"
+            <a href="{{ route('contactUs') }}#team"
               class="btn btn-outline-danger">Meet Our Team</a>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6" data-aos="fade-left" data-aos-duration="1000">
             <img src="{{ asset('images/image5.jpg') }}"
               class="img-fluid rounded-3"
               alt="">
