@@ -135,8 +135,7 @@ class AnnouncementController extends Controller
         try {
             if ($request->hasFile('file')) {
                 //try to not delete seeder file
-                $fileName =  explode('/', $announcement->attachment)[2];
-                if (count(explode('_', $fileName)) > 1) {
+                if (checkDelete($announcement->attachment)) {
                     //first delete 
                     File::delete($announcement->attachment);
                 }
@@ -169,9 +168,7 @@ class AnnouncementController extends Controller
      */
     public function destroy(Announcement $announcement)
     {
-        //try to not delete seeder file
-        $fileName =  explode('/', $announcement->attachment)[2];
-        if (count(explode('_', $fileName)) > 1) {
+        if (checkDelete($announcement->attachment)) {
             //first delete 
             File::delete($announcement->attachment);
         }

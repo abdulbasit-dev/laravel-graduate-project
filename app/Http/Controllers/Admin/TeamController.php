@@ -124,8 +124,7 @@ class TeamController extends Controller
         try {
             if ($request->hasFile('file')) {
                 //try to not delete seeder file
-                $fileName =  explode('/', $team->image)[2];
-                if (count(explode('_', $fileName)) > 1) {
+                if (checkDelete($team->image)) {
                     //first delete privies file
                     File::delete($team->image);
                 }
@@ -160,9 +159,8 @@ class TeamController extends Controller
     public function destroy(Team $team)
     {
         //try to not delete seeder file
-        $fileName =  explode('/', $team->image)[2];
-        if (count(explode('_', $fileName)) > 1) {
-            //first delete file
+        if (checkDelete($team->image)) {
+            //first delete privies file
             File::delete($team->image);
         }
 

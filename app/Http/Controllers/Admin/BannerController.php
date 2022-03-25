@@ -124,8 +124,7 @@ class BannerController extends Controller
         try {
             if ($request->hasFile('file')) {
                 //try to not delete seeder file
-                $fileName =  explode('/', $banner->image)[2];
-                if (count(explode('_', $fileName)) > 1) {
+                if (checkDelete($banner->image)) {
                     //first delete privies file
                     File::delete($banner->image);
                 }
@@ -159,10 +158,8 @@ class BannerController extends Controller
      */
     public function destroy(Banner $banner)
     {
-        //try to not delete seeder file
-        $fileName =  explode('/', $banner->image)[2];
-
-        if (count(explode('_', $fileName)) > 1) {
+         //try to not delete seeder file
+        if (checkDelete($banner->image)) {
             //first delete 
             File::delete($banner->image);
         }
