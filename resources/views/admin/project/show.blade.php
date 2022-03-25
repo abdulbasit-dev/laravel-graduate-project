@@ -30,12 +30,41 @@
                             <!-- Post content-->
                             <article class="p-4">
                                 <!-- Post header-->
-                                <header>
+                                <header class="d-fle justify-content-between">
+                                    <div>
                                     <!-- Post title-->
                                     <h1 class="fw-bolder mb-1">{{ $project->title }}</h1>
                                     <!-- Post meta content-->
                                     <div class="text-muted fst-italic mb-2">{{
                                         $project->project_year }}</div>
+                                    </div>
+                                    <div class="d-flex justify-content-end">
+                                         <form  action="{{ route('admin.projects.destroy', $project->id) }}" method="POST"
+                                                                id="myForm_{{ $project->id }}">
+                                                                @method("DELETE")
+                                                                @csrf
+                                                            </form>
+                                                            <button onclick="Swal.fire({
+                                                                                                                                                    title: 'Are you sure?',
+                                                                                                                                                    text: `You won't be able to revert this!`,
+                                                                                                                                                    showClass: {
+                                                                                                                                                    popup: 'animate__animated animate__fadeInDown'
+                                                                                                                                                    },
+                                                                                                                                                    hideClass: {
+                                                                                                                                                    popup: 'animate__animated animate__fadeOutUp'
+                                                                                                                                                    },
+                                                                                                                                                    icon: 'warning',
+                                                                                                                                                    showCancelButton: true,
+                                                                                                                                                    confirmButtonText: 'Yes, delete it'
+                                                                                                                                                }).then((result) => {
+                                                                                                                                                            if (result.isConfirmed) {
+                                                                                                                                                            document.getElementById('myForm_{{ $project->id }}').submit();
+                                                                                                                                                            }
+                                                                                                                                                        })
+                                                                                                                                                "
+                                                                class="btn btn-outline-danger btn-sm ">Delete</button>
+                                    </div>
+                                   
                                 </header>
                                 <!-- Preview image figure-->
                                 <figure class="mb-4"><img class="img-fluid"

@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\College;
 use App\Models\Project;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\View;
 
 class ProjectController extends Controller
@@ -131,8 +133,32 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Project $project)
     {
-        //
+        User::where('id', $project->created_by)->update(['is_submited'=>0]);
+        //try to not delete seeder file
+        if (checkDelete($project->project)) {
+            //first delete privies file
+            File::delete($project->project);
+        }
+
+        //try to not delete seeder file
+        if (checkDelete($project->report)) {
+            //first delete privies file
+            File::delete($project->report);
+        }
+
+        //try to not delete seeder file
+        if (checkDelete($project->poster)) {
+            //first delete privies file
+            File::delete($project->poster);
+        }
+
+        $project->delete();
+        return redirect()->route('admin.profile.show')->with([
+            "message" => "Project Deleted Succefully",
+            "title" => "Deleted",
+            "icon" => "success",
+        ]);
     }
 }
