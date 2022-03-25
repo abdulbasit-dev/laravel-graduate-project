@@ -34,7 +34,7 @@
                                     <!-- Post title-->
                                     <h1 class="fw-bolder mb-1">{{ $project->title }}</h1>
                                     <!-- Post meta content-->
-                                    <div class="text-muted fst-italic mb-2">Project Year 2021- 2022</div>
+                                    <div class="text-muted fst-italic mb-2">{{ $project->project_year }}</div>
                                 </header>
                                 <!-- Preview image figure-->
                                 <figure class="mb-4"><img class="img-fluid" style="width: 100%;height:45vh"

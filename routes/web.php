@@ -56,6 +56,7 @@ Route::get('/conferences', [PageController::class, 'conference'])->name('confere
 Route::get('/evaluation-committee', [PageController::class, 'evaluation'])->name('evaluationCommittee');
 Route::get('/expert-system-info', [PageController::class, 'expertSystemInfo'])->name('expertSystemInfo');
 Route::get('/announcements', [PageController::class, 'announcements'])->name('announcements');
+Route::get('/announcements/{announcement}', [PageController::class, 'announcementShow'])->name('announcementShow');
 Route::get('/contact-us', [PageController::class, 'contactUs'])->name('contactUs');
 
 Route::get('/get-department', [PageController::class, 'getDepartment'])->name('getDepartment');

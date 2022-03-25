@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Announcement;
 use App\Models\Banner;
 use App\Models\College;
 use App\Models\Department;
@@ -54,9 +55,13 @@ class PageController extends Controller
 
     public function announcements()
     {
-        $colleges = College::pluck('name', 'id');
-        $depts = Department::pluck('name', 'id');
-        return view('pages.announcement', compact("colleges", "depts"));
+        $announcements = Announcement::take(10)->get();
+        return view('pages.announcement', compact('announcements'));
+    }
+
+    public function announcementShow(Announcement $announcement)
+    {
+        return view('pages.announcement-show', compact("announcement"));
     }
 
     public function contactUs()

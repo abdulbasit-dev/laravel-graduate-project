@@ -30,7 +30,46 @@
             <div class="col-12 px-0">
                 <div class="card border-0 shadow mb-4">
                     <div class="card-body">
-                        <h1>Title {{ $announcement->title }}</h1>
+                        <div class="col-lg-8">
+                            <!-- Post content-->
+                            <article>
+                                <!-- Post header-->
+                                <header class="mb-4" >
+                                    <!-- Post title-->
+                                    <h3 class=" mb-1">{{ $announcement->title }}</h3>
+                                    <!-- Post meta content-->
+                                    <div class="text-muted fst-italic mb-2">{{ $announcement->created_at }}
+                                    </div>
+                                </header>
+                        
+                                <!-- Post content-->
+                                <section class="mb-5" >
+                                    <h4>Announcement Description:</h4>
+                                    <p>{{ $announcement->description }}</p>
+                        
+                                    <div class="d-flex mt-5">
+                                        {{-- if project file is not null --}}
+                                        @if ($announcement->attachment)
+                                        <div class="text-center">
+                                            <h5>Announcement Attachment</h5>
+                                            <a href="{{ asset($announcement->attachment) }}" download="">
+                        
+                                                <svg class="text-primary" style="width: 3rem" fill="none"
+                                                    stroke="currentColor" viewBox="0 0 24 24"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                                    </path>
+                                                </svg>
+                                            </a>
+                        
+                                        </div>
+                                        @endif
+                                    </div>
+                        
+                                </section>
+                            </article>
+                        </div>
                     </div>
                 </div>
             </div>
