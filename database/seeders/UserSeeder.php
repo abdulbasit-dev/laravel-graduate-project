@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+       // DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 
         // delete all rows 
         User::truncate();
@@ -77,6 +77,6 @@ class UserSeeder extends Seeder
             ])->assignRole('student');
         }
 
-        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+       // DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 }
