@@ -21,7 +21,7 @@ class CreateProjectsTable extends Migration
             $table->string('report')->nullable();
             $table->string('poster')->nullable();
             $table->string('supervisor_name');
-            $table->json("team_members");
+            $table->string("team_members")->nullable();
             $table->foreignId('created_by')->constrained('users', 'id')->onDelete("cascade");
             $table->timestamps();
         });
