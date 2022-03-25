@@ -2,7 +2,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'Laravel') }} | Dashboard</title>
+    {{-- tab icon --}}
+    <link rel="shortcut icon" href="{{ asset('images/icon.gif') }}" type="image/gif" />
+    <title> | {{ config('app.name', 'Laravel') }}</title>
 
 
     {{-- Styles --}}
@@ -11,7 +13,8 @@
     <link rel="stylesheet" href="{{ asset('css/animate.min.css') }}" />
 
     {{-- Bootstrap Icons --}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 </head>
 
 <body>
@@ -35,8 +38,8 @@
     @stack('scripts')
     {{-- sweetalert2 message --}}
     @if (Session::has('message'))
-        <script>
-            Swal.fire({
+    <script>
+        Swal.fire({
                 timer: 3000,
                 icon: "{{ Session::get('icon') }}",
                 title: "{{ Session::get('title') }}",
@@ -48,7 +51,7 @@
                     popup: 'animate__animated animate__backOutDown'
                 },
             })
-        </script>
+    </script>
     @endif
 </body>
 
