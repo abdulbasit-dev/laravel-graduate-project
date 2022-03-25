@@ -104,7 +104,10 @@
                                     @endforelse
                                 </tbody>
                             </table>
-
+                            <div
+                                class="card-footer px-3 border-0 d-flex flex-column flex-lg-row align-items-center justify-content-between">
+                                {{ $announcements->links() }}
+                            </div>
                         </div>
                     </div>
                 </div>

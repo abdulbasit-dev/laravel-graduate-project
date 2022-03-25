@@ -123,8 +123,13 @@ class BannerController extends Controller
         $file = null;
         try {
             if ($request->hasFile('file')) {
-                //first delete privies file
-                File::delete($banner->image);
+                //try to not delete seeder file
+                $fileName =  explode('/', $banner->image)[2];
+                if (count(explode('_', $fileName)) > 1) {
+                    //first delete privies file
+                    File::delete($banner->image);
+                }
+               
                 $file = time() . '_' . $request->file('file')->getClientOriginalName();
                 $request->file->move(public_path('uploads/banners'), $file);
             }

@@ -87,6 +87,18 @@ class AnnouncementController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Announcement  $announcement
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Announcement $announcement)
+    {
+        $desc = "Show Announcement";
+        return view('admin.announcements.show', compact("announcement", 'desc'));
+    }
+
+    /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Announcement  $announcement
@@ -107,11 +119,10 @@ class AnnouncementController extends Controller
      */
     public function update(Request $request, Announcement $announcement)
     {
-
         $validator = Validator::make($request->all(), [
-            "title" => ['required', 'string', 'max:30'],
-            "description" => ['required', 'string',],
-            "file" => ['file', 'mimes:png,jpg']
+            "title" => ['required'],
+            "description" => ['required'],
+            'file' => ['file']
         ]);
 
         if ($validator->fails()) {
@@ -123,8 +134,12 @@ class AnnouncementController extends Controller
         $file = null;
         try {
             if ($request->hasFile('file')) {
-                //first delete privies file
-                File::delete($announcement->image);
+                //try to not delete seeder file
+                $fileName =  explode('/', $announcement->attachment)[2];
+                if (count(explode('_', $fileName)) > 1) {
+                    //first delete 
+                    File::delete($announcement->attachment);
+                }
                 $file = time() . '_' . $request->file('file')->getClientOriginalName();
                 $request->file->move(public_path('uploads/announcements'), $file);
             }
@@ -156,11 +171,11 @@ class AnnouncementController extends Controller
     {
         //try to not delete seeder file
         $fileName =  explode('/', $announcement->attachment)[2];
-
         if (count(explode('_', $fileName)) > 1) {
             //first delete 
             File::delete($announcement->attachment);
         }
+
         $announcement->delete();
         return redirect()->back()->with([
             "message" => "Announcement Deleted Succefully",

@@ -18,7 +18,7 @@
                 d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
               </path>
             </svg></a></li>
-        <li class="breadcrumb-item"><a href="{{ route('admin.banners.index') }}">{{ $title }}</a>
+        <li class="breadcrumb-item"><a href="{{ route('admin.announcements.index') }}">{{ $title }}</a>
           / Edit
         </li>
       </ol>
@@ -27,7 +27,7 @@
       <div class="mb-3 mb-lg-0">
         <h4 class="h4">{{ $desc }}</h4>
       </div>
-      <a href="{{ route('admin.banners.index') }}">
+      <a href="{{ route('admin.announcements.index') }}">
         <button class="btn btn-warning">
           <svg class="icon icon-xs"
             fill="none"
@@ -49,20 +49,20 @@
     <div class="row">
       <div class="col-12 col-xl-12">
         <div class="card card-body border-0 shadow mb-4">
-          <form action="{{ route('admin.banners.update', $banner->id) }}"
+          <form action="{{ route('admin.announcements.update', $announcement->id) }}"
             method="POST"
             enctype="multipart/form-data">
             @csrf
             @method("PUT")
 
             <div class="row mt-3">
-              <div class="col-md-6 mb-3">
+              <div class="col-md-8 mb-3">
                 <label for="title">Title</label>
                 <input class="form-control @error('title') is-invalid @enderror"
                   id="title"
                   type="text"
                   name="title"
-                  value="{{ old('title', $banner->title) }}">
+                  value="{{ old('title', $announcement->title) }}">
                 @error('title')
                   <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
@@ -70,12 +70,12 @@
             </div>
 
             <div class="row mt-3">
-              <div class="col-md-6 mb-3">
+              <div class="col-md-8 mb-3">
                 <label for="description">Description</label>
                 <textarea class="form-control @error('description') is-invalid @enderror"
-                  rows="2"
+                  rows="6"
                   id="description"
-                  name="description">{{ old('description', $banner->description) }}</textarea>
+                  name="description">{{ old('description', $announcement->description) }}</textarea>
                 @error('description')
                   <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
@@ -83,7 +83,7 @@
             </div>
 
             <div class="row mt-3">
-              <div class="col-md-6 mb-3">
+              <div class="col-md-8 mb-3">
                 <label for="image"
                   class="form-label">Image</label>
                 <div class="mb-4">
