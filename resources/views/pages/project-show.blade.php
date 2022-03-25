@@ -34,9 +34,13 @@
                             <div class="d-flex justify-content-between">
                                 <div class="mb-3">
                                     @php
-                                    $serialized = serialize($project->team_members);
-                                    $myNewArray = unserialize($serialized);
-                                    $newTeamArr = json_decode($myNewArray, true);
+                                    if(getType($project->team_members)!="array"){
+                                        $serialized = serialize($project->team_members);
+                                        $myNewArray = unserialize($serialized);
+                                        $newTeamArr = json_decode($myNewArray, true);
+                                    }else{
+                                        $newTeamArr = $project->team_members;
+                                    }
                                     @endphp
                                     <h4>Team Members</h4>
                                     @foreach ($newTeamArr as $team)
