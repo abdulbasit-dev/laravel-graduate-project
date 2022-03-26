@@ -67,19 +67,19 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6" data-aos="fade-right" data-aos-duration="1000">
-            <h2 class="text-primary mb-4">About Project</h2>
-            <div class="mb-2">
+            <h2 class="text-primary mb-4" data-aos="fade-up" data-aos-duration="1500">About Project</h2>
+            <div class="mb-2" data-aos="zoom-in" data-aos-duration="1500">
               <h3>Student Project Gradution</h3>
               <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Sed, praesentium? Nam optio omnis, architecto ipsam voluptatem
                 recusandae consequatur expedita. Neque?</p>
             </div>
-            <div class="mb-4">
+            <div class="mb-4" data-aos="zoom-out" data-aos-duration="2000">
               <h3>Project Supervisor:</h3>
               <p class="lead fw-medium">D. Haider Haddad</p>
             </div>
             <a href="{{ route('contactUs') }}#team"
-              class="btn btn-outline-danger">Meet Our Team</a>
+              class="btn btn-outline-danger" data-aos="flip-down" data-aos-duration="2000">Meet Our Team</a>
           </div>
           <div class="col-md-6" data-aos="fade-left" data-aos-duration="1000">
             <img src="{{ asset('images/image5.jpg') }}"

@@ -85,13 +85,13 @@
         @role('student')
           <li class="nav-item">
             <a class="nav-link"
-              href="{{ route('admin.home') }}">Profile</a>
+              href="{{ route('admin.home') }}" target="__blank">Profile</a>
 
           </li>
           @else
            <li class="nav-item">
             <a class="nav-link"
-              href="{{ route('admin.home') }}">Dashboard</a>
+              href="{{ route('admin.home') }}" target="__blank">Dashboard</a>
           </li>
         @endrole
 

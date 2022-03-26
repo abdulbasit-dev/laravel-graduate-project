@@ -17,7 +17,8 @@ use \App\Http\Controllers\Admin\{
     ProjectController,
     UserController,
     ProfileController,
-    AnnouncementController
+    AnnouncementController,
+    GrantController,
 };
 use App\Models\College;
 use App\Models\Department;
@@ -77,6 +78,10 @@ Route::group([
 
     //announcements
     Route::resource('announcements', AnnouncementController::class);
+    
+    //grants
+    Route::get('grant-ideas', [GrantController::class, 'indexIdea'])->name("grants.indexIdea");
+    Route::resource('grants', GrantController::class);
 
     //teams
     Route::resource('teams', TeamController::class)->except('show');
