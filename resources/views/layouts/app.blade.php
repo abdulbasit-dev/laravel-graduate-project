@@ -45,7 +45,7 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <script>
-        AOS.init();
+        AOS.init({once: true});
     </script>
     @stack('scripts')
 

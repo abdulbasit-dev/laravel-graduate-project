@@ -21,6 +21,8 @@
 
     </style>
 
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam animi rerum molestias quisquam, vitae officia commodi sed unde cum quas magnam repellendus vel. Hic mollitia nobis incidunt temporibus, error at!
+
     <!-- ShowCase  -->
     <header id="showcase">
         <div class="primary-overlay text-white">
@@ -50,7 +52,7 @@
         </div>
 
         <div class="row my-5">
-            <div class="col-md-6" data-aos="fade-right">
+            <div class="col-md-6" data-aos="fade-right" data-aos-duration="1000">
                 <!-- Bootstrap 5 starter form -->
                 <form id="contactForm">
 
@@ -80,7 +82,7 @@
                 </form>
 
             </div>
-            <div class="col-md-6" data-aos="fade-left">
+            <div class="col-md-6" data-aos="fade-left"  data-aos-duration="1000">
                 <img src="{{ asset('images/contact.jpg') }}" alt="contact us" class="img-fluid rounded">
             </div>
         </div>

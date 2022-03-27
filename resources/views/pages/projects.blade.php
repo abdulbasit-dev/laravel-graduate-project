@@ -74,9 +74,9 @@
         </form>
     </div>
 
-    <div class="row my-5" id="projects" data-aos="zoom-in-down" data-aos-duration="1500">
+    <div class="row my-5" id="projects">
         @forelse ($projects as $project)
-        <div class="col-md-3 mb-5 d-flex align-items-stretch">
+        <div class="col-md-3 mb-5 d-flex align-items-stretch"  data-aos="zoom-in-down" data-aos-duration="1500">
             <div class="card"
                 style="width: 18rem;  box-shadow: 0 0 20px 5px rgba(62, 60, 98, 0.08);">
                 <div class="card-body">
