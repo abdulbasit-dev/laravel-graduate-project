@@ -40,7 +40,7 @@ use App\Models\User;
 Route::get('/change-langauge/{lang}', [LanguageController::class, "changeLanguage"])->name("change-langauge");
 
 
-Route::get('/test',function(){
+Route::get('/test', function () {
     // $json = file_get_contents('../names.json');
     // $array = json_decode($json, true);
     // $one_item = $array[rand(0, count($array) - 1)];
@@ -62,6 +62,8 @@ Route::get('/contact-us', [PageController::class, 'contactUs'])->name('contactUs
 
 Route::get('/get-department', [PageController::class, 'getDepartment'])->name('getDepartment');
 
+Route::post('projects-filter', [ProjectController::class, 'filter'])->name('projects.filter');
+
 
 Auth::routes();
 
@@ -74,18 +76,20 @@ Route::group([
     Route::get('', [DashboradController::class, 'index'])->name('home');
     Route::resource('colleges', CollegeController::class);
     Route::resource('departments', DepartmentController::class);
+
+    //projects
     Route::resource('projects', ProjectController::class);
 
     //announcements
     Route::resource('announcements', AnnouncementController::class);
-    
+
     //grants
     Route::get('grant-ideas', [GrantController::class, 'indexIdea'])->name("grants.indexIdea");
     Route::resource('grants', GrantController::class);
 
     //teams
     Route::resource('teams', TeamController::class)->except('show');
-    
+
     //banners
     Route::resource('banners', BannerController::class)->except('show');
 

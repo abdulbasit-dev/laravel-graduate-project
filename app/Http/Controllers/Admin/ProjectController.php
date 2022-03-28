@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\College;
 use App\Models\Project;
 use App\Models\User;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\View;
@@ -28,6 +29,32 @@ class ProjectController extends Controller
     {
         $projects = Project::with('student', 'student.dept', 'student.college')->paginate(15);
         return view('admin.project.index', compact('projects'));
+    }
+
+    public function filter(Request $request)
+    {
+        $collegeId = $request->has('collegeId') ?  $request->collegeId : null;
+        $deptId = $request->has('deptId') ?  $request->deptId : null;
+
+        $projects = Project::query()->with('student', 'student.dept', 'student.college');
+
+        if($collegeId){
+            $projects->whereHas('student',function(Builder $query) use ($collegeId){
+                $query->where("college_id",$collegeId);
+            });
+        }
+
+        if ($deptId) {
+            $projects->whereHas('student', function (Builder $query) use ($deptId) {
+                $query->where("dept_id", $deptId);
+            });
+        }
+
+
+        // $projects = $projects->paginate(15);
+        $projects = $projects->get();
+
+        return view('includes.projects',compact('projects'));
     }
 
     /**
@@ -135,7 +162,7 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        User::where('id', $project->created_by)->update(['is_submited'=>0]);
+        User::where('id', $project->created_by)->update(['is_submited' => 0]);
         //try to not delete seeder file
         if (checkDelete($project->project)) {
             //first delete privies file
