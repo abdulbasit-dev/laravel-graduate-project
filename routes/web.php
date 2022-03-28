@@ -20,6 +20,12 @@ use \App\Http\Controllers\Admin\{
     AnnouncementController,
     GrantController,
 };
+
+use \App\Http\Livewire\{
+    ProductPage,
+    PosterPage,
+};
+
 use App\Models\College;
 use App\Models\Department;
 use App\Models\User;
@@ -63,6 +69,8 @@ Route::get('/contact-us', [PageController::class, 'contactUs'])->name('contactUs
 Route::get('/get-department', [PageController::class, 'getDepartment'])->name('getDepartment');
 
 Route::post('projects-filter', [ProjectController::class, 'filter'])->name('projects.filter');
+
+Route::get('/posters', PosterPage::class)->name("posters");
 
 
 Auth::routes();
