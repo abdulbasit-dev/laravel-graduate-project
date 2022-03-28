@@ -51,6 +51,9 @@
 
 <section class="container">
     <div class="row" data-aos="fade-up" data-aos-duration="1000">
+        
+        {{-- <livewire:project.search /> --}}
+
         <form class="row justify-content-center row-cols-lg-auto g-3 align-items-center"
             id="filter-form">
             <div class="col-md-4">
@@ -71,7 +74,8 @@
             </div>
             <div class="col-12">
                 <button type="submit" class="btn btn-primary">Filter</button>
-                {{-- <button type="submit" class="btn btn-outline-secondary" id="reset">Reset</button> --}}
+                {{-- <button type="submit" class="btn btn-outline-secondary"
+                    id="reset">Reset</button> --}}
             </div>
         </form>
     </div>

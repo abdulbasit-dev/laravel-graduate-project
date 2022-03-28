@@ -36,6 +36,8 @@
     {{-- FOOTER --}}
     @include('includes.footer')
 
+    @livewireScripts
+
     {{-- Jquery --}}
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <!-- Scripts -->
@@ -46,7 +48,7 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <script src="{{ asset('js/custome.js') }}"></script>
-    @livewireScripts
+  
 
     <script>
         AOS.init();

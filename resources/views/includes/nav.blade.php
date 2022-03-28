@@ -27,10 +27,10 @@
             href="{{ route('project') }}">Projects</a>
         </li>
 
-        <li class="nav-item">
+        {{-- <li class="nav-item">
             <a class="nav-link fw-medium {{ Route::currentRouteName() == 'posters' ? 'active' : '' }}"
                 href="{{ route('posters') }}">Posters</a>
-        </li>
+        </li> --}}
 
         <li class="nav-item">
           <a class="nav-link fw-medium {{ Route::currentRouteName() == 'conference' ? 'active' : '' }}"
