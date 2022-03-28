@@ -21,7 +21,6 @@
 
     </style>
 
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam animi rerum molestias quisquam, vitae officia commodi sed unde cum quas magnam repellendus vel. Hic mollitia nobis incidunt temporibus, error at!
 
     <!-- ShowCase  -->
     <header id="showcase">
