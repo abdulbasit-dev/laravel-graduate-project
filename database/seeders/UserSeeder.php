@@ -73,6 +73,10 @@ class UserSeeder extends Seeder
                 "name" => "sozan",
                 "email" => "sccs10917@student.su.edu.krd",
             ],
+            [
+                "name" => "bushra",
+                "email" => "sccs11517@student.su.edu.krd",
+            ],
         ];
 
         foreach ($teams as $team) {

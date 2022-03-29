@@ -1,15 +1,15 @@
 <section class="container">
 
 
-  
 
- 
+
+
     <div class="text-center mb-1" data-aos="fade-up" data-aos-duration="1000">
-            <h3 class="mb-3">Projects</h3>
-            <hr class="mb-4 mt-0 d-inline-block mx-auto w-50 bg-primary" style="height: 2px" />
-        </div>
+        <h3 class="mb-3">Projects</h3>
+        <hr class="mb-4 mt-0 d-inline-block mx-auto w-50 bg-primary" style="height: 2px" />
+    </div>
 
-    {{--filter  --}}
+    {{--filter --}}
     <div class="row">
         <input type="text" class="form-control w-50 mx-auto mb-3" wire:model.debounce.500ms="search"
             placeholder="search by project title ..." data-aos="fade-down" data-aos-duration="1000">
@@ -35,21 +35,21 @@
         </div>
     </div>
 
-    {{-- loader  --}}
+    {{-- loader --}}
     <div class="d-flex justify-content-center">
         <div wire:loading.delay>
             <img src="{{ asset('images/loader.svg') }}" alt="">
         </div>
     </div>
 
-    
+
 
 
 
     <div class="row">
         <div class="row mt-3" id="projects">
-            <h2 class="text-left text-muted  mb-4"  data-aos="fade-right"
-                data-aos-duration="1000"> {!! $projects->total()? "<strong>". $projects->total()."</strong>". "
+            <h2 class="text-left text-muted  mb-4" data-aos="fade-right" data-aos-duration="1000">
+                {!! $projects->total()? "<strong>". $projects->total()."</strong>". "
                 Projects":null !!}</h2>
             @forelse ($projects as $project)
             <div class="col-md-3 mb-5 d-flex align-items-stretch" data-aos="zoom-in-down"
@@ -82,30 +82,35 @@
 
             @empty
             <div class="col-12 my-4 text-center">
-                <h2 class="text-muted">No project found 
-                    <svg class="pb-2" width="40" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
-                    </path>
-                </svg></h2>
+                <h2 class="text-muted">No project found
+                    <svg class="pb-2" width="40" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                        </path>
+                    </svg>
+                </h2>
             </div>
             @endforelse
 
-            {{ $projects->links() }}
-            @if ($projects->total())
-            <div>
-                <p class="text-sm text-gray-700 leading-5">
-                    <span>{!! __('Showing') !!}</span>
-                    <span class="font-medium">{{ $projects->firstItem() }}</span>
-                    <span>{!! __('to') !!}</span>
-                    <span class="font-medium">{{ $projects->lastItem() }}</span>
-                    <span>{!! __('of') !!}</span>
-                    <span class="font-medium">{{ $projects->total() }}</span>
-                    <span>{!! __('results') !!}</span>
-                </p>
+            <div class="d-flex justify-content-between align-items-center">
+
+                @if ($projects->total())
+                <div>
+                    <p class="text-sm text-gray-700 leading-5">
+                        <span>{!! __('Showing') !!}</span>
+                        <span class="font-medium">{{ $projects->firstItem() }}</span>
+                        <span>{!! __('to') !!}</span>
+                        <span class="font-medium">{{ $projects->lastItem() }}</span>
+                        <span>{!! __('of') !!}</span>
+                        <span class="font-medium">{{ $projects->total() }}</span>
+                        <span>{!! __('results') !!}</span>
+                    </p>
+                </div>
+                @endif
+
+                {{ $projects->links() }}
             </div>
-            @endif
         </div>
     </div>
 

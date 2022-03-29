@@ -83,9 +83,9 @@
               Zipcode: 44002
             </div>
           </div>
-          <p><i class="fas fa-envelope mr-3"></i> info@su.edu.krd</p>
+          {{-- <p><i class="fas fa-envelope mr-3"></i> info@su.edu.krd</p>
           <p><i class="fas fa-phone mr-3"></i> +964 2346 688</p>
-          <p><i class="fas fa-print mr-3"></i> +964 2346 689</p>
+          <p><i class="fas fa-print mr-3"></i> +964 2346 689</p> --}}
         </div>
         <!-- Grid column -->
       </div>

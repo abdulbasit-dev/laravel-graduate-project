@@ -118,9 +118,7 @@
                                     method="POST">
                                     @csrf
 
-                                    <button class="btn btn-outline-primary px-5 mt-3"
-                                        type="submit">ناردن</button>
-
+                            
                                     <input required type="number" min="0" max="0" name="grant_type"
                                         value="0" hidden>
 
@@ -389,8 +387,6 @@
                                 </div>
                                 <form class="px-5" method="POST" action="{{ route('admin.grants.store') }}">
                                     @csrf
-                                    <button class="btn btn-outline-primary px-5 mt-3"
-                                        type="submit">ناردن</button>
 
                                     <input required type="number" min="1" max="1" name="grant_type"
                                         value="1" hidden>
