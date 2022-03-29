@@ -42,7 +42,7 @@ class UserSeeder extends Seeder
 
         //create admin user
         User::firstorCreate([
-            'name' => 'haider',
+            'name' => 'dr.haider',
             'email' => 'haider.haddad@su.edu.krd',
             'is_student' => 0,
             'password' => bcrypt('password')
@@ -58,7 +58,7 @@ class UserSeeder extends Seeder
 
         //create mangaer users
         User::firstorCreate([
-            'name' => 'nabil',
+            'name' => 'dr.nabil',
             'email' => 'nabil.fakhre@su.edu.krd',
             'is_student' => 0,
             'password' => bcrypt('password')

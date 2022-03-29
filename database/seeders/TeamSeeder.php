@@ -18,13 +18,12 @@ class TeamSeeder extends Seeder
         Team::truncate();
 
         $names = [
-            "Sara",
             "Sanah",
-            "Jane",
-            "Helin",
+            "Sozan",
+            "Bushra",
         ];
 
-        foreach (range(1, 4) as $team) {
+        foreach (range(1, 3) as $team) {
             Team::create([
                 "name" => $names[$team - 1],
                 "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus. ",

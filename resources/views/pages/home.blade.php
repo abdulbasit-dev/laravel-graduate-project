@@ -70,9 +70,17 @@
             <h2 class="text-primary mb-4" data-aos="fade-up" data-aos-duration="1500">About Project</h2>
             <div class="mb-2" data-aos="zoom-in" data-aos-duration="1500">
               <h3>Student Project Gradution</h3>
-              <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Sed, praesentium? Nam optio omnis, architecto ipsam voluptatem
-                recusandae consequatur expedita. Neque?</p>
+              <p class="lead">
+                We are fourth-year students in the Department of Computer Science and IT at the College of Science.
+                We designed a graduation project under the title (Design an expert system for student’s graduation
+                projects of Salahaddin university)
+                This system offers to build a web-based graduation project management system as well as build a
+                smart database with data set and also manage and monitor activities such as the submission of
+                project and idea deliverables, grades, assessments, and announcements to the system of salahaddin
+                university
+                This system serves the centralization of the quality assurance department in the university
+                presidency.
+            </p>
             </div>
             <div class="mb-4" data-aos="zoom-out" data-aos-duration="2000">
               <h3>Project Supervisor:</h3>
