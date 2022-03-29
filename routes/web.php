@@ -20,9 +20,9 @@ use \App\Http\Controllers\Admin\{
     AnnouncementController,
     GrantController,
 };
-
+use App\Http\Livewire\Project\Search;
 // use \App\Http\Livewire\{
-    
+
 // };
 
 use App\Models\College;
@@ -69,7 +69,7 @@ Route::get('/get-department', [PageController::class, 'getDepartment'])->name('g
 
 Route::post('projects-filter', [ProjectController::class, 'filter'])->name('projects.filter');
 
-// Route::get('/posters', PosterPage::class)->name("posters");
+Route::get('/posters', [PageController::class, 'poster'])->name("posters");
 
 
 Auth::routes();

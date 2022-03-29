@@ -2,22 +2,63 @@
 
 namespace App\Http\Livewire\Project;
 
+use App\Models\College;
+use App\Models\Department;
 use App\Models\Project;
-use App\Models\User;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Log;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Search extends Component
 {
+
+    use WithPagination;
+    protected $paginationTheme = "bootstrap";
+
     public $search;
-    public $users;
+    public $collegeId;
+    public $deptId;
+
+    public $colleges;
+    public $depts = [];
 
     public function render()
     {
-        // $projects = Project::query()->orderByDesc('created_by')->with('student', 'student.dept', 'student.college')->paginate(15);4
+        $this->colleges = College::pluck('name', 'id');
+
+        $query = Project::query()->with('student', 'student.dept', 'student.college');
+
+        if ($this->collegeId) {
+            Log::info("college " . $this->collegeId);
+
+            $this->depts = Department::where('college_id', $this->collegeId)->pluck('name', 'id');
+            $query->whereHas('student', function (Builder $q) {
+                $q->where("college_id", $this->collegeId);
+            });
+        }
+
+        if ($this->deptId) {
+            Log::info("depratments " . $this->deptId);
+            $this->depts = Department::where('college_id', $this->collegeId)->pluck('name', 'id');
+            $query->whereHas('student', function (Builder $q) {
+                $q->where("dept_id", $this->deptId);
+            });
+        }
+
+
         $keyword = "%" . $this->search . "%";
-        $this->users = User::select('name')->where('name', "like", $keyword)->take(5)->get();
-        Log::info($this->users);
-        return view('livewire.project.search');
+        $query = $query->where('title', "like", $keyword);
+
+        $projects = $query->paginate(15);
+
+        return view('livewire.project.search', compact("projects"));
+    }
+
+    public function hydrateCollegeId()
+    {
+        Log::info("hidra");
+        $this->deptId = null;
+        Log::info("depratments " . $this->deptId);
     }
 }

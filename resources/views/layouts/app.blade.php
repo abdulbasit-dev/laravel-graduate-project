@@ -47,9 +47,7 @@
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-    <script src="{{ asset('js/custome.js') }}"></script>
   
-
     <script>
         AOS.init();
         // AOS.init({once: true});

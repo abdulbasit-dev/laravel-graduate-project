@@ -64,6 +64,15 @@ class PageController extends Controller
         return view('pages.announcement-show', compact("announcement"));
     }
 
+    public function poster()
+    {
+        $projects = Project::orderByDesc('created_by')->with('student', 'student.dept', 'student.college')->paginate(12);
+         $colleges = College::pluck('name', 'id');
+        $depts = Department::pluck('name', 'id');
+
+        return view('pages.poster',compact("projects", "depts", "colleges"));
+    }
+
     public function contactUs()
     {
         $teams = Team::take(4)->get();

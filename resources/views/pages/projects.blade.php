@@ -49,11 +49,11 @@
     </div>
 </header>
 
-<section class="container">
-    <div class="row" data-aos="fade-up" data-aos-duration="1000">
-        
-        {{-- <livewire:project.search /> --}}
 
+   <livewire:project.search />
+
+{{-- <section class="container">
+    <div class="row" data-aos="fade-up" data-aos-duration="1000">
         <form class="row justify-content-center row-cols-lg-auto g-3 align-items-center"
             id="filter-form">
             <div class="col-md-4">
@@ -74,8 +74,6 @@
             </div>
             <div class="col-12">
                 <button type="submit" class="btn btn-primary">Filter</button>
-                {{-- <button type="submit" class="btn btn-outline-secondary"
-                    id="reset">Reset</button> --}}
             </div>
         </form>
     </div>
@@ -121,58 +119,5 @@
         </div>
     </div>
 
-</section>
+</section> --}}
 @endsection
-@push('scripts')
-@push('scripts')
-<script>
-    $(document).ready(function() {
-
-        $("#college").on('change', function() {
-          let collegeId = $(this).val();
-          // Ajax
-          $.ajax({
-            url: `{{ route('getDepartment') }}`,
-            dataType: 'json',
-            data: {
-              collegeId
-            },
-            beforeSend: function() {
-              $(".department").html('<option>--- Loading ---</option>');
-            },
-            success: function(res) {
-              let _html = '';
-              $.each(res, function(id, data) {
-
-                _html += `<option  value="${id}">${data}</option>`;
-              });
-              $(".department").html(_html);
-
-            }
-          });
-        });
-
-        $("#filter-form").on('submit', function(e) {
-          e.preventDefault();
-          $.post('{{ route('projects.filter') }}', {
-            _token: "{{ csrf_token() }}",
-            collegeId: $("#college").val(),
-            deptId: $("#dept").val(),
-          }, function(res) {
-            $('#showData').html(res)
-          })
-        });
-
-        $("#reset").on('click', function(e) {
-        e.preventDefault();
-        $.post('{{ route('projects.filter') }}', {
-        _token: "{{ csrf_token() }}",
-        }, function(res) {
-        $('#showData').html(res)
-        })
-        });
-
-      });
-</script>
-@endpush
-@endpush
