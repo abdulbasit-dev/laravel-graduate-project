@@ -67,7 +67,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6" data-aos="fade-right" data-aos-duration="1000">
-            <h2 class="text-primary mb-4" data-aos="fade-up" data-aos-duration="1500">About Project</h2>
+            <h2 class="text-primary mb-2" data-aos="fade-up" data-aos-duration="1500">About Project</h2>
             <div class="mb-2" data-aos="zoom-in" data-aos-duration="1500">
               <h3>Student Project Gradution</h3>
               <p class="lead">

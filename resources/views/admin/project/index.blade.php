@@ -33,8 +33,7 @@
                                         <th class="border-0 rounded-start">#</th>
                                         <th class="border-0">Title</th>
                                         <th class="border-0">Supervisor Name</th>
-                                        <th class="border-0">College</th>
-                                        <th class="border-0">Department</th>
+                                        <th class="border-0">Team Members</th>
                                         <th class="border-0">Action</th>
                                     </tr>
                                 </thead>
@@ -44,8 +43,25 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $project->title }}</td>
                                         <td>{{ $project->supervisor_name }}</td>
-                                        <td>{{ $project->student->college->name }}</td>
-                                        <td>{{ $project->student->dept->name }}</td>
+                                        <td>
+                                            <div class="mb-3">
+                                            @php
+                                            if(getType($project->team_members)!="array"){
+                                            $serialized = serialize($project->team_members);
+                                            $myNewArray = unserialize($serialized);
+                                            $newTeamArr = json_decode($myNewArray, true);
+                                            }else{
+                                            $newTeamArr = $project->team_members;
+                                            }
+                                            @endphp
+                                            @foreach ($newTeamArr as $team)
+                                            <p class="mb-0">{{ $loop->iteration
+                                                }}. {{ $team }}
+                                            </p>
+                                            @endforeach
+                                        </div>
+                                    </td>
+
                                         <td class="d-flex">
                                             <a
                                                 href="{{ route('admin.projects.show',$project->id) }}">
