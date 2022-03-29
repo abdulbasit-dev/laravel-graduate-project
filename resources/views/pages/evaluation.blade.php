@@ -84,6 +84,71 @@
 </div>
 
 
+<section dir="rtl">
+    <div class="container">
+        <div class="row">
+            <div class="d-flex justify-content-around mt-5">
+                    <div class="text-center" data-aos="zoom-in" data-aos-duration="1000">
+                        <h6>هەلسەنگاندنی یەکەم</h6>
+                        <a href="{{ asset('forms/initial-seminar.xlsx') }}" download="">
+                            <svg class="text-primary" style="width: 2.5rem" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="text-center" data-aos="zoom-in" data-aos-duration="1000" >
+                        <h6>هەلسەنگاندنی کۆتایی</h6>
+                        <a href="{{ asset('forms/final-seminar.xlsx') }}" download="">
+                            <svg class="text-primary" style="width: 2.5rem" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="text-center" data-aos="zoom-in" data-aos-duration="1000">
+                        <h6>هەلسەنگاندنی کۆتایی سەرپەرشتیار</h6>
+                        <a href="{{ asset('forms/final-seminar-supervisor.xlsx') }}" download="">
+                            <svg class="text-primary" style="width: 2.5rem" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="text-center" data-aos="zoom-in" data-aos-duration="1000">
+                        <h6>تاقیکردنەوەی تیۆری</h6>
+                        <a href="{{ asset('forms/theory-exam.xlsx') }}" download="">
+                            <svg class="text-primary" style="width: 2.5rem" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="text-center" data-aos="zoom-in" data-aos-duration="1000">
+                        <h6>نمرەی کۆتایی</h6>
+                        <a href="{{ asset('forms/final-degree.xlsx') }}" download="">
+                            <svg class="text-primary" style="width: 2.5rem" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+    
+                </div>
+        </div>
+    </div>
+</section>
+
 
 <section class="mt-5" style="margin-bottom: 10rem">
     <div class="container">
@@ -648,7 +713,7 @@
                                         alt="" style="width: 100%;">
 
                                     <form action="">
-                                        <div class="text-center" style="margin-bottom: 3rem">
+                                        <div class="text-center" style="margin-bottom: 2.5rem">
                                             <h4 class="lh-base">
                                                 هەلسەنگاندنی (سەرەتایی) بۆ پڕۆژەی توێژینەی قوتابیانی
                                                 قوناغی کۆتایی <br>
