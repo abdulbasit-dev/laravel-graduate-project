@@ -1,4 +1,8 @@
 <section class="container">
+
+
+  
+
  
     <div class="text-center mb-1" data-aos="fade-up" data-aos-duration="1000">
             <h3 class="mb-3">Projects</h3>
@@ -14,7 +18,7 @@
             data-aos="fade-up" data-aos-duration="1000">
             <div class="col-md-4">
                 <select class="form-select" id="college" required wire:model='collegeId'>
-                    <option selected>Choose College</option>
+                    <option selected value>All Colleges</option>
                     @foreach ($colleges as $key => $value)
                     <option value="{{ $key }}">{{ $value }}</option>
                     @endforeach
@@ -22,7 +26,7 @@
             </div>
             <div class="col-md-4">
                 <select class="form-select department" id="dept" required wire:model="deptId">
-                    <option selected value="null">Choose Department</option>
+                    <option selected value>All Departments</option>
                     @foreach ($depts as $key => $value)
                     <option value="{{ $key }}">{{ $value }}</option>
                     @endforeach

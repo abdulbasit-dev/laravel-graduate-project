@@ -14,28 +14,24 @@ class CollegeSeeder extends Seeder
      */
     public function run()
     {
-        // $arr = [
-        //     "Science",
-        //     "Engineering",
-        //     "Agriculture Engineering Sciences",
-        //     "Education",
-        //     "Arts",
-        //     "Languages",
-        //     "Administration and Economic",
-        //     "Law",
-        //     "Political Science",
-        //     "Basic Education",
-        //     "Physical Education & Sport Sciences",
-        //     "Islamic Sciences",
-        //     "Fine Arts",
-        //     "Education of Shaqlawa",
-        //     "Education of Makhmoor"
-        // ];
         $arr = [
-            "Science",
-            "Engineering",
-            "Education",
+        "College of Science",
+        "College of Engineering ",
+        "College of Agriculture Engineering Sciences",
+        "College of Education ",
+        "College of Arts ",
+        "College of Languages ",
+        "College of Administration and Economics",
+        "College of Law",
+        "College of Basic Education ",
+        "College of Physical Education & Sport Sciences",
+        "College of Fine Arts ",
+        "College of Islamic Sciences ",
+        "College of Education-Makhmour ",
+        "College of Education-Shaqlawa ",
+        "College of Political Sciences",
         ];
+
 
         foreach ($arr as $name) {
             College::firstOrCreate([
