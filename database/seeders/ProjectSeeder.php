@@ -40,7 +40,7 @@ class ProjectSeeder extends Seeder
                     "report" => "/uploads/reports/dummy.pdf",
                     "poster" => "/uploads/posters/poster.jpg",
                     "supervisor_name" => $name,
-                    "team_members" => '["Magnam ducimus vel", "Laborum aut velit il", "Aperiam voluptatibus"]' ,
+                    "team_members" => '["Emma R. Quinn", "Karen N. Wheeler", "Herma T. Brown" , "Howard D. Fields"]' ,
                     "created_by" => $user->id,
                 ]);
 
