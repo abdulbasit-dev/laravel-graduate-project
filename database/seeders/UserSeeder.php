@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-       // DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        // DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 
         // delete all rows 
         // User::truncate();
@@ -35,8 +35,18 @@ class UserSeeder extends Seeder
 
         //cretae admin user
         Role::firstorCreate(['name' => 'admin']);
+        Role::firstorCreate(['name' => 'team']);
+        Role::firstorCreate(['name' => 'teacher']);
         Role::firstorCreate(['name' => 'manager']);
         Role::firstorCreate(['name' => 'student']);
+
+        //create admin user
+        User::firstorCreate([
+            'name' => 'haider',
+            'email' => 'haider.haddad@su.edu.krd',
+            'is_student' => 0,
+            'password' => bcrypt('password')
+        ])->assignRole('admin');
 
         //create admin user
         User::firstorCreate([
@@ -48,21 +58,37 @@ class UserSeeder extends Seeder
 
         //create mangaer users
         User::firstorCreate([
-            'name' => 'manager',
-            'email' => 'manager@admin.com',
+            'name' => 'nabil',
+            'email' => 'nabil.fakhre@su.edu.krd',
             'is_student' => 0,
             'password' => bcrypt('password')
         ])->assignRole('manager');
 
-        User::firstorCreate([
-            'name' => 'sara',
-            'email' => 'sara@student.su.edu.krd',
-            'college_id' => 1,
-            'dept_id' => 7,
-            'is_student' => 1,
-            'password' => bcrypt('password')
-        ])->assignRole('student');
+        $teams = [
+            [
+                "name" => "sanah",
+                "email" => "sccs02417@student.su.edu.krd",
+            ],
+            [
+                "name" => "sozan",
+                "email" => "sccs10917@student.su.edu.krd",
+            ],
+        ];
 
+        foreach ($teams as $team) {
+            User::firstorCreate([
+                'name' => $team['name'],
+                'email' => $team['email'],
+                'college_id' => 1,
+                'dept_id' => 7,
+                'is_student' => 1,
+                'password' => bcrypt('password')
+            ])->assignRole('team');
+
+        }
+    
+
+        //User Seeder
         foreach (range(1, 50) as $item) {
             $name =  Str::lower($array[rand(0, count($array) - 1)]);
             $collegeId = College::inRandomOrder()->first()->id;
@@ -77,6 +103,6 @@ class UserSeeder extends Seeder
             ])->assignRole('student');
         }
 
-       // DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+        // DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 }

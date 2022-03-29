@@ -76,7 +76,7 @@
             </div>
             <div class="mb-4" data-aos="zoom-out" data-aos-duration="2000">
               <h3>Project Supervisor:</h3>
-              <p class="lead fw-medium">D. Haider Haddad</p>
+              <a href="https://academics.su.edu.krd/haider.haddad" class="lead fw-medium text-decoration-none" target="__blank">D. Haider Haddad</a>
             </div>
             <a href="{{ route('contactUs') }}#team"
               class="btn btn-outline-danger" data-aos="flip-down" data-aos-duration="2000">Meet Our Team</a>
