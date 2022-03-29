@@ -57,6 +57,7 @@ Route::get('/test', function () {
 //Page Routes
 Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/projects', [PageController::class, 'project'])->name('project');
+Route::get('/projects-card', [PageController::class, 'projectCard'])->name('project-card');
 Route::get('/projects/{project}', [PageController::class, 'projectShow'])->name('projectShow');
 Route::get('/conferences', [PageController::class, 'conference'])->name('conference');
 Route::get('/evaluation-committee', [PageController::class, 'evaluation'])->name('evaluationCommittee');
