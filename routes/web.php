@@ -88,7 +88,12 @@ Route::group([
 
     //projects
     Route::resource('projects', ProjectController::class);
-    
+
+    Route::get('forms/first-seminar', [FormController::class, 'firstSeminar'])->name('forms.firstSeminar');
+    Route::get('forms/final-seminar', [FormController::class, 'finalSeminar'])->name('forms.finalSeminar');
+    Route::get('forms/final-seminar-supervisor', [FormController::class, 'finalSeminarSupervisor'])->name('forms.finalSeminarSupervisor');
+    Route::get('forms/theory-exam', [FormController::class, 'theoryExam'])->name('forms.theoryExam');
+    Route::get('forms/final-degree', [FormController::class, 'finalEegree'])->name('forms.finalEegree');
     Route::resource('forms', FormController::class);
 
     //announcements

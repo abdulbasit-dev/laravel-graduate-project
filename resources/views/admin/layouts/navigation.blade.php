@@ -132,6 +132,66 @@
         </a>
     </li>
 
+    {{-- evalution forms --}}
+    <li class="nav-item {{ request()->routeIs('admin.forms.*') ? 'active' : '' }}">
+        <span class="nav-link d-flex justify-content-between align-items-center"
+            data-bs-toggle="collapse" data-bs-target="#eval_forms">
+            <span class="d-flex  align-items-center">
+                <span class="sidebar-icon">
+                    <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                        </path>
+                    </svg>
+                </span>
+                <span class="sidebar-text">Evaluation Forms</span>
+            </span>
+            <span class="link-arrow">
+                <svg class="icon icon-sm" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                        clip-rule="evenodd">
+                    </path>
+                </svg>
+            </span>
+        </span>
+        <div class="multi-level collapse" role="list" id="eval_forms" aria-expanded="false">
+            <ul class="flex-column nav">
+                <li
+                    class="nav-item {{ request()->routeIs('admin.forms.firstSeminar') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('admin.forms.firstSeminar') }}">
+                        <span class="sidebar-text">First Seminar</span>
+                    </a>
+                </li>
+                <li
+                    class="nav-item {{ request()->routeIs('admin.forms.finalSeminar') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('admin.forms.finalSeminar') }}">
+                        <span class="sidebar-text">Final Seminar</span>
+                    </a>
+                </li>
+                <li
+                    class="nav-item {{ request()->routeIs('admin.forms.finalSeminarSupervisor') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('admin.forms.finalSeminarSupervisor') }}">
+                        <span class="sidebar-text">Final Evaluation Supervisor</span>
+                    </a>
+                </li>
+                <li class="nav-item {{ request()->routeIs('admin.forms.theoryExam') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('admin.forms.theoryExam') }}">
+                        <span class="sidebar-text">Theory Exam</span>
+                    </a>
+                </li>
+                <li
+                    class="nav-item {{ request()->routeIs('admin.forms.finalEegree') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('admin.forms.finalEegree') }}">
+                        <span class="sidebar-text">Final Degree</span>
+                    </a>
+                </li>
+    
+            </ul>
+        </div>
+    </li>
     
     <li class="nav-item {{ request()->routeIs('admin.grants.index') ? 'active' : '' }}">
         <a href="{{ route('admin.grants.index') }}" class="nav-link">
@@ -146,6 +206,8 @@
             <span class="sidebar-text text-sm">{{ __('Grant Project') }}</span>
         </a>
     </li>
+
+    
     <li class="nav-item {{ request()->routeIs('admin.grants.indexIdea') ? 'active' : '' }}">
         <a href="{{ route('admin.grants.indexIdea') }}" class="nav-link">
             <span class="sidebar-icon ">
@@ -190,6 +252,8 @@
         </a>
     </li>
 
+  
+
     {{-- college & department --}}
     <li class="nav-item">
         <span class="nav-link d-flex justify-content-between align-items-center"
@@ -217,8 +281,7 @@
         </span>
         <div class="multi-level collapse" role="list" id="college_depts" aria-expanded="false">
             <ul class="flex-column nav">
-                <li
-                    class="nav-item {{ request()->routeIs('admin.colleges.index') ? 'active' : '' }}">
+                <li class="nav-item {{ request()->routeIs('admin.colleges.index') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('admin.colleges.index') }}">
                         <span class="sidebar-text">Collegs</span>
                     </a>

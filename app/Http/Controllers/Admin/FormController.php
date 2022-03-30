@@ -17,7 +17,7 @@ class FormController extends Controller
     {
         View::share([
             'title' => "Forms",
-            'desc' => "List of Form members"
+            'desc' => "List of Forms"
         ]);
     }
 
@@ -26,10 +26,30 @@ class FormController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function firstSeminar()
     {
-        $Forms = Form::orderByDesc('created_at')->take(5)->get();
-        return view('admin.Forms.index', compact('Forms'));
+        $forms = Form::orderByDesc('created_at')->where('name','first seminar')->paginate(10);
+        return view('admin.forms.index', compact('forms'));
+    }
+    public function finalSeminar()
+    {
+        $forms = Form::orderByDesc('created_at')->where('name','final seminar')->paginate(10);
+          return view('admin.forms.index', compact('forms'));
+    }
+    public function finalSeminarSupervisor()
+    {
+        $forms = Form::orderByDesc('created_at')->where('name','final seminar supervisor')->paginate(10);
+          return view('admin.forms.index', compact('forms'));
+    }
+    public function theoryExam()
+    {
+        $forms = Form::orderByDesc('created_at')->where('name','theory exam')->paginate(10);
+           return view('admin.forms.index', compact('forms'));
+    }
+    public function finalEegree()
+    {
+        $forms = Form::orderByDesc('created_at')->where('name','final degree')->paginate(10);
+        return view('admin.forms.index', compact('forms'));
     }
 
     /**
@@ -70,69 +90,6 @@ class FormController extends Controller
         }
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Form  $Form
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Form $Form)
-    {
-        $desc = "Edit Form Member $Form->name";
-        return view('admin.Forms.edit', compact("Form", 'desc'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Form  $Form
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Form $Form)
-    {
-
-        $validator = Validator::make($request->all(), [
-            "name" => ['required', 'string', 'max:30'],
-            "description" => ['required', 'string',],
-            "file" => ['file', 'mimes:png,jpg']
-        ]);
-
-        if ($validator->fails()) {
-            return redirect()->back()
-                ->withErrors($validator)
-                ->withInput();
-        }
-
-        $file = null;
-        try {
-            if ($request->hasFile('file')) {
-                //try to not delete seeder file
-                if (checkDelete($Form->image)) {
-                    //first delete privies file
-                    File::delete($Form->image);
-                }
-
-                $file = time() . '_' . $request->file('file')->getClientOriginalName();
-                $request->file->move(public_path('uploads/Forms'), $file);
-            }
-
-            $Form->name = $request->name;
-            $Form->description = $request->description;
-            if ($file) {
-                $Form->image = 'uploads/Forms/' . $file;
-            }
-            $Form->save();
-
-            return redirect()->route('admin.Forms.index')->with([
-                "message" => "Form member Updated Succefully",
-                "title" => "updated",
-                "icon" => "success",
-            ]);
-        } catch (\Throwable $th) {
-            throw $th;
-        }
-    }
 
     /**
      * Remove the specified resource from storage.
@@ -140,15 +97,17 @@ class FormController extends Controller
      * @param  \App\Models\Form  $Form
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Form $Form)
+    public function destroy(Form $form)
     {
         //try to not delete seeder file
-        if (checkDelete($Form->image)) {
+        if (checkDelete($form->file)) {
             //first delete privies file
-            File::delete($Form->image);
+            
         }
 
-        $Form->delete();
+        File::delete($form->file);
+
+        $form->delete();
         return redirect()->back()->with([
             "message" => "Form member deleted Succefully",
             "title" => "Deleted",
