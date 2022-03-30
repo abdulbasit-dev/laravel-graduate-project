@@ -19,6 +19,7 @@ use \App\Http\Controllers\Admin\{
     ProfileController,
     AnnouncementController,
     GrantController,
+    FormController,
 };
 use App\Http\Livewire\Project\Search;
 // use \App\Http\Livewire\{
@@ -87,6 +88,8 @@ Route::group([
 
     //projects
     Route::resource('projects', ProjectController::class);
+    
+    Route::resource('forms', FormController::class);
 
     //announcements
     Route::resource('announcements', AnnouncementController::class);

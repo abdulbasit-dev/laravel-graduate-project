@@ -92,6 +92,10 @@ class RegisterController extends Controller
             $user->assignRole('student');
         }
 
+        if ($data['is_student'] == 0) {
+            $user->assignRole('teacher');
+        }
+
         return $user;
     }
 }

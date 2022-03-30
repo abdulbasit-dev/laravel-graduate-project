@@ -80,7 +80,7 @@
     @endrole
 
 
-    @hasanyrole('admin|manager|team')
+    @hasanyrole('admin|manager|team|teacher')
     {{-- profile --}}
     <li class="nav-item {{ request()->routeIs('admin.profile.*') ? 'active' : '' }}">
         <span class="nav-link d-flex justify-content-between align-items-center"
