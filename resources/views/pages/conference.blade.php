@@ -31,13 +31,26 @@
                     <p class="lead" data-aos="fade-right" data-aos-duration="1200">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, voluptas.
                     </p>
+
+                    <div>
+                        <a href="#projects" class="btn btn-outline-primary" data-aos="fade-up" data-aos-duration="1000">
+                             Projects <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#idea" class="btn btn-outline-primary mx-4" data-aos="fade-down" data-aos-duration="1000">
+                             Ideas <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#poster" class="btn btn-outline-primary" data-aos="fade-left" data-aos-duration="1000">
+                             Posters <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
+                
             </div>
         </div>
     </div>
 </header>
 
-<section class="container">
+<section class="container" id="project">
 
     <div class="text-center mb-4" data-aos="fade-down" data-aos-duration="1000">
         <h3 class="mb-3">Granted Project</h3>
@@ -76,9 +89,47 @@
     </div>
 </section>
 
-<section class="container">
+<section class="container" id="idea">
     <div class="text-center mb-4" data-aos="fade-down" data-aos-duration="1000">
         <h3 class="mb-3">Granted Idea</h3>
+        <hr class="mb-4 mt-0 d-inline-block mx-auto w-50 bg-primary" style="height: 2px" />
+    </div>
+    <div class="row my-5 justify-content-center" id="projects">
+        @foreach (range(1,3) as $item ) <div class="col-md-3 mb-5" data-aos="zoom-in"
+            data-aos-duration="1200">
+            <div class="card"
+                style="width: 18rem;  box-shadow: 0 0 20px 5px rgba(62, 60, 98, 0.08);">
+                <div class="card-body">
+                    <h4 class="card-title mb-3">Idea Name</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">2021 - 2022 </h6>
+                    <p class="card-text">Some quick example text to build on the card title and make
+                        up the
+                        bulk of
+                        the card's content.</p>
+                    <div class="d-flex flex-column">
+                        <div class="d-flex">
+                            <span>College: </span>
+                            <span class="fw-med text-primary ms-2">Science</span>
+                        </div>
+                        <div class="d-flex">
+                            <span>Department: </span>
+                            <span class="fw-med text-primary ms-2">Computer Science</span>
+                        </div>
+                    </div>
+                    <h6 class="my-3">Project Supervisor</h6>
+                    <button class="btn btn-primary">More Detail <i
+                            class="fas fa-arrow-right"></i></button>
+
+                </div>
+            </div>
+        </div>
+        @endforeach
+    </div>
+</section>
+
+<section class="container" id="poster">
+    <div class="text-center mb-4" data-aos="fade-down" data-aos-duration="1000">
+        <h3 class="mb-3">Poster</h3>
         <hr class="mb-4 mt-0 d-inline-block mx-auto w-50 bg-primary" style="height: 2px" />
     </div>
     <div class="row my-5 justify-content-center" id="projects">
