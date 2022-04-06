@@ -80,13 +80,20 @@
             consequuntur quam veniam magnam
             consectetur, odio velit alias!
         </p>
+        <div>
+            <a href="{{ asset('forms/evaluation-form.xlsx') }}" download="" class="btn btn-primary" data-aos="flip-up"
+                data-aos-duration="1000">
+                
+                Evaluation Form <i class="fas fa-download ms-2"></i>
+            </a>
+        </div>
     </div>
 </div>
 
 
 
 
-<section dir="rtl">
+{{-- <section dir="rtl">
     <div class="container">
         <div class="row">
             <div class="d-flex justify-content-around mt-5">
@@ -154,7 +161,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 
 
 <section class="mt-5" style="margin-bottom: 10rem">
