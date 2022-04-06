@@ -75,7 +75,7 @@
           <hr class="mb-4 mt-0 d-inline-block mx-auto"
             style="width: 60px; background-color: #7c4dff; height: 2px" />
           <div class="d-flex mb-2">
-            <i class="fas fa-home me-1"></i>
+            {{-- <i class="fas fa-home me-1"></i> --}}
             <div style="margin-top: -6px">
               Salahaddin University <br>
               Kirkuk road, Erbil <br>
