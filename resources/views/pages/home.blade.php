@@ -35,8 +35,22 @@
               <div class="dark-overlay">
                 <div class="carousel-caption d-none d-md-block"
                   style="margin-bottom: 5rem">
-                  <h1 class="display-4" data-aos="fade-down" data-aos-duration="1000">{{ $banner->title }}</h1>
-                  <p class="lead" data-aos="fade-up" data-aos-duration="1500">{{ $banner->description }}
+                  <p class="h3">
+                                    We are fourth-year students in the Department of Computer Science and IT at the College of
+                                    Science.
+                                    We designed a graduation project under the title (Design an expert system for student’s
+                                    graduation
+                                    projects of Salahaddin university)
+                                    This system offers to build a web-based graduation project management system as well as build a
+                                    smart database with data set and also manage and monitor activities such as the submission of
+                                    project and idea deliverables, grades, assessments, and announcements to the system of
+                                    salahaddin
+                                    university
+                                    This system serves the centralization of the quality assurance department in the university
+                                    presidency.
+                                </p>
+                  {{-- <h1 class="display-4" data-aos="fade-down" data-aos-duration="1000">{{ $banner->title }}</h1>
+                  <p class="lead" data-aos="fade-up" data-aos-duration="1500">{{ $banner->description }} --}}
                   </p>
                 </div>
               </div>
