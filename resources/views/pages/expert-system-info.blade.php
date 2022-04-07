@@ -18,6 +18,43 @@
         width: 100%;
         height: 100%;
     }
+
+    .lightbox {
+        /* Default to hidden */
+        display: none;
+
+        /* Overlay entire screen */
+        position: fixed;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        /* A bit of padding around image */
+        padding: 1em;
+
+        /* Translucent background */
+        background: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Unhide the lightbox when it's the target */
+    .lightbox:target {
+        display: block;
+    }
+
+    .lightbox span {
+        /* Full width and height */
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        /* Size and position background image */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
 </style>
 
 <!-- ShowCase  -->
@@ -56,8 +93,11 @@
             <div class="card" style="width: 22rem;">
                 <div class="card-body">
                     <h4 class="card-title">4th Class Project Sample</h4>
-                    <p class="card-text">This the template that help writning your project report effectively, find the download link below</p>
-                    <a href="{{ asset('docs/4th class Project  Sample - writing Desigen.docx') }}" download="" class="card-link"><i class="bi bi-file-earmark-arrow-down"></i> downlaod</a>
+                    <p class="card-text">This the template that help writning your project report
+                        effectively, find the download link below</p>
+                    <a href="{{ asset('docs/4th class Project  Sample - writing Desigen.docx') }}"
+                        download="" class="card-link"><i class="bi bi-file-earmark-arrow-down"></i>
+                        downlaod</a>
                 </div>
             </div>
         </div>
@@ -65,35 +105,56 @@
             <div class="card" style="width: 22rem;">
                 <div class="card-body">
                     <h4 class="card-title">Norms and Regulations</h4>
-                    <p class="card-tex">for Writing scientific Project for students in the fourth stage</p>
-                    <p class="card-text">Prepared by <a href="https://academics.su.edu.krd/haider.haddad" class=" text-decoration-none"
-                        target="__blank">D. Haider Haddad</a>
-                        <br> <span class="text-primary">computer Dept. College of Science Salahadin University</span></p>
+                    <p class="card-tex">for Writing scientific Project for students in the fourth
+                        stage</p>
+                    <p class="card-text">Prepared by <a
+                            href="https://academics.su.edu.krd/haider.haddad"
+                            class=" text-decoration-none" target="__blank">D. Haider Haddad</a>
+                        <br> <span class="text-primary">computer Dept. College of Science Salahadin
+                            University</span>
+                    </p>
 
-                    <a href="{{ asset('docs/4th student project .pptx') }}" download="" class="card-link"><i class="bi bi-file-earmark-arrow-down"></i> downlaod</a>
+                    <a href="{{ asset('docs/4th student project .pptx') }}" download=""
+                        class="card-link"><i class="bi bi-file-earmark-arrow-down"></i> downlaod</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="container" style="margin-bottom: 10rem">
+<section class="container" style="margin-bottom: 10rem" id="grantForms">
     <div class="text-center mb-4" data-aos="fade-up" data-aos-duration="1000">
         <h3>Grant Forms</h3>
         <hr class="mb-2 mt-0 d-inline-block mx-auto w-50 bg-primary" style="height: 2px" />
+        <p class="lead">Click the image to see in full veiw</p>
     </div>
 
-    <div class="row">
-        <div class="col-6" data-aos="zoom-in-right" data-aos-duration="1200">
+    <div class="row justify-content-center ">
+        <div class="col-4 " data-aos="zoom-in-right" data-aos-duration="1200" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
             <div class="w-75">
-                <img src="{{ asset('images/forms/grant-project.jpg') }}" class="img-fluid rounded-3 border" alt="">
+                <a href="#img1">
+                    <img src="{{ asset('images/forms/grant-project.jpg') }}"
+                        class="img-fluid rounded-3 border" alt="">
+                </a>
             </div>
         </div>
-        <div class="col-6" data-aos="zoom-in-left" data-aos-duration="1200">
+        <div class="col-4 " data-aos="zoom-in-left" data-aos-duration="1200">
             <div class="w-75">
-                <img src="{{ asset('images/forms/grant-project.jpg') }}" class="img-fluid rounded-3 border" alt="">
+                <a href="#img2" class="img__wrap">
+                    <img  src="{{ asset('images/forms/grant-project.jpg') }}"
+                        class="img-fluid rounded-3 border" alt="">
+                </a>
             </div>
         </div>
     </div>
+
+    {{-- light box containers  --}}
+    <a href="#grantForms" class="lightbox" id="img1">
+        <span style="background-image: url('{{ asset('images/forms/grant-project.jpg') }}')"></span>
+    </a>
+
+    <a href="#grantForms" class="lightbox" id="img2">
+        <span style="background-image: url('{{ asset('images/forms/grant-project.jpg') }}')"></span>
+    </a>
 </section>
 @endsection
