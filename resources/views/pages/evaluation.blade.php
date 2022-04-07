@@ -71,18 +71,18 @@
     </div>
 
     <div class="content">
-        <h1 data-aos="fade-up" data-aos-duration="1000">
+        <h1 data-aos="fade-up" data-aos-duration="2000">
             explore new places, <br />
             adventure awaits.
         </h1>
-        <p data-aos="fade-right" data-aos-duration="1400">
+        <p data-aos="fade-right" data-aos-duration="2000">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod necessitatibus sunt atque
             consequuntur quam veniam magnam
             consectetur, odio velit alias!
         </p>
         <div>
             <a href="{{ asset('forms/evaluation-form.xlsx') }}" download="" class="btn btn-primary" data-aos="flip-up"
-                data-aos-duration="1000">
+                data-aos-duration="1500">
                 
                 Evaluation Form <i class="fas fa-download ms-2"></i>
             </a>
