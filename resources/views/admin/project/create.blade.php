@@ -97,7 +97,7 @@
 
             <div class="row mt-3">
                 <div class="col-md-8 mb-3">
-                    <label for="project" class="form-label">Upload your project</label>
+                    <label for="project" class="form-label">Upload your zip file</label>
                     <input class="form-control" type="file" id="project" name="project">
                 </div>
             </div>
