@@ -20,6 +20,7 @@ use \App\Http\Controllers\Admin\{
     AnnouncementController,
     GrantController,
     FormController,
+    ExpertController,
 };
 use App\Http\Livewire\Project\Search;
 // use \App\Http\Livewire\{
@@ -98,6 +99,9 @@ Route::group([
 
     //announcements
     Route::resource('announcements', AnnouncementController::class);
+
+    //experts
+    Route::resource('experts', ExpertController::class)->except('show');
 
     //grants
     Route::get('grant-ideas', [GrantController::class, 'indexIdea'])->name("grants.indexIdea");

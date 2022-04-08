@@ -6,6 +6,7 @@ use App\Models\Announcement;
 use App\Models\Banner;
 use App\Models\College;
 use App\Models\Department;
+use App\Models\Expert;
 use App\Models\Project;
 use App\Models\Team;
 use Illuminate\Http\Request;
@@ -57,9 +58,8 @@ class PageController extends Controller
 
     public function expertSystemInfo()
     {
-        $colleges = College::pluck('name', 'id');
-        $depts = Department::pluck('name', 'id');
-        return view('pages.expert-system-info', compact("colleges", "depts"));
+        $experts = Expert::all();
+        return view('pages.expert-system-info', compact("experts"));
     }
 
     public function announcements()

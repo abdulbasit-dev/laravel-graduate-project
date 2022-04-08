@@ -3,7 +3,7 @@
         <div class="d-flex justify-content-end w-100" id="navbarSupportedContent">
             <!-- Navbar links -->
             <ul class="navbar-nav align-items-center">
-                <a href="{{ route('home') }}" data-bs-toggle="tooltip" data-bs-placement="top" title="Open Website">
+                <a href="{{ route('home') }}" data-bs-toggle="tooltip" target="__blank" data-bs-placement="top" title="Open Website">
                     <span class="sidebar-icon text-info">
                         <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
