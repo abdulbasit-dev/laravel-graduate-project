@@ -84,7 +84,7 @@ class PageController extends Controller
 
     public function contactUs()
     {
-        $teams = Team::take(4)->get();
+        $teams = Team::all();
         return view('pages.contact-us', compact('teams'));
     }
 

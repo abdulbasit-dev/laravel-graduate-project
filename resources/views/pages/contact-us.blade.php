@@ -98,13 +98,13 @@
             </p>
         </div>
 
-        <div class="row g-4">
+        <div class="d-flex justify-content-between">
             @foreach ($teams as $team)
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in-down" data-aos-duration="1500">
+                <div class="d-flex   align-items-stretch" data-aos="zoom-in-down" data-aos-duration="1500">
                     <div class="card bg-light">
                         <div class="card-body text-center">
                             <img src="{{ asset($team->image) }}" style="width:127px; height: 128px;" class="rounded-circle mb-3" alt="">
-                            <h3 class="card-title mb-3">{{ $team->name }}</h3>
+                            <h4 class="card-title mb-3">{{ $team->name }}</h4>
                             <p class="card-text">
                                 {{ $team->description }}
                             </p>
