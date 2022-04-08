@@ -4,7 +4,7 @@
 <style>
     #showcase {
         position: relative;
-        background: url('{{ asset('images/image8.jpg') }}');
+        background: url('{{ asset('images/image9.jpg') }}');
         background-position: center;
         min-height: 60vh;
         margin-bottom: 2rem;
@@ -19,41 +19,6 @@
         height: 100%;
     }
 
-    .lightbox {
-        /* Default to hidden */
-        display: none;
-
-        /* Overlay entire screen */
-        position: fixed;
-        z-index: 999;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-
-        /* A bit of padding around image */
-        padding: 1em;
-
-        /* Translucent background */
-        background: rgba(0, 0, 0, 0.8);
-    }
-
-    /* Unhide the lightbox when it's the target */
-    .lightbox:target {
-        display: block;
-    }
-
-    .lightbox span {
-        /* Full width and height */
-        display: block;
-        width: 100%;
-        height: 100%;
-
-        /* Size and position background image */
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-    }
 </style>
 
 <!-- ShowCase  -->
@@ -62,7 +27,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 text-left" data-aos="fade-down" data-aos-duration="1000">
-                    <h1 class="display-3" style="margin-top: 6rem">Expert Systems</h1>
+                    <h1 class="display-3" style="margin-top: 6rem">Project Announcement</h1>
                     <p class="lead" data-aos="fade-up" data-aos-duration="1300">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, voluptas.
                     </p>
