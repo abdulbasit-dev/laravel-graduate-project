@@ -76,7 +76,7 @@
 <section class="container" style="margin-bottom: 10rem">
 
     <div class="text-center mb-4" data-aos="fade-up" data-aos-duration="1000">
-        <h3 class="mb-3">Expert System Info (comming soon)</h3>
+        <h3 class="mb-3">Expert System Info</h3>
         <hr class="mb-4 mt-0 d-inline-block mx-auto w-50 bg-primary" style="height: 2px" />
     </div>
 

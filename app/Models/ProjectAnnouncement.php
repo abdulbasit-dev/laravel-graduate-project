@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Expert extends Model
+class ProjectAnnouncement extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    protected $fillable = ['title'];
 
     protected static function boot()
     {

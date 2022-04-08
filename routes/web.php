@@ -21,6 +21,7 @@ use \App\Http\Controllers\Admin\{
     GrantController,
     FormController,
     ExpertController,
+    ProjectAnnouncementController,
 };
 use App\Http\Livewire\Project\Search;
 // use \App\Http\Livewire\{
@@ -63,6 +64,7 @@ Route::get('/projects-card', [PageController::class, 'projectCard'])->name('proj
 Route::get('/projects/{project}', [PageController::class, 'projectShow'])->name('projectShow');
 Route::get('/conferences', [PageController::class, 'conference'])->name('conference');
 Route::get('/evaluation-committee', [PageController::class, 'evaluation'])->name('evaluationCommittee');
+Route::get('/project-announcement', [PageController::class, 'projectAnnouncement'])->name('projectAnnouncement');
 Route::get('/expert-system-info', [PageController::class, 'expertSystemInfo'])->name('expertSystemInfo');
 Route::get('/announcements', [PageController::class, 'announcements'])->name('announcements');
 Route::get('/announcements/{announcement}', [PageController::class, 'announcementShow'])->name('announcementShow');
@@ -99,6 +101,9 @@ Route::group([
 
     //announcements
     Route::resource('announcements', AnnouncementController::class);
+    
+    //project-announcements
+    Route::resource('project-announcements', ProjectAnnouncementController::class);
 
     //experts
     Route::resource('experts', ExpertController::class)->except('show');

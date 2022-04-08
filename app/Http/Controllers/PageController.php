@@ -8,6 +8,7 @@ use App\Models\College;
 use App\Models\Department;
 use App\Models\Expert;
 use App\Models\Project;
+use App\Models\ProjectAnnouncement;
 use App\Models\Team;
 use Illuminate\Http\Request;
 
@@ -60,6 +61,12 @@ class PageController extends Controller
     {
         $experts = Expert::all();
         return view('pages.expert-system-info', compact("experts"));
+    }
+
+    public function projectAnnouncement()
+    {
+        $projectAnnouncements = ProjectAnnouncement::paginate(10);
+        return view('pages.project-announcement', compact("projectAnnouncements"));
     }
 
     public function announcements()

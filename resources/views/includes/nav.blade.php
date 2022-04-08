@@ -50,7 +50,7 @@
                     <a class="nav-link fw-medium  dropdown-toggle {{ Route::currentRouteName() == 'announcements' || Route::currentRouteName() == 'evaluationCommittee' ? 'active' : '' }}"
                         href="#" data-bs-toggle="dropdown">Evaluation Committee</a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Project Announcement</a></li>
+                        <li><a class="dropdown-item" href="{{ route('projectAnnouncement') }}">Project Announcement</a></li>
                         <li><a class="dropdown-item"
                                 href="{{ route('evaluationCommittee') }}">Evaluation Form</a></li>
                     </ul>
