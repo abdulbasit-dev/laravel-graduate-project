@@ -136,7 +136,7 @@ class ExpertController extends Controller
             $expert->save();
 
             return redirect()->route('admin.experts.index')->with([
-                "message" => "Expert Updated Succefully",
+                "message" => "Expert Updated Successfully",
                 "title" => "updated",
                 "icon" => "success",
             ]);
@@ -160,7 +160,7 @@ class ExpertController extends Controller
 
         $expert->delete();
         return redirect()->back()->with([
-            "message" => "Expert Deleted Succefully",
+            "message" => "Expert Deleted Successfully",
             "title" => "Deleted",
             "icon" => "success",
         ]);

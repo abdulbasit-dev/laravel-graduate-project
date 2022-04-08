@@ -183,7 +183,7 @@ class ProjectController extends Controller
 
         $project->delete();
         return redirect()->route('admin.profile.show')->with([
-            "message" => "Project Deleted Succefully",
+            "message" => "Project Deleted Successfully",
             "title" => "Deleted",
             "icon" => "success",
         ]);

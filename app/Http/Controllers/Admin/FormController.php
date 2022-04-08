@@ -109,7 +109,7 @@ class FormController extends Controller
 
         $form->delete();
         return redirect()->back()->with([
-            "message" => "Form member deleted Succefully",
+            "message" => "Form member deleted Successfully",
             "title" => "Deleted",
             "icon" => "success",
         ]);

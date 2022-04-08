@@ -77,7 +77,7 @@ class TeamController extends Controller
             ]);
 
             return redirect()->route('admin.teams.index')->with([
-                "message" => "Team member Created Succefully",
+                "message" => "Team member Created Successfully",
                 "title" => "Created",
                 "icon" => "success",
             ]);
@@ -141,7 +141,7 @@ class TeamController extends Controller
             $team->save();
 
             return redirect()->route('admin.teams.index')->with([
-                "message" => "Team member Updated Succefully",
+                "message" => "Team member Updated Successfully",
                 "title" => "updated",
                 "icon" => "success",
             ]);
@@ -166,7 +166,7 @@ class TeamController extends Controller
 
         $team->delete();
         return redirect()->back()->with([
-            "message" => "Team member deleted Succefully",
+            "message" => "Team member deleted Successfully",
             "title" => "Deleted",
             "icon" => "success",
         ]);

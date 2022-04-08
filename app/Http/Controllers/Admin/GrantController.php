@@ -117,7 +117,7 @@ class GrantController extends Controller
     {
         $grant->delete();
         return redirect()->back()->with([
-            "message" => "Grant Deleted Succefully",
+            "message" => "Grant Deleted Successfully",
             "title" => "Deleted",
             "icon" => "success",
         ]);

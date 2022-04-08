@@ -114,7 +114,7 @@ class ProjectAnnouncementController extends Controller
             $projectAnnouncement->save();
 
             return redirect()->route('admin.project-announcements.index')->with([
-                "message" => "ProjectAnnouncement Updated Succefully",
+                "message" => "ProjectAnnouncement Updated Successfully",
                 "title" => "updated",
                 "icon" => "success",
             ]);
@@ -133,7 +133,7 @@ class ProjectAnnouncementController extends Controller
     {
         $projectAnnouncement->delete();
         return redirect()->back()->with([
-            "message" => "ProjectAnnouncement Deleted Succefully",
+            "message" => "ProjectAnnouncement Deleted Successfully",
             "title" => "Deleted",
             "icon" => "success",
         ]);

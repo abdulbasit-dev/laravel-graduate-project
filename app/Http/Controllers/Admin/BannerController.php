@@ -77,7 +77,7 @@ class BannerController extends Controller
             ]);
 
             return redirect()->route('admin.banners.index')->with([
-                "message" => "Banner Created Succefully",
+                "message" => "Banner Created Successfully",
                 "title" => "Created",
                 "icon" => "success",
             ]);
@@ -141,7 +141,7 @@ class BannerController extends Controller
             $banner->save();
 
             return redirect()->route('admin.banners.index')->with([
-                "message" => "Banner Updated Succefully",
+                "message" => "Banner Updated Successfully",
                 "title" => "updated",
                 "icon" => "success",
             ]);
@@ -166,7 +166,7 @@ class BannerController extends Controller
 
         $banner->delete();
         return redirect()->back()->with([
-            "message" => "Banner Deleted Succefully",
+            "message" => "Banner Deleted Successfully",
             "title" => "Deleted",
             "icon" => "success",
         ]);

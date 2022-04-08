@@ -77,7 +77,7 @@ class AnnouncementController extends Controller
             ]);
 
             return redirect()->route('admin.announcements.index')->with([
-                "message" => "Announcement member Created Succefully",
+                "message" => "Announcement member Created Successfully",
                 "title" => "Created",
                 "icon" => "success",
             ]);
@@ -151,7 +151,7 @@ class AnnouncementController extends Controller
             $announcement->save();
 
             return redirect()->route('admin.announcements.index')->with([
-                "message" => "Announcement Updated Succefully",
+                "message" => "Announcement Updated Successfully",
                 "title" => "updated",
                 "icon" => "success",
             ]);
@@ -175,7 +175,7 @@ class AnnouncementController extends Controller
 
         $announcement->delete();
         return redirect()->back()->with([
-            "message" => "Announcement Deleted Succefully",
+            "message" => "Announcement Deleted Successfully",
             "title" => "Deleted",
             "icon" => "success",
         ]);
