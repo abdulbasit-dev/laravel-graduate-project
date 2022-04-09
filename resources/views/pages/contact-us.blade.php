@@ -91,11 +91,11 @@
         <div class="text-center mb-4" data-aos="fade-up" data-aos-duration="1000">
             <h3 class="mb-3">Our Team</h3>
             <hr class="mb-4 mt-0 d-inline-block mx-auto w-50 bg-primary" style="height: 2px" />
-            <p class="lead text-center  mb-5">
+            {{-- <p class="lead text-center  mb-5">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad quidem aut totam
                 dolores molestias tempore,
                 vel architecto.
-            </p>
+            </p> --}}
         </div>
 
         <div class="d-flex justify-content-between">
