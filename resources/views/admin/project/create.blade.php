@@ -82,8 +82,8 @@
             <div class="row mt-3">
                 <div class="col-md-8 mb-3">
 
-                    <label for="description required">Project Description</label>
-                    <textarea class="form-control" rows="4" id="description" name="description"
+                    <label for="ck_description required">Project Description</label>
+                    <textarea class="form-control" rows="4" id="ck_description" name="description"
                         placeholder="project description"></textarea>
                 </div>
             </div>

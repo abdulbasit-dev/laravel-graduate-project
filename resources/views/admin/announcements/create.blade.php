@@ -70,10 +70,10 @@
 
             <div class="row mt-3">
               <div class="col-md-6 mb-3">
-                <label for="description">Description</label>
+                <label for="ck_description">Description</label>
                 <textarea class="form-control @error('description') is-invalid @enderror"
                   rows="2"
-                  id="description"
+                  id="ck_description"
                   name="description">{{ old('description') }}</textarea>
                 @error('description')
                   <div class="invalid-feedback">{{ $message }}</div>

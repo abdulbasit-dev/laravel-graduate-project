@@ -35,12 +35,16 @@
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     {{-- sweetalert2 --}}
     <script src="{{ asset('js/sweetalert2.min.js') }}"></script>
+
+    {{-- Ckedito --}}
+    <script src="{{ asset('js/ckeditor.js') }}"></script>
+
     @stack('scripts')
     {{-- sweetalert2 message --}}
     @if (Session::has('message'))
     <script>
         Swal.fire({
-                timer: 3000,
+                timer: 2000,
                 icon: "{{ Session::get('icon') }}",
                 title: "{{ Session::get('title') }}",
                 text: "{{ Session::get('message') }}",
@@ -51,6 +55,12 @@
                     popup: 'animate__animated animate__backOutDown'
                 },
             })
+
+            ClassicEditor
+            .create( document.querySelector( '#ck_description' ) )
+            .catch( error => {
+            console.error( error );
+            } );
     </script>
     @endif
 </body>
