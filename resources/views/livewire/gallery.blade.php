@@ -1,9 +1,4 @@
 <section class="container">
-
-
-
-
-
     <div class="text-center mb-1" data-aos="fade-up" data-aos-duration="1000">
         <h3 class="mb-3">Projects</h3>
         <hr class="mb-4 mt-0 d-inline-block mx-auto w-50 bg-primary" style="height: 2px" />
@@ -32,6 +27,18 @@
                     @endforeach
                 </select>
             </div>
+
+            <div class="col-md-4">
+                <select class="form-select department" id="dept" required wire:model="year">
+                    <option selected value>Year</option>
+                    <option value="2021 - 2022">2021 - 2022</option>
+                    <option value="2020 - 2021">2020 - 2021</option>
+                    <option value="2019 - 2020">2019 - 2020</option>
+                    <option value="2018 - 2019">2018 - 2019</option>
+                    <option value="2017 - 2018">2017 - 2018</option>
+                    <option value="2016 - 2017">2016 - 2017</option>
+                </select>
+            </div>
         </div>
     </div>
 
@@ -45,9 +52,11 @@
 
     <div class="row">
         <div class="row mt-3" id="projects">
+            @if ($projects instanceof \Illuminate\Pagination\LengthAwarePaginator)
             <h2 class="text-left text-muted  mb-4" data-aos="fade-right" data-aos-duration="1000">
                 {!! $projects->total()? "<strong>". $projects->total()."</strong>". "
                 Projects":null !!}</h2>
+            @endif
             @forelse ($projects as $project)
             <div class="col-md-3 mb-5 d-flex align-items-stretch" data-aos="zoom-in-down"
                 data-aos-duration="1000">
@@ -90,6 +99,7 @@
             </div>
             @endforelse
 
+            @if ($projects instanceof \Illuminate\Pagination\LengthAwarePaginator)
             <div class="d-flex justify-content-between align-items-center">
 
                 @if ($projects->total())
@@ -108,6 +118,7 @@
 
                 {{ $projects->links() }}
             </div>
+            @endif
         </div>
     </div>
 

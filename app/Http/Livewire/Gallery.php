@@ -18,7 +18,7 @@ class Gallery extends Component
     public $search;
     public $collegeId;
     public $deptId;
-
+    public $year;
     public $colleges;
     public $depts = [];
 
@@ -29,8 +29,6 @@ class Gallery extends Component
         $query = Project::query()->with('student', 'student.dept', 'student.college');
 
         if ($this->collegeId) {
-            Log::info("college " . $this->collegeId);
-
             $this->depts = Department::where('college_id', $this->collegeId)->pluck('name', 'id');
             $query->whereHas('student', function (Builder $q) {
                 $q->where("college_id", $this->collegeId);
@@ -38,7 +36,6 @@ class Gallery extends Component
         }
 
         if ($this->deptId) {
-            Log::info("depratments " . $this->deptId);
             $this->depts = Department::where('college_id', $this->collegeId)->pluck('name', 'id');
             $query->whereHas('student', function (Builder $q) {
                 $q->where("dept_id", $this->deptId);
@@ -46,18 +43,24 @@ class Gallery extends Component
         }
 
 
+
         $keyword = "%" . $this->search . "%";
         $query = $query->where('title', "like", $keyword);
 
-        $projects = $query->paginate(15);
+
+        if ($this->year) {
+            $projects = $query->paginate(15)->where('project_year', $this->year);
+        } else {
+            $projects = $query->paginate(15);
+        }
+
+
 
         return view('livewire.gallery', compact("projects"));
     }
 
     public function hydrateCollegeId()
     {
-        Log::info("hidra");
         $this->deptId = null;
-        Log::info("depratments " . $this->deptId);
     }
 }

@@ -4,8 +4,9 @@
 <style>
     #showcase {
         position: relative;
-        background: url('{{ asset('images/image6.jpg') }}');
-        min-height: 60vh;
+        background: url('{{ asset('images/image10.jpg') }}');
+        background-position: center;
+        min-height: 70vh;
         margin-bottom: 2rem;
     }
 
@@ -26,7 +27,7 @@
             <div class="row">
                 <div class="col-lg-8 text-left">
                     <div data-aos="fade-down" data-aos-duration="1000">
-                        <h1 class="display-4" style="margin-top: 6rem">Browse All Other Project</h1>
+                        <h1 class="display-4" style="margin-top: 6rem">Gallery</h1>
                         <p class="lead">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque,
                             voluptas.
