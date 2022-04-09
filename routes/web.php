@@ -38,15 +38,22 @@ use \App\Http\Controllers\Admin\{
 //Front End Routes
 //Page Routes
 Route::get('/', [PageController::class, 'home'])->name('home');
+
 Route::get('/projects', [PageController::class, 'project'])->name('project');
 Route::get('/projects-card', [PageController::class, 'projectCard'])->name('project-card');
 Route::get('/projects/{project}', [PageController::class, 'projectShow'])->name('projectShow');
+
+Route::get('/galleries', [PageController::class, 'gallery'])->name('gallery');
+Route::get('/galleries/{gallery}', [PageController::class, 'galleryShow'])->name('galleryShow');
+
 Route::get('/conferences', [PageController::class, 'conference'])->name('conference');
 Route::get('/evaluation-committee', [PageController::class, 'evaluation'])->name('evaluationCommittee');
 Route::get('/project-announcement', [PageController::class, 'projectAnnouncement'])->name('projectAnnouncement');
 Route::get('/expert-system-info', [PageController::class, 'expertSystemInfo'])->name('expertSystemInfo');
+
 Route::get('/announcements', [PageController::class, 'announcements'])->name('announcements');
 Route::get('/announcements/{announcement}', [PageController::class, 'announcementShow'])->name('announcementShow');
+
 Route::get('/contact-us', [PageController::class, 'contactUs'])->name('contactUs');
 
 Route::get('/get-department', [PageController::class, 'getDepartment'])->name('getDepartment');

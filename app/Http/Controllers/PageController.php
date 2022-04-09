@@ -23,23 +23,26 @@ class PageController extends Controller
 
     public function project()
     {
-        $colleges = College::pluck('name', 'id');
-        $depts = Department::pluck('name', 'id');
-        $projects = Project::orderByDesc('created_by')->with('student', 'student.dept', 'student.college')->paginate(12);
-        // return $projects;
-        return view('pages.projects', compact("colleges", "depts", "projects"));
+        return view('pages.projects');
     }
 
     public function projectCard()
     {
-        $colleges = College::pluck('name', 'id');
-        $depts = Department::pluck('name', 'id');
-        $projects = Project::orderByDesc('created_by')->with('student', 'student.dept', 'student.college')->paginate(12);
-        // return $projects;
-        return view('pages.projects-card', compact("colleges", "depts", "projects"));
+        return view('pages.projects-card');
     }
 
     public function projectShow(Project $project)
+    {
+        $project  =  $project->load('student', 'student.dept', 'student.college');
+        return view('pages.project-show', compact("project"));
+    }
+
+    public function gallery()
+    {
+        return view('pages.gallery');
+    }
+
+    public function galleryShow(Project $project)
     {
         $project  =  $project->load('student', 'student.dept', 'student.college');
         return view('pages.project-show', compact("project"));

@@ -60,9 +60,15 @@
                     <a class="nav-link fw-medium {{ Route::currentRouteName() == 'expertSystemInfo' ? 'active' : '' }}"
                         href="{{ route('expertSystemInfo') }}">Expert System Info</a>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link fw-medium {{ Route::currentRouteName() == 'announcements' ? 'active' : '' }}"
                         href="{{ route('announcements') }}">Announcement</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link fw-medium {{ Route::currentRouteName() == 'gallery' ? 'active' : '' }}"
+                        href="{{ route('gallery') }}">Gallery</a>
                 </li>
 
                 <li class="nav-item">
