@@ -40,6 +40,8 @@
                                     <tr>
                                         <th class="border-0 rounded-start">#</th>
                                         <th class="border-0">Title</th>
+                                        <th class="border-0">College</th>
+                                        <th class="border-0">Department</th>
                                         <th class="border-0 text-center">Action</th>
                                     </tr>
                                 </thead>
@@ -48,7 +50,8 @@
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $projectAnnouncement->title }}</td>
-                                   
+                                        <td>{{ $projectAnnouncement->college->name?? "null" }}</td>
+                                        <td>{{ $projectAnnouncement->dept->name?? "null" }}</td>                                   
                                         <td>
                                             <div
                                                 class="d-flex justify-content-center align-items-center">

@@ -48,14 +48,15 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function college()
-    {
-        return $this->belongsTo(College::class,'college_id','id');
-    }
 
     public function project()
     {
         return $this->hasOne(Project::class,'created_by');
+    }
+
+    public function college()
+    {
+        return $this->belongsTo(College::class, 'college_id', 'id');
     }
 
     public function dept()

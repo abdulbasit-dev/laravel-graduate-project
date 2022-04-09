@@ -16,6 +16,8 @@ class CreateProjectAnnouncementsTable extends Migration
         Schema::create('project_announcements', function (Blueprint $table) {
             $table->id();
             $table->text("title");
+            $table->foreignId('college_id')->nullable()->constrained('colleges', 'id');
+            $table->foreignId('dept_id')->nullable()->constrained('departments', 'id');
             $table->timestamps();
         });
     }

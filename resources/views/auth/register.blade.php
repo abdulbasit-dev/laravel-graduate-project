@@ -125,47 +125,6 @@
 @push('scripts')
 <script>
     $(document).ready(function() {
-            $(document).on("click", ".btn_add", function() {
-                let inputCount = $(".team_members").find("input").length;
-                let numberIncr =
-                    inputCount > 0 ?
-                    parseInt(
-                        $(".team_members")
-                        .find("input:last")
-                        .attr("id")
-                    ) + 1 :
-                    0;
-
-                $(".team_members")
-                    .append(
-                        $(`
-                    <div class="d-flex mt-3">
-                                <input class="form-control" id="${numberIncr}" type="text" name="teams[]"
-                                    placeholder="Enter team member name" required>
-                                <button type="button" class="btn btn-danger ms-3 btn-sm delegated-btn"><svg
-                                    class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16">
-                                        </path>
-                                    </svg>
-                         </button>
-                    </div>
-                    `)
-                    );
-            });
-
-            $(document).on("click", ".delegated-btn", function(e) {
-                e.preventDefault();
-                $(this)
-                    .parent()
-                    .remove();
-            });
-
-
-
-
-
             $("#college").on('change', function() {
                 let collegeId = $(this).val();
                 // Ajax

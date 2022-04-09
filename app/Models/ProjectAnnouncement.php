@@ -10,7 +10,7 @@ class ProjectAnnouncement extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title'];
+    protected $guarded = [];
 
     protected static function boot()
     {
@@ -18,5 +18,15 @@ class ProjectAnnouncement extends Model
         static::addGlobalScope('order', function (Builder $builder) {
             $builder->orderByDesc('created_at');
         });
+    }
+
+    public function college()
+    {
+        return $this->belongsTo(College::class, 'college_id', 'id');
+    }
+
+    public function dept()
+    {
+        return $this->belongsTo(Department::class, 'dept_id', 'id');
     }
 }

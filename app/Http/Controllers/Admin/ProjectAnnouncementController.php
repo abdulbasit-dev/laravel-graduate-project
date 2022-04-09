@@ -28,7 +28,7 @@ class ProjectAnnouncementController extends Controller
      */
     public function index()
     {
-        $projectAnnouncements = ProjectAnnouncement::paginate(10);
+        $projectAnnouncements = ProjectAnnouncement::with('college', 'dept')->paginate(10);
         return view('admin.project-announcements.index', compact('projectAnnouncements'));
     }
 
@@ -64,6 +64,8 @@ class ProjectAnnouncementController extends Controller
         try {
             ProjectAnnouncement::create([
                 "title" => $request->title,
+                'college_id' => $request->college_id,
+                'dept_id' => $request->dept_id,
             ]);
 
             return redirect()->route('admin.project-announcements.index')->with([
@@ -111,6 +113,8 @@ class ProjectAnnouncementController extends Controller
         try {
 
             $projectAnnouncement->title = $request->title;
+            $projectAnnouncement->college_id = $request->college_id;
+            $projectAnnouncement->dept_id = $request->dept_id;
             $projectAnnouncement->save();
 
             return redirect()->route('admin.project-announcements.index')->with([

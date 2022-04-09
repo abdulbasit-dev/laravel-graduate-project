@@ -18,7 +18,6 @@
         width: 100%;
         height: 100%;
     }
-
 </style>
 
 <!-- ShowCase  -->
@@ -37,7 +36,7 @@
     </div>
 </header>
 
-<section class="container" style="margin-bottom: 10rem">
+<section class="container">
 
     <div class="text-center mb-4" data-aos="fade-up" data-aos-duration="1000">
         <h3 class="mb-3">Project Announcement</h3>
@@ -46,7 +45,7 @@
 
     <div class="d-flex flex-column align-items-center">
         @forelse ($projectAnnouncements as $item)
-        <div class="card my-5" style="width: 30rem;" data-aos="fade-up" data-aos-duration="1000" >
+        <div class="card my-5" style="width: 30rem;" data-aos="fade-up" data-aos-duration="1000">
             <img src="{{ asset('images/announcement.jfif') }}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-text">{{ $item->title }}</h5>
@@ -55,8 +54,27 @@
 
         <hr>
         @empty
-            <h3>no data found</h3>
+        <h3>no data found</h3>
         @endforelse
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center">
+
+        @if ($projectAnnouncements->total())
+        <div>
+            <p class="text-sm text-gray-700 leading-5">
+                <span>{!! __('Showing') !!}</span>
+                <span class="font-medium">{{ $projectAnnouncements->firstItem() }}</span>
+                <span>{!! __('to') !!}</span>
+                <span class="font-medium">{{ $projectAnnouncements->lastItem() }}</span>
+                <span>{!! __('of') !!}</span>
+                <span class="font-medium">{{ $projectAnnouncements->total() }}</span>
+                <span>{!! __('results') !!}</span>
+            </p>
+        </div>
+        @endif
+
+        {{ $projectAnnouncements->links() }}
     </div>
 
 </section>

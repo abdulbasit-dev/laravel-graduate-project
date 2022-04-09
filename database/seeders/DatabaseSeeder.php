@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\ProjectAnnouncement;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -23,6 +24,7 @@ class DatabaseSeeder extends Seeder
         $this->call(DepartmentSeeder::class);
         $this->call(AnnouncementSeeder::class);
         $this->call(ExpertSeeder::class);
+        $this->call(ProjectAnnouncementSeeder::class);
         $this->call(UserSeeder::class);
         $this->call(ProjectSeeder::class);
 

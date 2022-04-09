@@ -65,7 +65,19 @@ class PageController extends Controller
 
     public function projectAnnouncement()
     {
-        $projectAnnouncements = ProjectAnnouncement::paginate(10);
+        $query = ProjectAnnouncement::query();
+        // $projectAnnouncements = ProjectAnnouncement::paginate(10);
+
+        if (auth()->user()->hasRole('student')) {
+            $college_id = auth()->user()->college_id;
+            $dept_id = auth()->user()->dept_id;
+            $query->where('college_id', $college_id)
+                ->where('dept_id', $dept_id);
+        }
+
+        $projectAnnouncements = $query->paginate(10);
+
+
         return view('pages.project-announcement', compact("projectAnnouncements"));
     }
 
@@ -83,10 +95,10 @@ class PageController extends Controller
     public function poster()
     {
         $projects = Project::orderByDesc('created_by')->with('student', 'student.dept', 'student.college')->paginate(12);
-         $colleges = College::pluck('name', 'id');
+        $colleges = College::pluck('name', 'id');
         $depts = Department::pluck('name', 'id');
 
-        return view('pages.poster',compact("projects", "depts", "colleges"));
+        return view('pages.poster', compact("projects", "depts", "colleges"));
     }
 
     public function contactUs()
