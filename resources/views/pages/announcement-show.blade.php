@@ -53,14 +53,14 @@
                       
                         <!-- Post content-->
                         <section class="mb-5" data-aos="zoom-out" data-aos-duration="1400">
-                            <h4>Announcement Description:</h4>
-                            <p>{{ $announcement->description }}</p>
+                            {{-- <h4>Announcement Description:</h4> --}}
+                            <p>{!! $announcement->description !!}</p>
 
                             <div class="d-flex mt-5" data-aos="fade-right" data-aos-duration="1400">
                                 {{-- if project file is not null --}}
                                 @if ($announcement->attachment)
                                 <div class="text-center">
-                                    <h5>Announcement Attachment</h5>
+                                    <p>attachment</p>
                                     <a href="{{ asset($announcement->attachment) }}" download="">
 
                                         <svg class="text-primary" style="width: 3rem" fill="none"

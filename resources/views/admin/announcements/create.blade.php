@@ -70,10 +70,10 @@
 
             <div class="row mt-3">
               <div class="col-md-6 mb-3">
-                <label for="ck_description">Description</label>
+                <label for="description">Description</label>
                 <textarea class="form-control @error('description') is-invalid @enderror"
-                  rows="2"
-                  id="ck_description"
+                  rows="6"
+                  id="description"
                   name="description">{{ old('description') }}</textarea>
                 @error('description')
                   <div class="invalid-feedback">{{ $message }}</div>
@@ -110,3 +110,12 @@
     </div>
   </div>
 @endsection
+@push('scripts')
+    <script>
+        ClassicEditor
+        .create( document.querySelector( '#description' ) )
+        .catch( error => {
+        console.error( error );
+        } );
+    </script>
+@endpush

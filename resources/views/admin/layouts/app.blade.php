@@ -56,11 +56,7 @@
                 },
             })
 
-            ClassicEditor
-            .create( document.querySelector( '#ck_description' ) )
-            .catch( error => {
-            console.error( error );
-            } );
+           
     </script>
     @endif
 </body>
