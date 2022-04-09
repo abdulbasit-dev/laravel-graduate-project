@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Traits\BelongsToCollege;
+use App\Traits\BelongsToDept;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -11,7 +13,8 @@ use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, HasRoles;
+    use HasApiTokens, HasFactory, Notifiable, HasRoles, BelongsToCollege, BelongsToDept;
+
 
     /**
      * The attributes that are mass assignable.
@@ -51,13 +54,9 @@ class User extends Authenticatable
 
     public function project()
     {
-        return $this->hasOne(Project::class,'created_by');
+        return $this->hasOne(Project::class, 'created_by');
     }
 
-    public function college()
-    {
-        return $this->belongsTo(College::class, 'college_id', 'id');
-    }
 
     public function dept()
     {
