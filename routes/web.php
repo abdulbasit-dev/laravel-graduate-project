@@ -21,6 +21,7 @@ use \App\Http\Controllers\Admin\{
     FormController,
     ExpertController,
     ProjectAnnouncementController,
+    IdeaController,
 };
 
 /*
@@ -87,6 +88,9 @@ Route::group([
 
     //announcements
     Route::resource('announcements', AnnouncementController::class);
+
+    //ideas
+    Route::resource('ideas', IdeaController::class);
     
     //project-announcements
     Route::resource('project-announcements', ProjectAnnouncementController::class);
@@ -105,7 +109,9 @@ Route::group([
     Route::resource('banners', BannerController::class)->except('show');
 
     Route::get('users', [UserController::class, 'index'])->name('users.index');
+
     Route::get('profile', [ProfileController::class, 'show'])->name('profile.show');
     Route::get('profile/project',  [ProfileController::class, 'project'])->name('profile.project');
+    Route::get('profile/idea',  [ProfileController::class, 'idea'])->name('profile.idea');
     Route::put('profile',  [ProfileController::class, 'update'])->name('profile.update');
 });

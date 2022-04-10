@@ -1,11 +1,11 @@
 <ul class="nav flex-column pt-3 pt-md-0">
-    <li class="nav-item">
+    {{-- <li class="nav-item">
         <a href="{{ route('home') }}" class="nav-link d-flex align-items-center" target="__blank">
             <span class="mt-1 ms-1 sidebar-text">
                 Front-End Website
             </span>
         </a>
-    </li>
+    </li> --}}
     <li class="nav-item">
         <a href="{{ route('admin.home') }}" class="nav-link d-flex align-items-center">
 
@@ -15,14 +15,7 @@
         </a>
     </li>
 
-    {{-- <li class="nav-item {{ request()->routeIs('admin.users.index') ? 'active' : '' }}">
-        <a href="{{ route('admin.projects.create') }}" class="nav-link">
-            <span class="sidebar-icon ">
-                <i class="bi bi-cloud-upload fa-lg"></i>
-            </span>
-            <span class="sidebar-text text-sm">{{ __('Upload Project') }}</span>
-        </a>
-    </li> --}}
+
 
 
     @role('student')
@@ -72,10 +65,53 @@
                         <span class="sidebar-text">My Project</span>
                     </a>
                 </li>
+                @endif
+
+                @php
+                $user = auth()->user()->load('idea');
+                $ideaExsist = false;
+                if ($user->idea) {
+                $ideaExsist = true;
+                }
+                @endphp
+
+                @if ($ideaExsist)
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.profile.idea') }}">
+                        <span class="sidebar-text">My Idea</span>
+                    </a>
+                </li>
 
                 @endif
             </ul>
         </div>
+    </li>
+
+    <li class="nav-item {{ request()->routeIs('admin.projects.*') ? 'active' : '' }}">
+        <a href="{{ route('admin.projects.create') }}" class="nav-link">
+            <span class="sidebar-icon ">
+                <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12">
+                    </path>
+                </svg>
+            </span>
+            <span class="sidebar-text text-sm">{{ __('Upload Project') }}</span>
+        </a>
+    </li>
+
+    <li class="nav-item {{ request()->routeIs('admin.ideas.') ? 'active' : '' }}">
+        <a href="{{ route('admin.ideas.create') }}" class="nav-link">
+            <span class="sidebar-icon ">
+                <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
+                </svg>
+            </span>
+            <span class="sidebar-text text-sm">{{ __('Submit Idea') }}</span>
+        </a>
     </li>
     @endrole
 
@@ -129,6 +165,21 @@
                 </svg>
             </span>
             <span class="sidebar-text text-sm">{{ __('Projects') }}</span>
+        </a>
+    </li>
+
+    {{-- ideas --}}
+    <li class="nav-item {{ request()->routeIs('admin.ideas.*') ? 'active' : '' }}">
+        <a href="{{ route('admin.ideas.index') }}" class="nav-link">
+            <span class="sidebar-icon ">
+                <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z">
+                    </path>
+                </svg>
+            </span>
+            <span class="sidebar-text text-sm">{{ __('Idea') }}</span>
         </a>
     </li>
 
@@ -194,6 +245,7 @@
         </div>
     </li>
 
+    {{-- grants project --}}
     <li class="nav-item {{ request()->routeIs('admin.grants.index') ? 'active' : '' }}">
         <a href="{{ route('admin.grants.index') }}" class="nav-link">
             <span class="sidebar-icon ">
@@ -209,17 +261,33 @@
     </li>
 
 
+    {{-- grants idea --}}
     <li class="nav-item {{ request()->routeIs('admin.grants.indexIdea') ? 'active' : '' }}">
         <a href="{{ route('admin.grants.indexIdea') }}" class="nav-link">
             <span class="sidebar-icon ">
                 <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z">
+                        d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
                     </path>
                 </svg>
             </span>
             <span class="sidebar-text text-sm">{{ __('Grant Idea') }}</span>
+        </a>
+    </li>
+
+    {{-- Student --}}
+    <li class="nav-item {{ request()->routeIs('admin.users.index') ? 'active' : '' }}">
+        <a href="{{ route('admin.users.index') }}" class="nav-link">
+            <span class="sidebar-icon ">
+                <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
+                    </path>
+                </svg>
+            </span>
+            <span class="sidebar-text text-sm">{{ __('Studens') }}</span>
         </a>
     </li>
 
@@ -329,7 +397,7 @@
 
     <li role="separator" class="dropdown-divider mt-4 mb-3 border-gray-700"></li>
 
-    {{-- projects --}}
+    {{-- Website Settings --}}
     <li class="nav-item ">
         <a class="nav-link">
             <span class="sidebar-icon ">

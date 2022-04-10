@@ -7,10 +7,9 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Project extends Model
+class Idea extends Model
 {
     use HasFactory, BelongsToUser;
-
     protected $guarded = [];
 
     protected $casts = [
@@ -25,6 +24,8 @@ class Project extends Model
         });
     }
 
+
+
     protected $appends = ['project_year'];
 
     public function getProjectYearAttribute()
@@ -35,4 +36,5 @@ class Project extends Model
         }
         return $this->created_at->year - 1 . " - " . $this->created_at->year;
     }
+
 }

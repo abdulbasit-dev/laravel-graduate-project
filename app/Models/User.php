@@ -29,6 +29,7 @@ class User extends Authenticatable
         'dept_id',
         'is_student',
         'is_submited',
+        'is_submited_idea',
         'password',
     ];
 
@@ -55,6 +56,11 @@ class User extends Authenticatable
     public function project()
     {
         return $this->hasOne(Project::class, 'created_by');
+    }
+
+    public function idea()
+    {
+        return $this->hasOne(Idea::class, 'created_by');
     }
 
 

@@ -38,20 +38,20 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse ($projects as $project)
+                                    @forelse ($ideas as $idea)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $project->title }}</td>
-                                        <td>{{ $project->supervisor_name }}</td>
+                                        <td>{{ $idea->title }}</td>
+                                        <td>{{ $idea->supervisor_name }}</td>
                                         <td>
                                             <div class="mb-3">
                                             @php
-                                            if(getType($project->team_members)!="array"){
-                                            $serialized = serialize($project->team_members);
+                                            if(getType($idea->team_members)!="array"){
+                                            $serialized = serialize($idea->team_members);
                                             $myNewArray = unserialize($serialized);
                                             $newTeamArr = json_decode($myNewArray, true);
                                             }else{
-                                            $newTeamArr = $project->team_members;
+                                            $newTeamArr = $idea->team_members;
                                             }
                                             @endphp
                                             @foreach ($newTeamArr as $team)
@@ -64,7 +64,7 @@
 
                                         <td class="">
                                             <a
-                                                href="{{ route('admin.projects.show',$project->id) }}">
+                                                href="{{ route('admin.ideas.show',$idea->id) }}">
                                                 <button class="btn btn-outline-info btn-sm"
                                                     type="button">View</button>
                                             </a>
@@ -73,14 +73,14 @@
                                     </tr>
                                     @empty
                                     <tr class=" text-center">
-                                        <td class="h3" colspan="5">No project found :(</td>
+                                        <td class="h3" colspan="5">No idea found :(</td>
                                     </tr>
                                     @endforelse
                                 </tbody>
                             </table>
                             <div
                                 class="card-footer px-3 border-0 d-flex flex-column flex-lg-row align-items-center justify-content-between">
-                                {{ $projects->links() }}
+                                {{ $ideas->links() }}
                             </div>
                         </div>
                     </div>

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\Idea;
 use App\Models\Project;
 use Illuminate\Support\Facades\View;
 
@@ -32,6 +33,12 @@ class ProfileController extends Controller
     {
         $project = Project::with('student', 'student.dept', 'student.college')->whereCreatedBy(auth()->id())->first();
         return view('admin.project.show', compact('project'));
+    }
+
+    public function idea()
+    {
+        $idea = Idea::with('student', 'student.dept', 'student.college')->whereCreatedBy(auth()->id())->first();
+        return view('admin.idea.show', compact('idea'));
     }
     
     public function update(ProfileUpdateRequest $request)

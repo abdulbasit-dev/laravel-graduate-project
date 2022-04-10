@@ -4,20 +4,20 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\College;
-use App\Models\Project;
+use App\Models\Idea;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\View;
 
-class ProjectController extends Controller
+class IdeaController extends Controller
 {
     public function __construct()
     {
         View::share([
-            'title' => "Projects",
-            'desc' => "List of uploaded projects"
+            'title' => "Ideas",
+            'desc' => "List of uploaded ideas"
         ]);
     }
     /**
@@ -27,34 +27,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::with('student', 'student.dept', 'student.college')->paginate(15);
-        return view('admin.project.index', compact('projects'));
-    }
-
-    public function filter(Request $request)
-    {
-        $collegeId = $request->has('collegeId') ?  $request->collegeId : null;
-        $deptId = $request->has('deptId') ?  $request->deptId : null;
-
-        $projects = Project::query()->with('student', 'student.dept', 'student.college');
-
-        if($collegeId){
-            $projects->whereHas('student',function(Builder $query) use ($collegeId){
-                $query->where("college_id",$collegeId);
-            });
-        }
-
-        if ($deptId) {
-            $projects->whereHas('student', function (Builder $query) use ($deptId) {
-                $query->where("dept_id", $deptId);
-            });
-        }
-
-
-        // $projects = $projects->paginate(15);
-        $projects = $projects->get();
-
-        return view('includes.projects',compact('projects'));
+        $ideas = Idea::with('student', 'student.dept', 'student.college')->paginate(15);
+        return view('admin.idea.index', compact('ideas'));
     }
 
     /**
@@ -64,8 +38,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        $colleges = College::pluck('name', 'id');
-        return view('admin.project.create', compact('colleges'));
+        return view('admin.idea.create');
     }
 
     /**
@@ -81,10 +54,10 @@ class ProjectController extends Controller
         $posterFile = null;
 
         try {
-            //for project files
+            //for idea files
             if ($request->hasFile('project')) {
                 $projectFile = time() . '_' . $request->file('project')->getClientOriginalName();
-                $request->project->move(public_path('uploads/projects'), $projectFile);
+                $request->project->move(public_path('uploads/ideas'), $projectFile);
             }
 
             // for report file
@@ -100,12 +73,13 @@ class ProjectController extends Controller
             }
 
             $data = [
-                    "title" => $request->title,
-                    "description" => $request->description,
-                    "supervisor_name" => $request->supervisor_name,
-                    "team_members" => $request->teams,
-                    "created_by" => $request->user()->id,
-                ];
+                "title" => $request->title,
+                "description" => $request->description,
+                "stage" => $request->stage,
+                "supervisor_name" => $request->supervisor_name,
+                "team_members" => $request->teams,
+                "created_by" => $request->user()->id,
+            ];
 
             if ($projectFile) {
                 $data["project"] = $projectFile;
@@ -118,11 +92,11 @@ class ProjectController extends Controller
             if ($posterFile) {
                 $data["poster"] = $posterFile;
             }
-            
-            Project::create($data);
 
-            //update user that he submit the project
-            auth()->user()->update(['is_submited' => 1]);
+            Idea::create($data);
+
+            //update user that he submit the idea
+            auth()->user()->update(['is_submited_idea' => 1]);
 
             return redirect()->route('admin.home');
         } catch (\Throwable $th) {
@@ -136,10 +110,10 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Project $project)
+    public function show(Idea $idea)
     {
-        $project->load('student', 'student.dept', 'student.college');
-        return view('admin.project.show', compact('project'));
+        $idea->load('student', 'student.dept', 'student.college');
+        return view('admin.idea.show', compact('idea'));
     }
 
     /**
@@ -171,32 +145,58 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Project $project)
+    public function destroy(Idea $idea)
     {
-        User::where('id', $project->created_by)->update(['is_submited' => 0]);
+        User::where('id', $idea->created_by)->update(['is_submited_idea' => 0]);
         //try to not delete seeder file
-        if (checkDelete($project->project)) {
+        if ($idea->project && checkDelete($idea->project)) {
             //first delete privies file
-            File::delete($project->project);
+            File::delete($idea->project);
         }
 
         //try to not delete seeder file
-        if (checkDelete($project->report)) {
+        if ($idea->report && checkDelete($idea->report)) {
             //first delete privies file
-            File::delete($project->report);
+            File::delete($idea->report);
         }
 
         //try to not delete seeder file
-        if (checkDelete($project->poster)) {
+        if ($idea->poster && checkDelete($idea->poster)) {
             //first delete privies file
-            File::delete($project->poster);
+            File::delete($idea->poster);
         }
 
-        $project->delete();
+        $idea->delete();
         return redirect()->route('admin.profile.show')->with([
-            "message" => "Project Deleted Successfully",
+            "message" => "Idea Deleted Successfully",
             "title" => "Deleted",
             "icon" => "success",
         ]);
+    }
+
+    public function filter(Request $request)
+    {
+        $collegeId = $request->has('collegeId') ?  $request->collegeId : null;
+        $deptId = $request->has('deptId') ?  $request->deptId : null;
+
+        $ideas = Idea::query()->with('student', 'student.dept', 'student.college');
+
+        if ($collegeId) {
+            $ideas->whereHas('student', function (Builder $query) use ($collegeId) {
+                $query->where("college_id", $collegeId);
+            });
+        }
+
+        if ($deptId) {
+            $ideas->whereHas('student', function (Builder $query) use ($deptId) {
+                $query->where("dept_id", $deptId);
+            });
+        }
+
+
+        // $ideas = $ideas->paginate(15);
+        $ideas = $ideas->get();
+
+        return view('includes.ideas', compact('ideas'));
     }
 }
