@@ -82,7 +82,8 @@
                                     ?? '' }}</span>
                             </div>
                         </div>
-                        <a href="{{ route('ideaShow', $idea->id) }}" class="mt-auto">
+                        <a href="{{ route('admin.ideas.show', $idea) }}" class="mt-auto">
+                        {{-- <a href="{{ route('ideaShow', $idea) }}" class="mt-auto"> --}}
                             <button class="btn btn-sm btn-primary">More Detail <i
                                     class="fas fa-arrow-right"></i></button>
                         </a>

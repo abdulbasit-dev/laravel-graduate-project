@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Livewire\Idea;
 use App\Models\Announcement;
 use App\Models\Banner;
 use App\Models\College;
@@ -42,26 +43,26 @@ class PageController extends Controller
         return view('pages.gallery');
     }
 
-    public function galleryShow(Project $project)
-    {
-        $project  =  $project->load('student', 'student.dept', 'student.college');
-        return view('pages.project-show', compact("project"));
-    }
-
     public function idea()
     {
         return view('pages.idea');
     }
 
-    public function ideaShow(Project $project)
+    public function ideaShow(Idea $idea)
     {
-        $project  =  $project->load('student', 'student.dept', 'student.college');
-        return view('pages.project-show', compact("project"));
+        return $idea;
+        $idea  =  $idea->load('student', 'student.dept', 'student.college');
+        return view('pages.idea-show', compact("project"));
     }
 
     public function conference()
     {
         return view('pages.conference');
+    }
+
+    public function poster()
+    {
+        return view('pages.poster');
     }
 
     public function evaluation()
@@ -104,15 +105,6 @@ class PageController extends Controller
     public function announcementShow(Announcement $announcement)
     {
         return view('pages.announcement-show', compact("announcement"));
-    }
-
-    public function poster()
-    {
-        $projects = Project::orderByDesc('created_by')->with('student', 'student.dept', 'student.college')->paginate(12);
-        $colleges = College::pluck('name', 'id');
-        $depts = Department::pluck('name', 'id');
-
-        return view('pages.poster', compact("projects", "depts", "colleges"));
     }
 
     public function contactUs()

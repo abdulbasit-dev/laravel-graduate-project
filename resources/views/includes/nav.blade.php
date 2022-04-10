@@ -34,7 +34,7 @@
                         href="#" data-bs-toggle="dropdown">Conference</a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="{{ route('idea') }}">Idea</a></li>
-                        <li><a class="dropdown-item" href="#">Poster</a></li>
+                        <li><a class="dropdown-item" href="{{ route('poster') }}">Poster</a></li>
                         <li><a class="dropdown-item" href="{{ route('conference') }}">Grant</a>
                         </li>
                     </ul>

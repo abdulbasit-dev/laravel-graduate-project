@@ -45,10 +45,9 @@ Route::get('/projects-card', [PageController::class, 'projectCard'])->name('proj
 Route::get('/projects/{project}', [PageController::class, 'projectShow'])->name('projectShow');
 
 Route::get('/galleries', [PageController::class, 'gallery'])->name('gallery');
-Route::get('/galleries/{gallery}', [PageController::class, 'galleryShow'])->name('galleryShow');
 
-Route::get('/ideas', [PageController::class, 'idea'])->name('idea');
-Route::get('/ideas/{idea}', [PageController::class, 'ideaShow'])->name('ideaShow');
+Route::get('ideas', [PageController::class, 'idea'])->name('idea');
+// Route::get('ideas/{idea}', [PageController::class, 'ideaShow'])->name('ideaShow');
 
 Route::get('/conferences', [PageController::class, 'conference'])->name('conference');
 Route::get('/evaluation-committee', [PageController::class, 'evaluation'])->name('evaluationCommittee');
@@ -64,7 +63,7 @@ Route::get('/get-department', [PageController::class, 'getDepartment'])->name('g
 
 Route::post('projects-filter', [ProjectController::class, 'filter'])->name('projects.filter');
 
-Route::get('/posters', [PageController::class, 'poster'])->name("posters");
+Route::get('/posters', [PageController::class, 'poster'])->name("poster");
 
 
 Auth::routes();

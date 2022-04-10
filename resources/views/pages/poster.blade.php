@@ -4,8 +4,9 @@
 <style>
     #showcase {
         position: relative;
-        background: url('{{ asset('images/image6.jpg') }}');
+        background: url('{{ asset('images/image12.jpg') }}');
         min-height: 60vh;
+        background-position: center;
         margin-bottom: 2rem;
     }
 
@@ -26,29 +27,23 @@
             <div class="row">
                 <div class="col-lg-8 text-left">
                     <div data-aos="fade-down" data-aos-duration="1000">
-                        <h1 class="display-4" style="margin-top: 6rem">Browse All Other Project</h1>
+                        <h1 class="display-4" style="margin-top: 6rem">All Posters</h1>
                         <p class="lead">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque,
                             voluptas.
                         </p>
                     </div>
-                    <a href="#projects" class="btn btn-outline-primary" data-aos="fade-right"
+                    <a href="#posters" class="btn btn-outline-primary" data-aos="fade-right"
                         data-aos-duration="1000">
                         See Projects <i class="fas fa-arrow-right"></i>
                     </a>
-                    @role('student')
-                    <a href="{{ route('admin.projects.create') }}" target="__blank"
-                        class="btn btn-outline-primary ms-4" data-aos="fade-left"
-                        data-aos-duration="1000">
-                        Upload Project <i class="fas fa-upload"></i>
-                    </a>
-                    @endrole
+               
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<livewire:project.search />
+<livewire:poster />
 
 @endsection
