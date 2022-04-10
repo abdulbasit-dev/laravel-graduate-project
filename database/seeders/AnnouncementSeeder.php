@@ -14,14 +14,26 @@ class AnnouncementSeeder extends Seeder
      */
     public function run()
     {
-        foreach (range(1, 5) as $item) {
-            Announcement::create([
-                "title" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum telluss ",
-                'attachment' => "uploads/announcements/docker.pdf"
-            ]);
+        Announcement::truncate();
+        foreach (range(1, 8) as $item) {
+            if ($item == 1) {
+                Announcement::create([
+                    "title" => "دووهەمین کۆنفڕانسی بەخشینی گرانت بۆ باشترین پڕۆژەی دەرچوون و ئایدیا",
+                    "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum telluss ",
+                    'attachment' => "uploads/announcements/docker.pdf",
+                    'image' => "uploads/announcements/confrance.jpg",
+                ]);
+            } else {
+                Announcement::create([
+                    "title" => $item . " Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                    "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum telluss ",
+                    'attachment' => "uploads/announcements/docker.pdf"
+                ]);
+            }
         }
     }
 }

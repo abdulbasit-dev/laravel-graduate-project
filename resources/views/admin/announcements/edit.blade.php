@@ -71,10 +71,10 @@
 
             <div class="row mt-3">
               <div class="col-md-8 mb-3">
-                <label for="ck_description">Description</label>
+                <label for="description">Description</label>
                 <textarea class="form-control @error('description') is-invalid @enderror"
                   rows="6"
-                  id="ck_description"
+                  id="description"
                   name="description">{{ old('description', $announcement->description) }}</textarea>
                 @error('description')
                   <div class="invalid-feedback">{{ $message }}</div>
@@ -83,9 +83,23 @@
             </div>
 
             <div class="row mt-3">
+                <div class="col-md-6 mb-3">
+                    <label for="image" class="form-label">Image Cover</label>
+                    <div class="mb-4">
+            
+                        <input type="file" name="image" id="image"
+                            class="form-control  @error('image') is-invalid @enderror">
+                        @error('image')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-3">
               <div class="col-md-8 mb-3">
                 <label for="image"
-                  class="form-label">Image</label>
+                  class="form-label">Attachment</label>
                 <div class="mb-4">
 
                   <input type="file"
@@ -111,3 +125,12 @@
     </div>
   </div>
 @endsection
+@push('scripts')
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#description' ) )
+        .catch( error => {
+        console.error( error );
+        } );
+</script>
+@endpush

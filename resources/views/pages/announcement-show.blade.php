@@ -53,6 +53,14 @@
                       
                         <!-- Post content-->
                         <section class="mb-5" data-aos="zoom-out" data-aos-duration="1400">
+
+                            {{-- if project image cover is not null --}}
+                            @if ($announcement->image)
+                                <div class="mb-4">
+                                    <img src="{{ asset($announcement->image) }}" class="img-fluid" alt="cover">
+                                </div>
+                            @endif
+
                             {{-- <h4>Announcement Description:</h4> --}}
                             <p>{!! $announcement->description !!}</p>
 

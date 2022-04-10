@@ -17,6 +17,7 @@ class CreateAnnouncementsTable extends Migration
             $table->id();
             $table->text('title');
             $table->longText('description');
+            $table->string('image')->nullable();
             $table->string('attachment')->nullable();
             $table->timestamps();
         });

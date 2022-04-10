@@ -54,6 +54,7 @@ class AnnouncementController extends Controller
         $validator = Validator::make($request->all(), [
             "title" => ['required'],
             "description" => ['required'],
+            'image' => ['file','mimes:png,jpg'],
             'file' => ['file']
         ]);
 
@@ -64,15 +65,22 @@ class AnnouncementController extends Controller
         }
 
         $file = null;
+        $image = null;
         try {
             if ($request->hasFile('file')) {
                 $file = time() . '_' . $request->file('file')->getClientOriginalName();
                 $request->file->move(public_path('uploads/announcements'), $file);
             }
 
+            if ($request->hasFile('image')) {
+                $image = time() . '_' . $request->file('image')->getClientOriginalName();
+                $request->image->move(public_path('uploads/announcements'), $image);
+            }
+
             Announcement::create([
                 "title" => $request->title,
                 "description" => $request->description,
+                "image" => 'uploads/announcements/' . $image,
                 "attachment" => 'uploads/announcements/' . $file,
             ]);
 
@@ -122,6 +130,7 @@ class AnnouncementController extends Controller
         $validator = Validator::make($request->all(), [
             "title" => ['required'],
             "description" => ['required'],
+            'image' => ['file', 'mimes:png,jpg'],
             'file' => ['file']
         ]);
 
@@ -132,6 +141,7 @@ class AnnouncementController extends Controller
         }
 
         $file = null;
+        $image = null;
         try {
             if ($request->hasFile('file')) {
                 //try to not delete seeder file
@@ -142,12 +152,27 @@ class AnnouncementController extends Controller
                 $file = time() . '_' . $request->file('file')->getClientOriginalName();
                 $request->file->move(public_path('uploads/announcements'), $file);
             }
+            if ($request->hasFile('image')) {
+                //try to not delete seeder file
+                if (checkDelete($announcement->image)) {
+                    //first delete 
+                    File::delete($announcement->image);
+                }
+                $image = time() . '_' . $request->file('image')->getClientOriginalName();
+                $request->image->move(public_path('uploads/announcements'), $image);
+            }
 
             $announcement->title = $request->title;
             $announcement->description = $request->description;
+
             if ($file) {
                 $announcement->attachment = 'uploads/announcements/' . $file;
             }
+            
+            if ($image) {
+                $announcement->image = 'uploads/announcements/' . $image;
+            }
+
             $announcement->save();
 
             return redirect()->route('admin.announcements.index')->with([

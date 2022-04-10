@@ -44,8 +44,15 @@
                         
                                 <!-- Post content-->
                                 <section class="mb-5" >
-                                    <h4>Announcement Description:</h4>
-                                    <p>{{ $announcement->description }}</p>
+                                    
+                                    {{-- if project image cover is not null --}}
+                                        @if ($announcement->image)
+                                        <div class="mb-4">
+                                            <img src="{{ asset($announcement->image) }}" class="img-fluid" alt="cover">
+                                        </div>
+                                        @endif
+                                    
+                                        <p>{!! $announcement->description !!}</p>
                         
                                     <div class="d-flex mt-5">
                                         {{-- if project file is not null --}}

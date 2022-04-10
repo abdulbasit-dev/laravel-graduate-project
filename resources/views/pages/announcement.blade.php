@@ -120,7 +120,7 @@
                             <span>{{ Str::upper($item->created_at->shortMonthName) }}</span>
                         </div>
                         <a href="{{ route('announcementShow',$item->id) }}" class="ann-show">
-                            <p class="" style="text-align: left">{{ substr($item->title,0,50) }}...
+                            <p class="" style="text-align: left">{{ substr($item->title,0,50) }}
                             </p>
                         </a>
                     </div>

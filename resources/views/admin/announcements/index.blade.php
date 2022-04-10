@@ -40,7 +40,6 @@
                                     <tr>
                                         <th class="border-0 rounded-start">#</th>
                                         <th class="border-0">Title</th>
-                                        <th class="border-0">Description</th>
                                         <th class="border-0 text-center">Action</th>
                                     </tr>
                                 </thead>
@@ -49,7 +48,6 @@
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $announcement->title }}</td>
-                                        <td>{{ substr($announcement->description,1,100)}}...</td>
                                         <td>
                                             <div
                                                 class="d-flex justify-content-center align-items-center">
