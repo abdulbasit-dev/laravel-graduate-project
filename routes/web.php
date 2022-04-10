@@ -47,6 +47,9 @@ Route::get('/projects/{project}', [PageController::class, 'projectShow'])->name(
 Route::get('/galleries', [PageController::class, 'gallery'])->name('gallery');
 Route::get('/galleries/{gallery}', [PageController::class, 'galleryShow'])->name('galleryShow');
 
+Route::get('/ideas', [PageController::class, 'idea'])->name('idea');
+Route::get('/ideas/{idea}', [PageController::class, 'ideaShow'])->name('ideaShow');
+
 Route::get('/conferences', [PageController::class, 'conference'])->name('conference');
 Route::get('/evaluation-committee', [PageController::class, 'evaluation'])->name('evaluationCommittee');
 Route::get('/project-announcement', [PageController::class, 'projectAnnouncement'])->name('projectAnnouncement');

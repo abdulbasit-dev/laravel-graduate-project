@@ -32,6 +32,9 @@
                     @endforeach
                 </select>
             </div>
+            <div class="col-md-2">
+                <button class="btn btn-outline-secondary" onclick="location.reload()">Reset</button>
+            </div>
         </div>
     </div>
 

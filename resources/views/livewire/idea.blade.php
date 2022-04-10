@@ -1,13 +1,13 @@
 <section class="container">
     <div class="text-center mb-1" data-aos="fade-up" data-aos-duration="1000">
-        <h3 class="mb-3">Projects</h3>
+        <h3 class="mb-3">Ideas</h3>
         <hr class="mb-4 mt-0 d-inline-block mx-auto w-50 bg-primary" style="height: 2px" />
     </div>
 
     {{--filter --}}
     <div class="row">
         <input type="text" class="form-control w-50 mx-auto mb-3" wire:model.debounce.500ms="search"
-            placeholder="search by project title ..." data-aos="fade-down" data-aos-duration="1000">
+            placeholder="search by idea title ..." data-aos="fade-down" data-aos-duration="1000">
 
         <div class="row justify-content-center row-cols-lg-auto  align-items-center"
             data-aos="fade-up" data-aos-duration="1000">
@@ -41,7 +41,7 @@
             </div>
 
             <div class="col-md-2">
-                <button class="btn btn-outline-secondary" onclick="location.reload()">Reset</button>
+               <button class="btn btn-outline-secondary" onclick="location.reload()">Reset</button>
             </div>
         </div>
     </div>
@@ -55,34 +55,34 @@
 
 
     <div class="row">
-        <div class="row mt-3" id="projects">
-            @if ($projects instanceof \Illuminate\Pagination\LengthAwarePaginator)
+        <div class="row mt-3" id="ideas">
+            @if ($ideas instanceof \Illuminate\Pagination\LengthAwarePaginator)
             <h2 class="text-left text-muted  mb-4" data-aos="fade-right" data-aos-duration="1000">
-                {!! $projects->total()? "<strong>". $projects->total()."</strong>". "
-                Projects":null !!}</h2>
+                {!! $ideas->total()? "<strong>". $ideas->total()."</strong>". "
+                Ideas":null !!}</h2>
             @endif
-            @forelse ($projects as $project)
+            @forelse ($ideas as $idea)
             <div class="col-md-3 mb-5 d-flex align-items-stretch" data-aos="zoom-in-down"
                 data-aos-duration="1000">
                 <div class="card"
                     style="width: 18rem;  box-shadow: 0 0 20px 5px rgba(62, 60, 98, 0.08);">
                     <div class="card-body d-flex flex-column">
-                        <h4 class="card-title mb-3">{{ $project->title }}</h4>
-                        <h6 class="card-subtitle mb-2 text-muted">{{ $project->project_year }}</h6>
+                        <h4 class="card-title mb-3">{{ $idea->title }}</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ $idea->idea_year }}</h6>
                         <div class="d-flex flex-column mb-4">
                             <div class="d-flex mb-2">
                                 <span>College: </span>
                                 <span class="fw-med text-primary ms-2">{{
-                                    $project->student->college->name ?? '' }}</span>
+                                    $idea->student->college->name ?? '' }}</span>
                             </div>
                             <div class="d-fle">
                                 <span>Department: </span>
                                 <span class="fw-med text-primary ms-2">{{
-                                    $project->student->dept->name
+                                    $idea->student->dept->name
                                     ?? '' }}</span>
                             </div>
                         </div>
-                        <a href="{{ route('projectShow', $project->id) }}" class="mt-auto">
+                        <a href="{{ route('ideaShow', $idea->id) }}" class="mt-auto">
                             <button class="btn btn-sm btn-primary">More Detail <i
                                     class="fas fa-arrow-right"></i></button>
                         </a>
@@ -92,7 +92,7 @@
 
             @empty
             <div class="col-12 my-4 text-center">
-                <h2 class="text-muted">No project found
+                <h2 class="text-muted">No idea found
                     <svg class="pb-2" width="40" fill="none" stroke="currentColor"
                         viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -103,24 +103,24 @@
             </div>
             @endforelse
 
-            @if ($projects instanceof \Illuminate\Pagination\LengthAwarePaginator)
+            @if ($ideas instanceof \Illuminate\Pagination\LengthAwarePaginator)
             <div class="d-flex justify-content-between align-items-center">
 
-                @if ($projects->total())
+                @if ($ideas->total())
                 <div>
                     <p class="text-sm text-gray-700 leading-5">
                         <span>{!! __('Showing') !!}</span>
-                        <span class="font-medium">{{ $projects->firstItem() }}</span>
+                        <span class="font-medium">{{ $ideas->firstItem() }}</span>
                         <span>{!! __('to') !!}</span>
-                        <span class="font-medium">{{ $projects->lastItem() }}</span>
+                        <span class="font-medium">{{ $ideas->lastItem() }}</span>
                         <span>{!! __('of') !!}</span>
-                        <span class="font-medium">{{ $projects->total() }}</span>
+                        <span class="font-medium">{{ $ideas->total() }}</span>
                         <span>{!! __('results') !!}</span>
                     </p>
                 </div>
                 @endif
 
-                {{ $projects->links() }}
+                {{ $ideas->links() }}
             </div>
             @endif
         </div>

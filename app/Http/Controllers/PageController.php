@@ -48,6 +48,17 @@ class PageController extends Controller
         return view('pages.project-show', compact("project"));
     }
 
+    public function idea()
+    {
+        return view('pages.idea');
+    }
+
+    public function ideaShow(Project $project)
+    {
+        $project  =  $project->load('student', 'student.dept', 'student.college');
+        return view('pages.project-show', compact("project"));
+    }
+
     public function conference()
     {
         return view('pages.conference');

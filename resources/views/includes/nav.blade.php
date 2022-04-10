@@ -30,10 +30,10 @@
                 </li> --}}
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link fw-medium  dropdown-toggle {{ Route::currentRouteName() == 'conference' ? 'active' : '' }}"
+                    <a class="nav-link fw-medium  dropdown-toggle {{ Route::currentRouteName() == 'conference'|| Route::currentRouteName() == 'idea' ? 'active' : '' }}"
                         href="#" data-bs-toggle="dropdown">Conference</a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Idea</a></li>
+                        <li><a class="dropdown-item" href="{{ route('idea') }}">Idea</a></li>
                         <li><a class="dropdown-item" href="#">Poster</a></li>
                         <li><a class="dropdown-item" href="{{ route('conference') }}">Grant</a>
                         </li>
