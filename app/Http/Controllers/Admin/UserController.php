@@ -8,11 +8,17 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    //<?php
+    // for admin
     public function index()
     {
-        $users = User::paginate();
+        $users = User::notRole('student')->paginate(15);
+        return view('admin.users.index', compact('users'));
+    }
 
+    // for students
+    public function student()
+    {
+        $users = User::role('student')->paginate(15);
         return view('admin.users.index', compact('users'));
     }
 }

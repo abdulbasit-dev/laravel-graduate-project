@@ -110,7 +110,8 @@ Route::group([
     //banners
     Route::resource('banners', BannerController::class)->except('show');
 
-    Route::get('users', [UserController::class, 'index'])->name('users.index');
+    Route::get('users/system-user', [UserController::class, 'index'])->name('users.index');
+    Route::get('users/student', [UserController::class, 'student'])->name('users.student');
 
     Route::get('profile', [ProfileController::class, 'show'])->name('profile.show');
     Route::get('profile/project',  [ProfileController::class, 'project'])->name('profile.project');

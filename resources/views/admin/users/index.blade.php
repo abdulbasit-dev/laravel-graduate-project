@@ -19,7 +19,7 @@
                     @foreach ($users as $user)
                         <tr>
                             <td><span class="fw-normal">{{ $user->name }}</span></td>
-                            <td><span class="fw-normal">{{ $user->getRoleNames()[0] }}</span></td>
+                            <td><span class="fw-normal badge bg-info">{{ $user->getRoleNames()[0] }}</span></td>
                             <td><span class="fw-normal">{{ $user->email }}</span></td>
                         </tr>
                     @endforeach
