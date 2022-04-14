@@ -39,6 +39,7 @@ class UserSeeder extends Seeder
         Role::firstorCreate(['name' => 'teacher']);
         Role::firstorCreate(['name' => 'manager']);
         Role::firstorCreate(['name' => 'student']);
+        Role::firstorCreate(['name' => 'council']);
 
         //create admin user
         User::firstorCreate([
@@ -63,6 +64,14 @@ class UserSeeder extends Seeder
             'is_student' => 0,
             'password' => bcrypt('password')
         ])->assignRole('manager');
+
+        //create council users
+        User::firstorCreate([
+            'name' => 'ahmad',
+            'email' => 'council@su.edu.krd',
+            'is_student' => 0,
+            'password' => bcrypt('password')
+        ])->assignRole('council');
 
         $teams = [
             [

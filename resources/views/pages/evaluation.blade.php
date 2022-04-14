@@ -10,7 +10,7 @@
         width: 100%;
         height: 100%;
         background-color: rgba(0, 0, 0, .4);
-        z-index: 2;
+        z-index: 1;
     }
 
     .home {
@@ -34,7 +34,7 @@
 
     .home .content {
         margin-top: 6rem;
-        z-index: 10000;
+        z-index: 4;
     }
 
     .home .content h1 {
@@ -62,6 +62,10 @@
     input[type=number] {
         -moz-appearance: textfield;
     }
+
+    .form_btn:hover{
+        border: none
+    }
 </style>
 
 <div class="home" id="home">
@@ -80,19 +84,60 @@
             consequuntur quam veniam magnam
             consectetur, odio velit alias!
         </p>
-        <div>
-            <a href="{{ asset('forms/evaluation-form.xlsx') }}" download="" class="btn btn-primary" data-aos="flip-up"
-                data-aos-duration="1500">
-                
-                Evaluation Form <i class="fas fa-download ms-2"></i>
+
+        @role('council')
+        <div class="mt-5">
+            <a href="{{ asset('forms/evaluation-form.xlsx') }}" download="" class="btn btn-primary"
+                data-aos="flip-up" data-aos-duration="1500">
+
+                Download Evaluation Form <i class="fas fa-download ms-2"></i>
             </a>
+
+            <button type="button" class="btn btn-block btn-outline-primary mx-4 border-white text-white form_btn"  data-bs-toggle="modal"
+                data-bs-target="#evaluation_form" data-aos="zoom-in" data-aos-duration="1500">Upload Evaluation Form <i class="fas fa-upload ms-2"></i></button>
         </div>
+        @endrole
     </div>
 </div>
 
 
 
+{{-- evaluation-form upload  --}}
+@role("council")
+<div class="modal fade" id="evaluation_form" tabindex="-1" role="dialog"
+    aria-labelledby="evaluation_form" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="h6 modal-title">Upload Form</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="{{ route('admin.forms.store') }}" method="POST"
+                    enctype='multipart/form-data'>
+                    @csrf
+                
+                    <div class="border-bottom mb-2">
+                
+                        <label for="file" class="col-form-label">Form File</label>
+                        <input required type="file" name="file" id="file" class="form-control">
+                    </div>
+                
+                    <button class="btn btn-outline-primary px-2 mt-3" type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" hidden>Accept</button>
+                <button type="button" class="btn btn-secondary ms-auto"
+                    data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+@endrole
 
+{{-- change 🚩 --}}
 {{-- <section dir="rtl">
     <div class="container">
         <div class="row">
@@ -170,8 +215,9 @@
         <div class="row">
             <div class="accordion accordion-flush" id="accordionExample">
 
-                @role("admin|manager|team|teacher")
-                <div class="accordion-item" data-aos="fade-left" data-aos-duration="1300">
+                {{-- change 🚩 --}}
+                @role("council")
+                {{-- <div class="accordion-item" data-aos="fade-left" data-aos-duration="1300">
                     <h2 class="accordion-header" id="headingOne">
                         <button class="accordion-button collapsed" type="button"
                             data-bs-toggle="collapse" data-bs-target="#uploadForm"
@@ -182,7 +228,7 @@
                     <div id="uploadForm" class="accordion-collapse collapse"
                         aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            {{-- Grant Graduate Project From --}}
+                           
                             <div class="card card-body" dir="rtl">
                                 <form class="px-5" action="{{ route('admin.forms.store') }}"
                                     method="POST" enctype='multipart/form-data'>
@@ -234,7 +280,7 @@
                         </div>
                     </div>
 
-                </div>
+                </div> --}}
                 @endrole
 
                 <div class="accordion-item" data-aos="fade-right" data-aos-duration="1300">
@@ -1366,12 +1412,6 @@
 
     </div>
 </section>
-
-
-<script>
-
-</script>
-
 @endsection
 
 @push('scripts')

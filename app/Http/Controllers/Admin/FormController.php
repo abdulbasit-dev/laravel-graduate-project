@@ -26,31 +26,38 @@ class FormController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function firstSeminar()
+
+       public function index()
     {
-        $forms = Form::orderByDesc('created_at')->where('name','first seminar')->paginate(10);
+        $forms = Form::orderByDesc('created_at')->paginate(10);
         return view('admin.forms.index', compact('forms'));
     }
-    public function finalSeminar()
-    {
-        $forms = Form::orderByDesc('created_at')->where('name','final seminar')->paginate(10);
-          return view('admin.forms.index', compact('forms'));
-    }
-    public function finalSeminarSupervisor()
-    {
-        $forms = Form::orderByDesc('created_at')->where('name','final seminar supervisor')->paginate(10);
-          return view('admin.forms.index', compact('forms'));
-    }
-    public function theoryExam()
-    {
-        $forms = Form::orderByDesc('created_at')->where('name','theory exam')->paginate(10);
-           return view('admin.forms.index', compact('forms'));
-    }
-    public function finalEegree()
-    {
-        $forms = Form::orderByDesc('created_at')->where('name','final degree')->paginate(10);
-        return view('admin.forms.index', compact('forms'));
-    }
+
+    // public function firstSeminar()
+    // {
+    //     $forms = Form::orderByDesc('created_at')->where('name','first seminar')->paginate(10);
+    //     return view('admin.forms.index', compact('forms'));
+    // }
+    // public function finalSeminar()
+    // {
+    //     $forms = Form::orderByDesc('created_at')->where('name','final seminar')->paginate(10);
+    //       return view('admin.forms.index', compact('forms'));
+    // }
+    // public function finalSeminarSupervisor()
+    // {
+    //     $forms = Form::orderByDesc('created_at')->where('name','final seminar supervisor')->paginate(10);
+    //       return view('admin.forms.index', compact('forms'));
+    // }
+    // public function theoryExam()
+    // {
+    //     $forms = Form::orderByDesc('created_at')->where('name','theory exam')->paginate(10);
+    //        return view('admin.forms.index', compact('forms'));
+    // }
+    // public function finalEegree()
+    // {
+    //     $forms = Form::orderByDesc('created_at')->where('name','final degree')->paginate(10);
+    //     return view('admin.forms.index', compact('forms'));
+    // }
 
     /**
      * Store a newly created resource in storage.
@@ -61,7 +68,6 @@ class FormController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            "name" => ['required'],
             "file" => ['required', 'file']
         ]);
 
@@ -80,7 +86,7 @@ class FormController extends Controller
             }
 
             Form::create([
-                "name" => $request->name,
+                "name" => $request->name ?? null,
                 "file" => 'uploads/forms/' . $file,
             ]);
 
@@ -102,7 +108,7 @@ class FormController extends Controller
         //try to not delete seeder file
         if (checkDelete($form->file)) {
             //first delete privies file
-            
+
         }
 
         File::delete($form->file);

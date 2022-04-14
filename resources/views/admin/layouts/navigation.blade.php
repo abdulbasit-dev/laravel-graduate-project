@@ -116,7 +116,8 @@
     @endrole
 
 
-    @hasanyrole('admin|manager|team|teacher')
+    @hasanyrole('council')
+
     {{-- profile --}}
     <li class="nav-item {{ request()->routeIs('admin.profile.*') ? 'active' : '' }}">
         <span class="nav-link d-flex justify-content-between align-items-center"
@@ -153,6 +154,62 @@
         </div>
     </li>
 
+    {{-- evalution forms --}}
+    <li class="nav-item {{ request()->routeIs('admin.forms.index') ? 'active' : '' }}">
+        <a href="{{ route('admin.forms.index') }}" class="nav-link">
+            <span class="sidebar-icon ">
+                <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                    </path>
+                </svg>
+            </span>
+            <span class="sidebar-text text-sm">{{ __('Evalution Forms') }}</span>
+        </a>
+    </li>
+    @endrole
+
+    @hasanyrole('admin|manager|team|teacher')
+
+    {{-- profile --}}
+    <li class="nav-item {{ request()->routeIs('admin.profile.*') ? 'active' : '' }}">
+        <span class="nav-link d-flex justify-content-between align-items-center"
+            data-bs-toggle="collapse" data-bs-target="#admin_profile">
+            <span class="d-flex  align-items-center">
+                <span class="sidebar-icon">
+                    <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z">
+                        </path>
+                    </svg>
+                </span>
+                <span class="sidebar-text">Profile</span>
+            </span>
+            <span class="link-arrow">
+                <svg class="icon icon-sm" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                        clip-rule="evenodd">
+                    </path>
+                </svg>
+            </span>
+        </span>
+        <div class="multi-level collapse" role="list" id="admin_profile" aria-expanded="false">
+            <ul class="flex-column nav">
+                <li class="nav-item {{ request()->routeIs('admin.profile.*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('admin.profile.show') }}">
+                        <span class="sidebar-text">My Profile</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </li>
+
+
+
     {{-- projects --}}
     <li class="nav-item {{ request()->routeIs('admin.projects.index') ? 'active' : '' }}">
         <a href="{{ route('admin.projects.index') }}" class="nav-link">
@@ -183,8 +240,8 @@
         </a>
     </li>
 
-    {{-- evalution forms --}}
-    <li class="nav-item {{ request()->routeIs('admin.forms.*') ? 'active' : '' }}">
+    {{-- evalution forms 🚩 --}}
+    {{-- <li class="nav-item {{ request()->routeIs('admin.forms.*') ? 'active' : '' }}">
         <span class="nav-link d-flex justify-content-between align-items-center"
             data-bs-toggle="collapse" data-bs-target="#eval_forms">
             <span class="d-flex  align-items-center">
@@ -243,7 +300,8 @@
 
             </ul>
         </div>
-    </li>
+    </li> --}}
+
 
     {{-- grants project --}}
     <li class="nav-item {{ request()->routeIs('admin.grants.index') ? 'active' : '' }}">
@@ -276,28 +334,20 @@
         </a>
     </li>
 
-    {{-- Student --}}
-    <li class="nav-item {{ request()->routeIs('admin.users.student') ? 'active' : '' }}">
-        <a href="{{ route('admin.users.student') }}" class="nav-link">
-            <span class="sidebar-icon ">
-                <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14l9-5-9-5-9 5 9 5z"></path><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path></svg>
-            </span>
-            <span class="sidebar-text text-sm">{{ __('Studens') }}</span>
-        </a>
-    </li>
+    <li role="separator" class="dropdown-divider mt-4 mb-3 border-gray-700"></li>
 
-    {{-- users --}}
-    <li class="nav-item {{ request()->routeIs('admin.users.index') ? 'active' : '' }}">
-        <a href="{{ route('admin.users.index') }}" class="nav-link">
+    {{-- experts --}}
+    <li class="nav-item {{ request()->routeIs('admin.experts.*') ? 'active' : '' }}">
+        <a href="{{ route('admin.experts.index') }}" class="nav-link">
             <span class="sidebar-icon ">
                 <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
+                        d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
                     </path>
                 </svg>
             </span>
-            <span class="sidebar-text text-sm">{{ __('System User') }}</span>
+            <span class="sidebar-text text-sm">{{ __('Experts') }}</span>
         </a>
     </li>
 
@@ -316,21 +366,6 @@
         </a>
     </li>
 
-    {{-- experts --}}
-    <li class="nav-item {{ request()->routeIs('admin.experts.*') ? 'active' : '' }}">
-        <a href="{{ route('admin.experts.index') }}" class="nav-link">
-            <span class="sidebar-icon ">
-                <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
-                    </path>
-                </svg>
-            </span>
-            <span class="sidebar-text text-sm">{{ __('Experts') }}</span>
-        </a>
-    </li>
-
     {{-- Project Announcements --}}
     <li class="nav-item {{ request()->routeIs('admin.project-announcements.*') ? 'active' : '' }}">
         <a href="{{ route('admin.project-announcements.index') }}" class="nav-link">
@@ -345,8 +380,6 @@
             <span class="sidebar-text text-sm">{{ __('Project Announcements') }}</span>
         </a>
     </li>
-
-
 
     {{-- college & department --}}
     <li class="nav-item">
@@ -388,6 +421,42 @@
                 </li>
             </ul>
         </div>
+    </li>
+
+    <li role="separator" class="dropdown-divider mt-4 mb-3 border-gray-700"></li>
+
+    {{-- Student --}}
+    <li class="nav-item {{ request()->routeIs('admin.users.student') ? 'active' : '' }}">
+        <a href="{{ route('admin.users.student') }}" class="nav-link">
+            <span class="sidebar-icon ">
+                <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                    <path
+                        d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z">
+                    </path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222">
+                    </path>
+                </svg>
+            </span>
+            <span class="sidebar-text text-sm">{{ __('Studens') }}</span>
+        </a>
+    </li>
+
+    {{-- users --}}
+    <li class="nav-item {{ request()->routeIs('admin.users.index') ? 'active' : '' }}">
+        <a href="{{ route('admin.users.index') }}" class="nav-link">
+            <span class="sidebar-icon ">
+                <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
+                    </path>
+                </svg>
+            </span>
+            <span class="sidebar-text text-sm">{{ __('System User') }}</span>
+        </a>
     </li>
 
     <li role="separator" class="dropdown-divider mt-4 mb-3 border-gray-700"></li>
