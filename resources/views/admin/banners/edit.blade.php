@@ -83,6 +83,21 @@
             </div>
 
             <div class="row mt-3">
+                <div class="col-md-6 mb-3">
+                    <label for="page">Page Banner</label>
+                    <select name="page" id="page" class="form-select">
+                        <option value>Choose A page</option>
+                        <option value="home">Home</option>
+                        <option value="expert">Expert</option>
+                        <option value="gallery">Gallery</option>
+                    </select>
+                    @error('page')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+            </div>
+
+            <div class="row mt-3">
               <div class="col-md-6 mb-3">
                 <label for="image"
                   class="form-label">Image</label>

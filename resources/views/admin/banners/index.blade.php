@@ -45,6 +45,7 @@
                       <th class="border-0 rounded-start">#</th>
                       <th class="border-0">Title</th>
                       <th class="border-0">Description</th>
+                      <th class="border-0">Page</th>
                       <th class="border-0">Image</th>
                       <th class="border-0 text-center">Action</th>
                     </tr>
@@ -55,6 +56,7 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $banner->title }}</td>
                         <td>{{ $banner->description }}</td>
+                        <td>{{ Str::title($banner->page) }}</td>
                         <td>
                           <img src="{{ asset($banner->image) }}"
                             alt="{{ $banner->name }}"

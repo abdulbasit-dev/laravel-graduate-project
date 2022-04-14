@@ -51,9 +51,11 @@ class BannerController extends Controller
      */
     public function store(Request $request)
     {
+       
         $validator = Validator::make($request->all(), [
             "title" => ['required', 'string', 'max:50'],
             "description" => ['required', 'string'],
+            "page" => ['required', 'string'],
             "file" => ['required', 'file', 'mimes:png,jpg']
         ]);
 
@@ -72,6 +74,7 @@ class BannerController extends Controller
 
             Banner::create([
                 "title" => $request->title,
+                "page" => $request->page,
                 "description" => $request->description,
                 "image" => 'uploads/banners/' . $file,
             ]);
@@ -111,7 +114,8 @@ class BannerController extends Controller
         $validator = Validator::make($request->all(), [
             "title" => ['required', 'string', 'max:30'],
             "description" => ['required', 'string',],
-            "file" => ['file', 'mimes:png,jpg']
+            "file" => ['file', 'mimes:png,jpg'],
+            "page" => ['required', 'string'],
         ]);
 
         if ($validator->fails()) {
@@ -134,6 +138,7 @@ class BannerController extends Controller
             }
 
             $banner->title = $request->title;
+            $banner->page = $request->page;
             $banner->description = $request->description;
             if ($file) {
                 $banner->image = 'uploads/banners/' . $file;

@@ -18,7 +18,7 @@ class PageController extends Controller
 
     public function home()
     {
-        $banners = Banner::take(3)->get();
+        $banners = Banner::wherePage("home")->take(3)->get();
         return view('pages.home', compact('banners'));
     }
 
