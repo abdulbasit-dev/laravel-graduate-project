@@ -29,7 +29,7 @@ class UserSeeder extends Seeder
         app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
 
         //get random name
-        $json = file_get_contents('./names.json');
+        $json = file_get_contents(base_path() . '/names.json');
         $array = json_decode($json, true);
 
 

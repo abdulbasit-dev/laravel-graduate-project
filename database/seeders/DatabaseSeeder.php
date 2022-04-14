@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ProjectAnnouncementSeeder::class);
         $this->call(UserSeeder::class);
         $this->call(ProjectSeeder::class);
+        $this->call(IdeaSeeder::class);
 
         // supposed to only apply to a single connection and reset it's self
         // but I like to explicitly undo what I've done for clarity

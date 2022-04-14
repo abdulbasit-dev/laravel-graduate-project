@@ -32,6 +32,7 @@
                                     <tr>
                                         <th class="border-0 rounded-start">#</th>
                                         <th class="border-0">Title</th>
+                                        <th class="border-0">Stage</th>
                                         <th class="border-0">Supervisor Name</th>
                                         <th class="border-0">Team Members</th>
                                         <th class="border-0">Action</th>
@@ -42,6 +43,7 @@
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $idea->title }}</td>
+                                        <td> <span class="badge bg-success" style="font-size: .8rem">{{ Str::title($idea->stage) }}</span></td>
                                         <td>{{ $idea->supervisor_name }}</td>
                                         <td>
                                             <div class="mb-3">

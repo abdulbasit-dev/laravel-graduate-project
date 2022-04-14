@@ -17,7 +17,7 @@ class GrantSeeder extends Seeder
     public function run()
     {
         //get random name
-        $json = file_get_contents('./names.json');
+        $json = file_get_contents(base_path() . '/names.json');
         $array = json_decode($json, true);
 
         foreach (range(1, 20) as $item) {

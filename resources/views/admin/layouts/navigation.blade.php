@@ -164,7 +164,7 @@
                     </path>
                 </svg>
             </span>
-            <span class="sidebar-text text-sm">{{ __('Projects') }}</span>
+            <span class="sidebar-text text-sm">{{ __('Graduation Projects') }}</span>
         </a>
     </li>
 
