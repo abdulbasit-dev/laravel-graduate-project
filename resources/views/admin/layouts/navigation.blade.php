@@ -221,7 +221,7 @@
                     </path>
                 </svg>
             </span>
-            <span class="sidebar-text text-sm">{{ __('Graduation Projects') }}</span>
+            <span class="sidebar-text text-sm">{{ __('Projects') }}</span>
         </a>
     </li>
 
@@ -237,6 +237,55 @@
                 </svg>
             </span>
             <span class="sidebar-text text-sm">{{ __('Idea') }}</span>
+        </a>
+    </li>
+
+
+    {{-- grants project --}}
+    <li class="nav-item {{ request()->routeIs('admin.grants.index') ? 'active' : '' }}">
+        <a href="{{ route('admin.grants.index') }}" class="nav-link">
+            <span class="sidebar-icon ">
+                <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                    </path>
+                </svg>
+            </span>
+            <span class="sidebar-text text-sm">{{ __('Grant Project') }}</span>
+        </a>
+    </li>
+
+
+    {{-- grants idea --}}
+    <li class="nav-item {{ request()->routeIs('admin.grants.indexIdea') ? 'active' : '' }}">
+        <a href="{{ route('admin.grants.indexIdea') }}" class="nav-link">
+            <span class="sidebar-icon ">
+                <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
+                    </path>
+                </svg>
+            </span>
+            <span class="sidebar-text text-sm">{{ __('Grant Idea') }}</span>
+        </a>
+    </li>
+
+    <li role="separator" class="dropdown-divider mt-4 mb-3 border-gray-700"></li>
+
+    {{-- Project Announcements --}}
+    <li class="nav-item {{ request()->routeIs('admin.project-announcements.*') ? 'active' : '' }}">
+        <a href="{{ route('admin.project-announcements.index') }}" class="nav-link">
+            <span class="sidebar-icon ">
+                <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9">
+                    </path>
+                </svg>
+            </span>
+            <span class="sidebar-text text-sm">{{ __('Project Announcements') }}</span>
         </a>
     </li>
 
@@ -285,8 +334,7 @@
                         <span class="sidebar-text">Final Evaluation Supervisor</span>
                     </a>
                 </li>
-                <li
-                    class="nav-item {{ request()->routeIs('admin.forms.theoryExam') ? 'active' : '' }}">
+                <li class="nav-item {{ request()->routeIs('admin.forms.theoryExam') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('admin.forms.theoryExam') }}">
                         <span class="sidebar-text">Theory Exam</span>
                     </a>
@@ -297,15 +345,14 @@
                         <span class="sidebar-text">Final Degree</span>
                     </a>
                 </li>
-
+    
             </ul>
         </div>
     </li> --}}
-
-
-    {{-- grants project --}}
-    <li class="nav-item {{ request()->routeIs('admin.grants.index') ? 'active' : '' }}">
-        <a href="{{ route('admin.grants.index') }}" class="nav-link">
+    
+    {{-- evalution forms --}}
+    <li class="nav-item {{ request()->routeIs('admin.forms.index') ? 'active' : '' }}">
+        <a href="{{ route('admin.forms.index') }}" class="nav-link">
             <span class="sidebar-icon ">
                 <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
@@ -314,28 +361,10 @@
                     </path>
                 </svg>
             </span>
-            <span class="sidebar-text text-sm">{{ __('Grant Project') }}</span>
+            <span class="sidebar-text text-sm">{{ __('Evalution Forms') }}</span>
         </a>
     </li>
-
-
-    {{-- grants idea --}}
-    <li class="nav-item {{ request()->routeIs('admin.grants.indexIdea') ? 'active' : '' }}">
-        <a href="{{ route('admin.grants.indexIdea') }}" class="nav-link">
-            <span class="sidebar-icon ">
-                <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
-                    </path>
-                </svg>
-            </span>
-            <span class="sidebar-text text-sm">{{ __('Grant Idea') }}</span>
-        </a>
-    </li>
-
-    <li role="separator" class="dropdown-divider mt-4 mb-3 border-gray-700"></li>
-
+    
     {{-- experts --}}
     <li class="nav-item {{ request()->routeIs('admin.experts.*') ? 'active' : '' }}">
         <a href="{{ route('admin.experts.index') }}" class="nav-link">
@@ -347,7 +376,7 @@
                     </path>
                 </svg>
             </span>
-            <span class="sidebar-text text-sm">{{ __('Experts') }}</span>
+            <span class="sidebar-text text-sm">{{ __('Expert System Info') }}</span>
         </a>
     </li>
 
@@ -363,21 +392,6 @@
                 </svg>
             </span>
             <span class="sidebar-text text-sm">{{ __('Announcements') }}</span>
-        </a>
-    </li>
-
-    {{-- Project Announcements --}}
-    <li class="nav-item {{ request()->routeIs('admin.project-announcements.*') ? 'active' : '' }}">
-        <a href="{{ route('admin.project-announcements.index') }}" class="nav-link">
-            <span class="sidebar-icon ">
-                <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9">
-                    </path>
-                </svg>
-            </span>
-            <span class="sidebar-text text-sm">{{ __('Project Announcements') }}</span>
         </a>
     </li>
 

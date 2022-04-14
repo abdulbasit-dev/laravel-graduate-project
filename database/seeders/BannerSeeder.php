@@ -17,17 +17,60 @@ class BannerSeeder extends Seeder
         // delete all rows 
         Banner::truncate();
 
-        $titles = [
-            'Explore Students Projects',
-            'Find Out The best Ranked One',
-            'Get Idea From Others Project',
+        $banners = [
+            [
+                "title"=> "Explore Students Projects",
+                "page"=> "home",
+                'image' => "uploads/banners/1.jpg"
+            ],
+            [
+                "title"=> "Find Out The best Ranked One",
+                "page"=> "home",
+                'image' => "uploads/banners/2.jpg"
+            ],
+            [
+                "title"=> "Get Idea From Others Project",
+                "page"=> "home",
+                'image' => "uploads/banners/3.jpg"
+            ],
+            [
+                "title"=> "Expert Systems",
+                "page"=> "expert",
+                'image' => "uploads/banners/4.jpg"
+            ],
+            [
+                "title"=> "Find Out The best Ranked One",
+                "page"=> "expert",
+                'image' => "uploads/banners/5.jpg"
+            ],
+            [
+                "title"=> "Get Idea From Others Project",
+                "page"=> "expert",
+                'image' => "uploads/banners/6.jpg"
+            ],
+            [
+                "title"=> "Explore Students Projects",
+                "page"=> "gallery",
+                'image' => "uploads/banners/5.jpg"
+            ],
+            [
+                "title"=> "Find Out The best Ranked One",
+                "page"=> "gallery",
+                'image' => "uploads/banners/6.jpg"
+            ],
+            [
+                "title"=> "Get Idea From Others Project",
+                "page"=> "gallery",
+                'image' => "uploads/banners/2.jpg"
+            ],
         ];
 
-        foreach (range(1, 3) as $banner) {
+        foreach ($banners as $banner) {
             Banner::create([
-                "title" => $titles[$banner - 1],
+                "title" => $banner["title"],
+                "page" => $banner["page"],
                 "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus. ",
-                'image' => "uploads/banners/$banner.jpg"
+                'image' => $banner["image"]
             ]);
         }
     }

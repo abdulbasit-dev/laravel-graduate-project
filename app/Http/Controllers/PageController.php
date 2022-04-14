@@ -40,7 +40,8 @@ class PageController extends Controller
 
     public function gallery()
     {
-        return view('pages.gallery');
+        $banners = Banner::wherePage("gallery")->take(3)->get();
+        return view('pages.gallery', compact('banners'));
     }
 
     public function idea()
