@@ -83,7 +83,7 @@ class PageController extends Controller
         $query = ProjectAnnouncement::query();
         // $projectAnnouncements = ProjectAnnouncement::paginate(10);
 
-        if (auth()->user()->hasRole('student')) {
+        if (auth()->check() && auth()->user()->hasRole('student')) {
             $college_id = auth()->user()->college_id;
             $dept_id = auth()->user()->dept_id;
             $query->where('college_id', $college_id)
