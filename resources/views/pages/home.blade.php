@@ -4,7 +4,7 @@
   <div>
 
     {{-- Carosel --}}
-    <section id="showcase">
+    <section >
       <div id="carouselExampleCaptions"
         class="carousel carousel-light slide"
         data-bs-ride="carousel"

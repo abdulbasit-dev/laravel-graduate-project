@@ -76,7 +76,8 @@ class PageController extends Controller
     public function expertSystemInfo()
     {
         $experts = Expert::all();
-        return view('pages.expert-system-info', compact("experts"));
+        $banners = Banner::wherePage("expert")->take(3)->get();
+        return view('pages.expert-system-info', compact("experts", "banners"));
     }
 
     public function projectAnnouncement()

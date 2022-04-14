@@ -2,7 +2,7 @@
 
 @section('content')
 <style>
-    #showcase {
+    /* #showcase {
         position: relative;
         background: url('{{ asset('images/image8.jpg') }}');
         background-position: center;
@@ -17,7 +17,7 @@
         background: rgba(0, 0, 0, 0.5);
         width: 100%;
         height: 100%;
-    }
+    } */
 
     .lightbox {
         /* Default to hidden */
@@ -55,10 +55,25 @@
         background-size: contain;
     }
 
+    #show {
+        margin-bottom: 5rem;
+    }
+
+    .carousel .carousel-item {
+        height: 70vh;
+    }
+
+    .carousel-item img {
+        position: absolute;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+        min-height: 70vh;
+    }
 </style>
 
 <!-- ShowCase  -->
-<header id="showcase">
+{{-- <header id="showcase">
     <div class="primary-overlay text-white">
         <div class="container">
             <div class="row">
@@ -71,9 +86,65 @@
             </div>
         </div>
     </div>
-</header>
+</header> --}}
 
-<section class="container" style="margin-bottom: 10rem">
+{{-- Carosel --}}
+<section id="show">
+    <div id="carouselExampleCaptions" class="carousel carousel-light slide" data-bs-ride="carousel"
+        data-bs-pause="false">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            @foreach ($banners as $banner)
+            <div class="carousel-item {{ $loop->iteration == 1 ? 'active' : '' }}"
+                data-bs-interval="3000">
+                <img src="{{ asset($banner->image) }}" class="d-block w-100" alt="...">
+                <div class="dark-overlay">
+                    <div class="carousel-caption d-none d-md-block" style="margin-bottom:24rem">
+                        <h1 class="display-4" data-aos="fade-down" data-aos-duration="1000">{{
+                            $banner->title }}</h1>
+                        <p class="lead" data-aos="fade-up" data-aos-duration="1500">{{
+                            $banner->description }}
+                        </p>
+                        <div class="mt-4">
+                            <a href="#experts" class="btn btn-outline-primary" data-aos="fade-right"
+                                data-aos-duration="1000">
+                                Expert Info Files <i class="fas fa-arrow-right"></i>
+                            </a>
+    
+                            <a href="#video" target="__blank"
+                                class="btn btn-outline-primary ms-4" data-aos="fade-left"
+                                data-aos-duration="1000">
+                                Video Tutorial <i class="fas fa-upload"></i>
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            @endforeach
+        </div>
+        <button class="carousel-control-prev" type="button"
+            data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button"
+            data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+
+<section class="container" id="experts" style="margin-bottom: 10rem">
 
     <div class="text-center mb-4" data-aos="fade-up" data-aos-duration="1000">
         <h3 class="mb-3">Expert System Info</h3>
@@ -93,18 +164,59 @@
             <tr data-aos="zoom-in-down" data-aos-duration="1000">
                 <th scope="row">{{ $loop->iteration }}</th>
                 <td>{{ $expert->title }}</td>
-                <td><a href="{{ asset($expert->file) }}"><i class="bi bi-file-earmark-arrow-down fa-2x"></i></a></td>
+                <td><a href="{{ asset($expert->file) }}"><i
+                            class="bi bi-file-earmark-arrow-down fa-2x"></i></a></td>
             </tr>
-                
+
             @empty
-                <tr class="mt-4">
-                    <td colspan="3" class="text-center h4">No file found :(</td>
-                </tr>
+            <tr class="mt-4">
+                <td colspan="3" class="text-center h4">No file found :(</td>
+            </tr>
             @endforelse
-            
+
         </tbody>
     </table>
 
+</section>
+
+<section class="container" id="video" style="margin-bottom: 10rem">
+    <div class="text-center mb-4" data-aos="fade-up" data-aos-duration="1000">
+        <h3>Video Tutorial</h3>
+        <hr class="mb-2 mt-0 d-inline-block mx-auto w-50 bg-primary" style="height: 2px" />
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-3 me-5" data-aos="fade-right" data-aos-duration="1500">
+            <div class="card" style="width: 22rem;">
+                <div class="card-body">
+                    <h4 class="card-title">4th Class Project Sample</h4>
+                    <p class="card-text">This the template that help writning your project report
+                        effectively, find the download link below</p>
+                    <a href="{{ asset('docs/4th class Project  Sample - writing Desigen.docx') }}"
+                        download="" class="card-link"><i class="bi bi-file-earmark-arrow-down"></i>
+                        downlaod</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-3" data-aos="fade-left" data-aos-duration="1500">
+            <div class="card" style="width: 22rem;">
+                <div class="card-body">
+                    <h4 class="card-title">Norms and Regulations</h4>
+                    <p class="card-tex">for Writing scientific Project for students in the fourth
+                        stage</p>
+                    <p class="card-text">Prepared by <a
+                            href="https://academics.su.edu.krd/haider.haddad"
+                            class=" text-decoration-none" target="__blank">D. Haider Haddad</a>
+                        <br> <span class="text-primary">computer Dept. College of Science Salahadin
+                            University</span>
+                    </p>
+
+                    <a href="{{ asset('docs/4th student project .pptx') }}" download=""
+                        class="card-link"><i class="bi bi-file-earmark-arrow-down"></i> downlaod</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <section class="container" style="margin-bottom: 10rem">
@@ -155,7 +267,8 @@
     </div>
 
     <div class="row justify-content-center ">
-        <div class="col-4 " data-aos="zoom-in-right" data-aos-duration="1200" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
+        <div class="col-4 " data-aos="zoom-in-right" data-aos-duration="1200"
+            data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
             <div class="w-75">
                 <a href="#img1">
                     <img src="{{ asset('uploads/experts/grant-project.jpg') }}"
@@ -166,16 +279,17 @@
         <div class="col-4 " data-aos="zoom-in-left" data-aos-duration="1200">
             <div class="w-75">
                 <a href="#img2" class="img__wrap">
-                    <img  src="{{ asset('uploads/experts/grant-idea.jpg') }}"
+                    <img src="{{ asset('uploads/experts/grant-idea.jpg') }}"
                         class="img-fluid rounded-3 border" alt="">
                 </a>
             </div>
         </div>
     </div>
 
-    {{-- light box containers  --}}
+    {{-- light box containers --}}
     <a href="#grantForms" class="lightbox" id="img1">
-        <span style="background-image: url('{{ asset('uploads/experts/grant-project.jpg') }}')"></span>
+        <span
+            style="background-image: url('{{ asset('uploads/experts/grant-project.jpg') }}')"></span>
     </a>
 
     <a href="#grantForms" class="lightbox" id="img2">
