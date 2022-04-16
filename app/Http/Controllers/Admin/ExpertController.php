@@ -121,7 +121,7 @@ class ExpertController extends Controller
         try {
             if ($request->hasFile('file')) {
                 //try to not delete seeder file
-                if (checkDelete($expert->attachment)) {
+                if (checkDelete($expert->attachment && $expert->attachment)) {
                     //first delete 
                     File::delete($expert->attachment);
                 }

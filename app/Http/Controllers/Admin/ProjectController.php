@@ -4,12 +4,14 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\College;
+use App\Models\Expert;
 use App\Models\Project;
 use App\Models\Setting;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\View;
 
 class ProjectController extends Controller
@@ -89,7 +91,7 @@ class ProjectController extends Controller
     {
         $active_project = Setting::where('name', 'project_upload')->first()->value;
 
-        if(!$active_project){
+        if (!$active_project) {
             return redirect()->back()->with([
                 "message" => "Project Uploading is Disabled",
                 "title" => "Disabled",
@@ -173,9 +175,10 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Project $project)
     {
-        //
+        $project->load('student', 'student.dept', 'student.college');
+        return view('admin.project.edit', compact('project'));
     }
 
     /**
@@ -185,9 +188,80 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Project $project)
     {
-        //
+
+
+        $projectFile = null;
+        $reportFile = null;
+        $posterFile = null;
+
+        try {
+            if ($request->hasFile('project')) {
+                //try to not delete seeder file
+                if ($project->project  && checkDelete($project->project)) {
+                    //first delete 
+                    File::delete($project->projectFile);
+                }
+
+                $projectFile = time() . '_' . $request->file('project')->getClientOriginalName();
+                $request->project->move(public_path('uploads/projects'), $projectFile);
+            }
+
+            if ($request->hasFile('report')) {
+                //try to not delete seeder file
+                if ($project->report &&  checkDelete($project->report)) {
+                    //first delete 
+                    File::delete($project->report);
+                }
+
+                $reportFile = time() . '_' . $request->file('report')->getClientOriginalName();
+                $request->report->move(public_path('uploads/reports'), $reportFile);
+            }
+
+            if ($request->hasFile('poster')) {
+                //try to not delete seeder file
+                if ($project->poster  && checkDelete($project->poster)) {
+                    //first delete 
+                    File::delete($project->poster);
+                }
+
+                $posterFile = time() . '_' . $request->file('poster')->getClientOriginalName();
+                $request->poster->move(public_path('uploads/posters'), $posterFile);
+            }
+
+
+
+            $project->title = $request->title;
+            $project->description = $request->description;
+            $project->supervisor_name = $request->supervisor_name;
+
+            if (count($request->teams) && $request->teams[0] !== null) {
+                $project->team_members = $request->teams;
+            }
+
+            if ($projectFile) {
+                $project->project = 'uploads/projects/' . $projectFile;
+            }
+
+            if ($reportFile) {
+                $project->report = 'uploads/reports/' . $reportFile;
+            }
+
+            if ($posterFile) {
+                $project->poster = 'uploads/posters/' . $posterFile;
+            }
+
+            $project->save();
+
+            return redirect()->route('admin.profile.project')->with([
+                "message" => "Expert Updated Successfully",
+                "title" => "updated",
+                "icon" => "success",
+            ]);
+        } catch (\Throwable $th) {
+            throw $th;
+        }
     }
 
     /**
@@ -200,19 +274,19 @@ class ProjectController extends Controller
     {
         User::where('id', $project->created_by)->update(['is_submited' => 0]);
         //try to not delete seeder file
-        if (checkDelete($project->project)) {
+        if ($project->project && checkDelete($project->project)) {
             //first delete privies file
             File::delete($project->project);
         }
 
         //try to not delete seeder file
-        if (checkDelete($project->report)) {
+        if ($project->report && checkDelete($project->report)) {
             //first delete privies file
             File::delete($project->report);
         }
 
         //try to not delete seeder file
-        if (checkDelete($project->poster)) {
+        if ($project->poster && checkDelete($project->poster)) {
             //first delete privies file
             File::delete($project->poster);
         }

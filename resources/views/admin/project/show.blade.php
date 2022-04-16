@@ -32,20 +32,24 @@
                                 <!-- Post header-->
                                 <header class="d-fle justify-content-between">
                                     <div>
-                                    <!-- Post title-->
-                                    <h1 class="fw-bolder mb-1">{{ $project->title }}</h1>
-                                    <!-- Post meta content-->
-                                    <div class="text-muted fst-italic mb-2">{{
-                                        $project->project_year }}</div>
+                                        <!-- Post title-->
+                                        <h1 class="fw-bolder mb-1">{{ $project->title }}</h1>
+                                        <!-- Post meta content-->
+                                        <div class="text-muted fst-italic mb-2">{{
+                                            $project->project_year }}</div>
                                     </div>
                                     @if (auth()->id() ==$project->created_by)
                                     <div class="d-flex justify-content-end">
-                                         <form  action="{{ route('admin.projects.destroy', $project->id) }}" method="POST"
-                                                                id="myForm_{{ $project->id }}">
-                                                                @method("DELETE")
-                                                                @csrf
-                                                            </form>
-                                                            <button onclick="Swal.fire({
+                                        <a href="{{ route('admin.projects.edit',$project) }}"
+                                            class="btn btn-outline-info me-3">Edit</a>
+                                        <form
+                                            action="{{ route('admin.projects.destroy', $project->id) }}"
+                                            method="POST" id="myForm_{{ $project->id }}">
+                                            @method("DELETE")
+                                            @csrf
+                                        </form>
+                                        <button
+                                            onclick="Swal.fire({
                                                                                                                                                     title: 'Are you sure?',
                                                                                                                                                     text: `You won't be able to revert this!`,
                                                                                                                                                     showClass: {
@@ -63,10 +67,10 @@
                                                                                                                                                             }
                                                                                                                                                         })
                                                                                                                                                 "
-                                                                class="btn btn-outline-danger btn-sm ">Delete</button>
+                                            class="btn btn-outline-danger btn-sm ">Delete</button>
                                     </div>
                                     @endif
-                                   
+
                                 </header>
                                 <!-- Preview image figure-->
                                 <figure class="mb-4"><img class="img-fluid"
@@ -89,11 +93,11 @@
                                         <div class="mb-3">
                                             @php
                                             if(getType($project->team_members)!="array"){
-                                                $serialized = serialize($project->team_members);
-                                                $myNewArray = unserialize($serialized);
-                                                $newTeamArr = json_decode($myNewArray, true);
+                                            $serialized = serialize($project->team_members);
+                                            $myNewArray = unserialize($serialized);
+                                            $newTeamArr = json_decode($myNewArray, true);
                                             }else{
-                                              $newTeamArr = $project->team_members;
+                                            $newTeamArr = $project->team_members;
                                             }
                                             @endphp
                                             <h4>Team Members</h4>
