@@ -35,7 +35,7 @@
               <div class="dark-overlay">
                 <div class="carousel-caption d-none d-md-block"
                   style="margin-bottom: 5rem">
-                  <p class="h3">
+                  {{-- <p class="h3">
                                     We are fourth-year students in the Department of Computer Science and IT at the College of
                                     Science.
                                     We designed a graduation project under the title (Design an expert system for student’s
@@ -48,9 +48,9 @@
                                     university
                                     This system serves the centralization of the quality assurance department in the university
                                     presidency.
-                                </p>
-                  {{-- <h1 class="display-4" data-aos="fade-down" data-aos-duration="1000">{{ $banner->title }}</h1>
-                  <p class="lead" data-aos="fade-up" data-aos-duration="1500">{{ $banner->description }} --}}
+                                </p> --}}
+                  <h1 class="display-4" data-aos="fade-down" data-aos-duration="1000">{{ $banner->title }}</h1>
+                  <p class="lead" data-aos="fade-up" data-aos-duration="1500">{{ $banner->description }}
                   </p>
                 </div>
               </div>
