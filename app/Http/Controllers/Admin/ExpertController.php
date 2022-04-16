@@ -121,9 +121,9 @@ class ExpertController extends Controller
         try {
             if ($request->hasFile('file')) {
                 //try to not delete seeder file
-                if (checkDelete($expert->attachment && $expert->attachment)) {
+                if ($expert->file && checkDelete($expert->file)) {
                     //first delete 
-                    File::delete($expert->attachment);
+                    File::delete($expert->file);
                 }
                 $file = time() . '_' . $request->file('file')->getClientOriginalName();
                 $request->file->move(public_path('uploads/experts'), $file);
@@ -131,7 +131,7 @@ class ExpertController extends Controller
 
             $expert->title = $request->title;
             if ($file) {
-                $expert->attachment = 'uploads/experts/' . $file;
+                $expert->file = 'uploads/experts/' . $file;
             }
             $expert->save();
 
@@ -153,7 +153,7 @@ class ExpertController extends Controller
      */
     public function destroy(Expert $expert)
     {
-        if (checkDelete($expert->file)) {
+        if ($expert->file && checkDelete($expert->file)) {
             //first delete 
             File::delete($expert->file);
         }

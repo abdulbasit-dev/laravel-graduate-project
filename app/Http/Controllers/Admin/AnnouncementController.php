@@ -145,7 +145,7 @@ class AnnouncementController extends Controller
         try {
             if ($request->hasFile('file')) {
                 //try to not delete seeder file
-                if (checkDelete($announcement->attachment)) {
+                if ($announcement->attachment && checkDelete($announcement->attachment)) {
                     //first delete 
                     File::delete($announcement->attachment);
                 }
@@ -154,7 +154,7 @@ class AnnouncementController extends Controller
             }
             if ($request->hasFile('image')) {
                 //try to not delete seeder file
-                if (checkDelete($announcement->image)) {
+                if ($announcement->image && checkDelete($announcement->image)) {
                     //first delete 
                     File::delete($announcement->image);
                 }
@@ -193,7 +193,7 @@ class AnnouncementController extends Controller
      */
     public function destroy(Announcement $announcement)
     {
-        if (checkDelete($announcement->attachment)) {
+        if ($announcement->attachment && checkDelete($announcement->attachment)) {
             //first delete 
             File::delete($announcement->attachment);
         }

@@ -128,7 +128,7 @@ class BannerController extends Controller
         try {
             if ($request->hasFile('file')) {
                 //try to not delete seeder file
-                if (checkDelete($banner->image)) {
+                if ($banner->image && checkDelete($banner->image)) {
                     //first delete privies file
                     File::delete($banner->image);
                 }
@@ -164,7 +164,7 @@ class BannerController extends Controller
     public function destroy(Banner $banner)
     {
          //try to not delete seeder file
-        if (checkDelete($banner->image)) {
+        if ($banner->image && checkDelete($banner->image)) {
             //first delete 
             File::delete($banner->image);
         }

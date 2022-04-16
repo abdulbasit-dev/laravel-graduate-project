@@ -106,7 +106,7 @@ class FormController extends Controller
     public function destroy(Form $form)
     {
         //try to not delete seeder file
-        if (checkDelete($form->file)) {
+        if ($form->file && checkDelete($form->file)) {
             //first delete privies file
 
         }
