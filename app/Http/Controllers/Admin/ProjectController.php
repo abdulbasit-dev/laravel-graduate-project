@@ -36,7 +36,7 @@ class ProjectController extends Controller
         $title = "Posters";
         $desc = "List of uploaded posters";
         $projects = Project::with('student', 'student.dept', 'student.college')->paginate(15);
-        return view('admin.project.poster', compact('projects', "title","desc"));
+        return view('admin.project.poster', compact('projects', "title", "desc"));
     }
 
     public function filter(Request $request)
@@ -132,7 +132,11 @@ class ProjectController extends Controller
             //update user that he submit the project
             auth()->user()->update(['is_submited' => 1]);
 
-            return redirect()->route('admin.home');
+            return redirect()->route('admin.profile.show')->with([
+                "message" => "Project Submited Successfully",
+                "title" => "Submited",
+                "icon" => "success",
+            ]);
         } catch (\Throwable $th) {
             throw $th;
         }

@@ -55,6 +55,8 @@
                                         <th class="border-0">Collge</th>
                                         <th class="border-0">Department</th>
                                         <th class="border-0">Email</th>
+                                        <th class="border-0">Submited Project</th>
+                                        <th class="border-0">Submited Idea</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -64,7 +66,13 @@
                                         <td>{{ $student->name }}</td>
                                         <td>{{ $student->college->name }}</td>
                                         <td>{{ $student->dept->name }}</td>
-                                        <td>{{ $student->email }}</td>
+                                        <td>{{ $student->email}}</td>
+                                        <td>{!! $student->is_submited?"<span
+                                                class='badge bg-success'>Yes</span>":"<span
+                                                class='badge bg-danger'>No</span>" !!}</td>
+                                        <td>{!! $student->is_submited_idea?"<span
+                                                class='badge bg-success'>Yes</span>":"<span
+                                                class='badge bg-danger'>No</span>"!!}</td>
                                     </tr>
                                     @empty
                                     <tr class=" text-center">

@@ -98,7 +98,12 @@ class IdeaController extends Controller
             //update user that he submit the idea
             auth()->user()->update(['is_submited_idea' => 1]);
 
-            return redirect()->route('admin.home');
+
+            return redirect()->route('admin.profile.show')->with([
+                "message" => "Idea Submited Successfully",
+                "title" => "Submited",
+                "icon" => "success",
+            ]);
         } catch (\Throwable $th) {
             throw $th;
         }

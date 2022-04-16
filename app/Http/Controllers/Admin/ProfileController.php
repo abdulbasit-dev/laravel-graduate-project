@@ -21,12 +21,17 @@ class ProfileController extends Controller
     }
     public function show()
     {
-        $user =  auth()->user()->load('project');
+        $user =  auth()->user()->load('project', 'idea');
         $projectExsist = false;
+        $ideaExsist = false;
         if ($user->project) {
             $projectExsist = true;
         }
-        return view('auth.profile', compact('projectExsist'));
+        if ($user->idea) {
+            $ideaExsist = true;
+        }
+        // return $user;
+        return view('auth.profile', compact('user', 'projectExsist', 'ideaExsist'));
     }
 
     public function project()
@@ -40,7 +45,7 @@ class ProfileController extends Controller
         $idea = Idea::with('student', 'student.dept', 'student.college')->whereCreatedBy(auth()->id())->first();
         return view('admin.idea.show', compact('idea'));
     }
-    
+
     public function update(ProfileUpdateRequest $request)
     {
         if ($request->password) {
@@ -52,6 +57,10 @@ class ProfileController extends Controller
             'email' => $request->email,
         ]);
 
-        return redirect()->back()->with('success', 'Profile updated.');
+        return redirect()->back()->with([
+            "message" => "Profile Updated Successfully",
+            "title" => "Updated",
+            "icon" => "success",
+        ]);
     }
 }

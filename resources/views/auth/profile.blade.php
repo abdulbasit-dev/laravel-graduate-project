@@ -3,29 +3,8 @@
 @section('content')
 <div class="main py-4">
     <div class="row">
-        <div class="col-12 col-xl-12">
-            <div class="card shadow border-0 text-center p-0">
-                <div class="profile-cover rounded-top"
-                    data-background="../assets/img/profile-cover.jpg"
-                    style="background: rgba(0, 0, 0, 0) url('https://demo.themesberg.com/volt/assets/img/profile-cover.jpg') repeat scroll 0% 0%;">
-                </div>
-                <div class="card-body pb-5">
-                    <h4 class="h3">{{ auth()->user()->name }}</h4>
-                    <h4 class="h3">{{ auth()->user()->email }}</h4>
-                    @role('student')
-                    <h5 class="fw-normal">{{ auth()->user()->college->name }}</h5>
-                    <p class="text-gray mb-4">{{ auth()->user()->dept->name }}</p>
-                    @if ($projectExsist)
-                    <a class="btn btn-sm btn-gray-800 d-inline-flex align-items-center me-2"
-                        href="{{ route('admin.profile.project') }}">
-                        My Project
-                        @endif
-                    </a>
-
-                    @endrole
-                </div>
-            </div>
-            {{-- <div class="card card-body border-0 shadow mb-4">
+        <div class="col-12 col-xl-8">
+            <div class="card card-body border-0 shadow mb-4">
                 <h2 class="h5 mb-4">{{ __('My profile') }}</h2>
                 <form action="{{ route('admin.profile.update') }}" method="POST">
                     @csrf
@@ -69,6 +48,7 @@
                             @enderror
                         </div>
                     </div>
+
                     <div class="row align-items-center">
                         <div class="col-md-6 mb-3">
                             <label for="password">{{ __('New Password') }}</label>
@@ -116,20 +96,48 @@
                             __('Submit') }}</button>
                     </div>
                 </form>
-            </div> --}}
+            </div>
+        </div>
+
+
+
+        <div class="col-12 col-xl-4">
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <div class="card shadow border-0 text-center p-0">
+                        <div class="profile-cover rounded-top"
+                            data-background="../assets/img/profile-cover.jpg"
+                            style="background: rgba(0, 0, 0, 0) url(&quot;../assets/img/profile-cover.jpg&quot;) repeat scroll 0% 0%;">
+                        </div>
+                        <div class="card-body pb-5">
+                            <img src="https://ui-avatars.com/api/?background=random&name={{ Auth::user()->name }}"
+                                alt="{{ Auth::user()->name }}"
+                                class="avatar-xl rounded-circle mx-auto mt-n7 mb-4">
+                            <h4 class="h3">
+                                {{ $user->name }}
+                            </h4>
+                            <h5 class="fw-normal text-info">{{ $user->college->name }}</h5>
+                            <p class="text-gray mb-4">{{ $user->dept->name }}</p>
+
+                            @role('student')
+                            @if ($projectExsist)
+                            <a class="btn btn-sm btn-gray-800 d-inline-flex align-items-center me-2"
+                                href="{{ route('admin.profile.project') }}">
+                                My Project
+                            </a>
+                            @endif
+
+                            @if ($ideaExsist)
+                            <a class="btn btn-sm btn-info"
+                                href="{{ route('admin.profile.idea') }}">My Idea</a>
+                            @endif
+                            @endrole
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-@endsection
-
-@section('scripts')
-@if ($message = Session::get('success'))
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script>
-    Swal.fire({
-        icon: 'success',
-        text: '{{ $message }}',
-      })
-</script>
-@endif
 @endsection
