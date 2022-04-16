@@ -141,7 +141,7 @@
 
                                         <div class="text-center ms-5">
                                             {{-- if project report is not null --}}
-                                            @if ($project->report)
+                                            @if ($project->project)
                                             <h5>Project File</h5>
                                             <a href="{{ asset($project->project) }}" download="">
                                                 <svg class="text-primary" style="width: 3rem"
