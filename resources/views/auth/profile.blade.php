@@ -116,8 +116,8 @@
                             <h4 class="h3">
                                 {{ $user->name }}
                             </h4>
-                            <h5 class="fw-normal text-info">{{ $user->college->name }}</h5>
-                            <p class="text-gray mb-4">{{ $user->dept->name }}</p>
+                            <h5 class="fw-normal text-info">{{ $user->college->name?? null }}</h5>
+                            <p class="text-gray mb-4">{{ $user->dept->name?? null }}</p>
 
                             @role('student')
                             @if ($projectExsist)
