@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\College;
 use App\Models\Idea;
+use App\Models\Setting;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
@@ -38,7 +39,8 @@ class IdeaController extends Controller
      */
     public function create()
     {
-        return view('admin.idea.create');
+        $active_idea = Setting::where('name', 'idea_upload')->first()->value;
+        return view('admin.idea.create',compact("active_idea"));
     }
 
     /**
@@ -49,6 +51,17 @@ class IdeaController extends Controller
      */
     public function store(Request $request)
     {
+
+        $active_idea = Setting::where('name', 'idea_upload')->first()->value;
+
+        if (!$active_idea) {
+            return redirect()->back()->with([
+                "message" => "Idea Uploading is Disabled",
+                "title" => "Disabled",
+                "icon" => "error",
+            ]);
+        }
+
         $projectFile = null;
         $reportFile = null;
         $posterFile = null;

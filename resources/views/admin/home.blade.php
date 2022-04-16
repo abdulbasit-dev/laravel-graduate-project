@@ -8,8 +8,7 @@
                 <div class="card border-0 shadow">
                     <div class="card-body">
                         <h2 class="fs-5 fw-bold mb-1">{{ __('Dashboard') }}</h2>
-                        <p>{{ __('You are logged in!') }}</p>
-                        <livewire:admin.active>
+                        <p>{{ __('Welcome Back') }}</p>
                     </div>
                 </div>
             </div>

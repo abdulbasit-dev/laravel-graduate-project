@@ -23,6 +23,7 @@ use \App\Http\Controllers\Admin\{
     ProjectAnnouncementController,
     IdeaController,
 };
+use App\Http\Livewire\Admin\Active;
 
 /*
 |--------------------------------------------------------------------------
@@ -77,6 +78,8 @@ Route::group([
     Route::get('', [DashboradController::class, 'index'])->name('home');
     Route::resource('colleges', CollegeController::class);
     Route::resource('departments', DepartmentController::class);
+
+    Route::view("upload-setting", 'admin.setting')->name("upload-setting");
 
     //projects
     Route::get('projects/poster', [ProjectController::class, 'poster'])->name('projects.poster');

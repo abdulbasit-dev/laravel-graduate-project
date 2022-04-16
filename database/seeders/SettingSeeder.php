@@ -16,8 +16,13 @@ class SettingSeeder extends Seeder
     {
 
 
-        Setting::create([
+        Setting::firstOrCreate([
             "name" => "project_upload",
+            "value" => 1,
+        ]);
+
+        Setting::firstOrCreate([
+            "name" => "idea_upload",
             "value" => 1,
         ]);
     }

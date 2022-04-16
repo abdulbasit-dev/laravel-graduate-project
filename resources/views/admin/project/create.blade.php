@@ -2,31 +2,30 @@
 
 @section('content')
 <div class="col-12 col-xl-12">
+    @if (!$active_project)
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        Project upload is disabled
+    </div>
+    @endif
     @if (auth()->user()->is_submited)
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <strong>Warning!</strong> You aleardy submit your project.
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Warning!</strong> You aleardy submit your project.
+    </div>
     @endif
     <div class="card card-body border-0 shadow mb-4">
         <div class="d-flex justify-content-between align-items-center">
 
             <h2 class="h5 mb-4">Submit Your Project</h2>
-                  <a href="{{ route('project') }}">
-            <button class="btn btn-warning">
-              <svg class="icon icon-xs"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z">
-                </path>
-              </svg>
-              Go Back</button>
-          </a>
+            <a href="{{ route('project') }}">
+                <button class="btn btn-warning">
+                    <svg class="icon icon-xs" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z">
+                        </path>
+                    </svg>
+                    Go Back</button>
+            </a>
         </div>
         <form action="{{ route('admin.projects.store') }}" method="POST"
             enctype="multipart/form-data">
@@ -105,13 +104,19 @@
             <div class="row mt-3">
                 <div class="col-md-8 mb-3">
                     <label for="project" class="form-label">Upload your project poster</label>
-                    <input class="form-control" type="file" id="project" name="poster" >
+                    <input class="form-control" type="file" id="project" name="poster">
                 </div>
             </div>
 
             <div class="mt-3">
-                <button class="btn btn-gray-800 mt-2 animate-up-2"  type="submit"
-                    @if(auth()->user()->is_submited) disabled @endif>Submit</button>
+                <button class="btn btn-gray-800 mt-2 animate-up-2" type="submit"
+                    @if(auth()->user()->is_submited)
+                    disabled
+                    @elseif (!$active_project)
+                    disabled
+                    @else
+                    null
+                    @endif>Submit</button>
             </div>
         </form>
     </div>

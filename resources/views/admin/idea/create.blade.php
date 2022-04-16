@@ -2,10 +2,14 @@
 
 @section('content')
 <div class="col-12 col-xl-12">
+    @if (!$active_idea)
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        Idea upload is disabled
+    </div>
+    @endif
     @if (auth()->user()->is_submited_idea)
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
         <strong>Warning!</strong> You aleardy submit your idea.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
 
@@ -121,10 +125,18 @@
 
             <div class="mt-3">
                 <button class="btn btn-gray-800 mt-2 animate-up-2" type="submit"
-                    @if(auth()->user()->is_submited_idea) disabled @endif>Submit</button>
+                    @if(auth()->user()->is_submited_idea)
+                    disabled
+                    @elseif (!$active_idea)
+                    disabled
+                    @else
+                    null
+                    @endif>Submit</button>
             </div>
-        </form>
+
     </div>
+    </form>
+</div>
 </div>
 @endsection
 

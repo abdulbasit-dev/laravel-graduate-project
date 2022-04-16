@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\College;
 use App\Models\Project;
+use App\Models\Setting;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
@@ -72,8 +73,10 @@ class ProjectController extends Controller
      */
     public function create()
     {
+        $active_project = Setting::where('name', 'project_upload')->first()->value;
+
         $colleges = College::pluck('name', 'id');
-        return view('admin.project.create', compact('colleges'));
+        return view('admin.project.create', compact('colleges', "active_project"));
     }
 
     /**
@@ -84,6 +87,16 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
+        $active_project = Setting::where('name', 'project_upload')->first()->value;
+
+        if(!$active_project){
+            return redirect()->back()->with([
+                "message" => "Project Uploading is Disabled",
+                "title" => "Disabled",
+                "icon" => "error",
+            ]);
+        }
+
         $projectFile = null;
         $reportFile = null;
         $posterFile = null;

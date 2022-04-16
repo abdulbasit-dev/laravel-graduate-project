@@ -154,6 +154,22 @@
         </div>
     </li>
 
+
+    {{-- Project Announcements --}}
+    <li class="nav-item {{ request()->routeIs('admin.project-announcements.*') ? 'active' : '' }}">
+        <a href="{{ route('admin.project-announcements.index') }}" class="nav-link">
+            <span class="sidebar-icon ">
+                <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9">
+                    </path>
+                </svg>
+            </span>
+            <span class="sidebar-text text-sm">{{ __('Project Announcements') }}</span>
+        </a>
+    </li>
+
     {{-- evalution forms --}}
     <li class="nav-item {{ request()->routeIs('admin.forms.index') ? 'active' : '' }}">
         <a href="{{ route('admin.forms.index') }}" class="nav-link">
@@ -208,8 +224,6 @@
         </div>
     </li>
 
-
-
     {{-- projects --}}
     <li class="nav-item {{ request()->routeIs('admin.projects.index') ? 'active' : '' }}">
         <a href="{{ route('admin.projects.index') }}" class="nav-link">
@@ -240,16 +254,30 @@
         </a>
     </li>
 
-    {{-- project.ideas --}}
+    {{-- posters --}}
     <li class="nav-item {{ request()->routeIs('admin.projects.poster') ? 'active' : '' }}">
         <a href="{{ route('admin.projects.poster') }}" class="nav-link">
             <span class="sidebar-icon ">
-                <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 13v-1m4 1v-3m4 3V8M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path></svg>
+                <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 13v-1m4 1v-3m4 3V8M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z">
+                    </path>
+                </svg>
             </span>
             <span class="sidebar-text text-sm">{{ __('Posters') }}</span>
         </a>
     </li>
 
+    {{-- upload settting --}}
+    <li class="nav-item {{ request()->routeIs('admin.upload-setting') ? 'active' : '' }}">
+        <a href="{{ route('admin.upload-setting') }}" class="nav-link">
+            <span class="sidebar-icon ">
+                <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path></svg>
+            </span>
+            <span class="sidebar-text text-sm">{{ __('Upload Setting') }}</span>
+        </a>
+    </li>
 
     {{-- 🚩 --}}
     {{-- grants project --}}
@@ -469,12 +497,17 @@
             <span class="sidebar-text text-sm">{{ __('Students') }}</span>
         </a>
     </li>
-    
+
     {{-- Student --}}
     <li class="nav-item {{ request()->routeIs('admin.users.teacher') ? 'active' : '' }}">
         <a href="{{ route('admin.users.teacher') }}" class="nav-link">
             <span class="sidebar-icon ">
-                <svg class="icon icon-sm" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                <svg class="icon icon-sm" class="w-6 h-6" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z">
+                    </path>
+                </svg>
             </span>
             <span class="sidebar-text text-sm">{{ __('Teachers') }}</span>
         </a>
