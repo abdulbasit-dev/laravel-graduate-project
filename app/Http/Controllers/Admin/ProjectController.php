@@ -31,6 +31,14 @@ class ProjectController extends Controller
         return view('admin.project.index', compact('projects'));
     }
 
+    public function poster()
+    {
+        $title = "Posters";
+        $desc = "List of uploaded posters";
+        $projects = Project::with('student', 'student.dept', 'student.college')->paginate(15);
+        return view('admin.project.poster', compact('projects', "title","desc"));
+    }
+
     public function filter(Request $request)
     {
         $collegeId = $request->has('collegeId') ?  $request->collegeId : null;
@@ -38,9 +46,9 @@ class ProjectController extends Controller
 
         $projects = Project::query()->with('student', 'student.dept', 'student.college');
 
-        if($collegeId){
-            $projects->whereHas('student',function(Builder $query) use ($collegeId){
-                $query->where("college_id",$collegeId);
+        if ($collegeId) {
+            $projects->whereHas('student', function (Builder $query) use ($collegeId) {
+                $query->where("college_id", $collegeId);
             });
         }
 
@@ -54,7 +62,7 @@ class ProjectController extends Controller
         // $projects = $projects->paginate(15);
         $projects = $projects->get();
 
-        return view('includes.projects',compact('projects'));
+        return view('includes.projects', compact('projects'));
     }
 
     /**
@@ -100,12 +108,12 @@ class ProjectController extends Controller
             }
 
             $data = [
-                    "title" => $request->title,
-                    "description" => $request->description,
-                    "supervisor_name" => $request->supervisor_name,
-                    "team_members" => $request->teams,
-                    "created_by" => $request->user()->id,
-                ];
+                "title" => $request->title,
+                "description" => $request->description,
+                "supervisor_name" => $request->supervisor_name,
+                "team_members" => $request->teams,
+                "created_by" => $request->user()->id,
+            ];
 
             if ($projectFile) {
                 $data["project"] = $projectFile;
@@ -118,7 +126,7 @@ class ProjectController extends Controller
             if ($posterFile) {
                 $data["poster"] = $posterFile;
             }
-            
+
             Project::create($data);
 
             //update user that he submit the project

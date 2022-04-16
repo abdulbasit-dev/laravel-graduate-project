@@ -79,6 +79,7 @@ Route::group([
     Route::resource('departments', DepartmentController::class);
 
     //projects
+    Route::get('projects/poster', [ProjectController::class, 'poster'])->name('projects.poster');
     Route::resource('projects', ProjectController::class);
 
     Route::get('forms/first-seminar', [FormController::class, 'firstSeminar'])->name('forms.firstSeminar');

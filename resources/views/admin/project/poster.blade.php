@@ -21,5 +21,6 @@
     </div>
 </div>
 
-<livewire:admin.ideas />
+<livewire:admin.posters />
+
 @endsection

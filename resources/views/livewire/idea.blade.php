@@ -72,6 +72,8 @@
                                     <tr>
                                         <th class="border-0 rounded-start">#</th>
                                         <th class="border-0">Title</th>
+                                        <th class="border-0">Collge</th>
+                                        <th class="border-0">Department</th>
                                         <th class="border-0">Stage</th>
                                         <th class="border-0">Supervisor Name</th>
                                         <th class="border-0">Team Members</th>
@@ -83,6 +85,8 @@
                                     <tr data-aos="zoom-in-down" data-aos-duration="1000">
                                         <td class="align-middle">{{ $loop->iteration }}</td>
                                         <td class="align-middle">{{ $idea->title }}</td>
+                                        <td class="align-middle">{{ $idea->student->college->name }}</td>
+                                        <td class="align-middle">{{ $idea->student->dept->name }}</td>
                                         <td class="align-middle">{{ Str::title($idea->stage) }}</td>
                                         <td class="align-middle">{{ $idea->supervisor_name }}
                                         </td>

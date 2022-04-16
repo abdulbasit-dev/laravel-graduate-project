@@ -62,6 +62,8 @@
                                 <tr>
                                     <th class="border-0 rounded-start">#</th>
                                     <th class="border-0">Title</th>
+                                    <th class="border-0">Collge</th>
+                                    <th class="border-0">Department</th>
                                     <th class="border-0">Download</th>
                                 </tr>
                             </thead>
@@ -70,10 +72,11 @@
                                 <tr data-aos="zoom-in-down" data-aos-duration="1000">
                                     <td class="align-middle">{{ $loop->iteration }}</td>
                                     <td class="align-middle">{{ $project->title }}</td>
-                                   
+                                    <td>{{ $project->student->college->name }}</td>
+                                    <td>{{ $project->student->dept->name }}</td>
                                     <td class="align-middle">
                                         <a href="{{ asset($project->poster) }}" download>
-                                           <i class="bi bi-file-earmark-arrow-down fa-2x"></i>
+                                            <i class="bi bi-file-earmark-arrow-down fa-2x"></i>
                                         </a>
 
                                     </td>
