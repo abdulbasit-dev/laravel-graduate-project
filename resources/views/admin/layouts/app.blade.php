@@ -15,6 +15,7 @@
     {{-- Bootstrap Icons --}}
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+        @livewireStyles
 </head>
 
 <body>
@@ -27,6 +28,8 @@
         {{-- Footer --}}
         {{-- @include('admin.layouts.footer') --}}
     </main>
+
+    @livewireScripts
 
     <!-- Scripts -->
     {{-- <script src="js/app.js"></script> --}}
