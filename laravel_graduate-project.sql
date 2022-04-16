@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 11, 2022 at 06:30 AM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.0.15
+-- Generation Time: Apr 16, 2022 at 09:26 PM
+-- Server version: 10.4.19-MariaDB
+-- PHP Version: 8.0.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,14 +42,14 @@ CREATE TABLE `announcements` (
 --
 
 INSERT INTO `announcements` (`id`, `title`, `description`, `image`, `attachment`, `created_at`, `updated_at`) VALUES
-(1, 'دووهەمین کۆنفڕانسی بەخشینی گرانت بۆ باشترین پڕۆژەی دەرچوون و ئایدیا', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus.\r\n                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus\r\n                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum telluss ', 'uploads/announcements/confrance.jpg', 'uploads/announcements/docker.pdf', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(2, '2 Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus.\r\n                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus\r\n                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum telluss ', NULL, 'uploads/announcements/docker.pdf', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(3, '3 Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus.\r\n                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus\r\n                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum telluss ', NULL, 'uploads/announcements/docker.pdf', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(4, '4 Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus.\r\n                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus\r\n                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum telluss ', NULL, 'uploads/announcements/docker.pdf', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(5, '5 Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus.\r\n                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus\r\n                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum telluss ', NULL, 'uploads/announcements/docker.pdf', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(6, '6 Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus.\r\n                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus\r\n                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum telluss ', NULL, 'uploads/announcements/docker.pdf', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(7, '7 Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus.\r\n                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus\r\n                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum telluss ', NULL, 'uploads/announcements/docker.pdf', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(8, '8 Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus.\r\n                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus\r\n                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum telluss ', NULL, 'uploads/announcements/docker.pdf', '2022-04-11 01:29:15', '2022-04-11 01:29:15');
+(1, 'دووهەمین کۆنفڕانسی بەخشینی گرانت بۆ باشترین پڕۆژەی دەرچوون و ئایدیا', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus.\n                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus\n                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum telluss ', 'uploads/announcements/confrance.jpg', 'uploads/announcements/docker.pdf', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(2, '2 Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus.\n                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus\n                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum telluss ', NULL, 'uploads/announcements/docker.pdf', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(3, '3 Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus.\n                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus\n                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum telluss ', NULL, 'uploads/announcements/docker.pdf', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(4, '4 Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus.\n                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus\n                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum telluss ', NULL, 'uploads/announcements/docker.pdf', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(5, '5 Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus.\n                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus\n                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum telluss ', NULL, 'uploads/announcements/docker.pdf', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(6, '6 Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus.\n                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus\n                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum telluss ', NULL, 'uploads/announcements/docker.pdf', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(7, '7 Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus.\n                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus\n                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum telluss ', NULL, 'uploads/announcements/docker.pdf', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(8, '8 Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus.\n                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus\n                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum telluss ', NULL, 'uploads/announcements/docker.pdf', '2022-04-16 16:23:30', '2022-04-16 16:23:30');
 
 -- --------------------------------------------------------
 
@@ -60,6 +60,7 @@ INSERT INTO `announcements` (`id`, `title`, `description`, `image`, `attachment`
 CREATE TABLE `banners` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `page` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -70,10 +71,16 @@ CREATE TABLE `banners` (
 -- Dumping data for table `banners`
 --
 
-INSERT INTO `banners` (`id`, `title`, `description`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'Explore Students Projects', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus. ', 'uploads/banners/1.jpg', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(2, 'Find Out The best Ranked One', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus. ', 'uploads/banners/2.jpg', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(3, 'Get Idea From Others Project', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus. ', 'uploads/banners/3.jpg', '2022-04-11 01:29:15', '2022-04-11 01:29:15');
+INSERT INTO `banners` (`id`, `title`, `page`, `description`, `image`, `created_at`, `updated_at`) VALUES
+(1, 'an expert system for students graduation project in salahaddin university', 'home', 'a website for facilitating  the work of students and academic staff to perform their work better and easier!', 'uploads/banners/1.jpg', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(2, 'an expert system for students graduation project in salahaddin university', 'home', 'a website for facilitating  the work of students and academic staff to perform their work better and easier!', 'uploads/banners/2.jpg', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(3, 'an expert system for students graduation project in salahaddin university', 'home', 'a website for facilitating  the work of students and academic staff to perform their work better and easier!', 'uploads/banners/3.jpg', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(4, 'Expert Systems', 'expert', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus.', 'uploads/banners/4.jpg', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(5, 'Find Out The best Ranked One', 'expert', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus.', 'uploads/banners/5.jpg', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(6, 'Get Idea From Others Project', 'expert', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus.', 'uploads/banners/6.jpg', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(7, 'Explore Students Projects', 'gallery', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus.', 'uploads/banners/7.jpg', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(8, 'Find Out The best Ranked One', 'gallery', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus.', 'uploads/banners/8.jpg', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(9, 'Get Idea From Others Project', 'gallery', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus.', 'uploads/banners/9.jpg', '2022-04-16 16:23:29', '2022-04-16 16:23:29');
 
 -- --------------------------------------------------------
 
@@ -93,21 +100,21 @@ CREATE TABLE `colleges` (
 --
 
 INSERT INTO `colleges` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'College of Science', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(2, 'College of Engineering ', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(3, 'College of Agriculture Engineering Sciences', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(4, 'College of Education ', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(5, 'College of Arts ', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(6, 'College of Languages ', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(7, 'College of Administration and Economics', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(8, 'College of Law', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(9, 'College of Basic Education ', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(10, 'College of Physical Education & Sport Sciences', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(11, 'College of Fine Arts ', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(12, 'College of Islamic Sciences ', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(13, 'College of Education-Makhmour ', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(14, 'College of Education-Shaqlawa ', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(15, 'College of Political Sciences', '2022-04-11 01:29:15', '2022-04-11 01:29:15');
+(1, 'College of Science', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(2, 'College of Engineering ', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(3, 'College of Agriculture Engineering Sciences', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(4, 'College of Education ', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(5, 'College of Arts ', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(6, 'College of Languages ', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(7, 'College of Administration and Economics', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(8, 'College of Law', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(9, 'College of Basic Education ', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(10, 'College of Physical Education & Sport Sciences', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(11, 'College of Fine Arts ', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(12, 'College of Islamic Sciences ', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(13, 'College of Education-Makhmour ', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(14, 'College of Education-Shaqlawa ', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(15, 'College of Political Sciences', '2022-04-16 16:23:29', '2022-04-16 16:23:29');
 
 -- --------------------------------------------------------
 
@@ -128,88 +135,88 @@ CREATE TABLE `departments` (
 --
 
 INSERT INTO `departments` (`id`, `college_id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Department of Biology', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(2, 1, 'Department of Geology', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(3, 1, 'Department of Chemistry', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(4, 1, 'Department of Computer Science', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(5, 1, 'Department of Environmental Science', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(6, 1, 'Department of Mathematics', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(7, 1, 'Department of Physics', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(8, 2, 'Department of Architecture Engineering', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(9, 2, 'Department of Civil Engineering', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(10, 2, 'Department of Software and Informatics Engineering', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(11, 2, 'Department of Electrical Engineering', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(12, 2, 'Department of Geomatics (Surveying) Engineering', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(13, 2, 'Department of Mechanical Engineering', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(14, 2, 'Department of Water Resources Engineering', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(15, 2, 'Department of Chemical and Petrochemical Engineering', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(16, 2, 'Department of Aviation Engineering ', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(17, 3, 'Department of Animal Resources', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(18, 3, 'Department of Soil and water', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(19, 3, 'Department of Food technology', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(20, 3, 'Department of Forestry', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(21, 3, 'Department of Plant Protection', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(22, 3, 'Department of Horticulture', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(23, 3, 'Department of Field crops', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(24, 3, 'Department of Fish Resources and Aquatic Animals', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(25, 4, 'Department of Biology', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(26, 4, 'Department of Chemistry', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(27, 4, 'Department of Physics', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(28, 4, 'Department of Mathematics', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(29, 4, 'Department of English', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(30, 4, 'Department of Arabic', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(31, 4, 'Department of Kurdish', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(32, 4, 'Department of Psychology and Educational Sciences', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(33, 4, 'Department of Special Education', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(34, 4, 'Department of Syriac', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(35, 5, 'Department of Archaeology', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(36, 5, 'Department of Geography', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(37, 5, 'Department of History', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(38, 5, 'Department of Media', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(39, 5, 'Department of Philosophy', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(40, 5, 'Department of Psychology', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(41, 5, 'Department of Social Work', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(42, 5, 'Department of Sociology', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(43, 6, 'Department of English', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(44, 6, 'Department of German', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(45, 6, 'Department of French', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(46, 6, 'Department of Kurdish', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(47, 6, 'Department of Arabic', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(48, 6, 'Department of Turkish', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(49, 6, 'Department of Persian', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(50, 6, 'Department of Chinese', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(51, 7, 'Department of Accounting', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(52, 7, 'Department of Administration', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(53, 7, 'Department of Economics', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(54, 7, 'Department of Finance and Banking', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(55, 7, 'Department of Statistics', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(56, 7, 'Department of Tourism Organizations Administration', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(57, 8, 'Department of Law', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(58, 9, 'Department of General Science', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(59, 9, 'Department of Mathematics', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(60, 9, 'Department of English Language', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(61, 9, 'Department of Kurdish Language', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(62, 9, 'Department of Social Sciences', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(63, 9, 'Department of Kindergarten', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(64, 9, 'Department of Arabic', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(65, 10, 'Department of Physical Education & Sport Sciences', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(66, 11, 'Department of Music Arts', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(67, 11, 'Department of Cinema and Theater Arts', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(68, 11, 'Department of Plastic Arts', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(69, 12, 'Department of Religious Education', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(70, 12, 'Department of Islamic studies', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(71, 12, 'Department of Principle of religion', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(72, 12, 'Department of Sharia', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(73, 13, 'Department of Arabic', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(74, 13, 'Department of Kurdish', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(75, 14, 'Department of Biology', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(76, 14, 'Department of Physics', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(77, 14, 'Department of Arabic', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(78, 14, 'Department of Kurdish', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(79, 14, 'Department of Physical Education', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(80, 14, 'Department of English', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(81, 15, 'Department of Political Systems and Public Policy', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(82, 15, 'Department of International Relations & Diplomacy', '2022-04-11 01:29:15', '2022-04-11 01:29:15');
+(1, 1, 'Department of Biology', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(2, 1, 'Department of Geology', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(3, 1, 'Department of Chemistry', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(4, 1, 'Department of Computer Science', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(5, 1, 'Department of Environmental Science', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(6, 1, 'Department of Mathematics', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(7, 1, 'Department of Physics', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(8, 2, 'Department of Architecture Engineering', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(9, 2, 'Department of Civil Engineering', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(10, 2, 'Department of Software and Informatics Engineering', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(11, 2, 'Department of Electrical Engineering', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(12, 2, 'Department of Geomatics (Surveying) Engineering', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(13, 2, 'Department of Mechanical Engineering', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(14, 2, 'Department of Water Resources Engineering', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(15, 2, 'Department of Chemical and Petrochemical Engineering', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(16, 2, 'Department of Aviation Engineering ', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(17, 3, 'Department of Animal Resources', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(18, 3, 'Department of Soil and water', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(19, 3, 'Department of Food technology', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(20, 3, 'Department of Forestry', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(21, 3, 'Department of Plant Protection', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(22, 3, 'Department of Horticulture', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(23, 3, 'Department of Field crops', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(24, 3, 'Department of Fish Resources and Aquatic Animals', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(25, 4, 'Department of Biology', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(26, 4, 'Department of Chemistry', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(27, 4, 'Department of Physics', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(28, 4, 'Department of Mathematics', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(29, 4, 'Department of English', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(30, 4, 'Department of Arabic', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(31, 4, 'Department of Kurdish', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(32, 4, 'Department of Psychology and Educational Sciences', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(33, 4, 'Department of Special Education', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(34, 4, 'Department of Syriac', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(35, 5, 'Department of Archaeology', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(36, 5, 'Department of Geography', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(37, 5, 'Department of History', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(38, 5, 'Department of Media', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(39, 5, 'Department of Philosophy', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(40, 5, 'Department of Psychology', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(41, 5, 'Department of Social Work', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(42, 5, 'Department of Sociology', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(43, 6, 'Department of English', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(44, 6, 'Department of German', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(45, 6, 'Department of French', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(46, 6, 'Department of Kurdish', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(47, 6, 'Department of Arabic', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(48, 6, 'Department of Turkish', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(49, 6, 'Department of Persian', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(50, 6, 'Department of Chinese', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(51, 7, 'Department of Accounting', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(52, 7, 'Department of Administration', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(53, 7, 'Department of Economics', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(54, 7, 'Department of Finance and Banking', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(55, 7, 'Department of Statistics', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(56, 7, 'Department of Tourism Organizations Administration', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(57, 8, 'Department of Law', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(58, 9, 'Department of General Science', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(59, 9, 'Department of Mathematics', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(60, 9, 'Department of English Language', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(61, 9, 'Department of Kurdish Language', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(62, 9, 'Department of Social Sciences', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(63, 9, 'Department of Kindergarten', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(64, 9, 'Department of Arabic', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(65, 10, 'Department of Physical Education & Sport Sciences', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(66, 11, 'Department of Music Arts', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(67, 11, 'Department of Cinema and Theater Arts', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(68, 11, 'Department of Plastic Arts', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(69, 12, 'Department of Religious Education', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(70, 12, 'Department of Islamic studies', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(71, 12, 'Department of Principle of religion', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(72, 12, 'Department of Sharia', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(73, 13, 'Department of Arabic', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(74, 13, 'Department of Kurdish', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(75, 14, 'Department of Biology', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(76, 14, 'Department of Physics', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(77, 14, 'Department of Arabic', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(78, 14, 'Department of Kurdish', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(79, 14, 'Department of Physical Education', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(80, 14, 'Department of English', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(81, 15, 'Department of Political Systems and Public Policy', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(82, 15, 'Department of International Relations & Diplomacy', '2022-04-16 16:23:30', '2022-04-16 16:23:30');
 
 -- --------------------------------------------------------
 
@@ -230,10 +237,14 @@ CREATE TABLE `experts` (
 --
 
 INSERT INTO `experts` (`id`, `title`, `file`, `created_at`, `updated_at`) VALUES
-(1, '4th class Project  Sample - writing Desigen.docx', 'uploads/experts/4th class Project  Sample - writing Desigen.docx', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(2, '4th student project.pptx', 'uploads/experts/4th student project.pptx', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(3, 'Grant Project', 'uploads/experts/grant-project.jpg', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(4, 'Grant Idea', 'uploads/experts/grant-idea.jpg', '2022-04-11 01:29:15', '2022-04-11 01:29:15');
+(1, '4th class Project  Sample - writing Desigen.docx', 'uploads/experts/4th class Project  Sample - writing Desigen.docx', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(2, '4th student project.pptx', 'uploads/experts/4th student project.pptx', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(3, 'Grant Project (image)', 'uploads/experts/grant-project.jpg', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(4, 'Grant Idea Image', 'uploads/experts/grant-idea.jpg', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(5, 'Grant-template.pptx', 'uploads/experts/Grant-template.pptx', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(6, 'Title-of-research-project-temp-ku.pptx', 'uploads/experts/Title-of-research-project-temp-ku.pptx', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(7, 'Send Student Name (image)', 'uploads/experts/viber_image_2022-03-03_14-26-15-200.jpg', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(8, 'Project Board (image)', 'uploads/experts/viber_image_2022-03-03_14-26-16-057.jpg', '2022-04-16 16:23:30', '2022-04-16 16:23:30');
 
 -- --------------------------------------------------------
 
@@ -259,7 +270,7 @@ CREATE TABLE `failed_jobs` (
 
 CREATE TABLE `forms` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `file` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -301,7 +312,7 @@ CREATE TABLE `grants` (
 CREATE TABLE `ideas` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `stage` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `project` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `report` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -312,6 +323,29 @@ CREATE TABLE `ideas` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `ideas`
+--
+
+INSERT INTO `ideas` (`id`, `title`, `description`, `stage`, `project`, `report`, `poster`, `supervisor_name`, `team_members`, `created_by`, `created_at`, `updated_at`) VALUES
+(1, 'Students Graduation Projects', ' We are fourth-year students in the Department of Computer Science and IT at the College of Science.\r\n                We designed a graduation project under the title (Design an expert system for student’s graduation\r\n                projects of Salahaddin university)\r\n                This system offers to build a web-based graduation project management system as well as build a\r\n                smart database with data set and also manage and monitor activities such as the submission of\r\n                project and idea deliverables, grades, assessments, and announcements to the system of salahaddin\r\n                university\r\n                This system serves the centralization of the quality assurance department in the university\r\n                presidency.', 'fourth', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'D. Haider Haddad', '\"[\\\"Sanah\\\", \\\"Sozan\\\", \\\"Bushra\\\"]\"', 5, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(2, 'lorem ut aliquam iaculis, lacus', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', 'sixth', '/uploads/ideas/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'monty', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 27, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(3, 'diam at pretium aliquet, metus', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', 'fourth', '/uploads/ideas/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'jeremy', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 65, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(4, 'lobortis, nisi nibh lacinia orci,', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', 'fourth', '/uploads/ideas/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'kierin', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 14, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(5, 'Duis at lacus. Quisque purus', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', 'fourth', '/uploads/ideas/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'humza', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 60, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(6, 'Quisque fringilla euismod enim. Etiam', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', 'first', '/uploads/ideas/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'atli', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 39, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(7, 'enim. Mauris quis turpis vitae', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', 'fifth', '/uploads/ideas/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'owain', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 11, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(8, 'In condimentum. Donec at arcu.', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', 'second', '/uploads/ideas/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'aiden-jack', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 48, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(9, 'semper pretium neque. Morbi quis', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', 'first', '/uploads/ideas/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'morris', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 35, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(10, 'placerat. Cras dictum ultricies ligula.', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', 'sixth', '/uploads/ideas/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'andrea', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 18, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(11, 'et, magna. Praesent interdum ligula', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', 'first', '/uploads/ideas/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'henry', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 20, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(12, 'est. Nunc ullamcorper, velit in', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', 'fifth', '/uploads/ideas/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'macaulay', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 63, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(13, 'sem, consequat nec, mollis vitae,', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', 'fifth', '/uploads/ideas/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'wen', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 21, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(14, 'Nunc ullamcorper, velit in aliquet', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', 'third', '/uploads/ideas/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'chiron', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 16, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(15, 'ut aliquam iaculis, lacus pede', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', 'third', '/uploads/ideas/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'sachkirat', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 49, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(16, 'gravida mauris ut mi. Duis', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', 'fifth', '/uploads/ideas/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'zhi', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 58, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(17, 'eu tellus. Phasellus elit pede,', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', 'sixth', '/uploads/ideas/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'sajjad', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 29, '2022-04-16 16:23:36', '2022-04-16 16:23:36');
 
 -- --------------------------------------------------------
 
@@ -345,7 +379,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (13, '2022_03_30_031358_create_forms_table', 1),
 (14, '2022_04_08_081530_create_experts_table', 1),
 (15, '2022_04_08_103523_create_project_announcements_table', 1),
-(16, '2022_04_10_123950_create_ideas_table', 1);
+(16, '2022_04_10_123950_create_ideas_table', 1),
+(17, '2022_04_16_094628_create_settings_table', 1);
 
 -- --------------------------------------------------------
 
@@ -378,21 +413,20 @@ CREATE TABLE `model_has_roles` (
 INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
 (1, 'App\\Models\\User', 1),
 (1, 'App\\Models\\User', 2),
-(2, 'App\\Models\\User', 4),
 (2, 'App\\Models\\User', 5),
 (2, 'App\\Models\\User', 6),
+(2, 'App\\Models\\User', 7),
+(3, 'App\\Models\\User', 8),
+(3, 'App\\Models\\User', 9),
+(3, 'App\\Models\\User', 10),
+(3, 'App\\Models\\User', 11),
+(3, 'App\\Models\\User', 12),
+(3, 'App\\Models\\User', 13),
+(3, 'App\\Models\\User', 14),
+(3, 'App\\Models\\User', 15),
+(3, 'App\\Models\\User', 16),
+(3, 'App\\Models\\User', 17),
 (4, 'App\\Models\\User', 3),
-(5, 'App\\Models\\User', 7),
-(5, 'App\\Models\\User', 8),
-(5, 'App\\Models\\User', 9),
-(5, 'App\\Models\\User', 10),
-(5, 'App\\Models\\User', 11),
-(5, 'App\\Models\\User', 12),
-(5, 'App\\Models\\User', 13),
-(5, 'App\\Models\\User', 14),
-(5, 'App\\Models\\User', 15),
-(5, 'App\\Models\\User', 16),
-(5, 'App\\Models\\User', 17),
 (5, 'App\\Models\\User', 18),
 (5, 'App\\Models\\User', 19),
 (5, 'App\\Models\\User', 20),
@@ -431,7 +465,19 @@ INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
 (5, 'App\\Models\\User', 53),
 (5, 'App\\Models\\User', 54),
 (5, 'App\\Models\\User', 55),
-(5, 'App\\Models\\User', 56);
+(5, 'App\\Models\\User', 56),
+(5, 'App\\Models\\User', 57),
+(5, 'App\\Models\\User', 58),
+(5, 'App\\Models\\User', 59),
+(5, 'App\\Models\\User', 60),
+(5, 'App\\Models\\User', 61),
+(5, 'App\\Models\\User', 62),
+(5, 'App\\Models\\User', 63),
+(5, 'App\\Models\\User', 64),
+(5, 'App\\Models\\User', 65),
+(5, 'App\\Models\\User', 66),
+(5, 'App\\Models\\User', 67),
+(6, 'App\\Models\\User', 4);
 
 -- --------------------------------------------------------
 
@@ -486,7 +532,7 @@ CREATE TABLE `personal_access_tokens` (
 CREATE TABLE `projects` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Project Title',
-  `description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Project Description',
+  `description` longtext COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Project Description',
   `project` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `report` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `poster` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -502,39 +548,42 @@ CREATE TABLE `projects` (
 --
 
 INSERT INTO `projects` (`id`, `title`, `description`, `project`, `report`, `poster`, `supervisor_name`, `team_members`, `created_by`, `created_at`, `updated_at`) VALUES
-(1, 'lorem ut aliquam iaculis, lacus', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'johnson', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 51, '2022-04-11 01:29:19', '2022-04-11 01:29:19'),
-(2, 'diam at pretium aliquet, metus', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'reece', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 45, '2022-04-11 01:29:19', '2022-04-11 01:29:19'),
-(3, 'lobortis, nisi nibh lacinia orci,', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'jordon', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 13, '2022-04-11 01:29:19', '2022-04-11 01:29:19'),
-(4, 'Duis at lacus. Quisque purus', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'boyd', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 38, '2022-04-11 01:29:19', '2022-04-11 01:29:19'),
-(5, 'Quisque fringilla euismod enim. Etiam', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'arrham', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 47, '2022-04-11 01:29:19', '2022-04-11 01:29:19'),
-(6, 'enim. Mauris quis turpis vitae', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'ellisandro', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 30, '2022-04-11 01:29:19', '2022-04-11 01:29:19'),
-(7, 'In condimentum. Donec at arcu.', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'isaac', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 22, '2022-04-11 01:29:19', '2022-04-11 01:29:19'),
-(8, 'semper pretium neque. Morbi quis', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'jahid', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 41, '2022-04-11 01:29:19', '2022-04-11 01:29:19'),
-(9, 'dictum cursus. Nunc mauris elit,', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'ren', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 36, '2022-04-11 01:29:19', '2022-04-11 01:29:19'),
-(10, 'placerat. Cras dictum ultricies ligula.', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'rehan', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 31, '2022-04-11 01:29:19', '2022-04-11 01:29:19'),
-(11, 'est. Nunc ullamcorper, velit in', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'luciano', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 7, '2022-04-11 01:29:19', '2022-04-11 01:29:19'),
-(12, 'vitae, posuere at, velit. Cras', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'selasi', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 11, '2022-04-11 01:29:19', '2022-04-11 01:29:19'),
-(13, 'Nunc ullamcorper, velit in aliquet', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'bryson', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 25, '2022-04-11 01:29:19', '2022-04-11 01:29:19'),
-(14, 'ut aliquam iaculis, lacus pede', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'jerry', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 52, '2022-04-11 01:29:19', '2022-04-11 01:29:19'),
-(15, 'eu tellus. Phasellus elit pede,', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'brandon-lee', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 26, '2022-04-11 01:29:19', '2022-04-11 01:29:19'),
-(16, 'Donec est. Nunc ullamcorper, velit', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'ardeshir', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 5, '2022-04-11 01:29:19', '2022-04-11 01:29:19'),
-(17, 'elit, pretium et, rutrum non,', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'davie', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 40, '2022-04-11 01:29:19', '2022-04-11 01:29:19'),
-(18, 'vehicula. Pellentesque tincidunt tempus risus.', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'arved', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 35, '2022-04-11 01:29:19', '2022-04-11 01:29:19'),
-(19, 'Nullam suscipit, est ac facilisis', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'jarno', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 18, '2022-04-11 01:29:19', '2022-04-11 01:29:19'),
-(20, 'enim. Suspendisse aliquet, sem ut', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'joynul', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 15, '2022-04-11 01:29:19', '2022-04-11 01:29:19'),
-(21, 'risus. Nunc ac sem ut', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'shayaan', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 21, '2022-04-11 01:29:19', '2022-04-11 01:29:19'),
-(22, 'eget magna. Suspendisse tristique neque', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'johannes', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 43, '2022-04-11 01:29:19', '2022-04-11 01:29:19'),
-(23, 'vitae erat vel pede blandit', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'shiloh', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 56, '2022-04-11 01:29:19', '2022-04-11 01:29:19'),
-(24, 'nisl sem, consequat nec, mollis', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'geordie', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 34, '2022-04-11 01:29:19', '2022-04-11 01:29:19'),
-(25, 'vitae odio sagittis semper. Nam', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'tisloh', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 6, '2022-04-11 01:29:19', '2022-04-11 01:29:19'),
-(26, 'erat. Sed nunc est, mollis', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'finnlay', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 49, '2022-04-11 01:29:19', '2022-04-11 01:29:19'),
-(27, 'vitae purus gravida sagittis. Duis', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'kajally', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 37, '2022-04-11 01:29:19', '2022-04-11 01:29:19'),
-(28, 'nonummy ac, feugiat non, lobortis', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'brodi', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 48, '2022-04-11 01:29:19', '2022-04-11 01:29:19'),
-(29, 'faucibus. Morbi vehicula. Pellentesque tincidunt', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'teos', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 8, '2022-04-11 01:29:19', '2022-04-11 01:29:19'),
-(30, 'ut odio vel est tempor', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'sudais', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 10, '2022-04-11 01:29:19', '2022-04-11 01:29:19'),
-(31, 'augue eu tellus. Phasellus elit', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'kaeden', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 23, '2022-04-11 01:29:19', '2022-04-11 01:29:19'),
-(32, 'iaculis odio. Nam interdum enim', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'eamon', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 46, '2022-04-11 01:29:19', '2022-04-11 01:29:19'),
-(33, 'non dui nec urna suscipit', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'olie', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 20, '2022-04-11 01:29:19', '2022-04-11 01:29:19');
+(1, 'Students Graduation Projects', ' We are fourth-year students in the Department of Computer Science and IT at the College of Science.\r\n                We designed a graduation project under the title (Design an expert system for student’s graduation\r\n                projects of Salahaddin university)\r\n                This system offers to build a web-based graduation project management system as well as build a\r\n                smart database with data set and also manage and monitor activities such as the submission of\r\n                project and idea deliverables, grades, assessments, and announcements to the system of salahaddin\r\n                university\r\n                This system serves the centralization of the quality assurance department in the university\r\n                presidency.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'D. Haider Haddad', '\"[\\\"Sanah\\\", \\\"Sozan\\\", \\\"Bushra\\\"]\"', 5, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(2, 'lorem ut aliquam iaculis, lacus', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'dan', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 35, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(3, 'diam at pretium aliquet, metus', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'meftah', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 65, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(4, 'lobortis, nisi nibh lacinia orci,', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'ayaan', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 16, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(5, 'Quisque fringilla euismod enim. Etiam', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'eidhan', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 32, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(6, 'enim. Mauris quis turpis vitae', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'd\'arcy', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 61, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(7, 'In condimentum. Donec at arcu.', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'dailey', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 64, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(8, 'semper pretium neque. Morbi quis', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'daniels', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 40, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(9, 'dictum cursus. Nunc mauris elit,', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'wabuya', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 7, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(10, 'et, magna. Praesent interdum ligula', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'johnpaul', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 38, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(11, 'est. Nunc ullamcorper, velit in', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'wen', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 21, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(12, 'sem, consequat nec, mollis vitae,', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'callyn', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 44, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(13, 'Nunc ullamcorper, velit in aliquet', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'deagan', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 49, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(14, 'ut aliquam iaculis, lacus pede', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'reiss', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 17, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(15, 'gravida mauris ut mi. Duis', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'tisloh', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 23, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(16, 'eu tellus. Phasellus elit pede,', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'kaleem', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 8, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(17, 'Cras sed leo. Cras vehicula', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'dougray', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 66, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(18, 'Donec feugiat metus sit amet', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'breogan', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 42, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(19, 'vehicula. Pellentesque tincidunt tempus risus.', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'lennex', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 30, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(20, 'enim. Suspendisse aliquet, sem ut', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'beinn', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 34, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(21, 'risus. Nunc ac sem ut', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'brehme', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 12, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(22, 'eget magna. Suspendisse tristique neque', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'thom', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 20, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(23, 'interdum. Sed auctor odio a', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'lepeng', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 59, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(24, 'vel turpis. Aliquam adipiscing lobortis', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'celik', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 54, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(25, 'vitae erat vel pede blandit', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'taonga', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 29, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(26, 'id sapien. Cras dolor dolor,', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'leonardo', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 53, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(27, 'nisl sem, consequat nec, mollis', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'maximus', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 52, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(28, 'lacus. Etiam bibendum fermentum metus.', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'dane', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 14, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(29, 'erat. Sed nunc est, mollis', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'myles', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 57, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(30, 'vitae purus gravida sagittis. Duis', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'prentice', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 50, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(31, 'vitae velit egestas lacinia. Sed', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'kalum', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 55, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(32, 'lobortis, nisi nibh lacinia orci,', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'zion', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 37, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(33, 'mollis dui, in sodales elit', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'gursees', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 67, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(34, 'ut odio vel est tempor', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'abdirahman', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 58, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(35, 'augue eu tellus. Phasellus elit', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'makin', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 47, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(36, 'egestas a, scelerisque sed, sapien.', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In error ea facere expedita. Unde repudiandae maiores tenetur. Architecto enim, beatae minus sint sit iusto at autem aut cupiditate? Nemo, quas.', '/uploads/projects/dentcare.zip', '/uploads/reports/dummy.pdf', '/uploads/posters/poster.jpg', 'maison', '\"[\\\"Emma R. Quinn\\\", \\\"Karen N. Wheeler\\\", \\\"Herma T. Brown\\\" , \\\"Howard D. Fields\\\"]\"', 41, '2022-04-16 16:23:36', '2022-04-16 16:23:36');
 
 -- --------------------------------------------------------
 
@@ -544,7 +593,7 @@ INSERT INTO `projects` (`id`, `title`, `description`, `project`, `report`, `post
 
 CREATE TABLE `project_announcements` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `college_id` bigint(20) UNSIGNED DEFAULT NULL,
   `dept_id` bigint(20) UNSIGNED DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -556,26 +605,26 @@ CREATE TABLE `project_announcements` (
 --
 
 INSERT INTO `project_announcements` (`id`, `title`, `college_id`, `dept_id`, `created_at`, `updated_at`) VALUES
-(1, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 10, 65, '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(2, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 14, 75, '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(3, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 6, 49, '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(4, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 4, 25, '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(5, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 13, 73, '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(6, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 14, 76, '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(7, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 11, 66, '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(8, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 4, 34, '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(9, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 8, 57, '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(10, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 7, 51, '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(11, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 14, 78, '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(12, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 10, 65, '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(13, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 4, 28, '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(14, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 10, 65, '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(15, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 10, 65, '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(16, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 7, 55, '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(17, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 10, 65, '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(18, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 13, 73, '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(19, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 11, 66, '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(20, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 5, 37, '2022-04-11 01:29:15', '2022-04-11 01:29:15');
+(1, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 12, 72, '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(2, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 3, 17, '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(3, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 8, 57, '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(4, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 4, 33, '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(5, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 1, 1, '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(6, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 7, 52, '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(7, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 7, 52, '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(8, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 14, 77, '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(9, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 5, 37, '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(10, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 8, 57, '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(11, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 9, 58, '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(12, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 14, 76, '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(13, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 8, 57, '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(14, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 7, 56, '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(15, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 5, 40, '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(16, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 6, 46, '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(17, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 4, 26, '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(18, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 9, 61, '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(19, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 4, 34, '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(20, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?', 10, 65, '2022-04-16 16:23:30', '2022-04-16 16:23:30');
 
 -- --------------------------------------------------------
 
@@ -596,11 +645,12 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'web', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(2, 'team', 'web', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(3, 'teacher', 'web', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(4, 'manager', 'web', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(5, 'student', 'web', '2022-04-11 01:29:15', '2022-04-11 01:29:15');
+(1, 'admin', 'web', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(2, 'team', 'web', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(3, 'teacher', 'web', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(4, 'manager', 'web', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(5, 'student', 'web', '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(6, 'council', 'web', '2022-04-16 16:23:30', '2022-04-16 16:23:30');
 
 -- --------------------------------------------------------
 
@@ -612,6 +662,28 @@ CREATE TABLE `role_has_permissions` (
   `permission_id` bigint(20) UNSIGNED NOT NULL,
   `role_id` bigint(20) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `settings`
+--
+
+CREATE TABLE `settings` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `value` tinyint(1) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `settings`
+--
+
+INSERT INTO `settings` (`id`, `name`, `value`, `created_at`, `updated_at`) VALUES
+(1, 'project_upload', 1, '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(2, 'idea_upload', 1, '2022-04-16 16:23:29', '2022-04-16 16:23:29');
 
 -- --------------------------------------------------------
 
@@ -633,11 +705,11 @@ CREATE TABLE `teams` (
 --
 
 INSERT INTO `teams` (`id`, `name`, `description`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'Dr.Nabil', 'nabil.fakhre@su.edu.krd', 'uploads/teams/dr.nabil.jpg', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(2, 'Dr.Haider', 'haider.haddad@su.edu.krd', 'uploads/teams/dr.haider.jpg', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(3, 'Sanah', 'sccs02417@student.su.edu.krd', 'uploads/teams/1.jpg', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(4, 'Sozan', 'sccs10917@student.su.edu.krd', 'uploads/teams/2.jpg', '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(5, 'Bushra', 'sccs11517@student.su.edu.krd', 'uploads/teams/3.jpg', '2022-04-11 01:29:15', '2022-04-11 01:29:15');
+(1, 'Dr.Nabil', 'nabil.fakhre@su.edu.krd', 'uploads/teams/dr.nabil.jpg', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(2, 'Dr.Haider', 'haider.haddad@su.edu.krd', 'uploads/teams/dr.haider.jpg', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(3, 'Sanah', 'sccs02417@student.su.edu.krd', 'uploads/teams/1.jpg', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(4, 'Sozan', 'sccs10917@student.su.edu.krd', 'uploads/teams/2.jpg', '2022-04-16 16:23:29', '2022-04-16 16:23:29'),
+(5, 'Bushra', 'sccs11517@student.su.edu.krd', 'uploads/teams/3.jpg', '2022-04-16 16:23:29', '2022-04-16 16:23:29');
 
 -- --------------------------------------------------------
 
@@ -666,62 +738,73 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `college_id`, `dept_id`, `is_student`, `is_submited`, `is_submited_idea`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'dr.haider', 'haider.haddad@su.edu.krd', NULL, NULL, 0, 0, 0, NULL, '$2y$10$YGM73PR4sRAVBJ1yXtg.cuscYzqQSojyY19jUZNvlyGDiTfX5EhJO', NULL, '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(2, 'admin', 'admin@admin.com', NULL, NULL, 0, 0, 0, NULL, '$2y$10$wcZfeZgOn2SFnLPYjypQ0.VQBIguCLMB/BK2nnRh9DKfUJdCs5CBa', NULL, '2022-04-11 01:29:15', '2022-04-11 01:29:15'),
-(3, 'dr.nabil', 'nabil.fakhre@su.edu.krd', NULL, NULL, 0, 0, 0, NULL, '$2y$10$6NpABTs2JNCnICns.QoGN.29CFWmyo2NQ5Uzr3L/W.vpyaU3m25K6', NULL, '2022-04-11 01:29:16', '2022-04-11 01:29:16'),
-(4, 'sanah', 'sccs02417@student.su.edu.krd', 1, 7, 1, 0, 0, NULL, '$2y$10$S4xFp1R5PdEluwFxbMIH9OJK39kUhSEgCYs.0vfwSCoMRb0V2g/lC', NULL, '2022-04-11 01:29:16', '2022-04-11 01:29:16'),
-(5, 'sozan', 'sccs10917@student.su.edu.krd', 1, 7, 1, 1, 0, NULL, '$2y$10$GO.lcwGK23N3TEGreL1M6unN90uDsjuGJQ.2DL6knU.bA9v3pDJLS', NULL, '2022-04-11 01:29:16', '2022-04-11 01:29:19'),
-(6, 'bushra', 'sccs11517@student.su.edu.krd', 1, 7, 1, 1, 0, NULL, '$2y$10$tHTvV2M09BN1CrlGydSz.eJ1Bx3BCJckeGjKrZchb48eHdv6zj4Re', NULL, '2022-04-11 01:29:16', '2022-04-11 01:29:19'),
-(7, 'ajayraj', 'ajayraj1@student.su.edu.krd', 15, 81, 1, 1, 0, NULL, '$2y$10$GN/iPTq8540s6WftqFtdbueS62XZOBJjfzaauBiZiCA6MGVm/jGuq', NULL, '2022-04-11 01:29:16', '2022-04-11 01:29:19'),
-(8, 'okeoghene', 'okeoghene2@student.su.edu.krd', 9, 64, 1, 1, 0, NULL, '$2y$10$dkRoRls4VGAKXPH9iRP/quReRSCR6etVLM/eEkIsT5/1cx6tssoK2', NULL, '2022-04-11 01:29:16', '2022-04-11 01:29:19'),
-(9, 'nial', 'nial3@student.su.edu.krd', 6, 47, 1, 0, 0, NULL, '$2y$10$I72XMN1gFwxnwAY8bgNjn.qqB6RUwy3k.1vk46Bb6oERxEF.CTgoW', NULL, '2022-04-11 01:29:16', '2022-04-11 01:29:16'),
-(10, 'szymon', 'szymon4@student.su.edu.krd', 3, 17, 1, 1, 0, NULL, '$2y$10$.yVKg3DxXxaLoCwYr26c7Ocp8FH5rjj7hCUtDtc3XxkVMUjb71ni2', NULL, '2022-04-11 01:29:16', '2022-04-11 01:29:19'),
-(11, 'mccaulley', 'mccaulley5@student.su.edu.krd', 3, 17, 1, 1, 0, NULL, '$2y$10$nBhIDPMSvbw9BHrFHTzOu.iBoDKcAZa1.Waq75A9TaaAHbVRDHsOa', NULL, '2022-04-11 01:29:16', '2022-04-11 01:29:19'),
-(12, 'daksh', 'daksh6@student.su.edu.krd', 13, 74, 1, 0, 0, NULL, '$2y$10$8fZDRwxIB1AgqSpFHj1bNu2F6Eu.BxSeZw5y2J1E0Bu1szDUWghTy', NULL, '2022-04-11 01:29:16', '2022-04-11 01:29:16'),
-(13, 'sunny', 'sunny7@student.su.edu.krd', 15, 82, 1, 1, 0, NULL, '$2y$10$j5G0JH6pmyKhLA4smuoVWu5lrLW4EEuiXVY1CDS2guupHMKiwYjza', NULL, '2022-04-11 01:29:16', '2022-04-11 01:29:19'),
-(14, 'kyle-derek', 'kyle-derek8@student.su.edu.krd', 9, 62, 1, 0, 0, NULL, '$2y$10$5jmdQbLuxYGKjpfj33nOO.ZG6AEReBFr10AENAbE.5VNewJ.UeWAa', NULL, '2022-04-11 01:29:16', '2022-04-11 01:29:16'),
-(15, 'corey', 'corey9@student.su.edu.krd', 3, 22, 1, 1, 0, NULL, '$2y$10$ISrtukKpP5zXdOZpT5uDy.I9oyZB/GqPYoH5eISOJECra8qN6zDn.', NULL, '2022-04-11 01:29:16', '2022-04-11 01:29:19'),
-(16, 'daegan', 'daegan10@student.su.edu.krd', 3, 24, 1, 0, 0, NULL, '$2y$10$PLUMNr5YHw0VIdbdVDy.w.Os5vMr5v9i0/BjZ.zzBqO9QuLGVZnIe', NULL, '2022-04-11 01:29:16', '2022-04-11 01:29:16'),
-(17, 'jaosha', 'jaosha11@student.su.edu.krd', 5, 42, 1, 0, 0, NULL, '$2y$10$AIEhWNwG1V.ucyohSqxpiOAzcz1Y6yUyyrbBJsQFSnPm8DYdN.kFK', NULL, '2022-04-11 01:29:16', '2022-04-11 01:29:16'),
-(18, 'travis', 'travis12@student.su.edu.krd', 15, 81, 1, 1, 0, NULL, '$2y$10$6iofB9xc.fnm1nPE4jZLAOkbpbvTd7LaMuuR58PxLLAaQJcxYGFCK', NULL, '2022-04-11 01:29:16', '2022-04-11 01:29:19'),
-(19, 'jubin', 'jubin13@student.su.edu.krd', 12, 70, 1, 0, 0, NULL, '$2y$10$/T6YfR94vqJa6YwKx45txelSyW9p0l0emMSHAFcBExm6.cfM7JpTi', NULL, '2022-04-11 01:29:17', '2022-04-11 01:29:17'),
-(20, 'moshy', 'moshy14@student.su.edu.krd', 6, 49, 1, 1, 0, NULL, '$2y$10$6kGuGYELUtLxJLvqU2XqK.lMl.0odfU/T8QWmoTMw.BbFu7UWKWyu', NULL, '2022-04-11 01:29:17', '2022-04-11 01:29:19'),
-(21, 'oisin', 'oisin15@student.su.edu.krd', 13, 74, 1, 1, 0, NULL, '$2y$10$QlCANCs8d9RjJo8NpQ.Lv.MHQBg9sVjAyxqq87cOk.XkCxhCMvu/2', NULL, '2022-04-11 01:29:17', '2022-04-11 01:29:19'),
-(22, 'coby', 'coby16@student.su.edu.krd', 8, 57, 1, 1, 0, NULL, '$2y$10$XB5FTtZHqEqsa98tJv/RjO4SCcbRetceVkMAioZLx74NVeheHcXwq', NULL, '2022-04-11 01:29:17', '2022-04-11 01:29:19'),
-(23, 'aristomenis', 'aristomenis17@student.su.edu.krd', 12, 70, 1, 1, 0, NULL, '$2y$10$D9lpdHv2ogzzntzJsMVcU.f2If2wtJ398kHRvvl3DvjDz/mlvKMUm', NULL, '2022-04-11 01:29:17', '2022-04-11 01:29:19'),
-(24, 'hamza', 'hamza18@student.su.edu.krd', 11, 67, 1, 0, 0, NULL, '$2y$10$3M32ktasQwBeBIs.2f2/k.YxLTwT54tR2e4uqUckcizAuyAqEo2Ta', NULL, '2022-04-11 01:29:17', '2022-04-11 01:29:17'),
-(25, 'uzair', 'uzair19@student.su.edu.krd', 5, 39, 1, 1, 0, NULL, '$2y$10$zz8SZ7s70lcTAYKdrbQjXOYF0ij79WEbNWY/92dQ/l30V5latgkrS', NULL, '2022-04-11 01:29:17', '2022-04-11 01:29:19'),
-(26, 'spencer', 'spencer20@student.su.edu.krd', 13, 73, 1, 1, 0, NULL, '$2y$10$YkuBy5k6ELT.9uMzyc4EFu.4NOPqEkvsowsmMAxY/mubdIy1Xo2zK', NULL, '2022-04-11 01:29:17', '2022-04-11 01:29:19'),
-(27, 'andy', 'andy21@student.su.edu.krd', 5, 37, 1, 0, 0, NULL, '$2y$10$ktF5h2/r6qrM5ihUiTYOZub6d0CHmt4epQOy4maD.22cNKknmLM5.', NULL, '2022-04-11 01:29:17', '2022-04-11 01:29:17'),
-(28, 'dhani', 'dhani22@student.su.edu.krd', 9, 63, 1, 0, 0, NULL, '$2y$10$NUtyRjlgZmhbmRZKETceAOIvcGLzTE9opcEM5l.XEl7dbROq1MkfK', NULL, '2022-04-11 01:29:17', '2022-04-11 01:29:17'),
-(29, 'meftah', 'meftah23@student.su.edu.krd', 11, 66, 1, 0, 0, NULL, '$2y$10$Z.ckiOPswyp8YW2T1Yq59eHYN9.8aIj6AkBLJ0PH7e81bhw1KSJG6', NULL, '2022-04-11 01:29:17', '2022-04-11 01:29:17'),
-(30, 'euan', 'euan24@student.su.edu.krd', 15, 82, 1, 1, 0, NULL, '$2y$10$.aXs0xUhXtjKd9g5I4kCoOg/syCfzDd89zBjE2irBgL7QhQkQtuzC', NULL, '2022-04-11 01:29:17', '2022-04-11 01:29:19'),
-(31, 'connar', 'connar25@student.su.edu.krd', 6, 49, 1, 1, 0, NULL, '$2y$10$6dO0aKfNQZfKoqo39bOoVuM9UeXCMaXDj4cJqsh2fLak312IJFmQW', NULL, '2022-04-11 01:29:17', '2022-04-11 01:29:19'),
-(32, 'aaren', 'aaren26@student.su.edu.krd', 6, 43, 1, 0, 0, NULL, '$2y$10$r1p3jQtvtjNbr1PmehSpBeBnimNAb7vI1KmXTZabNYBzpUlKpeD3S', NULL, '2022-04-11 01:29:17', '2022-04-11 01:29:17'),
-(33, 'iain', 'iain27@student.su.edu.krd', 4, 29, 1, 0, 0, NULL, '$2y$10$PHr50n/KsD0mLAZ.Vvd6QegRyyhFaFrutpgJmBd7/V.on.PkzoSpW', NULL, '2022-04-11 01:29:17', '2022-04-11 01:29:17'),
-(34, 'troy', 'troy28@student.su.edu.krd', 4, 26, 1, 1, 0, NULL, '$2y$10$CJ8A7ThcsSTOPIHYWZBjbO0XuEx.vncC4dew0Z.L//RPiNQzAcDn2', NULL, '2022-04-11 01:29:17', '2022-04-11 01:29:19'),
-(35, 'bryan', 'bryan29@student.su.edu.krd', 4, 32, 1, 1, 0, NULL, '$2y$10$VXYdXTOoV39YamdSNT0sqeF6lhCpOJZM1W19ajPoQbtHmysHATF7C', NULL, '2022-04-11 01:29:18', '2022-04-11 01:29:19'),
-(36, 'dion', 'dion30@student.su.edu.krd', 10, 65, 1, 1, 0, NULL, '$2y$10$xiN.ol4gISwrF/SV.DP3BufIlukuPU81Yt1iiwze/6ny3gcnwdSBK', NULL, '2022-04-11 01:29:18', '2022-04-11 01:29:19'),
-(37, 'doire', 'doire31@student.su.edu.krd', 1, 5, 1, 1, 0, NULL, '$2y$10$hBzdsuy/XRCFMml.HPrSFOf9QDa68Z03qQwdCoPVSVnUokhG97XoG', NULL, '2022-04-11 01:29:18', '2022-04-11 01:29:19'),
-(38, 'carson', 'carson32@student.su.edu.krd', 2, 10, 1, 1, 0, NULL, '$2y$10$uDS.DwOuuLnClySGd8QHg.b83Yxyn1gtUu.dS3ZcOZX.49rDSFsMG', NULL, '2022-04-11 01:29:18', '2022-04-11 01:29:19'),
-(39, 'zack', 'zack33@student.su.edu.krd', 10, 65, 1, 0, 0, NULL, '$2y$10$.T.JynlyGOt95XmfV/8mk.daRWDqDryTpGhpgkNN8FF4dmMK.2IS6', NULL, '2022-04-11 01:29:18', '2022-04-11 01:29:18'),
-(40, 'danny', 'danny34@student.su.edu.krd', 5, 40, 1, 1, 0, NULL, '$2y$10$BoIssGCod.xwGvUJ7jsFdu/4rRaZ4ok/DzIh1l3Qw0rB3xt08HH3O', NULL, '2022-04-11 01:29:18', '2022-04-11 01:29:19'),
-(41, 'yusef', 'yusef35@student.su.edu.krd', 10, 65, 1, 1, 0, NULL, '$2y$10$eeJplnpSN2Qie9J6OIRNme9hzsyzNixahn0F3CINLyp4BBPtiVAWG', NULL, '2022-04-11 01:29:18', '2022-04-11 01:29:19'),
-(42, 'dyllan', 'dyllan36@student.su.edu.krd', 7, 54, 1, 0, 0, NULL, '$2y$10$Gl4foOC2bCOe5dCyFdMFpuypfs4PRiqMdMTgNrYmVbFC/taQcd2X.', NULL, '2022-04-11 01:29:18', '2022-04-11 01:29:18'),
-(43, 'bryan', 'bryan37@student.su.edu.krd', 2, 16, 1, 1, 0, NULL, '$2y$10$GmgsAEjOu2Uq6E7Q.wTEu.UQrjs1p4/7wtj1yFPBeK1EGOMuaC3cK', NULL, '2022-04-11 01:29:18', '2022-04-11 01:29:19'),
-(44, 'hamid', 'hamid38@student.su.edu.krd', 4, 31, 1, 0, 0, NULL, '$2y$10$dXS4CsHQg0e4oNVOZ5xL..eCTKGLjFgeW7EUb.ux.BVA1g1CvQqB2', NULL, '2022-04-11 01:29:18', '2022-04-11 01:29:18'),
-(45, 'drew', 'drew39@student.su.edu.krd', 2, 9, 1, 1, 0, NULL, '$2y$10$CwMS4oDkj9x9/Owz0piDqu1gIiyfVF/Wy9QCEq050.tQiwroM43ei', NULL, '2022-04-11 01:29:18', '2022-04-11 01:29:19'),
-(46, 'cameron', 'cameron40@student.su.edu.krd', 13, 73, 1, 1, 0, NULL, '$2y$10$2qLJMJ9KdaP16RSrolE/QeHv4JUh4gTn.0kcGdUMdKFjabEC0phSK', NULL, '2022-04-11 01:29:18', '2022-04-11 01:29:19'),
-(47, 'rayan', 'rayan41@student.su.edu.krd', 14, 77, 1, 1, 0, NULL, '$2y$10$uQ2.biJdzKbAQYAyPi3Gu.q2GFMJjh9v272Del3ZgxnvhIYdgtZfy', NULL, '2022-04-11 01:29:18', '2022-04-11 01:29:19'),
-(48, 'kienan', 'kienan42@student.su.edu.krd', 3, 22, 1, 1, 0, NULL, '$2y$10$KxKTJo9LsIVFBYylzm8a/.if5R8GTw8rc/X4oQTreDH8/IYN1.BI.', NULL, '2022-04-11 01:29:18', '2022-04-11 01:29:19'),
-(49, 'ceiran', 'ceiran43@student.su.edu.krd', 3, 17, 1, 1, 0, NULL, '$2y$10$MMie7vuWUS2XrahddKjOpOeNRq2rB6pmVs5JaOBlgefcGu2AyiG.m', NULL, '2022-04-11 01:29:18', '2022-04-11 01:29:19'),
-(50, 'bryson', 'bryson44@student.su.edu.krd', 10, 65, 1, 0, 0, NULL, '$2y$10$/MlGK406trDrg/3omnFFhuZ4i9J77rD8rPv0YCq5ptjhhdsO4TkaS', NULL, '2022-04-11 01:29:18', '2022-04-11 01:29:18'),
-(51, 'haydn', 'haydn45@student.su.edu.krd', 9, 64, 1, 1, 0, NULL, '$2y$10$DrFqG1s61PX9X7Ow0mKC6uhY9NZOaHxsfVeezmHM4Qc43oxoTUB3y', NULL, '2022-04-11 01:29:18', '2022-04-11 01:29:19'),
-(52, 'jonathan', 'jonathan46@student.su.edu.krd', 14, 79, 1, 1, 0, NULL, '$2y$10$Kdr6IMC2TKAZEPmpdcMV2.UDWL9bPVOBEEM60CRydSNbIlF/23Yuy', NULL, '2022-04-11 01:29:19', '2022-04-11 01:29:19'),
-(53, 'jock', 'jock47@student.su.edu.krd', 13, 74, 1, 0, 0, NULL, '$2y$10$B5hbmJ/Xpj7tOXousSKBGOgCP8zUQvXlCKRb56zfYmOigMiiEn13G', NULL, '2022-04-11 01:29:19', '2022-04-11 01:29:19'),
-(54, 'harjeevan', 'harjeevan48@student.su.edu.krd', 13, 74, 1, 0, 0, NULL, '$2y$10$/JctJQkeKAXC23do0MkaiOMN2h6hPXtF84QjYqrq0GRMx3oA102ly', NULL, '2022-04-11 01:29:19', '2022-04-11 01:29:19'),
-(55, 'scott-alexander', 'scott-alexander49@student.su.edu.krd', 11, 66, 1, 0, 0, NULL, '$2y$10$S9Ox93hPqsMW8nTpbXhtLOE1AaMAFgI/Oji.IWYIOoq8fyMBnpMTe', NULL, '2022-04-11 01:29:19', '2022-04-11 01:29:19'),
-(56, 'rowen', 'rowen50@student.su.edu.krd', 15, 82, 1, 1, 0, NULL, '$2y$10$7ol3Jr4TvuEy9VnnzJWMK.7mughn7Zp3LCgcPNkSj3E9deWOr/4z2', NULL, '2022-04-11 01:29:19', '2022-04-11 01:29:19');
+(1, 'dr.haider', 'haider.haddad@su.edu.krd', NULL, NULL, 0, 0, 0, NULL, '$2y$10$HTa8b5rFEwCj3goGnTIbIe3eXiEmfmxrk2S05pI1vW/o5Rxq.G2uy', NULL, '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(2, 'admin', 'admin@admin.com', NULL, NULL, 0, 0, 0, NULL, '$2y$10$Yo.4u/mc4i4W1yA3yyGZyugxuHQXh8o0NcubcJUPVNSVN8YlbOBrS', NULL, '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(3, 'dr.nabil', 'nabil.fakhre@su.edu.krd', NULL, NULL, 0, 0, 0, NULL, '$2y$10$Gw4xKO65fxwPDGfWqJiWwuRj71sRl9JVCfnLhr3XsvGYBYPzBC.P6', NULL, '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(4, 'ahmad', 'council@su.edu.krd', NULL, NULL, 0, 0, 0, NULL, '$2y$10$4UmMWsY3WPGNmiLdfZ7LduhK3MEOeJ5OqT4PgI4m/7QJt56b.0Awm', NULL, '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(5, 'sanah', 'sccs02417@student.su.edu.krd', 1, 7, 1, 0, 0, NULL, '$2y$10$eWx4zhnkzQbcRcephDrqRuhTtU/BZdgCg8H5lysbZGlrO9UceBQA6', NULL, '2022-04-16 16:23:30', '2022-04-16 16:23:30'),
+(6, 'sozan', 'sccs10917@student.su.edu.krd', 1, 7, 1, 0, 0, NULL, '$2y$10$XmuYuSUdZlpSEN3KRh6Hke2oaLhKS5H0KHGYSXRmokyTYhw68UyZ6', NULL, '2022-04-16 16:23:31', '2022-04-16 16:23:31'),
+(7, 'bushra', 'sccs11517@student.su.edu.krd', 1, 7, 1, 1, 0, NULL, '$2y$10$03aYZ8w7NepC3kj5pkBYjOMwplpBMLAiPAxOyfeCm.1P85kgRZsVC', NULL, '2022-04-16 16:23:31', '2022-04-16 16:23:36'),
+(8, 'lloyde', 'lloyde1@su.edu.krd', 5, 42, 1, 1, 0, NULL, '$2y$10$YDB39riZ.C5ovLfx1/59Iu8p/19L6ruJcxhmZLYjNPxzRu68x3QDm', NULL, '2022-04-16 16:23:31', '2022-04-16 16:23:36'),
+(9, 'taylor-lee', 'taylor-lee2@su.edu.krd', 4, 32, 1, 0, 0, NULL, '$2y$10$oT10mYhNaOfC/qM1ayTyWeqz67n4sV8tTlkXi/gMV6F.8gXM1AuPe', NULL, '2022-04-16 16:23:31', '2022-04-16 16:23:31'),
+(10, 'jensen', 'jensen3@su.edu.krd', 7, 54, 1, 0, 0, NULL, '$2y$10$fyhqbKCi3KK/yfoDT.Ful.CNlRczAaTIsAXvyvJ5460CBD.TkYyg.', NULL, '2022-04-16 16:23:31', '2022-04-16 16:23:31'),
+(11, 'lawrie', 'lawrie4@su.edu.krd', 11, 68, 1, 0, 1, NULL, '$2y$10$VYkZlqR85Ke09sleGx891O1z8Zg4JIyMk0FSkyiXtd/a61QDR95Y2', NULL, '2022-04-16 16:23:31', '2022-04-16 16:23:36'),
+(12, 'j', 'j5@su.edu.krd', 11, 68, 1, 1, 0, NULL, '$2y$10$wJjPNIQwXLIdwXhyAn6IfOhiKYYGW/Uvx4FtaBqHxy5Vadjd/6rTa', NULL, '2022-04-16 16:23:31', '2022-04-16 16:23:36'),
+(13, 'subhaan', 'subhaan6@su.edu.krd', 11, 68, 1, 0, 0, NULL, '$2y$10$GweO3sr3o1FjUaZuVIPWQeBjEpfkbN6FHlTvRJbjnvW2bTYxt5HEW', NULL, '2022-04-16 16:23:31', '2022-04-16 16:23:31'),
+(14, 'corey', 'corey7@su.edu.krd', 6, 46, 1, 1, 1, NULL, '$2y$10$GD3MotTC/kqnDPC9wokCVe28ufnI8xS4XivGSJwWklw3ue1Ryr4vq', NULL, '2022-04-16 16:23:31', '2022-04-16 16:23:36'),
+(15, 'zayn', 'zayn8@su.edu.krd', 12, 69, 1, 0, 0, NULL, '$2y$10$rkX5alhoYanWZKklHV7G0eB8SwwOUhEnVMrIG2reMuJG4hupihroW', NULL, '2022-04-16 16:23:31', '2022-04-16 16:23:31'),
+(16, 'lleyton', 'lleyton9@su.edu.krd', 12, 70, 1, 1, 1, NULL, '$2y$10$7MlNRZhV0apjJaxdcaQKGe2VLliadIZK.yhKzE6D2nVOxLkbE283S', NULL, '2022-04-16 16:23:31', '2022-04-16 16:23:36'),
+(17, 'firaaz', 'firaaz10@su.edu.krd', 5, 42, 1, 1, 0, NULL, '$2y$10$5h/inV8ewTrldtONug8fiekgS4Qm22b4YmFiZShetxd1uMPi3.Elu', NULL, '2022-04-16 16:23:32', '2022-04-16 16:23:36'),
+(18, 'drakeo', 'drakeo1@student.su.edu.krd', 10, 65, 1, 0, 1, NULL, '$2y$10$pcZv8Jq6M8QogdqH4da8mu1MrkyG32gnUM9sue73ZOJeUDlzBhH7K', NULL, '2022-04-16 16:23:32', '2022-04-16 16:23:36'),
+(19, 'tian', 'tian2@student.su.edu.krd', 6, 46, 1, 0, 0, NULL, '$2y$10$yJUOV6d1xwMiKq9yCls1m.xiCK9h.nAFV/znX02cn0p0FBGhUnTcK', NULL, '2022-04-16 16:23:32', '2022-04-16 16:23:32'),
+(20, 'josef', 'josef3@student.su.edu.krd', 5, 41, 1, 1, 1, NULL, '$2y$10$2taDgBZIy9CpcFA7gKf1pORs6AhxHV4WT8gfjSG0MWFHTtU3GUPne', NULL, '2022-04-16 16:23:32', '2022-04-16 16:23:36'),
+(21, 'kaiden', 'kaiden4@student.su.edu.krd', 6, 43, 1, 1, 1, NULL, '$2y$10$bmGbgU6sq3nsAa1lGeEoVONrBD13lswPUS0z7RVEyq1/csMJq70R2', NULL, '2022-04-16 16:23:32', '2022-04-16 16:23:36'),
+(22, 'loui', 'loui5@student.su.edu.krd', 10, 65, 1, 0, 0, NULL, '$2y$10$Qq5g3Mxhha.fV9QB4PsoaeGrfF5dTTqBRh1TBxi6SUUxcGgALderG', NULL, '2022-04-16 16:23:32', '2022-04-16 16:23:32'),
+(23, 'shannon', 'shannon6@student.su.edu.krd', 14, 79, 1, 1, 0, NULL, '$2y$10$ZvUENyJjX01fEHA1AYkikeV.LCrft7sHWYoAJwNGftEG5CYTvww.a', NULL, '2022-04-16 16:23:32', '2022-04-16 16:23:36'),
+(24, 'youcef', 'youcef7@student.su.edu.krd', 15, 82, 1, 0, 0, NULL, '$2y$10$9aoS1YUYk7Ca24CdB5IAx.16UOHTBW0nng.gvImLw7RzEHgzCkPdO', NULL, '2022-04-16 16:23:32', '2022-04-16 16:23:32'),
+(25, 'rhys-bernard', 'rhys-bernard8@student.su.edu.krd', 2, 12, 1, 0, 0, NULL, '$2y$10$7GJy/0QUgFm/iVKA8dCqXezOJXvf2MbhM8vi4Z7ycImLP.XdeHO0S', NULL, '2022-04-16 16:23:32', '2022-04-16 16:23:32'),
+(26, 'sukhpal', 'sukhpal9@student.su.edu.krd', 9, 62, 1, 0, 0, NULL, '$2y$10$o7aRceWe2P0ctMbhVxfdDuaGteDNesKPrgC10UGu.ZsNduAfQ5W.a', NULL, '2022-04-16 16:23:32', '2022-04-16 16:23:32'),
+(27, 'hugo', 'hugo10@student.su.edu.krd', 15, 82, 1, 0, 1, NULL, '$2y$10$oTDNm.T5qLtJ9mH0KIW40.fxJkhDRVLnGCca4/Pu/hWncX4dco8qm', NULL, '2022-04-16 16:23:32', '2022-04-16 16:23:36'),
+(28, 'siergiej', 'siergiej11@student.su.edu.krd', 6, 49, 1, 0, 0, NULL, '$2y$10$fftaGWYkyLQNet0oZ1ic5OivmKrQLeQzYK9IjeAR3WgD8F3mB7kGm', NULL, '2022-04-16 16:23:32', '2022-04-16 16:23:32'),
+(29, 'cadan', 'cadan12@student.su.edu.krd', 3, 23, 1, 1, 1, NULL, '$2y$10$CsrpbNMspXBR/UIYeoGN9.NpoGNT6E4sPiuqk/NS/k1j17gUwT7Sy', NULL, '2022-04-16 16:23:32', '2022-04-16 16:23:36'),
+(30, 'makin', 'makin13@student.su.edu.krd', 11, 68, 1, 1, 0, NULL, '$2y$10$HS6B3d1nwdgLsDOb77vZz.nEpYsx3vgX8i0zk5FX5AiKD5dvghCwW', NULL, '2022-04-16 16:23:33', '2022-04-16 16:23:36'),
+(31, 'shahmir', 'shahmir14@student.su.edu.krd', 6, 46, 1, 0, 0, NULL, '$2y$10$9P5VUb2ibgbibXUBAPcGR.Nak2klrwBsQQY2SW/jwcuiQbPzY.O9e', NULL, '2022-04-16 16:23:33', '2022-04-16 16:23:33'),
+(32, 'arihant', 'arihant15@student.su.edu.krd', 12, 72, 1, 1, 0, NULL, '$2y$10$lVlKKBF2GVK7LgTUlTytmuypZqgl2n/FjVM/eVPRRW.eVeTntZtcy', NULL, '2022-04-16 16:23:33', '2022-04-16 16:23:36'),
+(33, 'luis', 'luis16@student.su.edu.krd', 10, 65, 1, 0, 0, NULL, '$2y$10$QEkO9/fexB1SOxuQJuSKsulyOJPIVEGiTTD/j43LotrkQbvDJqR2y', NULL, '2022-04-16 16:23:33', '2022-04-16 16:23:33'),
+(34, 'eadie', 'eadie17@student.su.edu.krd', 2, 11, 1, 1, 0, NULL, '$2y$10$nVAFILP1M7JDj9/5YOyyHOQcv4vj64GX4HHQH8PPf1RjXLSBKBlum', NULL, '2022-04-16 16:23:33', '2022-04-16 16:23:36'),
+(35, 'shaun', 'shaun18@student.su.edu.krd', 11, 67, 1, 1, 1, NULL, '$2y$10$sF6wDOH3GbNxuJ59A2jAweWdMbZjqA/9/E6C8ByvmvKgGKRbypIW6', NULL, '2022-04-16 16:23:33', '2022-04-16 16:23:36'),
+(36, 'dharam', 'dharam19@student.su.edu.krd', 10, 65, 1, 0, 0, NULL, '$2y$10$E8eVkL.Df.huOKpGkdJalOfs.vcheh6dUudcr4AVlIBu.H.ksJkDa', NULL, '2022-04-16 16:23:33', '2022-04-16 16:23:33'),
+(37, 'mac', 'mac20@student.su.edu.krd', 6, 43, 1, 1, 0, NULL, '$2y$10$N38LPmRCxqwZdHKkfCdzDOt2fIIi1pPTfpP9IWYmssQgTq7AkWJMG', NULL, '2022-04-16 16:23:33', '2022-04-16 16:23:36'),
+(38, 'ruaridh', 'ruaridh21@student.su.edu.krd', 3, 24, 1, 1, 0, NULL, '$2y$10$wOdoNLi1wEoxtNi.4eMVxuARnpN7R.O5NzRecvluFZfbss0B2t7X2', NULL, '2022-04-16 16:23:33', '2022-04-16 16:23:36'),
+(39, 'tymom', 'tymom22@student.su.edu.krd', 15, 82, 1, 0, 1, NULL, '$2y$10$hym3N1vp2pO/JJ6t2KHKY.TNNJMtyPbf27xFiRLOPzyBOZWgtzgUy', NULL, '2022-04-16 16:23:33', '2022-04-16 16:23:36'),
+(40, 'mueez', 'mueez23@student.su.edu.krd', 6, 47, 1, 1, 0, NULL, '$2y$10$Q8A9ghFyiRE/olT4LAW33uVCbWNyM8Mto0tr8eWbRVnDy1hyOQxoG', NULL, '2022-04-16 16:23:33', '2022-04-16 16:23:36'),
+(41, 'abdisalam', 'abdisalam24@student.su.edu.krd', 1, 6, 1, 1, 0, NULL, '$2y$10$D7/fZs6gxIFk90doFJ8bZOKrVwJzjFgfefTiEKui7hGeAdqaTEkr.', NULL, '2022-04-16 16:23:33', '2022-04-16 16:23:36'),
+(42, 'william-john', 'william-john25@student.su.edu.krd', 3, 22, 1, 1, 0, NULL, '$2y$10$.Fgksmpec2hizKMlJrsuOehxvRLRQjIJlB1YrKS5R0iNN4.g5OZI2', NULL, '2022-04-16 16:23:34', '2022-04-16 16:23:36'),
+(43, 'eoghan', 'eoghan26@student.su.edu.krd', 12, 71, 1, 0, 0, NULL, '$2y$10$W77SRYpAmmT1K2ho78AEue55NwP.XhngY/xXCmvdoOU2Z4aPW8W2S', NULL, '2022-04-16 16:23:34', '2022-04-16 16:23:34'),
+(44, 'abdulkarem', 'abdulkarem27@student.su.edu.krd', 8, 57, 1, 1, 0, NULL, '$2y$10$x9083lrjvk6RsOfiZ6AO0.T.iSlPz/pzf1AaGr1UCi6L.QLKY45a6', NULL, '2022-04-16 16:23:34', '2022-04-16 16:23:36'),
+(45, 'rorie', 'rorie28@student.su.edu.krd', 2, 10, 1, 0, 0, NULL, '$2y$10$NNYa4vdBqmrrallE5.H6x.B0tb4n74t0UlFMfNqEInX1ZdHTOWsam', NULL, '2022-04-16 16:23:34', '2022-04-16 16:23:34'),
+(46, 'daniels', 'daniels29@student.su.edu.krd', 6, 47, 1, 0, 0, NULL, '$2y$10$/X1TWQWS3atIZfVWZJj/zeyXAvT7roJgwiM9meMUMVSb43p8sX7j2', NULL, '2022-04-16 16:23:34', '2022-04-16 16:23:34'),
+(47, 'jacky', 'jacky30@student.su.edu.krd', 8, 57, 1, 1, 0, NULL, '$2y$10$qcW38yqPTnGUH28rfIlqLuVNl6dZlv8M7ykcTiHpFtrsNDGhEwZTS', NULL, '2022-04-16 16:23:34', '2022-04-16 16:23:36'),
+(48, 'haydon', 'haydon31@student.su.edu.krd', 5, 35, 1, 0, 1, NULL, '$2y$10$d/ugqUgz.ee.uEuusCexW.9PGfFId3T3NLcTGKy8DORNQAOV.eBt.', NULL, '2022-04-16 16:23:34', '2022-04-16 16:23:36'),
+(49, 'eroni', 'eroni32@student.su.edu.krd', 15, 81, 1, 1, 1, NULL, '$2y$10$J1IZi71GziDyhafkS82ncu1bSDneKKxyJMin2HHN97n8vrh4ypTpm', NULL, '2022-04-16 16:23:34', '2022-04-16 16:23:36'),
+(50, 'chu', 'chu33@student.su.edu.krd', 8, 57, 1, 1, 0, NULL, '$2y$10$ukScjK0XkOI8iP8gbLKyP.gp5SGvEMUY27FrMAyugjWJrtVJBLhg.', NULL, '2022-04-16 16:23:34', '2022-04-16 16:23:36'),
+(51, 'wayne', 'wayne34@student.su.edu.krd', 2, 15, 1, 0, 0, NULL, '$2y$10$NQo9UvO8XchPIUcdzyJL9uvVPtqncHhtDWMbZj11qn/IAxwSQYgvq', NULL, '2022-04-16 16:23:34', '2022-04-16 16:23:34'),
+(52, 'muhammed', 'muhammed35@student.su.edu.krd', 12, 69, 1, 1, 0, NULL, '$2y$10$Cto4xsJ2ZodQlgXptHpNBOoXJ0zxvRFGEwFYp2e16OaRrKZ6AIUVK', NULL, '2022-04-16 16:23:34', '2022-04-16 16:23:36'),
+(53, 'connel', 'connel36@student.su.edu.krd', 14, 79, 1, 1, 0, NULL, '$2y$10$UEf5VAvhi9Wl/0/aahe8OuxL.Bl/8C.POh3c7WlZLJzsDQGvLPSDW', NULL, '2022-04-16 16:23:34', '2022-04-16 16:23:36'),
+(54, 'osesenagha', 'osesenagha37@student.su.edu.krd', 3, 18, 1, 1, 0, NULL, '$2y$10$wuUgxBQQa5PeXbRBecdn4uRT4uPtpaXXiJyA6yX5rOfPXZXLi3zm2', NULL, '2022-04-16 16:23:35', '2022-04-16 16:23:36'),
+(55, 'abir', 'abir38@student.su.edu.krd', 12, 72, 1, 1, 0, NULL, '$2y$10$lyU3g9oYlQBDSYccO6BWZ.a4O86hVgk9vuAXYcG4Z6U5YXRjptoZG', NULL, '2022-04-16 16:23:35', '2022-04-16 16:23:36'),
+(56, 'denton', 'denton39@student.su.edu.krd', 15, 81, 1, 0, 0, NULL, '$2y$10$DFnejAXN1cUtFJifHXQxme./epPCmiYxGODBgzxSoyT2g17szuva6', NULL, '2022-04-16 16:23:35', '2022-04-16 16:23:35'),
+(57, 'bruno', 'bruno40@student.su.edu.krd', 13, 74, 1, 1, 0, NULL, '$2y$10$UO/hfbH/a4QEyrXyJ4YbYuwLXEk88m52p/pemeGWYuNY4pW8k7.Fm', NULL, '2022-04-16 16:23:35', '2022-04-16 16:23:36'),
+(58, 'zohair', 'zohair41@student.su.edu.krd', 8, 57, 1, 1, 1, NULL, '$2y$10$ioBSM.tiwambaUhvMyDSPe8Kzt2f3W421iBqfazLPwVBtGvNIePtW', NULL, '2022-04-16 16:23:35', '2022-04-16 16:23:36'),
+(59, 'jack', 'jack42@student.su.edu.krd', 7, 52, 1, 1, 0, NULL, '$2y$10$22837q45LYDDznPGLhMCeuIi28dNHDC9VWKh3qCuf4ci6vVPUbpb2', NULL, '2022-04-16 16:23:35', '2022-04-16 16:23:36'),
+(60, 'conall', 'conall43@student.su.edu.krd', 12, 71, 1, 0, 1, NULL, '$2y$10$2vF3tZ60cya8qmDPAnG13O0DdOxewvStg8ibyqv6WqJX1gccQXU0O', NULL, '2022-04-16 16:23:35', '2022-04-16 16:23:36'),
+(61, 'madox', 'madox44@student.su.edu.krd', 13, 73, 1, 1, 0, NULL, '$2y$10$kE9WqwsWn4ZSdSWesPgYwuFeFQyv33Zj7cZPWzDpes2dIZEGZIpX2', NULL, '2022-04-16 16:23:35', '2022-04-16 16:23:36'),
+(62, 'rhett', 'rhett45@student.su.edu.krd', 5, 38, 1, 0, 0, NULL, '$2y$10$Hgyy7oFhqhyNMcVHecPAm.AfAIBTqeRexVb0.LVh41JMqgqKyenem', NULL, '2022-04-16 16:23:35', '2022-04-16 16:23:35'),
+(63, 'sami', 'sami46@student.su.edu.krd', 10, 65, 1, 0, 1, NULL, '$2y$10$cU2FJHVy.K.twmVhCaBfvOnjS91xFYmL0kxR7sO3/6EE3vGVtrt6e', NULL, '2022-04-16 16:23:35', '2022-04-16 16:23:36'),
+(64, 'jedd', 'jedd47@student.su.edu.krd', 11, 68, 1, 1, 0, NULL, '$2y$10$Tqkz5UlZ59qEISYgPLJy6ec.eugLVGsopRRcFFbU08mT1SMWGTRvG', NULL, '2022-04-16 16:23:35', '2022-04-16 16:23:36'),
+(65, 'reid', 'reid48@student.su.edu.krd', 13, 73, 1, 1, 1, NULL, '$2y$10$1JgBvyD05VeKUEkej1G2HubvDEQL3N1l4RoCg6EdnATkM8oS/EjYy', NULL, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(66, 'struan', 'struan49@student.su.edu.krd', 11, 67, 1, 1, 0, NULL, '$2y$10$m5ffcR.oYMhBUJfp7j2lYegzU5hRYll3Ym6K2l4r7RDcZwZeaa55i', NULL, '2022-04-16 16:23:36', '2022-04-16 16:23:36'),
+(67, 'bhaaldeen', 'bhaaldeen50@student.su.edu.krd', 14, 78, 1, 1, 0, NULL, '$2y$10$BRW3Hr0jK4a0W788K2ZGrOK3751FN4M7nN9whWNJjhMYOFKbsz87u', NULL, '2022-04-16 16:23:36', '2022-04-16 16:23:36');
 
 --
 -- Indexes for dumped tables
@@ -857,6 +940,12 @@ ALTER TABLE `role_has_permissions`
   ADD KEY `role_has_permissions_role_id_foreign` (`role_id`);
 
 --
+-- Indexes for table `settings`
+--
+ALTER TABLE `settings`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `teams`
 --
 ALTER TABLE `teams`
@@ -885,7 +974,7 @@ ALTER TABLE `announcements`
 -- AUTO_INCREMENT for table `banners`
 --
 ALTER TABLE `banners`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `colleges`
@@ -903,7 +992,7 @@ ALTER TABLE `departments`
 -- AUTO_INCREMENT for table `experts`
 --
 ALTER TABLE `experts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -927,13 +1016,13 @@ ALTER TABLE `grants`
 -- AUTO_INCREMENT for table `ideas`
 --
 ALTER TABLE `ideas`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -951,7 +1040,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `project_announcements`
@@ -963,7 +1052,13 @@ ALTER TABLE `project_announcements`
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `settings`
+--
+ALTER TABLE `settings`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `teams`
@@ -975,7 +1070,7 @@ ALTER TABLE `teams`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- Constraints for dumped tables
