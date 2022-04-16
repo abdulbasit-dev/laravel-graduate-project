@@ -99,6 +99,22 @@ class UserSeeder extends Seeder
             ])->assignRole('team');
 
         }
+
+
+        //Teacher Seeder
+        foreach (range(1, 10) as $item) {
+            $name =  Str::lower($array[rand(0, count($array) - 1)]);
+            $collegeId = College::inRandomOrder()->first()->id;
+            $dept = Department::whereCollegeId($collegeId)->inRandomOrder()->first();
+
+            User::firstorCreate([
+                'name' => $name,
+                'email' => $name . $item . '@su.edu.krd',
+                'college_id' =>  $dept->college_id,
+                'dept_id' =>  $dept->id,
+                'password' => bcrypt('password')
+            ])->assignRole('teacher');
+        }
     
 
         //User Seeder
@@ -115,6 +131,8 @@ class UserSeeder extends Seeder
                 'password' => bcrypt('password')
             ])->assignRole('student');
         }
+
+
 
         // DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }

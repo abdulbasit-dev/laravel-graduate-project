@@ -11,14 +11,19 @@ class UserController extends Controller
     // for admin
     public function index()
     {
-        $users = User::notRole('student')->paginate(15);
+        $users = User::notRole(['student','teacher'])->paginate(15);
         return view('admin.users.index', compact('users'));
     }
 
     // for students
     public function student()
     {
-        $users = User::role('student')->paginate(15);
-        return view('admin.users.index', compact('users'));
+        return view('admin.users.student');
+    }
+
+    // for teachers
+    public function teacher()
+    {
+        return view('admin.users.teachers');
     }
 }
