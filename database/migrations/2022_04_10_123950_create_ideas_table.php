@@ -16,7 +16,7 @@ class CreateIdeasTable extends Migration
         Schema::create('ideas', function (Blueprint $table) {
             $table->id();
             $table->string("title");
-            $table->string("description")->nullable();
+            $table->longText("description")->nullable();
             $table->string("stage");
             $table->string('project')->nullable();
             $table->string('report')->nullable();

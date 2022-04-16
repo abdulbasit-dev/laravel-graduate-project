@@ -182,6 +182,26 @@ class IdeaSeeder extends Seeder
             "sixth",
         ];
 
+        Idea::firstorCreate([
+            "title" => "Students Graduation Projects",
+            "description" => " We are fourth-year students in the Department of Computer Science and IT at the College of Science.
+                We designed a graduation project under the title (Design an expert system for student’s graduation
+                projects of Salahaddin university)
+                This system offers to build a web-based graduation project management system as well as build a
+                smart database with data set and also manage and monitor activities such as the submission of
+                project and idea deliverables, grades, assessments, and announcements to the system of salahaddin
+                university
+                This system serves the centralization of the quality assurance department in the university
+                presidency.",
+            "project" => "/uploads/projects/dentcare.zip",
+            "report" => "/uploads/reports/dummy.pdf",
+            "poster" => "/uploads/posters/poster.jpg",
+            "supervisor_name" => "D. Haider Haddad",
+            "team_members" => '["Sanah", "Sozan", "Bushra"]',
+            "created_by" => 5,
+            "stage" => "fourth",
+        ]);
+
         foreach (range(1, 20) as $item) {
             $user = User::whereIsStudent(1)->inRandomOrder()->first();
             $name =  Str::lower($array[rand(0, count($array) - 1)]);

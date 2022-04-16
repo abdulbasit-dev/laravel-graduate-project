@@ -51,17 +51,17 @@ class BannerSeeder extends Seeder
             [
                 "title"=> "Explore Students Projects",
                 "page"=> "gallery",
-                'image' => "uploads/banners/5.jpg"
+                'image' => "uploads/banners/7.jpg"
             ],
             [
                 "title"=> "Find Out The best Ranked One",
                 "page"=> "gallery",
-                'image' => "uploads/banners/6.jpg"
+                'image' => "uploads/banners/8.jpg"
             ],
             [
                 "title"=> "Get Idea From Others Project",
                 "page"=> "gallery",
-                'image' => "uploads/banners/2.jpg"
+                'image' => "uploads/banners/9.jpg"
             ],
         ];
 

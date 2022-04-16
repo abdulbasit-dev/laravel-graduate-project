@@ -60,12 +60,12 @@
     }
 
     .carousel .carousel-item {
-        height: 70vh;
+        height: 80vh;
     }
 
     .carousel-item img {
         position: absolute;
-        object-fit: cover;
+        object-fit: contain;
         top: 0;
         left: 0;
         min-height: 70vh;
@@ -106,7 +106,7 @@
                 data-bs-interval="3000">
                 <img src="{{ asset($banner->image) }}" class="d-block w-100" alt="...">
                 <div class="dark-overlay">
-                    <div class="carousel-caption d-none d-md-block" style="margin-bottom:24rem">
+                    <div class="carousel-caption d-none d-md-block" style="margin-bottom:15rem">
                         <h1 class="display-4" data-aos="fade-down" data-aos-duration="1000">{{
                             $banner->title }}</h1>
                         <p class="lead" data-aos="fade-up" data-aos-duration="1500">{{
