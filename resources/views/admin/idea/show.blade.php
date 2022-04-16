@@ -42,6 +42,8 @@
                                         
                                   
                                     <div class="d-flex justify-content-end">
+                                        <a href="{{ route('admin.ideas.edit',$idea) }}"
+                                            class="btn btn-outline-info me-3">Edit</a>
                                         <form
                                             action="{{ route('admin.ideas.destroy', $idea->id) }}"
                                             method="POST" id="myForm_{{ $idea->id }}">
@@ -144,7 +146,7 @@
 
                                         <div class="text-center ms-5">
                                             {{-- if project report is not null --}}
-                                            @if ($idea->report)
+                                            @if ($idea->project)
                                             <h5>Project File</h5>
                                             <a href="{{ asset($idea->project) }}" download="">
                                                 <svg class="text-primary" style="width: 3rem"

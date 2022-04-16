@@ -140,21 +140,88 @@ class IdeaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Idea $idea)
     {
-        //
+        $idea->load('student', 'student.dept', 'student.college');
+        return view('admin.idea.edit', compact('idea'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update(Request $request, Idea $idea)
     {
-        //
+        $projectFile = null;
+        $reportFile = null;
+        $posterFile = null;
+
+        try {
+            if ($request->hasFile('project')) {
+                //try to not delete seeder file
+                if ($idea->project  && checkDelete($idea->project)) {
+                    //first delete 
+                    File::delete($idea->projectFile);
+                }
+
+                $projectFile = time() . '_' . $request->file('project')->getClientOriginalName();
+                $request->project->move(public_path('uploads/ideas'), $projectFile);
+            }
+
+            if ($request->hasFile('report')) {
+                //try to not delete seeder file
+                if ($idea->report &&  checkDelete($idea->report)) {
+                    //first delete 
+                    File::delete($idea->report);
+                }
+
+                $reportFile = time() . '_' . $request->file('report')->getClientOriginalName();
+                $request->report->move(public_path('uploads/reports'), $reportFile);
+            }
+
+            if ($request->hasFile('poster')) {
+                //try to not delete seeder file
+                if ($idea->poster  && checkDelete($idea->poster)) {
+                    //first delete 
+                    File::delete($idea->poster);
+                }
+
+                $posterFile = time() . '_' . $request->file('poster')->getClientOriginalName();
+                $request->poster->move(public_path('uploads/posters'), $posterFile);
+            }
+
+
+
+            $idea->title = $request->title;
+            $idea->description = $request->description;
+            $idea->supervisor_name = $request->supervisor_name;
+
+            if (count($request->teams) && $request->teams[0] !== null) {
+                $idea->team_members = $request->teams;
+            }
+
+            if ($request->stage) {
+                $idea->stage = $request->stage;
+            }
+
+            if ($projectFile) {
+                $idea->project = 'uploads/ideas/' . $projectFile;
+            }
+
+            if ($reportFile) {
+                $idea->report = 'uploads/reports/' . $reportFile;
+            }
+
+            if ($posterFile) {
+                $idea->poster = 'uploads/posters/' . $posterFile;
+            }
+
+            $idea->save();
+
+            return redirect()->route('admin.profile.idea')->with([
+                "message" => "Idea Updated Successfully",
+                "title" => "updated",
+                "icon" => "success",
+            ]);
+        } catch (\Throwable $th) {
+            throw $th;
+        }
     }
 
     /**

@@ -190,8 +190,6 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
-
-
         $projectFile = null;
         $reportFile = null;
         $posterFile = null;
@@ -255,7 +253,7 @@ class ProjectController extends Controller
             $project->save();
 
             return redirect()->route('admin.profile.project')->with([
-                "message" => "Expert Updated Successfully",
+                "message" => "Project Updated Successfully",
                 "title" => "updated",
                 "icon" => "success",
             ]);
