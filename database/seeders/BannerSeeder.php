@@ -19,48 +19,57 @@ class BannerSeeder extends Seeder
 
         $banners = [
             [
-                "title"=> "Explore Students Projects",
-                "page"=> "home",
+                "title" => "an expert system for students graduation project in salahaddin university",
+                "page" => "home",
+                "desc" => "a website for facilitating  the work of students and academic staff to perform their work better and easier!",
                 'image' => "uploads/banners/1.jpg"
             ],
             [
-                "title"=> "Find Out The best Ranked One",
-                "page"=> "home",
+                "title" => "an expert system for students graduation project in salahaddin university",
+                "page" => "home",
+                "desc" => "a website for facilitating  the work of students and academic staff to perform their work better and easier!",
                 'image' => "uploads/banners/2.jpg"
             ],
             [
-                "title"=> "Get Idea From Others Project",
-                "page"=> "home",
+                "title" => "an expert system for students graduation project in salahaddin university",
+                "page" => "home",
+                "desc" => "a website for facilitating  the work of students and academic staff to perform their work better and easier!",
                 'image' => "uploads/banners/3.jpg"
             ],
             [
-                "title"=> "Expert Systems",
-                "page"=> "expert",
+                "title" => "Expert Systems",
+                "page" => "expert",
+                "desc" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus.",
                 'image' => "uploads/banners/4.jpg"
             ],
             [
-                "title"=> "Find Out The best Ranked One",
-                "page"=> "expert",
+                "title" => "Find Out The best Ranked One",
+                "page" => "expert",
+                "desc" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus.",
                 'image' => "uploads/banners/5.jpg"
             ],
             [
-                "title"=> "Get Idea From Others Project",
-                "page"=> "expert",
+                "title" => "Get Idea From Others Project",
+                "page" => "expert",
+                "desc" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus.",
                 'image' => "uploads/banners/6.jpg"
             ],
             [
-                "title"=> "Explore Students Projects",
-                "page"=> "gallery",
+                "title" => "Explore Students Projects",
+                "page" => "gallery",
+                "desc" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus.",
                 'image' => "uploads/banners/7.jpg"
             ],
             [
-                "title"=> "Find Out The best Ranked One",
-                "page"=> "gallery",
+                "title" => "Find Out The best Ranked One",
+                "page" => "gallery",
+                "desc" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus.",
                 'image' => "uploads/banners/8.jpg"
             ],
             [
-                "title"=> "Get Idea From Others Project",
-                "page"=> "gallery",
+                "title" => "Get Idea From Others Project",
+                "page" => "gallery",
+                "desc" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus.",
                 'image' => "uploads/banners/9.jpg"
             ],
         ];
@@ -69,7 +78,7 @@ class BannerSeeder extends Seeder
             Banner::create([
                 "title" => $banner["title"],
                 "page" => $banner["page"],
-                "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus. ",
+                "description" => $banner['desc'],
                 'image' => $banner["image"]
             ]);
         }

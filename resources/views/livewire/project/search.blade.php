@@ -1,9 +1,4 @@
 <section class="container">
-
-
-
-
-
     <div class="text-center mb-1" data-aos="fade-up" data-aos-duration="1000">
         <h3 class="mb-3">Projects</h3>
         <hr class="mb-4 mt-0 d-inline-block mx-auto w-50 bg-primary" style="height: 2px" />
@@ -51,8 +46,8 @@
     <div class="row">
         <div class="row mt-3" id="projects">
             <h2 class="text-left text-muted  mb-4" data-aos="fade-right" data-aos-duration="1000">
-                {!! $projects->total()? "<strong>". $projects->total()."</strong>". "
-                Projects":null !!}</h2>
+                {!! $projects->total()? "</strong>". "
+                #Submited Projects "."<strong>". $projects->total():null !!}</h2>
 
             <div class="card border-0 shado mb-4">
                 <div class="card-body">
