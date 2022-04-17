@@ -19,41 +19,6 @@
         height: 100%;
     } */
 
-    .lightbox {
-        /* Default to hidden */
-        display: none;
-
-        /* Overlay entire screen */
-        position: fixed;
-        z-index: 999;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-
-        /* A bit of padding around image */
-        padding: 1em;
-
-        /* Translucent background */
-        background: rgba(0, 0, 0, 0.8);
-    }
-
-    /* Unhide the lightbox when it's the target */
-    .lightbox:target {
-        display: block;
-    }
-
-    .lightbox span {
-        /* Full width and height */
-        display: block;
-        width: 100%;
-        height: 100%;
-
-        /* Size and position background image */
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-    }
 
     #show {
         margin-bottom: 5rem;
@@ -179,7 +144,8 @@
 
 </section>
 
-<section class="container" id="video" style="margin-bottom: 10rem">
+{{-- tutorial --}}
+{{-- <section class="container" id="video" style="margin-bottom: 10rem">
     <div class="text-center mb-4" data-aos="fade-up" data-aos-duration="1000">
         <h3>Video Tutorial</h3>
         <hr class="mb-2 mt-0 d-inline-block mx-auto w-50 bg-primary" style="height: 2px" />
@@ -217,7 +183,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 
 <section class="container" style="margin-bottom: 10rem">
     <div class="text-center mb-4" data-aos="fade-up" data-aos-duration="1000">

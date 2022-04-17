@@ -52,7 +52,7 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="{{ route('projectAnnouncement') }}">Project Announcement</a></li>
                         <li><a class="dropdown-item"
-                                href="{{ route('evaluationCommittee') }}">Evaluation Form</a></li>
+                                href="{{ route('evaluationCommittee') }}">Evaluation</a></li>
                     </ul>
                 </li>
 

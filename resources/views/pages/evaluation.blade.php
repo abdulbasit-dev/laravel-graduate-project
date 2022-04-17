@@ -208,6 +208,43 @@
     </div>
 </section> --}}
 
+<section class="container" style="margin-bottom: 5rem;margin-top:5rem" id="grantForms">
+    <div class="text-center mb-4" data-aos="fade-up" data-aos-duration="1000">
+        <h3>Evaluation</h3>
+        <hr class="mb-2 mt-0 d-inline-block mx-auto w-50 bg-primary" style="height: 2px" />
+        <p class="lead">Click the image to see in full veiw</p>
+    </div>
+
+    <div class="row justify-content-center ">
+        <div class="col-4 " data-aos="zoom-in-right" data-aos-duration="1200"
+            data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
+            <div class="w-75">
+                <a href="#img1">
+                    <img src="{{ asset('images/Student-Project-Evaluation-A-1.jpg') }}"
+                        class="img-fluid rounded-3 border" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="col-4 " data-aos="zoom-in-left" data-aos-duration="1200">
+            <div class="w-75">
+                <a href="#img2" class="img__wrap">
+                    <img src="{{ asset('images/Student-Project-Evaluation-A-2.jpg') }}"
+                        class="img-fluid rounded-3 border" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    {{-- light box containers --}}
+    <a href="#grantForms" class="lightbox" id="img1">
+        <span
+            style="background-image: url('{{ asset('images/Student-Project-Evaluation-A-1.jpg') }}')"></span>
+    </a>
+
+    <a href="#grantForms" class="lightbox" id="img2">
+        <span style="background-image: url('{{ asset('images/Student-Project-Evaluation-A-2.jpg') }}')"></span>
+    </a>
+</section>
 
 <section class="mt-5" style="margin-bottom: 10rem">
     <div class="container">
