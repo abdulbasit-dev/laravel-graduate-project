@@ -83,10 +83,10 @@
                                 Expert Info Files <i class="fas fa-arrow-right"></i>
                             </a>
     
-                            <a href="#video" target="__blank"
+                            <a href="#video"
                                 class="btn btn-outline-primary ms-4" data-aos="fade-left"
                                 data-aos-duration="1000">
-                                Video Tutorial <i class="fas fa-upload"></i>
+                                Video Tutorial <i class="fas fa-video"></i>
                             </a>
                         </div>
 
@@ -145,45 +145,28 @@
 </section>
 
 {{-- tutorial --}}
-{{-- <section class="container" id="video" style="margin-bottom: 10rem">
+<section class="container" id="video" style="margin-bottom: 10rem">
     <div class="text-center mb-4" data-aos="fade-up" data-aos-duration="1000">
         <h3>Video Tutorial</h3>
         <hr class="mb-2 mt-0 d-inline-block mx-auto w-50 bg-primary" style="height: 2px" />
     </div>
 
-    <div class="row justify-content-center">
-        <div class="col-3 me-5" data-aos="fade-right" data-aos-duration="1500">
-            <div class="card" style="width: 22rem;">
-                <div class="card-body">
-                    <h4 class="card-title">4th Class Project Sample</h4>
-                    <p class="card-text">This the template that help writning your project report
-                        effectively, find the download link below</p>
-                    <a href="{{ asset('docs/4th class Project  Sample - writing Desigen.docx') }}"
-                        download="" class="card-link"><i class="bi bi-file-earmark-arrow-down"></i>
-                        downlaod</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-3" data-aos="fade-left" data-aos-duration="1500">
-            <div class="card" style="width: 22rem;">
-                <div class="card-body">
-                    <h4 class="card-title">Norms and Regulations</h4>
-                    <p class="card-tex">for Writing scientific Project for students in the fourth
-                        stage</p>
-                    <p class="card-text">Prepared by <a
-                            href="https://academics.su.edu.krd/haider.haddad"
-                            class=" text-decoration-none" target="__blank">D. Haider Haddad</a>
-                        <br> <span class="text-primary">computer Dept. College of Science Salahadin
-                            University</span>
-                    </p>
-
-                    <a href="{{ asset('docs/4th student project .pptx') }}" download=""
-                        class="card-link"><i class="bi bi-file-earmark-arrow-down"></i> downlaod</a>
-                </div>
-            </div>
+    <div class="row mb-5">
+        <div class="col-12">
+            <h3 class="text-muted  mb-4 text-center " data-aos="zoom-in" data-aos-duration="1000">How To Upload Your Project</h3>
+            <video class="w-100" src="{{ asset("images/how to upload project.mp4") }}" data-aos="fade-left" data-aos-duration="1000" controls loop></video>
         </div>
     </div>
-</section> --}}
+
+    <div class="row mt-5">
+        <div class="col-12">
+            <h3 class="text-muted  mb-4 text-center " data-aos="zoom-in" data-aos-duration="1000">How To Upload Your Idea</h3>
+            <video class="w-100" src="{{ asset("images/how to upload idea.mp4") }}" data-aos="zoom-out" data-aos-duration="1000" controls loop></video>
+        </div>
+    </div>
+
+
+</section>
 
 <section class="container" style="margin-bottom: 10rem">
     <div class="text-center mb-4" data-aos="fade-up" data-aos-duration="1000">
