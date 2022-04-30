@@ -325,7 +325,8 @@
                     </path>
                 </svg>
             </span>
-            <span class="sidebar-text text-sm">{{ __('Project Announcements') }}</span>
+            {{-- <span class="sidebar-text text-sm">{{ __('Project Announcements') }}</span> --}}
+            <span class="sidebar-text text-sm">{{ __('Committee Announcements') }}</span>
         </a>
     </li>
 

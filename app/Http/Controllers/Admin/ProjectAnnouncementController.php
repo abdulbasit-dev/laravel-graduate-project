@@ -16,8 +16,8 @@ class ProjectAnnouncementController extends Controller
     public function __construct()
     {
         View::share([
-            'title' => "Project Announcements",
-            'desc' => "List of Project Announcements"
+            'title' => "Committee Announcements",
+            'desc' => "List of Committee Announcements"
         ]);
     }
 

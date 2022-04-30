@@ -51,7 +51,7 @@
                         href="#" data-bs-toggle="dropdown">Evaluation Committee</a>
                     <ul class="dropdown-menu">
                         {{-- <li><a class="dropdown-item" href="{{ route('projectAnnouncement') }}">Project Announcement</a></li> --}}
-                        <li><a class="dropdown-item" href="{{ route('projectAnnouncement') }}">committee Announcement</a></li>
+                        <li><a class="dropdown-item" href="{{ route('projectAnnouncement') }}">Committee Announcement</a></li>
                         <li><a class="dropdown-item"
                                 href="{{ route('evaluationCommittee') }}">Evaluation</a></li>
                     </ul>
