@@ -113,8 +113,12 @@ class ProjectAnnouncementController extends Controller
         try {
 
             $projectAnnouncement->title = $request->title;
-            $projectAnnouncement->college_id = $request->college_id;
-            $projectAnnouncement->dept_id = $request->dept_id;
+            if ($request->college_id) {
+                $projectAnnouncement->college_id = $request->college_id;
+            }
+            if ($request->dept_id) {
+                $projectAnnouncement->dept_id = $request->dept_id;
+            }
             $projectAnnouncement->save();
 
             return redirect()->route('admin.project-announcements.index')->with([

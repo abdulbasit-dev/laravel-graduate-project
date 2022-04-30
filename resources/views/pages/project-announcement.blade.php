@@ -48,7 +48,7 @@
         <div class="card my-5" style="width: 30rem;" data-aos="fade-up" data-aos-duration="1000">
             <img src="{{ asset('images/announcement.jfif') }}" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-text">{{ $item->title }}</h5>
+                <h5 class="card-text">{!! $item->title !!}</h5>
             </div>
         </div>
 

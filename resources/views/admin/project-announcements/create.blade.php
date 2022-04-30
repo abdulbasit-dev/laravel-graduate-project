@@ -69,8 +69,6 @@
               </div>
             </div>
 
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus incidunt eaque unde amet quo ex, eveniet corrupti quidem id ea!
-
             <div class="row mt-3">
               <div class="col-md-10 mb-3">
                 <label for="title">Attachment</label>
@@ -119,34 +117,7 @@
         });
       });
 
-      $(function () {
-            $('textarea.tinymce').tinymce({
 
-                height: 300,
-                plugins: [
-                    'advlist autolink lists link image charmap print preview hr anchor pagebreak',
-                    'searchreplace wordcount visualblocks visualchars code fullscreen',
-                    'insertdatetime media nonbreaking save table contextmenu directionality',
-                    'emoticons template paste textcolor colorpicker textpattern imagetools codesample toc help'
-                ],
-                toolbar1: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media | forecolor backcolor emoticons | print preview',
-
-                file_picker_callback (callback, value, meta) {
-                    let x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth
-                    let y = window.innerHeight|| document.documentElement.clientHeight|| document.getElementsByTagName('body')[0].clientHeight
-
-                    tinymce.activeEditor.windowManager.openUrl({
-                        url : '/file-manager/tinymce5',
-                        title : 'Laravel File manager',
-                        width : x * 0.8,
-                        height : y * 0.8,
-                        onMessage: (api, message) => {
-                            callback(message.content, { text: message.text })
-                        }
-                    })
-                }
-            });
-        });
     });
   </script>
 @endpush
