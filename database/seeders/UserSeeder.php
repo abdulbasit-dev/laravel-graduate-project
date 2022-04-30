@@ -47,7 +47,7 @@ class UserSeeder extends Seeder
             'email' => 'haider.haddad@su.edu.krd',
             'is_student' => 0,
             'password' => bcrypt('password')
-        ])->assignRole('admin');
+        ])->assignRole('team');
 
         //create admin user
         User::firstorCreate([
