@@ -17,8 +17,8 @@
                                             data-aos="fade-down" data-aos-duration="1000">
                                     </div>
                                     <div class="col">
-                                        <select class="form-select form-select-sm" id="college" required
-                                            wire:model='collegeId'>
+                                        <select class="form-select form-select-sm" id="college"
+                                            required wire:model='collegeId'>
                                             <option selected value>All Colleges</option>
                                             @foreach ($colleges as $key => $value)
                                             <option value="{{ $key }}">{{ $value }}</option>
@@ -26,8 +26,8 @@
                                         </select>
                                     </div>
                                     <div class="col">
-                                        <select class="form-select form-select-sm department" id="dept" required
-                                            wire:model="deptId">
+                                        <select class="form-select form-select-sm department"
+                                            id="dept" required wire:model="deptId">
                                             <option selected value>All Departments</option>
                                             @foreach ($depts as $key => $value)
                                             <option value="{{ $key }}">{{ $value }}</option>
@@ -90,6 +90,17 @@
                                         </td>
 
                                         <td class="">
+                                            @if ($project->is_ranked)
+                                            <button class="btn btn-primary btn-sm"
+                                                type="button">Ranked</button>
+
+                                            @else
+                                            <a
+                                                href="{{ route('admin.projects.rank',$project->id) }}">
+                                                <button class="btn btn-warning btn-sm"
+                                                    type="button">Rank</button>
+                                            </a>
+                                            @endif
                                             <a
                                                 href="{{ route('admin.projects.show',$project->id) }}">
                                                 <button class="btn btn-outline-info btn-sm"

@@ -296,4 +296,14 @@ class ProjectController extends Controller
             "icon" => "success",
         ]);
     }
+
+    public function rankProject(Project $project)
+    {
+        $project->update(['is_ranked'=>1]);
+        return redirect()->back()->with([
+            "message" => "Project Ranked Successfully",
+            "title" => "Ranked",
+            "icon" => "success",
+        ]);
+    }
 }
