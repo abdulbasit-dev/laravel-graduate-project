@@ -246,7 +246,7 @@
     </a>
 </section>
 
-<section class="mt-5" style="margin-bottom: 10rem">
+<section class="mt-5" style="margin-bottom: 5rem">
     <div class="container">
 
         <div class="row">
@@ -861,7 +861,7 @@
                     </div>
                 </div>
 
-                <div class="accordion-item" data-aos="fade-up-right" data-aos-duration="1700">
+                {{-- <div class="accordion-item" data-aos="fade-up-right" data-aos-duration="1700">
                     <h2 class="accordion-header" id="headingThree">
                         <button class="accordion-button collapsed" type="button"
                             data-bs-toggle="collapse" data-bs-target="#firstPresentation"
@@ -1442,7 +1442,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
 
         </div>

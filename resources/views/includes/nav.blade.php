@@ -14,10 +14,10 @@
                     <a class="nav-link fw-medium {{ Route::currentRouteName() == 'home' ? 'active' : '' }}"
                         aria-current="page" href="{{ route('home') }}">About</a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link fw-medium {{ Route::currentRouteName() == 'project' ? 'active' : '' }}"
                         href="{{ route('project') }}">Projects</a>
-                </li>
+                </li> --}}
 
                 {{-- <li class="nav-item">
                     <a class="nav-link fw-medium {{ Route::currentRouteName() == 'posters' ? 'active' : '' }}"
@@ -33,6 +33,7 @@
                     <a class="nav-link fw-medium  dropdown-toggle {{ Route::currentRouteName() == 'conference'|| Route::currentRouteName() == 'idea' ? 'active' : '' }}"
                         href="#" data-bs-toggle="dropdown">Conference</a>
                     <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{ route('project') }}">Project</a></li>
                         <li><a class="dropdown-item" href="{{ route('idea') }}">Idea</a></li>
                         <li><a class="dropdown-item" href="{{ route('poster') }}">Poster</a></li>
                         <li><a class="dropdown-item" href="{{ route('conference') }}">Grant</a>
