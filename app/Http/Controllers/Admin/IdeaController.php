@@ -284,4 +284,14 @@ class IdeaController extends Controller
 
         return view('includes.ideas', compact('ideas'));
     }
+
+    public function rankIdea(Idea $idea)
+    {
+        $idea->update(['is_ranked' => 1]);
+        return redirect()->back()->with([
+            "message" => "Idea Ranked Successfully",
+            "title" => "Ranked",
+            "icon" => "success",
+        ]);
+    }
 }

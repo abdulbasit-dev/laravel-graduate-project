@@ -97,6 +97,7 @@ Route::group([
     Route::resource('announcements', AnnouncementController::class);
 
     //ideas
+    Route::get('ideas/rank/{idea}', [IdeaController::class, 'rankIdea'])->name('ideas.rank');
     Route::resource('ideas', IdeaController::class);
     
     //project-announcements

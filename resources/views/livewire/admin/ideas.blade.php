@@ -12,11 +12,11 @@
                                     <div class="col">
                                         <input type="text" class="form-control form-control-sm"
                                             wire:model.debounce.500ms="search"
-                                            placeholder="search by project title ..."
-                                            >
+                                            placeholder="search by project title ...">
                                     </div>
                                     <div class="col">
-                                        <select class="form-select form-select-sm" wire:model='stage'>
+                                        <select class="form-select form-select-sm"
+                                            wire:model='stage'>
                                             <option selected value>Select Stage</option>
                                             <option value="first">First</option>
                                             <option value="second">Second</option>
@@ -27,8 +27,8 @@
                                         </select>
                                     </div>
                                     <div class="col">
-                                        <select class="form-select form-select-sm" id="college" required
-                                            wire:model='collegeId'>
+                                        <select class="form-select form-select-sm" id="college"
+                                            required wire:model='collegeId'>
                                             <option selected value>All Colleges</option>
                                             @foreach ($colleges as $key => $value)
                                             <option value="{{ $key }}">{{ $value }}</option>
@@ -36,8 +36,8 @@
                                         </select>
                                     </div>
                                     <div class="col">
-                                        <select class="form-select form-select-sm department" id="dept" required
-                                            wire:model="deptId">
+                                        <select class="form-select form-select-sm department"
+                                            id="dept" required wire:model="deptId">
                                             <option selected value>All Departments</option>
                                             @foreach ($depts as $key => $value)
                                             <option value="{{ $key }}">{{ $value }}</option>
@@ -103,6 +103,16 @@
                                         </td>
 
                                         <td class="">
+                                            @if ($idea->is_ranked)
+                                            <button class="btn btn-primary btn-sm"
+                                                type="button">Ranked</button>
+
+                                            @else
+                                            <a href="{{ route('admin.ideas.rank',$idea->id) }}">
+                                                <button class="btn btn-warning btn-sm"
+                                                    type="button">Rank</button>
+                                            </a>
+                                            @endif
                                             <a href="{{ route('admin.ideas.show',$idea->id) }}">
                                                 <button class="btn btn-outline-info btn-sm"
                                                     type="button">View</button>
