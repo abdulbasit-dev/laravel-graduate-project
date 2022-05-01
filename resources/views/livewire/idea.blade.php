@@ -119,7 +119,7 @@
                                     </tr>
                                     @empty
                                     <tr class="mt-4">
-                                        <td colspan="5" class="text-center h4">No project found :(
+                                        <td colspan="8" class="text-center h4">No idea found :(
                                         </td>
                                     </tr>
                                     @endforelse
