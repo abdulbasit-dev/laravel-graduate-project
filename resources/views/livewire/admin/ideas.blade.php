@@ -69,6 +69,7 @@
                                         <th class="border-0">Stage</th>
                                         <th class="border-0">Supervisor Name</th>
                                         <th class="border-0">Team Members</th>
+                                        <th class="border-0">Rank</th>
                                         <th class="border-0">Action</th>
                                     </tr>
                                 </thead>
@@ -102,21 +103,36 @@
                                             </div>
                                         </td>
 
-                                        <td class="">
+                                        <td>
                                             @if ($idea->is_ranked)
-                                            <button class="btn btn-primary btn-sm"
-                                                type="button">Ranked</button>
+                                            <span class="badge bg-success">Yes</span>
 
                                             @else
-                                            <a href="{{ route('admin.ideas.rank',$idea->id) }}">
-                                                <button class="btn btn-warning btn-sm"
-                                                    type="button">Rank</button>
-                                            </a>
+                                            <span class="badge bg-secondary">No</span>
                                             @endif
-                                            <a href="{{ route('admin.ideas.show',$idea->id) }}">
-                                                <button class="btn btn-outline-info btn-sm"
-                                                    type="button">View</button>
-                                            </a>
+                                        </td>
+
+                                        <td >
+                                            <div class="d-flex">
+
+                                                @role('council')
+                                                @if ($idea->is_ranked)
+                                                <button class="btn btn-primary btn-sm"
+                                                    type="button">Ranked</button>
+    
+                                                @else
+                                                <a href="{{ route('admin.ideas.rank',$idea->id) }}">
+                                                    <button class="btn btn-warning btn-sm"
+                                                        type="button">Rank</button>
+                                                </a>
+                                                @endif
+    
+                                                @endrole
+                                                <a href="{{ route('admin.ideas.show',$idea->id) }}" class="ms-3">
+                                                    <button class="btn btn-outline-info btn-sm"
+                                                        type="button">View</button>
+                                                </a>
+                                            </div>
 
                                         </td>
                                     </tr>

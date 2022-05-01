@@ -299,9 +299,19 @@ class ProjectController extends Controller
 
     public function rankProject(Project $project)
     {
-        $project->update(['is_ranked'=>1]);
+        $project->update(['is_ranked' => 1]);
         return redirect()->back()->with([
             "message" => "Project Ranked Successfully",
+            "title" => "Ranked",
+            "icon" => "success",
+        ]);
+    }
+
+    public function rankPoster(Project $project)
+    {
+        $project->update(['is_poster_ranked' => 1]);
+        return redirect()->back()->with([
+            "message" => "Project Poster Ranked Successfully",
             "title" => "Ranked",
             "icon" => "success",
         ]);

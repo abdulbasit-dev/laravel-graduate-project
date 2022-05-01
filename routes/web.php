@@ -82,6 +82,7 @@ Route::group([
     Route::view("upload-setting", 'admin.setting')->name("upload-setting");
 
     //projects
+    Route::get('projects/rank-poster/{project}', [ProjectController::class, 'rankPoster'])->name('projects.rank-poster');
     Route::get('projects/rank/{project}', [ProjectController::class, 'rankProject'])->name('projects.rank');
     Route::get('projects/poster', [ProjectController::class, 'poster'])->name('projects.poster');
     Route::resource('projects', ProjectController::class);

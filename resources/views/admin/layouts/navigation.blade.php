@@ -117,7 +117,6 @@
 
 
     @hasanyrole('council')
-
     {{-- profile --}}
     <li class="nav-item {{ request()->routeIs('admin.profile.*') ? 'active' : '' }}">
         <span class="nav-link d-flex justify-content-between align-items-center"
@@ -154,6 +153,52 @@
         </div>
     </li>
 
+    {{-- projects --}}
+    <li class="nav-item {{ request()->routeIs('admin.projects.index') ? 'active' : '' }}">
+        <a href="{{ route('admin.projects.index') }}" class="nav-link">
+            <span class="sidebar-icon ">
+                <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12">
+                    </path>
+                </svg>
+            </span>
+            <span class="sidebar-text text-sm">{{ __('Projects') }}</span>
+        </a>
+    </li>
+
+    {{-- ideas --}}
+    <li class="nav-item {{ request()->routeIs('admin.ideas.*') ? 'active' : '' }}">
+        <a href="{{ route('admin.ideas.index') }}" class="nav-link">
+            <span class="sidebar-icon ">
+                <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z">
+                    </path>
+                </svg>
+            </span>
+            <span class="sidebar-text text-sm">{{ __('Ideas') }}</span>
+        </a>
+    </li>
+
+    {{-- posters --}}
+    <li class="nav-item {{ request()->routeIs('admin.projects.poster') ? 'active' : '' }}">
+        <a href="{{ route('admin.projects.poster') }}" class="nav-link">
+            <span class="sidebar-icon ">
+                <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 13v-1m4 1v-3m4 3V8M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z">
+                    </path>
+                </svg>
+            </span>
+            <span class="sidebar-text text-sm">{{ __('Posters') }}</span>
+        </a>
+    </li>
+
+    <li role="separator" class="dropdown-divider mt-4 mb-3 border-gray-700"></li>
 
     {{-- Project Announcements --}}
     <li class="nav-item {{ request()->routeIs('admin.project-announcements.*') ? 'active' : '' }}">
@@ -274,7 +319,12 @@
     <li class="nav-item {{ request()->routeIs('admin.upload-setting') ? 'active' : '' }}">
         <a href="{{ route('admin.upload-setting') }}" class="nav-link">
             <span class="sidebar-icon ">
-                <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path></svg>
+                <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01">
+                    </path>
+                </svg>
             </span>
             <span class="sidebar-text text-sm">{{ __('Upload Setting') }}</span>
         </a>
