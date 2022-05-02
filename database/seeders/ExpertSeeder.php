@@ -50,7 +50,10 @@ class ExpertSeeder extends Seeder
         ];
 
         foreach ($experts as $expert) {
-            Expert::create($expert);
+            Expert::create($expert + [
+                "college_id" => 1,
+                "dept_id" => 4,
+            ]);
         }
     }
 }

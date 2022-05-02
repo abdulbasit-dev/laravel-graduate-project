@@ -24,6 +24,8 @@ class AnnouncementSeeder extends Seeder
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum telluss ",
                     'attachment' => "uploads/announcements/docker.pdf",
                     'image' => "uploads/announcements/confrance.jpg",
+                    "college_id" => 1,
+                    "dept_id" => 4,
                 ]);
             } else {
                 Announcement::create([
@@ -31,7 +33,9 @@ class AnnouncementSeeder extends Seeder
                     "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus.
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum tellus
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis finibus metus, vel rutrum telluss ",
-                    'attachment' => "uploads/announcements/docker.pdf"
+                    'attachment' => "uploads/announcements/docker.pdf",
+                    "college_id" => 1,
+                    "dept_id" => 4,
                 ]);
             }
         }

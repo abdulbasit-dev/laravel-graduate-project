@@ -69,6 +69,8 @@ class UserSeeder extends Seeder
         User::firstorCreate([
             'name' => 'ahmad',
             'email' => 'council@su.edu.krd',
+            'college_id' =>  1,
+            'dept_id' =>  4,
             'is_student' => 0,
             'password' => bcrypt('password')
         ])->assignRole('council');

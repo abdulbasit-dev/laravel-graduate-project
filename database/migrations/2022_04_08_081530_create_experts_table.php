@@ -15,6 +15,8 @@ class CreateExpertsTable extends Migration
     {
         Schema::create('experts', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('college_id')->nullable()->constrained('colleges', 'id');
+            $table->foreignId('dept_id')->nullable()->constrained('departments', 'id');
             $table->string("title");
             $table->string("file");
             $table->timestamps();

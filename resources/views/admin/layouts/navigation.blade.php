@@ -442,19 +442,47 @@
         </div>
     </li> --}}
 
-    {{-- evalution forms --}}
-    <li class="nav-item {{ request()->routeIs('admin.forms.index') ? 'active' : '' }}">
-        <a href="{{ route('admin.forms.index') }}" class="nav-link">
-            <span class="sidebar-icon ">
-                <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+
+    {{-- evaluation forms --}}
+    <li class="nav-item">
+        <span class="nav-link d-flex justify-content-between align-items-center"
+            data-bs-toggle="collapse" data-bs-target="#college_depts">
+            <span class="d-flex  align-items-center">
+                <span class="sidebar-icon">
+                    <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                        </path>
+                    </svg>
+                </span>
+                <span class="sidebar-text">{{ __('Evaluation Forms') }}</span>
+            </span>
+            <span class="link-arrow">
+                <svg class="icon icon-sm" fill="currentColor" viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                    <path fill-rule="evenodd"
+                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                        clip-rule="evenodd">
                     </path>
                 </svg>
             </span>
-            <span class="sidebar-text text-sm">{{ __('Evalution Forms') }}</span>
-        </a>
+        </span>
+        <div class="multi-level collapse" role="list" id="college_depts" aria-expanded="false">
+            <ul class="flex-column nav">
+                <li class="nav-item {{ request()->routeIs('admin.forms.index') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('admin.forms.index') }}">
+                        <span class="sidebar-text">{{ __('Evaluation Forms') }}</span>
+                    </a>
+                </li>
+                <li
+                    class="nav-item {{ request()->routeIs('admin.forms.uploaded-form') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('admin.forms.uploaded-form') }}">
+                        <span class="sidebar-text">{{ __('Uploaded Evaluation Forms') }}</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </li>
 
     {{-- experts --}}
@@ -520,7 +548,8 @@
                         <span class="sidebar-text">Collegs</span>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li
+                    class="nav-item {{ request()->routeIs('admin.departments.index') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('admin.departments.index') }}">
                         <span class="sidebar-text">Departments</span>
                     </a>

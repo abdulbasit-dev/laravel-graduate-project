@@ -194,6 +194,8 @@ class ProjectSeeder extends Seeder
             "project" => "/uploads/projects/dentcare.zip",
             "report" => "/uploads/reports/dummy.pdf",
             "poster" => "/uploads/posters/poster.jpg",
+            'is_ranked' => 1,
+            'is_poster_ranked' => 1,
             "supervisor_name" => "D. Haider Haddad",
             "team_members" => '["Sanah", "Sozan", "Bushra"]',
             "created_by" => 5,

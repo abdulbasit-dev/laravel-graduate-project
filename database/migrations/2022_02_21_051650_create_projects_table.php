@@ -22,6 +22,8 @@ class CreateProjectsTable extends Migration
             $table->string('poster')->nullable();
             $table->string('supervisor_name');
             $table->string("team_members")->nullable();
+            $table->boolean('is_ranked')->default(0);
+            $table->boolean("is_poster_ranked")->default(0);
             $table->foreignId('created_by')->constrained('users', 'id')->onDelete("cascade");
             $table->timestamps();
         });

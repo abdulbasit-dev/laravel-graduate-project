@@ -23,6 +23,7 @@ class CreateIdeasTable extends Migration
             $table->string('poster')->nullable();
             $table->string('supervisor_name')->nullable();
             $table->string("team_members")->nullable();
+            $table->boolean('is_ranked')->default(0);
             $table->foreignId('created_by')->constrained('users', 'id')->onDelete("cascade");
             $table->timestamps();
         });

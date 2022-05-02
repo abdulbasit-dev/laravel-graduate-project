@@ -16,8 +16,8 @@ class FormController extends Controller
     public function __construct()
     {
         View::share([
-            'title' => "Forms",
-            'desc' => "List of Forms"
+            'title' => "Evalution Forms",
+            'desc' => "List of Evalution Forms"
         ]);
     }
 
@@ -27,8 +27,15 @@ class FormController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-       public function index()
+    public function index()
     {
+        $forms = Form::orderByDesc('created_at')->paginate(10);
+        return view('admin.forms.index', compact('forms'));
+    }
+
+    public function uploadedForm()
+    {
+        return "as";
         $forms = Form::orderByDesc('created_at')->paginate(10);
         return view('admin.forms.index', compact('forms'));
     }

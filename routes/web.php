@@ -87,11 +87,13 @@ Route::group([
     Route::get('projects/poster', [ProjectController::class, 'poster'])->name('projects.poster');
     Route::resource('projects', ProjectController::class);
 
-    Route::get('forms/first-seminar', [FormController::class, 'firstSeminar'])->name('forms.firstSeminar');
-    Route::get('forms/final-seminar', [FormController::class, 'finalSeminar'])->name('forms.finalSeminar');
-    Route::get('forms/final-seminar-supervisor', [FormController::class, 'finalSeminarSupervisor'])->name('forms.finalSeminarSupervisor');
-    Route::get('forms/theory-exam', [FormController::class, 'theoryExam'])->name('forms.theoryExam');
-    Route::get('forms/final-degree', [FormController::class, 'finalEegree'])->name('forms.finalEegree');
+    //evaluation form
+    // Route::get('forms/first-seminar', [FormController::class, 'firstSeminar'])->name('forms.firstSeminar');
+    // Route::get('forms/final-seminar', [FormController::class, 'finalSeminar'])->name('forms.finalSeminar');
+    // Route::get('forms/final-seminar-supervisor', [FormController::class, 'finalSeminarSupervisor'])->name('forms.finalSeminarSupervisor');
+    // Route::get('forms/theory-exam', [FormController::class, 'theoryExam'])->name('forms.theoryExam');
+    // Route::get('forms/final-degree', [FormController::class, 'finalEegree'])->name('forms.finalEegree');
+    Route::get('forms/uploaded-form', [FormController::class, 'uploadedForm'])->name('forms.uploaded-form');
     Route::resource('forms', FormController::class);
 
     //announcements

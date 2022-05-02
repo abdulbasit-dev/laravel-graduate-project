@@ -197,6 +197,7 @@ class IdeaSeeder extends Seeder
             "report" => "/uploads/reports/dummy.pdf",
             "poster" => "/uploads/posters/poster.jpg",
             "supervisor_name" => "D. Haider Haddad",
+            'is_ranked' => 1,
             "team_members" => '["Sanah", "Sozan", "Bushra"]',
             "created_by" => 5,
             "stage" => "fourth",
