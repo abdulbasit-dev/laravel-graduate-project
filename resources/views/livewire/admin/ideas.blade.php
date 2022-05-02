@@ -138,7 +138,7 @@
                                     </tr>
                                     @empty
                                     <tr class=" text-center">
-                                        <td class="h3" colspan="5">No idea found :(</td>
+                                        <td class="h3" colspan="9">No data found :(</td>
                                     </tr>
                                     @endforelse
                                 </tbody>

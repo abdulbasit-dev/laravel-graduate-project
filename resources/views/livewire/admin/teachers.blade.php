@@ -67,8 +67,9 @@
                                         <td>{{ $teacher->email }}</td>
                                     </tr>
                                     @empty
-                                    <tr class=" text-center">
-                                        <td class="h3" colspan="5">No teacher found :(</td>
+                                    <tr class="mt-4">
+                                        <td colspan="5" class="text-center h4">No data found :(
+                                        </td>
                                     </tr>
                                     @endforelse
                                 </tbody>

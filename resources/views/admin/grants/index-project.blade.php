@@ -47,23 +47,23 @@
                                         <td>{{ $grant->title }}</td>
                                         <td>{{ $grant->dept->name }}</td>
                                         <td class="d-flex">
-                                            <a
-                                                href="{{ route('admin.grants.show',$grant->id) }}">
+                                            <a href="{{ route('admin.grants.show',$grant->id) }}">
                                                 <button class="btn btn-outline-info btn-sm"
                                                     type="button">View</button>
                                             </a>
-                                            <a
-                                                href="{{ route('admin.grants.show',$grant->id) }}">
+                                            <a href="{{ route('admin.grants.show',$grant->id) }}">
                                                 <button class="btn btn-outline-tertiary btn-sm mx-2"
                                                     type="button">Rank It</button>
                                             </a>
 
-                                            <form action="{{ route('admin.grants.destroy', $grant->id) }}" method="POST"
-                                                    id="myForm_{{ $grant->id }}">
-                                                    @method("DELETE")
-                                                    @csrf
-                                                </form>
-                                                <button onclick="Swal.fire({
+                                            <form
+                                                action="{{ route('admin.grants.destroy', $grant->id) }}"
+                                                method="POST" id="myForm_{{ $grant->id }}">
+                                                @method("DELETE")
+                                                @csrf
+                                            </form>
+                                            <button
+                                                onclick="Swal.fire({
                                                                 title: 'Are you sure?',
                                                                 text: `You won't be able to revert this!`,
                                                                 showClass: {
@@ -81,14 +81,15 @@
                                                                                                                 }
                                                                                                             })
                                                                                                     "
-                                                    class="btn btn-outline-danger btn-sm ">Delete</button>
+                                                class="btn btn-outline-danger btn-sm ">Delete</button>
 
                                         </td>
                                     </tr>
                                     @empty
-                                    <div class="col-12 text-center">
-                                        <h2>No submited grant gradution project found :(</h2>
-                                    </div>
+                                    <tr class="mt-4">
+                                        <td colspan="6" class="text-center h4">No data found :(
+                                        </td>
+                                    </tr>
                                     @endforelse
                                 </tbody>
                             </table>

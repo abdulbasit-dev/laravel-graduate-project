@@ -97,9 +97,10 @@
 
 
                                     @empty
-                                    <div class="col-12 text-center">
-                                        <h5>No forms found :(</h5>
-                                    </div>
+                                    <tr class="mt-4">
+                                        <td colspan="4" class="text-center h4">No data found :(
+                                        </td>
+                                    </tr>
                                     @endforelse
                                 </tbody>
                             </table>

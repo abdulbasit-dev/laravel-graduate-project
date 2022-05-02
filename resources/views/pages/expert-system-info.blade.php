@@ -134,9 +134,10 @@
             </tr>
 
             @empty
-            <tr class="mt-4">
-                <td colspan="3" class="text-center h4">No file found :(</td>
-            </tr>
+        <tr class="mt-4">
+            <td colspan="3" class="text-center h4">No data found :(
+            </td>
+        </tr>
             @endforelse
 
         </tbody>

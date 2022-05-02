@@ -100,8 +100,9 @@
                                     </td>
                                 </tr>
                                 @empty
-                                <tr class="mt-4">
-                                    <td colspan="5" class="text-center h4">No project found :(</td>
+                               <tr class="mt-4">
+                                    <td colspan="7" class="text-center h4">No data found :(
+                                    </td>
                                 </tr>
                                 @endforelse
                             </tbody>

@@ -119,7 +119,7 @@
                                     </tr>
                                     @empty
                                     <tr class="mt-4">
-                                        <td colspan="8" class="text-center h4">No idea found :(
+                                        <td colspan="8" class="text-center h4">No data found :(
                                         </td>
                                     </tr>
                                     @endforelse

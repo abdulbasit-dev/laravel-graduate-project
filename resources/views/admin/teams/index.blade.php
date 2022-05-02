@@ -96,9 +96,10 @@
                         </td>
                       </tr>
                     @empty
-                      <div class="col-12 text-center">
-                        <h5>No team member found :(</h5>
-                      </div>
+                     <tr class="mt-4">
+                        <td colspan="5" class="text-center h4">No data found :(
+                        </td>
+                    </tr>
                     @endforelse
                   </tbody>
                 </table>

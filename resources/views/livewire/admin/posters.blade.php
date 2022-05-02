@@ -72,31 +72,37 @@
                                         <td>
                                             @if ($project->is_poster_ranked)
                                             <span class="badge bg-success">Yes</span>
-                                        
+
                                             @else
                                             <span class="badge bg-secondary">No</span>
                                             @endif
                                         </td>
-    
+
                                         <td class="align-middle d-flex">
                                             @role('council')
-                                                @if ($project->is_poster_ranked)
-                                                <a href="javascript:void(0)" class="btn btn-primary btn-sm" type="button">Ranked</a>
-                                                @else
-                                                <a href="{{ route('admin.projects.rank-poster',$project->id) }}">
-                                                    <button class="btn btn-warning btn-sm" type="button">Rank</button>
-                                                </a>
-                                                @endif
-                                                @endrole
-                                            <a href="{{ asset($project->poster) }}" download class="ms-3">
+                                            @if ($project->is_poster_ranked)
+                                            <a href="javascript:void(0)"
+                                                class="btn btn-primary btn-sm"
+                                                type="button">Ranked</a>
+                                            @else
+                                            <a
+                                                href="{{ route('admin.projects.rank-poster',$project->id) }}">
+                                                <button class="btn btn-warning btn-sm"
+                                                    type="button">Rank</button>
+                                            </a>
+                                            @endif
+                                            @endrole
+                                            <a href="{{ asset($project->poster) }}" download
+                                                class="ms-3">
                                                 <i class="bi bi-file-earmark-arrow-down fa-2x"></i>
                                             </a>
 
                                         </td>
                                     </tr>
                                     @empty
-                                    <tr class=" text-center">
-                                        <td class="h3" colspan="5">No posters found :(</td>
+                                    <tr class="mt-4">
+                                        <td colspan="6" class="text-center h4">No data found :(
+                                        </td>
                                     </tr>
                                     @endforelse
                                 </tbody>
