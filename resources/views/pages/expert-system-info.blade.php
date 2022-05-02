@@ -82,10 +82,9 @@
                                 data-aos-duration="1000">
                                 Expert Info Files <i class="fas fa-arrow-right"></i>
                             </a>
-    
-                            <a href="#video"
-                                class="btn btn-outline-primary ms-4" data-aos="fade-left"
-                                data-aos-duration="1000">
+
+                            <a href="#video" class="btn btn-outline-primary ms-4"
+                                data-aos="fade-left" data-aos-duration="1000">
                                 Video Tutorial <i class="fas fa-video"></i>
                             </a>
                         </div>
@@ -109,41 +108,7 @@
     </div>
 </section>
 
-<section class="container" id="experts" style="margin-bottom: 10rem">
-
-    <div class="text-center mb-4" data-aos="fade-up" data-aos-duration="1000">
-        <h3 class="mb-3">Expert System Info</h3>
-        <hr class="mb-4 mt-0 d-inline-block mx-auto w-50 bg-primary" style="height: 2px" />
-    </div>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">File Name</th>
-                <th scope="col">download</th>
-            </tr>
-        </thead>
-        <tbody>
-            @forelse ($experts as $expert)
-            <tr data-aos="zoom-in-down" data-aos-duration="1000">
-                <th scope="row">{{ $loop->iteration }}</th>
-                <td>{{ $expert->title }}</td>
-                <td><a href="{{ asset($expert->file) }}"><i
-                            class="bi bi-file-earmark-arrow-down fa-2x"></i></a></td>
-            </tr>
-
-            @empty
-        <tr class="mt-4">
-            <td colspan="3" class="text-center h4">No data found :(
-            </td>
-        </tr>
-            @endforelse
-
-        </tbody>
-    </table>
-
-</section>
+<livewire:expert-system />
 
 {{-- tutorial --}}
 <section class="container" id="video" style="margin-bottom: 10rem">
@@ -153,19 +118,22 @@
     </div>
 
     <div class="row mb-5">
-        <div class="col-12">
-            <h3 class="text-muted  mb-4 text-center " data-aos="zoom-in" data-aos-duration="1000">How To Upload Your Project</h3>
-            <video class="w-100" src="{{ asset("images/how to upload project.mp4") }}" data-aos="fade-left" data-aos-duration="1000" controls loop></video>
+        <div class="col-md-12">
+            <h3 class="text-muted  mb-4 text-center " data-aos="zoom-in" data-aos-duration="1000">
+                How To Upload Your Project</h3>
+            <video class="w-100" src="{{ asset("images/how to upload project.mp4") }}"
+                data-aos="fade-left" data-aos-duration="1000" controls loop></video>
         </div>
     </div>
 
-    <div class="row mt-5">
-        <div class="col-12">
-            <h3 class="text-muted  mb-4 text-center " data-aos="zoom-in" data-aos-duration="1000">How To Upload Your Idea</h3>
-            <video class="w-100" src="{{ asset("images/how to upload idea.mp4") }}" data-aos="zoom-out" data-aos-duration="1000" controls loop></video>
+    <div class="row mb-5">
+        <div class="col-md-12">
+            <h3 class="text-muted  mb-4 text-center " data-aos="zoom-in" data-aos-duration="1000">
+               How To Upload Your Idea</h3>
+            <video class="w-100" src="{{ asset("images/how to upload idea.mp4") }}" data-aos="zoom-out"
+                data-aos-duration="1000" controls loop></video>
         </div>
     </div>
-
 
 </section>
 

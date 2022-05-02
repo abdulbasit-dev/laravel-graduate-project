@@ -46,6 +46,34 @@
 
                     <div class="row mt-3">
                         <div class="col-md-6 mb-3">
+                            <label for="">Choose your college</label>
+                            <select class="form-select @error('college_id') is-invalid @enderror" id="college" name="college_id">
+                                <option selected value>Choose College</option>
+                                @foreach (\App\Models\College::pluck('name', 'id') as $key =>
+                                $value)
+                                <option value="{{ $key }}">{{ $value }}</option>
+                                @endforeach
+                            </select>
+                            @error('college_id')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-md-6 mb-3">
+                            <label for="dept">Choose your department</label>
+                            <select class="form-select department @error('dept_id') is-invalid @enderror" name="dept_id" id="dept">
+                                <option selected value>Choose Department</option>
+                            </select>
+                            @error('dept_id')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-md-6 mb-3">
                             <label for="title">Title</label>
                             <input class="form-control @error('title') is-invalid @enderror"
                                 id="title" type="text" name="title" value="{{ old('title') }}">
@@ -56,9 +84,8 @@
                     </div>
                     <div class="row mt-3">
                         <div class="col-md-6 mb-3">
-                            <label for="image" class="form-label">Attachment</label>
+                            <label for="file" class="form-label">Attachment</label>
                             <div class="mb-4">
-
                                 <input type="file" name="file" id="file"
                                     class="form-control  @error('file') is-invalid @enderror">
                                 @error('file')
@@ -80,3 +107,35 @@
     </div>
 </div>
 @endsection
+@push('scripts')
+<script>
+    $(document).ready(function() {
+      $("#college").on('change', function() {
+        let collegeId = $(this).val();
+        // Ajax
+        $.ajax({
+          url: `{{ route('getDepartment') }}`,
+          dataType: 'json',
+          data: {
+            collegeId
+          },
+          beforeSend: function() {
+            $(".department").html('<option>--- Loading ---</option>');
+          },
+          success: function(res) {
+            console.log(res);
+            let _html = '';
+            $.each(res, function(id, data) {
+
+              _html += `<option  value="${id}">${data}</option>`;
+            });
+            $(".department").html(_html);
+
+          }
+        });
+      });
+
+
+    });
+</script>
+@endpush

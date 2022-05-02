@@ -40,6 +40,8 @@
                                     <tr>
                                         <th class="border-0 rounded-start">#</th>
                                         <th class="border-0">Title</th>
+                                        <th class="border-0">College</th>
+                                        <th class="border-0">Department</th>
                                         <th class="border-0">File</th>
                                         <th class="border-0 text-center">Action</th>
                                     </tr>
@@ -49,6 +51,8 @@
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $expert->title }}</td>
+                                        <td>{{ $expert->college->name }}</td>
+                                        <td>{{ $expert->dept->name }}</td>
                                         <td><a href="{{ asset($expert->file) }}"><i
                                                     class="bi bi-file-earmark-arrow-down fa-2x"></i></a>
                                         </td>

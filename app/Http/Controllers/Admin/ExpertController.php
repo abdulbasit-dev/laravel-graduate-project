@@ -51,10 +51,19 @@ class ExpertController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            "title" => ['required'],
-            'file' => ['file']
-        ]);
+        $validator = Validator::make(
+            $request->all(),
+            [
+                "title" => ['required', 'string'],
+                "college_id" => ['required', 'exists:colleges,id'],
+                "dept_id" => ['required', 'exists:departments,id'],
+                "file" => ['required', 'file'],
+            ],
+            [
+                'college_id.required' => "The college field is required",
+                'dept_id.required' => "The department field is required",
+            ]
+        );
 
         if ($validator->fails()) {
             return redirect()->back()
@@ -72,10 +81,12 @@ class ExpertController extends Controller
             Expert::create([
                 "title" => $request->title,
                 "file" => 'uploads/experts/' . $file,
+                "college_id" => $request->college_id,
+                "dept_id" => $request->dept_id,
             ]);
 
             return redirect()->route('admin.experts.index')->with([
-                "message" => "Expert  Created Successfully",
+                "message" => "Expert Created Successfully",
                 "title" => "Created",
                 "icon" => "success",
             ]);
@@ -106,17 +117,6 @@ class ExpertController extends Controller
      */
     public function update(Request $request, Expert $expert)
     {
-        $validator = Validator::make($request->all(), [
-            "title" => ['required'],
-            'file' => ['file']
-        ]);
-
-        if ($validator->fails()) {
-            return redirect()->back()
-                ->withErrors($validator)
-                ->withInput();
-        }
-
         $file = null;
         try {
             if ($request->hasFile('file')) {
@@ -130,8 +130,17 @@ class ExpertController extends Controller
             }
 
             $expert->title = $request->title;
+            
             if ($file) {
                 $expert->file = 'uploads/experts/' . $file;
+            }
+
+            if ($request->college_id) {
+                $expert->college_id = $request->college_id;
+            }
+
+            if ($request->dept_id) {
+                $expert->dept_id = $request->dept_id;
             }
             $expert->save();
 
