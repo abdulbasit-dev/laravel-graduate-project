@@ -18,7 +18,7 @@ class CreateFormsTable extends Migration
             $table->foreignId('college_id')->nullable()->constrained('colleges', 'id');
             $table->foreignId('dept_id')->nullable()->constrained('departments', 'id');
             $table->string('name')->nullable();
-            $table->string('file')->comment("the file that admin will upload from backend and show in front-end");
+            $table->string('file')->nullable()->comment("the file that admin will upload from backend and show in front-end");
             $table->string('upload')->nullable()->comment("the file will be upload from front-end");
             $table->timestamps();
         });

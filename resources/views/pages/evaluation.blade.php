@@ -63,7 +63,7 @@
         -moz-appearance: textfield;
     }
 
-    .form_btn:hover{
+    .form_btn:hover {
         border: none
     }
 </style>
@@ -85,25 +85,34 @@
             consectetur, odio velit alias!
         </p>
 
-        @role('council')
+
+
         <div class="mt-5">
-            <a href="{{ asset('forms/evaluation-form.xlsx') }}" download="" class="btn btn-primary"
-                data-aos="flip-up" data-aos-duration="1500">
+            <a href="#forms" download="" class="btn btn-primary" data-aos="flip-up"
+                data-aos-duration="1500">
+                Evaluation Form
+            </a>
+            @role('council|admin')
+            {{-- <a href="{{ asset('forms/evaluation-form.xlsx') }}" download=""
+                class="btn btn-primary" data-aos="flip-up" data-aos-duration="1500">
 
                 Download Evaluation Form <i class="fas fa-download ms-2"></i>
-            </a>
+            </a> --}}
 
-            <button type="button" class="btn btn-block btn-outline-primary mx-4 border-white text-white form_btn"  data-bs-toggle="modal"
-                data-bs-target="#evaluation_form" data-aos="zoom-in" data-aos-duration="1500">Upload Evaluation Form <i class="fas fa-upload ms-2"></i></button>
+            <button type="button"
+                class="btn btn-block btn-outline-primary mx-4 border-white text-white form_btn"
+                data-bs-toggle="modal" data-bs-target="#evaluation_form" data-aos="zoom-in"
+                data-aos-duration="1500">Upload Evaluation Form <i
+                    class="fas fa-upload ms-2"></i></button>
+            @endrole
         </div>
-        @endrole
     </div>
 </div>
 
 
 
-{{-- evaluation-form upload  --}}
-@role("council")
+{{-- evaluation-form upload modal --}}
+@role("council|admin")
 <div class="modal fade" id="evaluation_form" tabindex="-1" role="dialog"
     aria-labelledby="evaluation_form" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -114,16 +123,36 @@
                     aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="{{ route('admin.forms.store') }}" method="POST"
+                <form action="{{ route('admin.forms.upload-form') }}" method="POST"
                     enctype='multipart/form-data'>
                     @csrf
-                
-                    <div class="border-bottom mb-2">
-                
+                    <div class="mb-2">
+                        <label class="col-form-label" for="">Choose your college</label>
+                        <select class="form-select" id="college" name="college_id" required>
+                            <option selected value>Choose College</option>
+                            @foreach (\App\Models\College::pluck('name', 'id') as $key =>
+                            $value)
+                            <option value="{{ $key }}">{{ $value }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
+
+
+
+                    <div class="mb-2">
+                        <label class="col-form-label" for="dept">Choose your department</label>
+                        <select class="form-select department" name="dept_id" id="dept" required>
+                            <option selected value>Choose Department</option>
+                        </select>
+                    </div>
+
+
+                    <div class="mb-2">
                         <label for="file" class="col-form-label">Form File</label>
                         <input required type="file" name="file" id="file" class="form-control">
                     </div>
-                
+
                     <button class="btn btn-outline-primary px-2 mt-3" type="submit">Submit</button>
                 </form>
             </div>
@@ -136,6 +165,74 @@
     </div>
 </div>
 @endrole
+
+
+{{-- show forms --}}
+<section class="container mt-5" id="forms">
+    <div class="text-center mb-4" data-aos="fade-up" data-aos-duration="1000">
+        <h3>Evaluation Forms</h3>
+        <hr class="mb-2 mt-0 d-inline-block mx-auto w-50 bg-primary" style="height: 2px" />
+    </div>
+    <div class="card border-0 shado mb-4">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-centered table-nowrap mb-0 rounded">
+                    <thead class="thead-light">
+                        <tr>
+                            <th class="border-0 rounded-start">#</th>
+                            <th class="border-0">Name</th>
+                            <th class="border-0">Collge</th>
+                            <th class="border-0">Department</th>
+                            <th class="border-0">Download</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse ($forms as $form)
+                        <tr data-aos="zoom-in-down" data-aos-duration="1000">
+                            <td class="align-middle">{{ $loop->iteration }}</td>
+                            <td class="align-middle">{{ $form->name }}</td>
+                            <td class="align-middle">{{ $form->college->name }}
+                            </td>
+                            <td class="align-middle">{{ $form->dept->name }}</td>
+
+                            <td class="align-middle"><a href="{{ asset($form->file) }}"><i
+                                        class="bi bi-file-earmark-arrow-down fa-2x"></i></a>
+                            </td>
+
+                        </tr>
+                        @empty
+                        <tr class="mt-4">
+                            <td colspan="5" class="text-center h4">No evalution form found
+                                :(
+                            </td>
+                        </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    @if ($forms instanceof \Illuminate\Pagination\LengthAwarePaginator)
+    <div class="d-flex justify-content-between align-items-center">
+
+        @if ($forms->total())
+        <div>
+            <p class="text-sm text-gray-700 leading-5">
+                <span>{!! __('Showing') !!}</span>
+                <span class="font-medium">{{ $forms->firstItem() }}</span>
+                <span>{!! __('to') !!}</span>
+                <span class="font-medium">{{ $forms->lastItem() }}</span>
+                <span>{!! __('of') !!}</span>
+                <span class="font-medium">{{ $forms->total() }}</span>
+                <span>{!! __('results') !!}</span>
+            </p>
+        </div>
+        @endif
+
+        {{ $forms->links() }}
+    </div>
+    @endif
+</section>
 
 {{-- change 🚩 --}}
 {{-- <section dir="rtl">
@@ -208,6 +305,7 @@
     </div>
 </section> --}}
 
+{{-- image section --}}
 <section class="container" style="margin-bottom: 5rem;margin-top:5rem" id="grantForms">
     <div class="text-center mb-4" data-aos="fade-up" data-aos-duration="1000">
         <h3>Evaluation</h3>
@@ -242,10 +340,12 @@
     </a>
 
     <a href="#grantForms" class="lightbox" id="img2">
-        <span style="background-image: url('{{ asset('images/Student-Project-Evaluation-A-2.jpg') }}')"></span>
+        <span
+            style="background-image: url('{{ asset('images/Student-Project-Evaluation-A-2.jpg') }}')"></span>
     </a>
 </section>
 
+{{-- forms --}}
 <section class="mt-5" style="margin-bottom: 5rem">
     <div class="container">
 
@@ -265,7 +365,7 @@
                     <div id="uploadForm" class="accordion-collapse collapse"
                         aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                           
+
                             <div class="card card-body" dir="rtl">
                                 <form class="px-5" action="{{ route('admin.forms.store') }}"
                                     method="POST" enctype='multipart/form-data'>

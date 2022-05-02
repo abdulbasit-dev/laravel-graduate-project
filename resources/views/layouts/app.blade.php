@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {{-- tab icon  --}}
+    {{-- tab icon --}}
     <link rel="shortcut icon" href="{{ asset('images/icon.gif') }}" type="image/gif" />
     <!-- BootStrap -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
@@ -21,6 +21,8 @@
 
     {{-- custome style --}}
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('css/animate.min.css') }}" />
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -46,14 +48,32 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    {{-- sweetalert2 --}}
+    <script src="{{ asset('js/sweetalert2.min.js') }}"></script>
+    
 
-  
     <script>
         AOS.init();
         // AOS.init({once: true});
     </script>
     @stack('scripts')
-
+    {{-- sweetalert2 message --}}
+    @if (Session::has('message'))
+    <script>
+        Swal.fire({
+            timer: 2000,
+            icon: "{{ Session::get('icon') }}",
+            title: "{{ Session::get('title') }}",
+            text: "{{ Session::get('message') }}",
+            showClass: {
+              popup: 'animate__animated animate__backInDown'
+            },
+            hideClass: {
+              popup: 'animate__animated animate__backOutDown'
+            },
+          })
+    </script>
+    @endif
 
 </body>
 

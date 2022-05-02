@@ -8,6 +8,7 @@ use App\Models\Banner;
 use App\Models\College;
 use App\Models\Department;
 use App\Models\Expert;
+use App\Models\Form;
 use App\Models\Project;
 use App\Models\ProjectAnnouncement;
 use App\Models\Team;
@@ -68,9 +69,8 @@ class PageController extends Controller
 
     public function evaluation()
     {
-        $colleges = College::pluck('name', 'id');
-        $depts = Department::pluck('name', 'id');
-        return view('pages.evaluation', compact("colleges", "depts"));
+        $forms = Form::paginate(6);
+        return view('pages.evaluation', compact('forms'));
     }
 
     public function expertSystemInfo()

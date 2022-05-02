@@ -445,7 +445,7 @@
 
     {{-- evaluation forms --}}
     <li class="nav-item">
-        <span class="nav-link d-flex justify-content-between align-items-center"
+        <span class="nav-link d-flex justify-content-between align-items-center "
             data-bs-toggle="collapse" data-bs-target="#college_depts">
             <span class="d-flex  align-items-center">
                 <span class="sidebar-icon">
@@ -468,9 +468,9 @@
                 </svg>
             </span>
         </span>
-        <div class="multi-level collapse" role="list" id="college_depts" aria-expanded="false">
+        <div class="multi-level {{ request()->routeIs('admin.forms.*') ? '' : 'collapse' }} " role="list" id="college_depts" aria-expanded="false">
             <ul class="flex-column nav">
-                <li class="nav-item {{ request()->routeIs('admin.forms.index') ? 'active' : '' }}">
+                <li class="nav-item {{ request()->routeIs('admin.forms.index') || request()->routeIs('admin.forms.create') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('admin.forms.index') }}">
                         <span class="sidebar-text">{{ __('Evaluation Forms') }}</span>
                     </a>

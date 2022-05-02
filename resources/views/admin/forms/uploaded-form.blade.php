@@ -18,12 +18,8 @@
     </nav>
     <div class="d-flex justify-content-between w-100 flex-wrap">
         <div class="mb-3 mb-lg-0">
-            <h4 class="h4">{{ $desc }}</h4>
+            <h4 class="h4">List of Upload Evaluation Forms</h4>
         </div>
-        <a href="{{ route('admin.forms.create') }}">
-            <button class="btn btn-primary">Add New
-                {{ $title }}</button>
-        </a>
     </div>
 </div>
 {{-- End Header --}}
@@ -50,11 +46,8 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td class="fw-bold">{{Str::title($form->name) }}</td>
 
-                                        {{-- <td class="fw-bold">
-                                            {{Str::title(substr($form->file,25)) }}
-                                        </td> --}}
                                         <td>
-                                            <a class="text-info" href="{{ asset($form->file) }}"
+                                            <a class="text-info" href="{{ asset($form->upload) }}"
                                                 download="">
 
                                                 <svg class="icon" fill="none" stroke="currentColor"
