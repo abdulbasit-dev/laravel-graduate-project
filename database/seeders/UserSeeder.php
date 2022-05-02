@@ -98,7 +98,7 @@ class UserSeeder extends Seeder
                 'name' => $team['name'],
                 'email' => $team['email'],
                 'college_id' => 1,
-                'dept_id' => 7,
+                'dept_id' => 4,
                 'is_student' => 1,
                 'password' => bcrypt('password')
             ])->assignRole('team');

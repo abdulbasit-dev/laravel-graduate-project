@@ -12,7 +12,7 @@
                                     <div class="col">
                                         <input type="text" class="form-control form-control-sm"
                                             wire:model.debounce.500ms="search"
-                                            placeholder="search by project title ...">
+                                            placeholder="search by name ...">
                                     </div>
                                     <div class="col">
                                         <select class="form-select form-select-sm" id="college"

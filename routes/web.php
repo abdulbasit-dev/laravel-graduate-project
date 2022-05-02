@@ -122,6 +122,7 @@ Route::group([
 
     Route::get('users/create', [UserController::class, 'create'])->name('users.create');
     Route::post('users', [UserController::class, 'store'])->name('users.store');
+    Route::delete('users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
     Route::get('users/system-user', [UserController::class, 'index'])->name('users.index');
     Route::get('users/student', [UserController::class, 'student'])->name('users.student');
     Route::get('users/teacher', [UserController::class, 'teacher'])->name('users.teacher');

@@ -112,7 +112,7 @@
                                             @endif
                                         </td>
 
-                                        <td >
+                                        <td>
                                             <div class="d-flex">
 
                                                 @role('committee')
@@ -133,7 +133,6 @@
                                                         type="button">View</button>
                                                 </a>
                                             </div>
-
                                         </td>
                                     </tr>
                                     @empty

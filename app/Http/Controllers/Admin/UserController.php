@@ -23,8 +23,7 @@ class UserController extends Controller
     // for admin
     public function index()
     {
-        $users = User::notRole(['student', 'teacher'])->paginate(15);
-        return view('admin.users.index', compact('users'));
+        return view('admin.users.index');
     }
 
     // for students
@@ -47,7 +46,6 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
-
         $validator = Validator::make(
             $request->all(),
             [
@@ -104,5 +102,15 @@ class UserController extends Controller
         } catch (\Throwable $th) {
             throw $th;
         }
+    }
+
+    public function destroy(User $user)
+    {
+        $user->delete();
+        return redirect()->route('admin.users.index')->with([
+            "message" => "User delete Successfully",
+            "title" => "Deleted",
+            "icon" => "success",
+        ]);
     }
 }

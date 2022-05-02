@@ -52,31 +52,52 @@
                                     <tr>
                                         <th class="border-0 rounded-start">#</th>
                                         <th class="border-0">Name</th>
+                                        <th class="border-0">Role</th>
                                         <th class="border-0">Collge</th>
                                         <th class="border-0">Department</th>
                                         <th class="border-0">Email</th>
-                                        <th class="border-0">Submited Project</th>
-                                        <th class="border-0">Submited Idea</th>
+                                        <th class="border-0">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse ($students as $student)
+                                    @forelse ($users as $user)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $student->name }}</td>
-                                        <td>{{ $student->college->name }}</td>
-                                        <td>{{ $student->dept->name }}</td>
-                                        <td>{{ $student->email}}</td>
-                                        <td>{!! $student->is_submited?"<span
-                                                class='badge bg-success'>Yes</span>":"<span
-                                                class='badge bg-danger'>No</span>" !!}</td>
-                                        <td>{!! $student->is_submited_idea?"<span
-                                                class='badge bg-success'>Yes</span>":"<span
-                                                class='badge bg-danger'>No</span>"!!}</td>
+                                        <td>{{ $user->name }}</td>
+                                        <td><span class="fw-normal badge bg-info">{{ $user->getRoleNames()[0] }}</span></td>
+                                        <td>{{ $user->college->name?? '---' }}</td>
+                                        <td>{{ $user->dept->name?? '---' }}</td>
+                                        <td>{{ $user->email }}</td>
+                                        <td>
+                                           <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST"
+                                                id="myForm_{{ $user->id }}">
+                                                @method("DELETE")
+                                                @csrf
+                                            </form>
+                                            <button onclick="Swal.fire({
+                                                                                                    title: 'Are you sure?',
+                                                                                                    text: `You won't be able to revert this!`,
+                                                                                                    showClass: {
+                                                                                                    popup: 'animate__animated animate__fadeInDown'
+                                                                                                    },
+                                                                                                    hideClass: {
+                                                                                                    popup: 'animate__animated animate__fadeOutUp'
+                                                                                                    },
+                                                                                                    icon: 'warning',
+                                                                                                    showCancelButton: true,
+                                                                                                    confirmButtonText: 'Yes, delete it'
+                                                                                                }).then((result) => {
+                                                                                                            if (result.isConfirmed) {
+                                                                                                            document.getElementById('myForm_{{ $user->id }}').submit();
+                                                                                                            }
+                                                                                                        })
+                                                                                                "
+                                                class="btn btn-outline-danger btn-sm ">Delete</button>
+                                        </td>
                                     </tr>
                                     @empty
                                     <tr class="mt-4">
-                                        <td colspan="7" class="text-center h4">No data found :(
+                                        <td colspan="5" class="text-center h4">No data found :(
                                         </td>
                                     </tr>
                                     @endforelse
@@ -84,7 +105,7 @@
                             </table>
                             <div
                                 class="card-footer px-3 border-0 d-flex flex-column flex-lg-row align-items-center justify-content-between">
-                                {{ $students->links() }}
+                                {{ $users->links() }}
                             </div>
                         </div>
                     </div>
