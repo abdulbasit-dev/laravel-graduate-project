@@ -1,4 +1,4 @@
-<section class="container">
+<section class="container" id="projects">
     <div class="text-center mb-1" data-aos="fade-up" data-aos-duration="1000">
         <h3 class="mb-3">Projects</h3>
         <hr class="mb-4 mt-0 d-inline-block mx-auto w-50 bg-primary" style="height: 2px" />
@@ -60,7 +60,7 @@
                                     <th class="border-0">Collge</th>
                                     <th class="border-0">Department</th>
                                     <th class="border-0">Supervisor Name</th>
-                                    <th class="border-0">Team Members</th>
+                                    {{-- <th class="border-0">Team Members</th> --}}
                                     <th class="border-0">Action</th>
                                 </tr>
                             </thead>
@@ -72,7 +72,7 @@
                                     <td class="align-middle">{{ $project->student->college->name }}</td>
                                     <td class="align-middle">{{ $project->student->dept->name }}</td>
                                     <td class="align-middle">{{ $project->supervisor_name }}</td>
-                                    <td class="align-middle">
+                                    {{-- <td class="align-middle">
                                         <div class="mb-3">
                                             @php
                                             if(getType($project->team_members)!="array"){
@@ -89,7 +89,7 @@
                                             </p>
                                             @endforeach
                                         </div>
-                                    </td>
+                                    </td> --}}
 
                                     <td class="align-middle">
                                         <a href="{{ route('projectShow', $project->id) }}">

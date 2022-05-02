@@ -76,7 +76,7 @@
                                         <th class="border-0">Department</th>
                                         <th class="border-0">Stage</th>
                                         <th class="border-0">Supervisor Name</th>
-                                        <th class="border-0">Team Members</th>
+                                        {{-- <th class="border-0">Team Members</th> --}}
                                         <th class="border-0">Action</th>
                                     </tr>
                                 </thead>
@@ -90,7 +90,7 @@
                                         <td class="align-middle">{{ Str::title($idea->stage) }}</td>
                                         <td class="align-middle">{{ $idea->supervisor_name }}
                                         </td>
-                                        <td class="align-middle">
+                                        {{-- <td class="align-middle">
                                             <div class="mb-3">
                                                 @php
                                                 if(getType($idea->team_members)!="array"){
@@ -107,7 +107,7 @@
                                                 </p>
                                                 @endforeach
                                             </div>
-                                        </td>
+                                        </td> --}}
 
                                         <td class="align-middle">
                                             <a href="{{ route('admin.ideas.show', $idea->id) }}">

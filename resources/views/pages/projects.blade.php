@@ -36,6 +36,10 @@
                         data-aos-duration="1000">
                         See Projects <i class="fas fa-arrow-right"></i>
                     </a>
+                    <a href="#statics" class="btn btn-outline-primary ms-4" data-aos="fade-right"
+                        data-aos-duration="1000">
+                        Project Statics <i class="fas fa-arrow-right"></i>
+                    </a>
                     @role('student')
                     <a href="{{ route('admin.projects.create') }}" target="__blank"
                         class="btn btn-outline-primary ms-4" data-aos="fade-left"
@@ -51,6 +55,13 @@
 
 
    <livewire:project.search />
+
+   <section class="container mt-5" id="statics">
+    <div class="text-center mb-1" data-aos="fade-up" data-aos-duration="1000">
+        <h3 class="mb-3">Statics</h3>
+        <hr class="mb-4 mt-0 d-inline-block mx-auto w-50 bg-primary" style="height: 2px" />
+    </div>
+   </section>
 
 
 @endsection

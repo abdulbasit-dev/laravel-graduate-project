@@ -27,6 +27,11 @@ class PageController extends Controller
 
     public function project()
     {
+        // $projects = Project::query()->with('student.college')->get()
+        //     ->groupBy([
+        //         'college.name',
+        //     ]);
+        // return $projects;
         return view('pages.projects');
     }
 
