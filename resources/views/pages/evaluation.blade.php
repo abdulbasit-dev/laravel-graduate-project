@@ -92,7 +92,7 @@
                 data-aos-duration="1500">
                 Evaluation Form
             </a>
-            @role('council|admin')
+            @role('committee|admin')
             {{-- <a href="{{ asset('forms/evaluation-form.xlsx') }}" download=""
                 class="btn btn-primary" data-aos="flip-up" data-aos-duration="1500">
 
@@ -112,7 +112,7 @@
 
 
 {{-- evaluation-form upload modal --}}
-@role("council|admin")
+@role("committee|admin")
 <div class="modal fade" id="evaluation_form" tabindex="-1" role="dialog"
     aria-labelledby="evaluation_form" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -353,7 +353,7 @@
             <div class="accordion accordion-flush" id="accordionExample">
 
                 {{-- change 🚩 --}}
-                @role("council")
+                @role("committee")
                 {{-- <div class="accordion-item" data-aos="fade-left" data-aos-duration="1300">
                     <h2 class="accordion-header" id="headingOne">
                         <button class="accordion-button collapsed" type="button"

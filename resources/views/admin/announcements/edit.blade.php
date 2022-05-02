@@ -56,7 +56,7 @@
             @method("PUT")
 
             <div class="row mt-3">
-              <div class="col-md-8 mb-3">
+              <div class="col-md-10 mb-3">
                 <label for="title">Title</label>
                 <input class="form-control @error('title') is-invalid @enderror"
                   id="title"
@@ -70,9 +70,9 @@
             </div>
 
             <div class="row mt-3">
-              <div class="col-md-8 mb-3">
+              <div class="col-md-10 mb-3">
                 <label for="description">Description</label>
-                <textarea class="form-control @error('description') is-invalid @enderror"
+                <textarea class="form-control tinymce @error('description') is-invalid @enderror"
                   rows="6"
                   id="description"
                   name="description">{{ old('description', $announcement->description) }}</textarea>
@@ -97,7 +97,7 @@
             </div>
 
             <div class="row mt-3">
-              <div class="col-md-8 mb-3">
+              <div class="col-md-10 mb-3">
                 <label for="image"
                   class="form-label">Attachment</label>
                 <div class="mb-4">
@@ -125,12 +125,3 @@
     </div>
   </div>
 @endsection
-@push('scripts')
-<script>
-    ClassicEditor
-        .create( document.querySelector( '#description' ) )
-        .catch( error => {
-        console.error( error );
-        } );
-</script>
-@endpush

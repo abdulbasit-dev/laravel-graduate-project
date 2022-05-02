@@ -33,13 +33,16 @@ class UserSeeder extends Seeder
         $array = json_decode($json, true);
 
 
-        //cretae admin user
+        //cretae roles user
         Role::firstorCreate(['name' => 'admin']);
         Role::firstorCreate(['name' => 'team']);
         Role::firstorCreate(['name' => 'teacher']);
         Role::firstorCreate(['name' => 'manager']);
         Role::firstorCreate(['name' => 'student']);
-        Role::firstorCreate(['name' => 'council']);
+        Role::firstorCreate(['name' => 'college-admin']);
+        Role::firstorCreate(['name' => 'department-admin']);
+        Role::firstorCreate(['name' => 'committee']);
+  
 
         //create admin user
         User::firstorCreate([
@@ -65,15 +68,15 @@ class UserSeeder extends Seeder
             'password' => bcrypt('password')
         ])->assignRole('manager');
 
-        //create council users
+        //create committee users
         User::firstorCreate([
-            'name' => 'ahmad',
-            'email' => 'council@su.edu.krd',
+            'name' => 'sara',
+            'email' => 'committee@su.edu.krd',
             'college_id' =>  1,
             'dept_id' =>  4,
             'is_student' => 0,
             'password' => bcrypt('password')
-        ])->assignRole('council');
+        ])->assignRole('committee');
 
         $teams = [
             [

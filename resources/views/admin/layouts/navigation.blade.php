@@ -116,7 +116,7 @@
     @endrole
 
 
-    @hasanyrole('council')
+    @hasanyrole('committee')
     {{-- profile --}}
     <li class="nav-item {{ request()->routeIs('admin.profile.*') ? 'active' : '' }}">
         <span class="nav-link d-flex justify-content-between align-items-center"

@@ -101,7 +101,7 @@
 
                                         <td class="">
                                             <div class="d-flex">
-                                                @role('council')
+                                                @role('committee')
                                                 @if ($project->is_ranked)
                                                 <button class="btn btn-primary btn-sm"
                                                     type="button">Ranked</button>

@@ -79,7 +79,7 @@
                                         </td>
 
                                         <td class="align-middle d-flex">
-                                            @role('council')
+                                            @role('committee')
                                             @if ($project->is_poster_ranked)
                                             <a href="javascript:void(0)"
                                                 class="btn btn-primary btn-sm"

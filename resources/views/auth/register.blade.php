@@ -81,7 +81,7 @@
                             </span>
                             <input name="password" type="password"
                                 placeholder="{{ __('Password') }}" class="form-control"
-                                id="password" value="password" autocomplete="new-password">
+                                id="password"  autocomplete="new-password">
                         </div>
                         @error('password') <div class="invalid-feedback"> {{ $message }} </div>
                         @enderror
@@ -100,7 +100,7 @@
                                 </svg>
                             </span>
                             <input name="password_confirmation" type="password"
-                                placeholder="{{ __('Confirm Password') }}" value="password"
+                                placeholder="{{ __('Confirm Password') }}" 
                                 class="form-control" id="password_confirmation">
                         </div>
                     </div>
