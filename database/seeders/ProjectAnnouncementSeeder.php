@@ -23,6 +23,7 @@ class ProjectAnnouncementSeeder extends Seeder
                 "title" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ea?",
                 'college_id' =>  $dept->college_id,
                 'dept_id' =>  $dept->id,
+                "file"=> "/uploads/project-announcement/dummy.pdf",
             ]);
         }
     }

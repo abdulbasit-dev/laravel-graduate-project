@@ -33,14 +33,14 @@ class FormController extends Controller
         return view('admin.forms.index', compact('forms'));
     }
 
-    
+
     public function uploadedForm()
     {
         $forms = Form::whereNotNull('upload')->orderByDesc('created_at')->paginate(10);
         return view('admin.forms.uploaded-form', compact('forms'));
     }
 
-    
+
     public function storeUploadForm(Request $request)
     {
         $file = null;
@@ -54,7 +54,7 @@ class FormController extends Controller
                 "name" => $request->file('file')->getClientOriginalName(),
                 "college_id" => $request->college_id,
                 "dept_id" => $request->dept_id,
-                "upload" => 'uploads/forms/' . $file,
+                "upload" => $file ? 'uploads/forms/' . $file : null,
             ]);
 
             return redirect()->back()->with([
@@ -113,7 +113,7 @@ class FormController extends Controller
                 "name" => $request->name,
                 "college_id" => $request->college_id,
                 "dept_id" => $request->dept_id,
-                "file" => 'uploads/forms/' . $file,
+                "file" => $file ? 'uploads/forms/' . $file : null,
             ]);
 
             return redirect()->route('admin.forms.index')->with([

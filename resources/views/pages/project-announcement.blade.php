@@ -45,10 +45,25 @@
 
     <div class="d-flex flex-column align-items-center">
         @forelse ($projectAnnouncements as $item)
-        <div class="card my-5" style="width: 30rem;" data-aos="fade-up" data-aos-duration="1000">
+        <div class="card my-3" style="width: 50rem;" data-aos="fade-up" data-aos-duration="1000">
             <img src="{{ asset('images/announcement.jfif') }}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-text">{!! $item->title !!}</h5>
+
+                @if ($item->file)
+                <div class="mt-4">
+                    <h5 class="card-text text-muted">Attachment</h5>
+                  <a href="{{ asset($item->file) }}" download="">
+                      <svg class="text-primary" style="width: 2rem" fill="none" stroke="currentColor"
+                          viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10">
+                          </path>
+                      </svg>
+                  </a>
+
+                </div>
+                @endif
             </div>
         </div>
 

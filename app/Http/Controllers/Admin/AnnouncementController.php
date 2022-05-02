@@ -80,8 +80,8 @@ class AnnouncementController extends Controller
             Announcement::create([
                 "title" => $request->title,
                 "description" => $request->description,
-                "image" => 'uploads/announcements/' . $image,
-                "attachment" => 'uploads/announcements/' . $file,
+                "image" => $image ?  'uploads/announcements/' . $image : null,
+                "attachment" =>$file ?  'uploads/announcements/' . $file : null,
             ]);
 
             return redirect()->route('admin.announcements.index')->with([

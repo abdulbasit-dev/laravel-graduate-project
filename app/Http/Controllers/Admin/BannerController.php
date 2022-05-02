@@ -51,7 +51,7 @@ class BannerController extends Controller
      */
     public function store(Request $request)
     {
-       
+
         $validator = Validator::make($request->all(), [
             "title" => ['required', 'string', 'max:50'],
             "description" => ['required', 'string'],
@@ -76,7 +76,7 @@ class BannerController extends Controller
                 "title" => $request->title,
                 "page" => $request->page,
                 "description" => $request->description,
-                "image" => 'uploads/banners/' . $file,
+                "image" => $file ? 'uploads/banners/' . $file : null,
             ]);
 
             return redirect()->route('admin.banners.index')->with([
@@ -132,7 +132,7 @@ class BannerController extends Controller
                     //first delete privies file
                     File::delete($banner->image);
                 }
-               
+
                 $file = time() . '_' . $request->file('file')->getClientOriginalName();
                 $request->file->move(public_path('uploads/banners'), $file);
             }
@@ -163,7 +163,7 @@ class BannerController extends Controller
      */
     public function destroy(Banner $banner)
     {
-         //try to not delete seeder file
+        //try to not delete seeder file
         if ($banner->image && checkDelete($banner->image)) {
             //first delete 
             File::delete($banner->image);

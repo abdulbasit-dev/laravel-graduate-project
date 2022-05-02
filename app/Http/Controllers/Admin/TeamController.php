@@ -73,7 +73,7 @@ class TeamController extends Controller
             Team::create([
                 "name" => $request->name,
                 "description" => $request->description,
-                "image" => 'uploads/teams/' . $file,
+                "image" => $file ? 'uploads/teams/' . $file : null,
             ]);
 
             return redirect()->route('admin.teams.index')->with([
@@ -128,7 +128,7 @@ class TeamController extends Controller
                     //first delete privies file
                     File::delete($team->image);
                 }
-               
+
                 $file = time() . '_' . $request->file('file')->getClientOriginalName();
                 $request->file->move(public_path('uploads/teams'), $file);
             }
@@ -150,7 +150,7 @@ class TeamController extends Controller
         }
     }
 
-    
+
 
     /**
      * Remove the specified resource from storage.

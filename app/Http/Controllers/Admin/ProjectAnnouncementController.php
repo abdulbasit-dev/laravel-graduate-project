@@ -51,9 +51,20 @@ class ProjectAnnouncementController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            "title" => ['required'],
-        ]);
+        $validator = Validator::make(
+            $request->all(),
+            [
+                "title" => ['required', 'string'],
+                "college_id" => ['required', 'exists:colleges,id'],
+                "dept_id" => ['required', 'exists:departments,id'],
+                "file" => ['file'],
+            ],
+            [
+                'title.required' => "The announcement field is required",
+                'college_id.required' => "The college field is required",
+                'dept_id.required' => "The department field is required",
+            ]
+        );
 
         if ($validator->fails()) {
             return redirect()->back()
@@ -61,15 +72,22 @@ class ProjectAnnouncementController extends Controller
                 ->withInput();
         }
 
+        $file = null;
         try {
+            if ($request->hasFile('file')) {
+                $file = time() . '_' . $request->file('file')->getClientOriginalName();
+                $request->file->move(public_path('uploads/project-announcement'), $file);
+            }
+
             ProjectAnnouncement::create([
                 "title" => $request->title,
                 'college_id' => $request->college_id,
                 'dept_id' => $request->dept_id,
+                "file" => $file ? 'uploads/project-announcement/' . $file : null,
             ]);
 
             return redirect()->route('admin.project-announcements.index')->with([
-                "message" => "ProjectAnnouncement  Created Successfully",
+                "message" => "Project Announcement created Successfully",
                 "title" => "Created",
                 "icon" => "success",
             ]);
@@ -100,19 +118,24 @@ class ProjectAnnouncementController extends Controller
      */
     public function update(Request $request, ProjectAnnouncement $projectAnnouncement)
     {
-        $validator = Validator::make($request->all(), [
-            "title" => ['required'],
-        ]);
 
-        if ($validator->fails()) {
-            return redirect()->back()
-                ->withErrors($validator)
-                ->withInput();
-        }
-
+        $file = null;
         try {
-
+            if ($request->hasFile('file')) {
+                //try to not delete seeder file
+                if ($projectAnnouncement->file && checkDelete($projectAnnouncement->file)) {
+                    //first delete 
+                    File::delete($projectAnnouncement->file);
+                }
+                $file = time() . '_' . $request->file('file')->getClientOriginalName();
+                $request->file->move(public_path('uploads/project-announcement'), $file);
+            }
             $projectAnnouncement->title = $request->title;
+
+            if ($file) {
+                $projectAnnouncement->file = 'uploads/project-announcement/' . $file;
+            }
+
             if ($request->college_id) {
                 $projectAnnouncement->college_id = $request->college_id;
             }
@@ -139,6 +162,11 @@ class ProjectAnnouncementController extends Controller
      */
     public function destroy(ProjectAnnouncement $projectAnnouncement)
     {
+
+        if ($projectAnnouncement->file && checkDelete($projectAnnouncement->file)) {
+            //first delete 
+            File::delete($projectAnnouncement->file);
+        }
         $projectAnnouncement->delete();
         return redirect()->back()->with([
             "message" => "ProjectAnnouncement Deleted Successfully",

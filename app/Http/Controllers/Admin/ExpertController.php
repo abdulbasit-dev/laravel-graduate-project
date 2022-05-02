@@ -80,7 +80,7 @@ class ExpertController extends Controller
 
             Expert::create([
                 "title" => $request->title,
-                "file" => 'uploads/experts/' . $file,
+                "file" => $file ? 'uploads/experts/' . $file : null,
                 "college_id" => $request->college_id,
                 "dept_id" => $request->dept_id,
             ]);
@@ -130,7 +130,7 @@ class ExpertController extends Controller
             }
 
             $expert->title = $request->title;
-            
+
             if ($file) {
                 $expert->file = 'uploads/experts/' . $file;
             }
