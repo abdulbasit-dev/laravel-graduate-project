@@ -53,24 +53,25 @@
         <div class="row my-5">
             <div class="col-md-6" data-aos="fade-right" data-aos-duration="1000">
                 <!-- Bootstrap 5 starter form -->
-                <form id="contactForm">
+                <form id="contactForm" action="{{ route('send-mail') }}" method="POST">
+                    @csrf
 
                     <!-- Name input -->
                     <div class="mb-3">
                         <label class="form-label" for="name">Name</label>
-                        <input class="form-control" id="name" type="text" placeholder="Name" />
+                        <input class="form-control" id="name" name="name" type="text" placeholder="Name" required />
                     </div>
 
                     <!-- Email address input -->
                     <div class="mb-3">
                         <label class="form-label" for="emailAddress">Email Address</label>
-                        <input class="form-control" id="emailAddress" type="email" placeholder="Email Address" />
+                        <input class="form-control" id="emailAddress" name="email" type="email" placeholder="Email Address" required />
                     </div>
 
                     <!-- Message input -->
                     <div class="mb-3">
                         <label class="form-label" for="message">Message</label>
-                        <textarea class="form-control" id="message" type="text" placeholder="Message" style="height: 10rem;"></textarea>
+                        <textarea class="form-control" id="message" type="text" name="message" placeholder="Message" style="height: 10rem;" required></textarea>
                     </div>
 
                     <!-- Form submit button -->

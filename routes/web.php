@@ -59,6 +59,7 @@ Route::get('/announcements', [PageController::class, 'announcements'])->name('an
 Route::get('/announcements/{announcement}', [PageController::class, 'announcementShow'])->name('announcementShow');
 
 Route::get('/contact-us', [PageController::class, 'contactUs'])->name('contactUs');
+Route::post('/contact-us/send-mail', [PageController::class, 'sendMail'])->name('send-mail');
 
 Route::get('/get-department', [PageController::class, 'getDepartment'])->name('getDepartment');
 

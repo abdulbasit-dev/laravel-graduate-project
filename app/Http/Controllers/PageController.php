@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Livewire\Idea;
+use App\Mail\ContactUsMail;
 use App\Models\Announcement;
 use App\Models\Banner;
 use App\Models\College;
@@ -13,6 +14,7 @@ use App\Models\Project;
 use App\Models\ProjectAnnouncement;
 use App\Models\Team;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class PageController extends Controller
 {
@@ -113,6 +115,17 @@ class PageController extends Controller
     {
         $teams = Team::all();
         return view('pages.contact-us', compact('teams'));
+    }
+
+    public function sendMail(Request $request)
+    {
+
+        Mail::to('Graduationprojectswebsite21@gmail.com')->send(new ContactUsMail($request));
+        return redirect()->back()->with([
+                "message" => "We have received your message and would like to thank you for writing to us",
+                "title" => "Success",
+                "icon" => "success",
+            ]);
     }
 
 
